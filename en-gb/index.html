@@ -1,0 +1,1242 @@
+<!DOCTYPE html>
+
+<html lang="en-gb" class="clip-paths">
+  <head>
+    <!-- needed for other scripts -->
+    <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+
+    
+
+<script type="text/javascript">
+(function() {
+    typeof window.B === 'object' || (window.B = {});
+    typeof window.B.util === 'object' || (window.B.util = {});
+    typeof window.B.env === 'object' || (window.B.env = {});
+    typeof window.B.modules === 'object' || (window.B.modules = {});
+    typeof window.B.services === 'object' || (window.B.services = {});
+    typeof window.B.data === 'object' || (window.B.data = {});
+    typeof window.B.components === 'object' || (window.B.components = {});
+
+    
+    typeof window.booking === 'object' || (window.booking = window.B);
+
+    B.env.global_translation_tags = {"zwsp":"\u200b","line_break":"\u003cbr\u003e","lrm":"\u200e","nbsp":"&nbsp;","rlm":"\u200f"};
+    B.env.params = {};
+    B.env.route_params = "";
+    B.env.action = "index";
+    B.env.pid = "7b23980f38300008";
+    B.env.stype = "48";
+    B.env.currency = {"code":"JPY","exchange_rate":1,"symbol":"&#165;"};
+    B.env.channel = "booking";
+    B.env.google_analytics_tag = "";
+    B.env.lang = "en-gb";
+    B.env.lang_short_code = "en";
+    B.env.date_format = "dd/MM/yyyy";
+    B.env.ajax_action_host = "https://reservation.booking.expert";
+    B.env.csrf_token = "3/G6WgAAAAA=BLzBPLZdRfLgKFLqh0FIjITMXzlzcZkvaBkVw3Lh6uB8n6UHdweuaNyTETfXAQgtVbWtObbRvaYM1xBXdLTpWI8rK7nBVNAGZokQD_8ibqQbl4S3wBBmOwRH-UCwsP9ejvT9z-QMRT8zVqMy5Am0oqB6FLrSvF8HoO8pn-DsimOYbEfvcPO4XHTwBqQ";
+    B.env.urls = {"confirm":"https://reservation.booking.expert/en-gb/confirm?hotel_id=271588","home":"http://www.sapporoparkhotel1964.com/en-gb","reviews":"http://www.sapporoparkhotel1964.com/en-gb/reviews","cookie_policy":"http://www.sapporoparkhotel1964.com/en-gb/cookie-policy","book":"https://reservation.booking.expert/en-gb/book?hotel_id=271588","contact":"http://www.sapporoparkhotel1964.com/en-gb/contact","search":"https://reservation.booking.expert/en-gb/search?hotel_id=271588","attractions":"http://www.sapporoparkhotel1964.com/en-gb/attractions","sitemap":"http://www.sapporoparkhotel1964.com/en-gb/sitemap","facilities":"http://www.sapporoparkhotel1964.com/en-gb/amenities","verify":"https://reservation.booking.expert/en-gb/verify?hotel_id=271588","rooms":"http://www.sapporoparkhotel1964.com/en-gb/rooms","privacy_policy":"http://www.sapporoparkhotel1964.com/en-gb/privacy-policy","photos":"http://www.sapporoparkhotel1964.com/en-gb/photos"};
+    B.env.guest_ip = "52.211.218.41";
+    B.env.ip_country = "ie";
+    B.env.page_type = "homepage";
+    B.env.error_config = {"booking_looks_suspicious":{"code":2006,"desc":"Book process failed.","type":"user"},"possible_hijack":{"code":1111,"desc":"A reequest is blocked because its considered a hijack for a booking","type":"user"},"internal_error":{"type":"system","code":1001,"desc":"Internal error (with a unique ID if the error is logged: in those cases Bookings may be contacted to trace the error)."},"FACEBOOK_ACCOUNTS_MUST_BE_MERGED":{"type":"user","desc":"FACEBOOK_ACCOUNTS_MUST_BE_MERGED","code":3022},"service_unavailable":{"code":503,"desc":"Service Unavailable","type":"system"},"AUTH_STATUS_2FA_CHALLENGE_FAILED_INVALID_PIN":{"type":"user","desc":"AUTH_STATUS_2FA_CHALLENGE_FAILED_INVALID_PIN","code":3032},"SHORT_PASSWORD":{"type":"user","desc":"Password is less then 8 characters","code":3030},"AUTH_STATUS_FAILED":{"type":"user","desc":"AUTH_STATUS_FAILED","code":3004},"AUTH_STATUS_2FA_WRONG_ANSWER_TO_SECURITY_QUESTION":{"type":"user","code":3034,"desc":"AUTH_STATUS_2FA_WRONG_ANSWER_TO_SECURITY_QUESTION"},"too_many_requests":{"desc":"Too many requests per minute. Please don't use this function heavily (i.e. only for testing) during 8-23 GMT.","code":1007,"type":"user"},"internal_server_error":{"type":"system","code":500,"desc":"Internal Server Error"},"AUTH_STATUS_USER_UNCONFIRMED":{"desc":"AUTH_STATUS_USER_UNCONFIRMED","code":3009,"type":"user"},"PASSWORD_RESET_FAILED":{"type":"user","desc":"Password reset failed","code":3020},"filtered_av_updates":{"code":444,"desc":"AV updates - some filtered","type":"user"},"invalid_guest_qty":{"code":1122,"desc":"Guest_qty is not between 1 and it's maximum.","type":"user"},"token_invalid":{"type":"user","code":2001,"desc":"Provided token is invalid."},"AUTH_STATUS_TOKEN_ERROR":{"desc":"AUTH_STATUS_TOKEN_ERROR","code":3011,"type":"user"},"cc_validation_error":{"type":"user","desc":"Credit card validation error","code":1013},"FACEBOOK_USER_DIDNT_ALLOW_EMAIL":{"type":"user","code":3027,"desc":"FACEBOOK_USER_DIDNT_ALLOW_EMAIL"},"hotel_is_closed":{"type":"user","code":1011,"desc":"The specified hotel is not in service."},"booking_already_processed":{"type":"user","desc":"This booking has already been processed and a cached result will be returned.","code":2005},"unknown_link_booking_error":{"code":2003,"desc":"Unknown error while linking booking.","type":"user"},"captcha_required":{"desc":"User must complete captcha challenge before retrying request.","code":1142,"type":"user"},"rpo_not_in_hotel":{"desc":"Room is not part of the hotel.","code":1106,"type":"user"},"duplicated_request_dist":{"type":"user","desc":"Duplicated distribution request (magic, not client facing)","code":1020},"forbidden":{"type":"user","desc":"HTTP 403 - Forbidden","code":403},"no_rpo_availability":{"type":"user","desc":"There is no room available during the specified period.","code":1107},"duplicated_request_supply":{"code":420,"desc":"Duplicated supply request (magic, not client facing)","type":"user"},"item_not_available":{"desc":"Item not available.","code":2011,"type":"user"},"function_not_allowed":{"type":"user","code":1010,"desc":"Function not allowed."},"too_many_parallel_requests":{"desc":"Too many parallel requests. Please only call 1 instance of this function in parallel during 8-23 GMT or 3 instances in parallel during 23-8 GMT.","code":1008,"type":"user"},"xml_parse_error":{"type":"user","desc":"XML parse error","code":1012},"unknown_error_code":{"type":"system","desc":"Unknown error code","code":65535},"booking_already_linked":{"type":"user","code":2004,"desc":"This booking has already been linked to another user account."},"price_mismatch_decrease_process_booking":{"code":1201,"desc":"Difference between asked and available incremental prices. The price decreased.","type":"user"},"missing_parameters":{"type":"user","desc":"One or more required input parameters are missing.","code":1002},"FACEBOOK_ERROR_WITH_CUSTOM_MSG":{"type":"user","code":3025,"desc":"FACEBOOK_ERROR_WITH_CUSTOM_MSG"},"AUTH_STATUS_EXPIRED":{"type":"user","desc":"AUTH_STATUS_EXPIRED","code":3001},"FACEBOOK_AUTHENTICATE":{"type":"user","desc":"FACEBOOK_AUTHENTICATE","code":3023},"PASSWORD_EQ_USERNAME":{"type":"user","code":3031,"desc":"Password is equal to username"},"affiliate_not_found":{"desc":"Affiliate not found.","code":1119,"type":"user"},"arrival_date_in_past":{"type":"user","code":1124,"desc":"Arrival date must be today or after today"},"AUTH_STATUS_LOCKED":{"desc":"AUTH_STATUS_LOCKED","code":3005,"type":"user"},"min_length_of_stay_not_fulfilled":{"desc":"Minimum length of stay for the requested hotel(s) was not fulfilled","code":1126,"type":"user"},"AUTH_STATUS_2FA_NO_APP_SUPPORT_FOR_THE_FEATURE":{"desc":"AUTH_STATUS_2FA_NO_APP_SUPPORT_FOR_THE_FEATURE","code":3035,"type":"user"},"not_implemented":{"desc":"Not Implemented","code":501,"type":"system"},"booking_is_being_processed":{"code":2009,"desc":"This booking is being processed in another request, ignoring this request.","type":"user"},"AUTH_STATUS_AUTHENTICATED":{"type":"user","code":3002,"desc":"AUTH_STATUS_AUTHENTICATED"},"ALREADY_SUBMITTED":{"type":"user","code":3026,"desc":"ALREADY_SUBMITTED"},"AUTH_STATUS_USER_UNKNOWN":{"code":3004,"desc":"AUTH_STATUS_FAILED","type":"user"},"gone":{"type":"user","desc":"HTTP 410 - Gone","code":410},"I_MEAN_AUTH_STATUS_USER_UNKNOWN":{"type":"user","desc":"AUTH_STATUS_USER_UNKNOWN","code":3028},"cancelled_booking":{"type":"user","code":1123,"desc":"The given booking is cancelled."},"num_rooms_bigger_than_allowed":{"type":"user","desc":"Number of rooms is bigger than the maximum allowed","code":1125},"AUTH_STATUS_2FA_INVALID_AUTHORIZATION_TOKEN":{"desc":"AUTH_STATUS_2FA_INVALID_AUTHORIZATION_TOKEN","code":3033,"type":"user"},"price_mismatch_increase_process_booking":{"type":"user","code":1200,"desc":"Difference between asked and available incremental prices. The price increased."},"AUTH_STATUS_NO_USERNAME":{"type":"user","code":3007,"desc":"AUTH_STATUS_NO_USERNAME"},"invalid_input_format":{"desc":"One or more input parameters have an illegal format.","code":1003,"type":"user"},"affiliate_closed":{"type":"user","desc":"Affiliate is closed.","code":1120},"non_pci_call_in_pci":{"type":"user","desc":"This call can not be made to secure server. Please remove 'secure-' prefix from domain name.","code":1015},"AUTH_STATUS_NO_PASSWORD":{"desc":"AUTH_STATUS_NO_PASSWORD","code":3008,"type":"user"},"not_found":{"desc":"HTTP 404 - Not Found","code":404,"type":"user"},"AUTH_STATUS_SN_SIGNIN_NEEDS_PASSWORD":{"desc":"AUTH_STATUS_SN_SIGNIN_NEEDS_PASSWORD","code":3003,"type":"user"},"FACEBOOK_ALREADY_CONNECTED_TO_DIFF_ACCOUNT":{"desc":"FACEBOOK_AUTHENTICATE","code":3024,"type":"user"},"bad_request":{"code":400,"desc":"HTTP 400 - Bad Request","type":"user"},"ssl_required":{"type":"user","code":1005,"desc":"HTTPS (SSL) connection required for using this procedure."},"ofac_second_match":{"type":"user","desc":"OFAC second match by date of birthday.","code":1300},"rpo_not_found":{"type":"user","desc":"Room not found.","code":1105},"payment_error_generic":{"desc":"There was a problem processing payment","code":2007,"type":"user"},"incorrect_parameters":{"desc":"One or more input parameters have an incorrect value.","code":1009,"type":"user"},"no_bn_or_pincode":{"type":"user","code":2002,"desc":"Missing booknumber or pincode."},"invalid_parameter_combination":{"type":"user","desc":"Invalid parameter combination.","code":1006},"too_many_requests_":{"type":"user","code":429,"desc":"Too many requests - Throttling"},"AUTH_STATUS_EMAIL_UNCONFIRMED":{"desc":"AUTH_STATUS_EMAIL_UNCONFIRMED","code":3010,"type":"user"},"filtered_av_updates_errors":{"desc":"AV updates - errors and filtered","code":445,"type":"user"},"pci_call_outside_pci":{"desc":"This call requires connection to secure server. Please add 'secure-' prefix to domain name.","code":1014,"type":"user"},"FACEBOOK_ERROR_UNKNOWN":{"type":"user","desc":"FACEBOOK_ERROR_UNKNOWN","code":3021},"payment_error_insufficient_funds":{"type":"user","code":2010,"desc":"Insufficient funds"},"WECHAT_ERROR_WITH_CUSTOM_MSG":{"type":"user","code":3029,"desc":"WECHAT_ERROR_WITH_CUSTOM_MSG"},"AUTH_STATUS_NONE":{"type":"user","desc":"AUTH_STATUS_NONE","code":3000},"unauthorized":{"code":401,"desc":"HTTP 401 - Unauthorized","type":"user"}};
+    B.env.constants = {"SmartAVClient":{"AVAILABILITY_DAYS":22,"LENGTH_OF_STAY":1,"SEVEN_DAYS_AGO":-7},"AlbumTypes":{"ARTICLE_SECTION":"articlesection","HOMEPAGE":"homepage","CUSTOM_ROOM":"custom_room","GALLERY":"gallery","DINING":"dining","ARTICLE_MAIN":"articlemain"},"BookingEngineName":{"choice":"choice","booking":"booking"},"PageTypes":{"PROMOTIONS":"promotions","ARTICLE":"article","RESERVATION":"reservation","CUSTOM_LINK":"custom_link","CONTACT":"contact","DINING":"dining","INDEX":"index","FACILITIES":"facilities","COOKIE_POLICY":"cookie_policy","EMAIL_CANCELLATION":"email/cancellation","VERIFY":"verify","PHOTOS":"photos","CONFIRM":"confirm","ROOM_DETAIL":"roomdetail","TOOLS":"_","HOME":"home","REVIEWS":"reviews","ROOM_OVERVIEW":"roomoverview","BOOK":"book","ROOM":"room","ATTRACTIONS":"attractions","EMAIL_CONTACT":"email/contact","SEARCH":"search","SITEMAP":"sitemap","HOMEPAGE":"homepage","PRIVACY_POLICY":"privacy_policy","ROOMS":"rooms","EMAIL_CONFIRMATION":"email/confirmation","CUSTOM_ROOM":"custom_room"},"RefundableTypes":{"NON_REFUNDABLE":"non_refundable","FREE_CANCELLATION":"free_cancellation","SPECIAL_CONDITIONS":"special_conditions"},"BookingEngineType":{"CHOICE":1,"BOOKING":0},"SegmentTypes":{"NONEDITABLE":"noneditable","HEADER":"header","SECTION_HEADER":"section_header","VIDEO":"video","PARAGRAPH_HTML":"paragraph_html","PARAGRAPH":"paragraph","SLIDESHOW":"slideshow","IMAGE":"image","CUSTOM_CONTACT_FORM":"custom_contact_form","EMBED":"embed"},"PolicyTypes":{"CHILDREN":"POLICY_CHILDREN","PREPAYMENT":"POLICY_PREPAY","PARKING":"POLICY_HOTEL_PARKING","INTERNET":"POLICY_HOTEL_INTERNET","CANCELLATION":"POLICY_CANCELLATION","PETS":"POLICY_HOTEL_PETS","GROUPS":"POLICY_HOTEL_GROUPS"},"PhotoClass":{"BKS_FAVICON":59,"BKS_LOGO_AWARDS":54,"BKS_HOMEPAGE_HERO":56,"BKS_PDF_DOCUMENT":99,"BKS_CUSTOM_ROOM":68,"BKS_BACKGROUND":55,"BKS_ARTICLE_HERO":57,"BKS_ARTICLE_BODY":58,"BKS_GALLERY":60},"RoomSource":{"BOOKING_PLUS":"booking_plus","BOOKING":"booking","CUSTOM":"custom"},"Theme":{"ASCENT":"theme_Ascent","AURA":"theme_Aura","FRAME":"theme_Frame","CREST":"theme_Crest","AVENUE":"theme_Avenue","SUMMIT":"theme_Summit","FOCUS":"theme_Focus","EDGE":"theme_Edge"},"PaymentMethod":{"MAX_CARDS_TO_DISPLAY":3,"CASH_ONLY_PAYMENT_METHOD":18,"FREE":"free"},"WidgetTypes":{"LEGACY":"DEPRECATED","EMBED":"Embed","FEATURED_ARTICLE":"FeaturedArticle","FACILITIES":"Facilities","CUSTOM_CONTACT_FORM":"CustomContactForm","SITEMAP":"DEPRECATED","QUICKRESERVATION":"DEPRECATED","REVIEWS":"Reviews","CONTACT":"DEPRECATED","VIDEO":"Video","EMBEDWIDGET":"DEPRECATED","ROOM":"Room","LOCATION":"Location"},"ChoiceRatePlanStrings":{"SAPR2":"bks_cms_choice_hotels_advance_purchase_rate","SP15M2":"bks_cms_choice_hotels_discount_with_min_stay_2_nights","S3A":"bks_cms_choice_hotels_aaa_caa_members_only","SGM":"bks_cms_choice_hotels_special_rates_gov_military_travellers","RACK":"bks_cms_choice_hotels_best_available","SSC":"bks_cms_choice_hotels_aarp_members_60_plus","SP20M4":"bks_cms_choice_hotels_discount_with_min_stay_4_nights","SP15M3":"bks_cms_choice_hotels_discount_with_min_stay_3_nights","SAPR1":"bks_cms_choice_hotels_advance_purchase_rate"},"GTM":{"CHANNEL":"booking","WF_GUEST_TRAFFIC":"GTM-PBSCT4T"},"Layouts":{"BOOKING_ENGINE":"bookingengine","EMPTY":"empty","EMAIL_BASE":"email_base","WEBSITES":"websites"},"CustomContactFormFieldTypes":{"GUESTS":"11","EMAIL":"5","RECIPIENT":"2","TIME_RANGE":"10","TITLE":"1","CATEGORY":"0","MESSAGE":"12","TIME":"9","PHONE":"6","LAST_NAME":"4","DATE":"7","DATE_RANGE":"8","FIRST_NAME":"3","BOOKED_ROOM":"13"},"SocialLinkTypes":{"GOOGLEPLUS":"google+","PINTEREST":"pinterest","INSTAGRAM":"instagram","WEIBO":"weibo","YELP":"yelp","TUMBLR":"tumblr","TWITTER":"twitter","FACEBOOK":"facebook","YOUTUBE":"youtube","TRIPADVISOR":"tripadvisor"},"ChoiceRatePlanTypes":{"RACK":"RACK","SP15M3":"SP15M3","SP20M4":"SP20M4","SAPR1":"SAPR1","SSC":"SSC","SAPR2":"SAPR2","SP15M2":"SP15M2","SGM":"SGM","S3A":"S3A"}};
+    B.env.static_hostnames = ["http://q-fa.bstatic.com","http://r-fa.bstatic.com"];
+    B.env.static_images_hostnames = ["http://q-fa.bstatic.com","http://r-fa.bstatic.com"];
+    B.env.static_file_suffix = "";
+    B.env.affiliate_id = 1241010;
+    B.env.affiliate_label = "bks_wf";
+    B.env.hotel_id = 271588;
+    B.env.is_preview = !!"";
+    B.env.device_class_by_ua = "desktop";
+
+    
+
+    B.data.hotel = {"contact_emails":[{"email":"sph_inb1@granvista.co.jp","contact_person_id":952898}],"short_code":"bhpicqsr","custom_reservation_url":"https://www.book-secure.com/index.php?s=results&property=jpsap30526&arrival={$CheckIN(yyyy-MM-dd)}&departure={$CheckOUT(yyyy-MM-dd)}","hotel_poi_zoom":15,"currency_code":"JPY","booking_engine":0,"header_menus":[{"target_blank":false,"current":"","action":"rooms","url":"http://www.sapporoparkhotel1964.com/en-gb/rooms","title":"bks_cms_menu_rooms"},{"title":"Restaurant","url":"http://www.sapporoparkhotel1964.com/en-gb/restaurant","action":"article","current":"","action_id":176279,"target_blank":false},{"target_blank":false,"action_id":176287,"current":"","action":"article","title":"Facilities","url":"http://www.sapporoparkhotel1964.com/en-gb/facilities1"},{"current":"","target_blank":false,"action_id":176292,"url":"http://www.sapporoparkhotel1964.com/en-gb/services1","title":"Services","action":"article"},{"title":"Access","url":"http://www.sapporoparkhotel1964.com/en-gb/access","action":"article","current":"","action_id":176277,"target_blank":false},{"current":"","target_blank":false,"title":"bks_cms_menu_attractions","url":"http://www.sapporoparkhotel1964.com/en-gb/attractions","action":"attractions"},{"action":"reviews","title":"bks_cms_menu_reviews","url":"http://www.sapporoparkhotel1964.com/en-gb/reviews","target_blank":false,"current":""},{"action":"photos","title":"bks_cms_menu_photos","url":"http://www.sapporoparkhotel1964.com/en-gb/photos","target_blank":false,"current":""},{"action_id":176284,"target_blank":false,"current":"","action":"article","url":"http://www.sapporoparkhotel1964.com/en-gb/faq","title":"FAQ"},{"action":"facilities","url":"http://www.sapporoparkhotel1964.com/en-gb/amenities","title":"bks_cms_menu_amenities","target_blank":false,"current":""},{"url":"http://www.sapporoparkhotel1964.com/en-gb/contact","title":"bks_cms_menu_contact","action":"contact","current":"","target_blank":false}],"languages_spoken":["en-gb","ja-jp"],"default_communication_language":"ja","hotel_checkin_from":"14:00","affiliate_id":1241010,"name":"Sapporo Park Hotel","hotel_checkout_until":"11:00","branding_hash_name":"90010b6d5e74fad6913e489e48ecf58a61ddcd12","google_analytics_tracking_id":"","primary_domain":"www.sapporoparkhotel1964.com","flags":{"HasQuickReservationFeature":"false","ConsentCheckboxIsRequired":"true","HasThirdPartyBookingEngine":"false","HasThirdPartyAnalyticsInsertions":"false","ConsentCheckboxIsPrechecked":"false","HasCustomReservationURLs":"true","ShowConsentCheckbox":"true"},"hotel_checkout_from":"","hotel_flag_foreigner_tax_exemption":0,"preferred_contacts":{"telephone_1":"+81 11-511-3135","name":"Ms. Takahashi Yumi","email":"sph_inb1@granvista.co.jp"},"test_hotel":false,"open_bookable":true,"hotel_checkin_until":"","longitude":141.355928778648,"primary_language":"en","hotel_id":271588,"latitude":43.0480122367167,"address_object":{"name":"Sapporo Park Hotel","country":"Japan","city":"Sapporo","address":"Chuo-ku Minami 10-jo Nishi 3-1-1"},"standard_branding":{"logo":"//q.bstatic.com/data/bsuitewf/3bf94bac2ddfa5e05a929a05613909cc1662e4f1","background_img":"//q.bstatic.com/data/bsuitewf/6ac64972b5e163f3dbde95088369717c9e144ac4","accent_color":"#17417d","font_settings":"Georgia;Georgia;Georgia","theme":"theme_Aura","background_color":"#529ec2","hash_name":"90010b6d5e74fad6913e489e48ecf58a61ddcd12"},"social_links":[{"id":1063678,"title":"Facebook","url":"https://www.facebook.com/park1964","sort_id":0,"hidden":false,"hotel_id":271588,"is_hidden":false},{"hidden":false,"hotel_id":271588,"is_hidden":false,"sort_id":2,"title":"TripAdvisor","url":"https://www.tripadvisor.com.sg/Hotel_Review-g298560-d325626-Reviews-Sapporo_Park_Hotel-Sapporo_Hokkaido.html","id":1063675}],"footer_menus":[{"action":"sitemap","title":"bks_cms_menu_sitemap","url":"http://www.sapporoparkhotel1964.com/en-gb/sitemap","target_blank":false,"current":""},{"action":"privacy_policy","url":"http://www.sapporoparkhotel1964.com/en-gb/privacy-policy","title":"bks_cms_menu_privacy_policy","target_blank":false,"current":""},{"title":"bks_cms_menu_cookie_policy","url":"http://www.sapporoparkhotel1964.com/en-gb/cookie-policy","action":"cookie_policy","current":"","target_blank":false},{"target_blank":false,"action_id":297393,"current":"","action":"article","title":"General Terms and Conditions for Accommodation Contract","url":"http://www.sapporoparkhotel1964.com/en-gb/general-terms-conditions-for-accommodation-contract"}],"sku":"WebDirectSubscription","branding_version":"56c44","webpage_languages":["en-gb","ko-kr","zh-tw","zh-cn"],"time_zone":"Asia/Tokyo"};
+    B.data.urls = {"confirm":"https://reservation.booking.expert/en-gb/confirm?hotel_id=271588","home":"http://www.sapporoparkhotel1964.com/en-gb","reviews":"http://www.sapporoparkhotel1964.com/en-gb/reviews","cookie_policy":"http://www.sapporoparkhotel1964.com/en-gb/cookie-policy","book":"https://reservation.booking.expert/en-gb/book?hotel_id=271588","contact":"http://www.sapporoparkhotel1964.com/en-gb/contact","search":"https://reservation.booking.expert/en-gb/search?hotel_id=271588","attractions":"http://www.sapporoparkhotel1964.com/en-gb/attractions","sitemap":"http://www.sapporoparkhotel1964.com/en-gb/sitemap","facilities":"http://www.sapporoparkhotel1964.com/en-gb/amenities","verify":"https://reservation.booking.expert/en-gb/verify?hotel_id=271588","rooms":"http://www.sapporoparkhotel1964.com/en-gb/rooms","privacy_policy":"http://www.sapporoparkhotel1964.com/en-gb/privacy-policy","photos":"http://www.sapporoparkhotel1964.com/en-gb/photos"};
+    B.data.default_image = "data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4KPCFET0NUWVBFIHN2ZyBQVUJMSUMgIi0vL1czQy8vRFREIFNWRyAxLjEvL0VOIiAiaHR0cDovL3d3dy53My5vcmcvR3JhcGhpY3MvU1ZHLzEuMS9EVEQvc3ZnMTEuZHRkIj4KPHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZlcnNpb249IjEuMSI+CiAgPHJlY3Qgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgc3R5bGU9ImZpbGw6I0ZBRkFGQTtzdHJva2Utd2lkdGg6MztzdHJva2U6Izk5OTtzdHJva2UtZGFzaGFycmF5OiA4LCA0O3ZlY3Rvci1lZmZlY3Q6IG5vbi1zY2FsaW5nLXN0cm9rZTsiIC8+Cjwvc3ZnPgo=";
+
+    
+    B.data.search_results = "" || undefined;
+    
+
+    
+
+    
+    B.data.policies = "" || undefined;
+    
+
+    
+
+    
+
+    
+
+    
+    B.env.accounting_config = {"group_separator":{"default":","},"decimal_separator":{"default":"."},"symbol_position":{"PLN":"after","RON":"after","default":"before","CZK":"after"},"num_decimals":{"DJF":"0","LAK":"0","KWD":"3","ECS":"0","KRW":"0","VND":"0","LYD":"3","KMF":"0","CLP":"0","HUF":"0","BIF":"0","JPY":"0","ISK":"0","MZM":"0","XAF":"0","TMM":"0","GNF":"0","XPF":"0","TJR":"0","default":"2","OMR":"3","JOD":"3","XOF":"0","BYR":"0","PYG":"0","RWF":"0","MGA":"0","TWD":"0","IDR":"0","VUV":"0","AFA":"0","TND":"3","UGX":"0","RUB":"0","IQD":"3","BHD":"3","COP":"0"},"currency_separator":{"JPY":"","GBP":"","default":"&nbsp;","USD":""},"html_symbol":{"SGD":"S$","PLN":"z&#x0142;","GBP":"&#163;","USD":"US$","HKD":"HK$","BRL":"R$","CZK":"K&#269;","INR":"Rs.","XPF":"CFP","JPY":"&#165;","TRY":"TL","EUR":"&#x20AC;","ARS":"AR$","ILS":"&#x20AA;","IDR":"Rp","CLP":"CL$","RON":"lei"}} || undefined;
+    
+
+    B.env.month_names = ["January","February","March","April","May","June","July","August","September","October","November","December"];
+    B.env.day_of_week_names = ["Sun","Mon","Tue","Wed","Thu","Fri","Sat"];
+    B.env.full_day_of_week_names = ["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"];
+
+    
+        B.env.jstmpl_date_format = {"from_month_with_year":"since {month_name_from} {full_year}","date_without_year":"{day_of_month} {month_name}","date_with_weekday_time_from":"{weekday} {begin_marker}{day_of_month} {month_name}{end_marker} {full_year} from {time}","date_with_weekday_time_until":"{weekday} {begin_marker}{day_of_month} {month_name}{end_marker} {full_year} until {time}","short_month_only":"{short_month_name}","month_with_year":"{month_name_with_year_only} {full_year}","short_date_with_weekday_without_year":"{short_weekday} {day_of_month} {short_month_name}","date_with_short_weekday_with_year":"{short_weekday} {day_of_month} {month_name} {full_year}","numeric_date_range_both_years":"{day_of_month}/{month}/{full_year} - {day_of_month_until}/{month_until}/{full_year_until}","date_with_weekday_to":"{weekday_to} {day_of_month} {month_name_to} {full_year}","day_of_month_only":"{day_of_month}","numeric_date":"{day_of_month}/{month}/{full_year}","date_with_short_weekday_without_year":"{short_weekday} {day_of_month} {month_name}","short_date":"{day_of_month} {short_month_name} {full_year}","long_date_range_both_years":"{day_of_month} {month_name} {full_year} - {day_of_month_until} {month_name_until} {full_year_until}","in_month_with_year":"in {month_name_in} {full_year}","date_with_weekday":"{weekday} {day_of_month} {month_name} {full_year}","numeric_date_range":"{day_of_month}/{month} - {day_of_month_until}/{month_until}","short_date_without_year_range":"{day_of_month} {short_month_name} - {day_of_month_until} {short_month_name_until}","range_from_long_date_time_until_long_date_time":"from {day_of_month} {month_name} {full_year} at {time} until {day_of_month_until} {month_name_until} {full_year_until} at {time_until}","short_weekday_only":"{short_weekday}","short_month_with_year":"{short_month_name} {full_year}","month_name_only":"{month_name_nom}","short_date_with_weekday":"{short_weekday} {day_of_month} {short_month_name} {full_year}","short_date_without_year":"{day_of_month} {short_month_name}","date_with_year":"{day_of_month} {month_name} {full_year}","date_with_weekday_time_from_until":"{weekday} {begin_marker}{day_of_month} {month_name}{end_marker} {full_year} from {time} until {time_until}","date_with_weekday_with_markers":"{weekday} {begin_marker}{day_of_month} {month_name}{end_marker} {full_year}","date_with_weekday_from":"{weekday_from} {day_of_month} {month_name_from} {full_year}"};
+        B.env.jstmpl_months = {"5":{"name_to":"May","name_only":"May","name_from":"May","name":"May","short_name":"May","name_with_year_only":"May","name_in":"May","name_def_article_uc":"The May","name_def_article_lc":"the May"},"4":{"name_to":"April","name_only":"April","name_from":"April","name":"April","short_name":"Apr","name_with_year_only":"April","name_in":"April","name_def_article_uc":"The April","name_def_article_lc":"the April"},"1":{"name_to":"January","name_only":"January","name_from":"January","name":"January","short_name":"Jan","name_with_year_only":"January","name_in":"January","name_def_article_uc":"The January","name_def_article_lc":"the January"},"11":{"name_to":"November","name_only":"November","name_from":"November","name":"November","short_name":"Nov","name_with_year_only":"November","name_in":"November","name_def_article_uc":"The November","name_def_article_lc":"the November"},"8":{"name_to":"August","name_only":"August","name_from":"August","name":"August","short_name":"Aug","name_with_year_only":"August","name_in":"August","name_def_article_uc":"The August","name_def_article_lc":"the August"},"3":{"name_to":"March","name_only":"March","name_from":"March","name":"March","short_name":"Mar","name_with_year_only":"March","name_in":"March","name_def_article_uc":"The March","name_def_article_lc":"the March"},"6":{"name_to":"June","name_only":"June","name_from":"June","name":"June","short_name":"Jun","name_with_year_only":"June","name_in":"June","name_def_article_uc":"The June","name_def_article_lc":"the June"},"7":{"name_to":"July","name_only":"July","name_from":"July","name":"July","short_name":"Jul","name_with_year_only":"July","name_in":"July","name_def_article_uc":"The July","name_def_article_lc":"the July"},"9":{"name_to":"September","name_only":"September","name_from":"September","name":"September","short_name":"Sept","name_with_year_only":"September","name_in":"September","name_def_article_uc":"The September","name_def_article_lc":"the September"},"10":{"name_to":"October","name_only":"October","name_from":"October","name":"October","short_name":"Oct","name_with_year_only":"October","name_in":"October","name_def_article_uc":"The October","name_def_article_lc":"the October"},"2":{"name_to":"February","name_only":"February","name_from":"February","name":"February","short_name":"Feb","name_with_year_only":"February","name_in":"February","name_def_article_uc":"The February","name_def_article_lc":"the February"},"12":{"name_to":"December","name_only":"December","name_from":"December","name":"December","short_name":"Dec","name_with_year_only":"December","name_in":"December","name_def_article_uc":"The December","name_def_article_lc":"the December"}};
+        B.env.jstmpl_weekdays = {"2":{"short":"Tue","name_to":"Tuesday","name_on":"Tuesday","name_from":"Tuesday","name":"Tuesday","shortest":"Tu"},"3":{"short":"Wed","name_to":"Wednesday","name_on":"Wednesday","name_from":"Wednesday","name":"Wednesday","shortest":"We"},"4":{"short":"Thu","name_to":"Thursday","name_on":"Thursday","name_from":"Thursday","name":"Thursday","shortest":"Th"},"7":{"short":"Sun","name_to":"Sunday","name_on":"Sunday","name_from":"Sunday","name":"Sunday","shortest":"Su"},"6":{"short":"Sat","name_to":"Saturday","name_on":"Saturday","name_from":"Saturday","name":"Saturday","shortest":"Sa"},"1":{"short":"Mon","name_to":"Monday","name_on":"Monday","name_from":"Monday","name":"Monday","shortest":"Mo"},"5":{"short":"Fri","name_to":"Friday","name_on":"Friday","name_from":"Friday","name":"Friday","shortest":"Fr"}};
+    
+
+    
+        B.env.jstmpl_time_format = {"PM_symbol":{"name":"PM"},"AM_symbol":{"name":"AM"},"time":{"name":"{hour_24h}:{minutes}"}};
+    
+
+    
+
+    B.env.reservation_backend = {
+        name: null,
+        process_url: null,
+        cancel_url: null
+    };
+
+    
+
+
+
+
+    B.env.clientside_translation_tags = {"weekday":{"2":{"short":"Tue"},"4":{"short":"Thu"},"7":{"short":"Sun"},"3":{"short":"Wed"},"1":{"short":"Mon"},"6":{"short":"Sat"},"5":{"short":"Fri"}},"bed_type":{"2":{"name_withnumber":"{bed_count} double beds"},"4":{"name_withnumber":"{bed_count} bunk beds"},"7":{"name_withnumber":"{bed_count} futon beds"},"3":{"name_withnumber":"{bed_count} extra-large double beds"},"1":{"name_withnumber":"{bed_count} single beds"},"5":{"name_withnumber":"{bed_count} sofa beds"},"6":{"name_withnumber":"{bed_count} large double beds"}},"month":{"1":{"name_upper":"January"},"5":{"name_upper":"May"},"7":{"name_upper":"July"},"4":{"name_upper":"April"},"11":{"name_upper":"November"},"10":{"name_upper":"October"},"3":{"name_upper":"March"},"9":{"name_upper":"September"},"6":{"name_upper":"June"},"2":{"name_upper":"February"},"12":{"name_upper":"December"},"8":{"name_upper":"August"}},"private":{"bks_cms_menu_check_availability":"Check availability","bks_be_free_cancellation_before_date":"FREE cancellation before {short_date_without_year}","bks_be_error_incorrect_hotel":"This booking is not from this property.","bks_be_invalid_phone":"Invalid Phone number","bks_cms_menu_privacy_policy":"Privacy policy","sq_ft_usa":"sq ft","bks_be_credit_card_enter_valid_expiry":"Please fill in a valid expiration date","bks_be_conf_email_important_info":"Important information","bks_be_select_a_room":"Please select a room","bks_be_error_no_bookings_at_the_moment":"Sorry, we cannot accept bookings at the moment.","bks_cms_menu_around_town":"Around town","bks_cms_menu_amenities":"Amenities","bks_cms_menu_houses":"Houses","bks_cms_menu_destination_guide":"Destination Guide","bks_cms_menu_area_attractions":"Area attractions","bks_be_the_fine_print":"The fine print","bks_be_room_no_longer_available":"This room is no longer available, it may have just been booked!","bks_cms_menu_apartments":"Apartments","bks_cms_menu_bunks":"Bunks","bks_be_all_inclusive":"All-inclusive","bks_be_not_allowed_to_book_in_preview":"Bookings cannot be made in preview mode.","bks_be_cancellation_authenticating":"Authenticating...","bks_cms_menu_excursions":"Excursions","bks_cms_view_all":"View all","bks_be_validate_cc":"Invalid credit card number","bks_cms_menu_reviews":"Reviews","bks_be_error_credit_card_validation":"Please check your credit card information.","bks_be_select":"Select","bks_be_half_board_included":"Half board included","language_exception_bks_be_error_room_no_longer_available_1":"This room is no longer available.","bks_be_validate_email_confirm_different":"Please make sure the email addresses match","bks_be_error_max_rooms_than_allowed":"Cannot book so many rooms.","bks_cms_menu_reservation_policy":"Reservation policy","bks_be_num_rooms":"{num} rooms","bks_cms_menu_contact":"Contact","bks_be_error_incorrect_pincode":"Incorrect PIN code.","bks_cms_hotel_compare_score_review":"Score from {num_reviews} reviews","bks_be_error_missing_parameters":"Cannot proceed, some parameters are missing.","bks_cms_more_info":"More info","bks_cms_menu_attractions":"Attractions","bks_be_dates_must_be_in_future":"Check in and check out dates must be in the future.","bks_cms_menu_cookie_policy":"Cookie policy","bks_be_invalid_email":"Invalid Email","bks_cms_menu_cabins":"Cabins","bks_be_confirm_exit":"Are you sure you want to exit? Your changes won't be saved.","bks_cms_contact_message_success":"The information has been submitted to us. Thank you!","bks_cms_menu_packages":"Packages","bks_cms_menu_bookings":"Bookings","bks_be_num_nights_stay":"{number_nights} night stay","bks_cms_menu_more_info":"More info","bks_cms_menu_book_now":"Book now","bks_cms_menu_resorts":"Resorts","bks_cms_menu_log_in":"Log in","bks_cms_menu_images":"Images","bks_cms_menu_info":"More info","bks_cms_menu_local_area":"Local area","bks_cms_menu_promotions":"Promotions","bks_cms_menu_check_rates":"Check rates","bks_be_must_be_numbers":"Must be numbers","bks_be_too_many_characters":"Text is too long","bks_cms_menu_tents":"Tents","bks_be_session_has_expired":"Your session has expired.","bks_be_error_payment_error_generic":"Cannot process your payment.","bks_cms_menu_inns":"Inns","bks_be_secure_reservation":"The details you've entered will not be saved if you leave this page. Secure your reservation now to complete your booking.","bks_cms_menu_reservations":"Reservations","bks_be_special_conditions":"special conditions","bks_cms_menu_cottages":"Cottages","sq_feet":"ft²","bks_cms_menu_villas":"Villas","language_exception_bks_cms_hotel_compare_score_review_1":"Score from {num_reviews} review","bks_be_error_too_many_attempts_to_cancel":"Too many attempts to cancel a booking. Please try again later.","bks_cms_menu_sitemap":"Sitemap","bks_be_error_incorrect_reservation_data":"Your booking cannot be confirmed. Please check the information you have entered and try again.","bks_cms_menu_suites":"Suites","bks_be_error_incorrect_arrival_hour":"Incorrect hour of arrival.","bks_be_terms_and_conditions":"Terms and conditions","bks_cms_contact_message_error":"Your comments were not submitted due to error. Please, try again later or call us.","bks_be_no_availability_dates":"Sorry, no availability from {checkin_date} to {checkout_date}","bks_cms_menu_deals":"Deals","bks_be_included_charges":"Included","bks_cms_menu_specials":"Specials","bks_be_max30nights":"Your check-out date is more than 30 nights after your check-in date. Bookings can only be made for a maximum of 30 nights. Please enter different dates and try again.","bks_be_non_refundable":"Non-refundable","bks_be_error_too_many_guests":"Rooms in your booking cannot accept so many guests.","bks_cms_menu_rooms":"Rooms","bks_be_error_missing_booking_number":"Missing booking number.","bks_cms_menu_plans":"Plans","sq_metres":"m²","bks_cms_menu_local_attractions":"Local attractions","bks_cms_menu_vacation_rentals":"Vacation Rentals","bks_be_error_booking_not_found":"Booking not found. Check your PIN code and confirmation number.","bks_cms_menu_map":"Map","bks_be_error_booking_already_cancelled":"This booking is already cancelled.","bks_cms_menu_location":"Location","bks_be_sorry_something_wrong_developers_working_on_it":"We're sorry, but something has gone wrong. Our developers are working on it.","bks_cms_menu_enquire_now":"Enquire now","bks_cms_menu_benefits":"Benefits","bks_be_required":"Required","bks_cms_menu_dining":"Dining","bks_be_children_number":"{num_children} children","bks_cms_menu_accommodations":"Accommodation","bks_cms_featured_article_header":"Featured articles","bks_cms_menu_nearby_attractions":"Nearby attractions","bks_be_error_booking_already_processed":"Your booking has been already processed.","bks_be_adult_number":"{num_adults} adults","language_exception_bks_be_adult_number_1":"1 adult","bks_cms_menu_bungalows":"Bungalows","bks_be_error_booking_in_the_past":"Cannot cancel booking in the past.","bks_cms_menu_beds":"Beds","bks_be_arrival_should_be_earlier_than_departure":"Arrival date must be earlier than departure date.","bks_be_error_room_no_longer_available":"These rooms are no longer available.","bks_cms_menu_lodges":"Lodges","bks_cms_menu_offers":"Offers","bks_cms_menu_properties":"Properties","language_exception_bks_be_children_number_1":"{num_children} child","bks_be_excluded_charges":"Excluded","bks_cms_menu_services":"Services","bks_be_full_board_included":"Full board included","bks_be_cancellation_canceling":"Cancelling...","bks_cms_menu_destinations":"Destinations","bks_cms_menu_sign_up":"Sign up","bks_cms_menu_contact_us":"Contact us","language_exception_bks_be_num_rooms_1":"1 room","bks_cms_menu_photos":"Photos","bks_be_mealplan":"Meal plan","bks_be_cart_abandon_dont_miss":"Don’t miss your chance to stay at {hotel_name}!","bks_cms_menu_hotels":"Hotels","bks_cms_menu_signature_offers":"Signature offers","bks_cms_menu_things_to_do":"Things to do","bks_be_breakfast_included":"Breakfast included","bks_be_error_incorrect_affiliate":"This booking was not done on this site.","bks_cms_menu_local_guide":"Local guide","bks_cms_menu_gallery":"Gallery","bks_cms_menu_vaction_rentals":"Vacation Rentals","bks_cms_menu_facilities":"Facilities","language_exception_bks_be_error_too_many_guests_1":"Room in your booking cannot accept so many guests.","bks_cms_review_score":"Review score"}};
+
+
+
+})();
+</script>
+
+
+
+    <script>
+    gtm_data_layer = [{
+       "bookingId": B.data.hotel.hotel_id,
+       "hotelId": B.data.hotel.hotel_id,
+       "channel": B.env.channel,
+       "deviceType": '', //B.util.screenHelper.deviceType(),
+       "parentId": 0,
+       "pageType": B.env.page_type,
+       "typeId": 0,
+       "locale": B.env.lang,
+       "partnerGaCode": B.data.hotel.google_analytics_tracking_id,
+       "reservationError": "",
+    }];
+</script>
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','gtm_data_layer','GTM-PBSCT4T');</script>
+<!-- End Google Tag Manager -->
+
+    
+	<title>[Official Website] Sapporo Park Hotel in Sapporo, Japan&nbsp;&ndash;&nbsp;Sapporo Park Hotel&nbsp;&ndash;&nbsp;Sapporo&nbsp;&ndash;&nbsp;Japan</title>
+
+
+    
+	<link rel="alternate" hreflang="en-gb" href="/en-gb" />
+<link rel="alternate" hreflang="ko-kr" href="/ko-kr" />
+<link rel="alternate" hreflang="zh-tw" href="/zh-tw" />
+<link rel="alternate" hreflang="zh-cn" href="/zh-cn" />
+<link rel="canonical" href="" />
+
+
+
+
+    <base href="/">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="description" content="Overlooking Nakajima Park in central Sapporo and just a 1-minute walk from Nakajima Koen Subway Station, the Park Hotel offers comfortable rooms">
+    <meta name="keywords" content="">
+    <meta name="format-detection" content="telephone=no">
+
+    <link rel="stylesheet" href="https://branding.booking.expert/api/brand/w/56c44/90010b6d5e74fad6913e489e48ecf58a61ddcd12.css" type="text/css" media="screen" />
+
+    
+
+    
+
+    
+  </head>
+
+  <body
+    itemscope=""
+    itemtype="http://schema.org/LodgingBusiness"
+    id="shortcode_bhpicqsr"
+    class="theme_Aura pg-homepage">
+  <div class="body-overflow-wrap">
+    
+
+    <!-- Google Tag Manager (noscript) -->
+<noscript>
+	<iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PBSCT4T" height="0" width="0"
+		style="display:none;visibility:hidden"></iframe>
+</noscript>
+<!-- End Google Tag Manager (noscript) -->
+    
+
+  <div id="CPolicy">
+      <span>
+          This website uses cookies to improve your browsing experience. By continuing to use this site, you consent to the use of cookies on your device as described in our
+          <a href="/en-gb/cookie-policy">Cookie Policy</a>.
+      </span>
+      <div id="closeEUbtn"></div>
+  </div>
+
+
+
+    <header class="mast mast-fixed" id="mast-fixed">
+  <div class="inner">
+      <div class="logo-container"><a target="_self" itemprop="url" href="/en-gb" title="Sapporo Park Hotel">
+  
+    
+      <span class="full-size-logo"><img src="https://r-fa.bstatic.com/data/bsuitewf/3bf94bac2ddfa5e05a929a05613909cc1662e4f1" alt="Sapporo Park Hotel"></span>
+      <span class="small-logo"><img src="https://r-fa.bstatic.com/data/bsuitewf/3bf94bac2ddfa5e05a929a05613909cc1662e4f1" alt="Sapporo Park Hotel"></span>
+
+    
+  
+</a>
+</div><!--
+   --><div class="mast-right">
+          <div class="menu-collapsed"><span data-toggle="menu"><span class="iconfont"></span><span class="menu-label">Menu</span></span></div>
+          
+<div class="reservations track-event" eventName="reservations">
+  <div class="close">
+    <span class="iconfont"></span>
+    
+      <div class="quickrevBtn">
+        <span class="close">Book Now</span>
+      </div>
+    
+  </div>
+</div>
+
+
+      </div>
+  </div>
+</header>
+
+    
+<header class="mast static logo-left">
+  <div class="inner">
+    <div class="logo-container">
+      <a target="_self" itemprop="url" href="/en-gb" title="Sapporo Park Hotel">
+  
+    
+      <span class="full-size-logo"><img src="https://r-fa.bstatic.com/data/bsuitewf/3bf94bac2ddfa5e05a929a05613909cc1662e4f1" alt="Sapporo Park Hotel"></span>
+      <span class="small-logo"><img src="https://r-fa.bstatic.com/data/bsuitewf/3bf94bac2ddfa5e05a929a05613909cc1662e4f1" alt="Sapporo Park Hotel"></span>
+
+    
+  
+</a>
+
+    </div><div class="mast-right">
+      <div class="mast-actions">
+        
+          <div class="phone">
+            <span class="iconfont"></span>
+            <span class="phone-number" itemprop="telephone">
+              <a class="phone-btn-call track-call" href="tel:+81115113135">
+                +81 11-511-3135
+              </a>
+            </span>
+          </div>
+        
+        <div class="menu-collapsed">
+            <span data-toggle="menu"><span class="iconfont"></span><span class="menu-label">Menu</span></span>
+        </div>
+
+        <div class="phone-button-mobile">
+          <a href="tel:+81115113135" class="track-call">
+            <span class="iconfont"></span>
+            <span class="phone-label">+81 11-511-3135</span>
+          </a>
+        </div>
+
+        
+<div class="reservations track-event" eventName="reservations">
+  <div class="close">
+    <span class="iconfont"></span>
+    
+      <div class="quickrevBtn">
+        <span class="close">Book Now</span>
+      </div>
+    
+  </div>
+</div>
+
+
+
+      </div>
+
+      
+
+<nav class="menu-links count-6plus ">
+    <ul>
+    
+        
+        
+        <li eventName="menu" class="track-event ">
+            <a href="/en-gb/rooms" target="_self">
+                <span data-hover="Rooms">
+                        Rooms
+                </span>
+            </a>
+        </li>
+    
+        
+        
+        <li eventName="menu" class="track-event ">
+            <a href="/en-gb/restaurant" target="_self">
+                <span data-hover="Restaurant">
+                        Restaurant
+                </span>
+            </a>
+        </li>
+    
+        
+        
+        <li eventName="menu" class="track-event ">
+            <a href="/en-gb/facilities1" target="_self">
+                <span data-hover="Facilities">
+                        Facilities
+                </span>
+            </a>
+        </li>
+    
+        
+        
+        <li eventName="menu" class="track-event ">
+            <a href="/en-gb/services1" target="_self">
+                <span data-hover="Services">
+                        Services
+                </span>
+            </a>
+        </li>
+    
+        
+        
+        <li eventName="menu" class="track-event ">
+            <a href="/en-gb/access" target="_self">
+                <span data-hover="Access">
+                        Access
+                </span>
+            </a>
+        </li>
+    
+        
+        
+        <li eventName="menu" class="track-event ">
+            <a href="/en-gb/attractions" target="_self">
+                <span data-hover="Attractions">
+                        Attractions
+                </span>
+            </a>
+        </li>
+    
+        
+        
+        <li eventName="menu" class="track-event ">
+            <a href="/en-gb/reviews" target="_self">
+                <span data-hover="Reviews">
+                        Reviews
+                </span>
+            </a>
+        </li>
+    
+        
+        
+        <li eventName="menu" class="track-event ">
+            <a href="/en-gb/photos" target="_self">
+                <span data-hover="Photos">
+                        Photos
+                </span>
+            </a>
+        </li>
+    
+        
+        
+        <li eventName="menu" class="track-event ">
+            <a href="/en-gb/faq" target="_self">
+                <span data-hover="FAQ">
+                        FAQ
+                </span>
+            </a>
+        </li>
+    
+        
+        
+        <li eventName="menu" class="track-event ">
+            <a href="/en-gb/amenities" target="_self">
+                <span data-hover="Amenities">
+                        Amenities
+                </span>
+            </a>
+        </li>
+    
+        
+        
+        <li eventName="menu" class="track-event ">
+            <a href="/en-gb/contact" target="_self">
+                <span data-hover="Contact">
+                        Contact
+                </span>
+            </a>
+        </li>
+    
+    </ul>
+</nav>
+
+
+
+    </div>
+  </div>
+</header>
+
+
+    <header class="mast static logo-center">
+  <div class="inner">
+    <div class="mast-top clearfix">
+      <div class="mast-top-inner">
+        <div class="mast-top-left">
+          
+            <div class="phone">
+              <span class="iconfont"></span>
+              <span class="phone-number">
+                <a class="phone-btn-call track-call" href="tel:+81115113135">
+                  +81 11-511-3135
+                </a>
+              </span>
+            </div>
+          
+        </div><!--
+     --><div class="logo-container"><a target="_self" itemprop="url" href="/en-gb" title="Sapporo Park Hotel">
+  
+    
+      <span class="full-size-logo"><img src="https://r-fa.bstatic.com/data/bsuitewf/3bf94bac2ddfa5e05a929a05613909cc1662e4f1" alt="Sapporo Park Hotel"></span>
+      <span class="small-logo"><img src="https://r-fa.bstatic.com/data/bsuitewf/3bf94bac2ddfa5e05a929a05613909cc1662e4f1" alt="Sapporo Park Hotel"></span>
+
+    
+  
+</a>
+</div><!--
+     --><div class="mast-actions" >
+          <div class="menu-collapsed"><span data-toggle="menu"><span class="iconfont"></span><span class="menu-label">Menu</span></span></div>
+          <div class="phone-button-mobile">
+            <a href="tel:+81115113135" class="track-call">
+              <span class="iconfont"></span>
+              <span class="phone-label">+81 11-511-3135</span>
+            </a>
+          </div>
+
+          
+<div class="reservations track-event" eventName="reservations">
+  <div class="close">
+    <span class="iconfont"></span>
+    
+      <div class="quickrevBtn">
+        <span class="close">Book Now</span>
+      </div>
+    
+  </div>
+</div>
+
+
+
+        </div>
+      </div>
+    </div>
+
+    
+
+<nav class="menu-links count-6plus ">
+    <ul>
+    
+        
+        
+        <li eventName="menu" class="track-event ">
+            <a href="/en-gb/rooms" target="_self">
+                <span data-hover="Rooms">
+                        Rooms
+                </span>
+            </a>
+        </li>
+    
+        
+        
+        <li eventName="menu" class="track-event ">
+            <a href="/en-gb/restaurant" target="_self">
+                <span data-hover="Restaurant">
+                        Restaurant
+                </span>
+            </a>
+        </li>
+    
+        
+        
+        <li eventName="menu" class="track-event ">
+            <a href="/en-gb/facilities1" target="_self">
+                <span data-hover="Facilities">
+                        Facilities
+                </span>
+            </a>
+        </li>
+    
+        
+        
+        <li eventName="menu" class="track-event ">
+            <a href="/en-gb/services1" target="_self">
+                <span data-hover="Services">
+                        Services
+                </span>
+            </a>
+        </li>
+    
+        
+        
+        <li eventName="menu" class="track-event ">
+            <a href="/en-gb/access" target="_self">
+                <span data-hover="Access">
+                        Access
+                </span>
+            </a>
+        </li>
+    
+        
+        
+        <li eventName="menu" class="track-event ">
+            <a href="/en-gb/attractions" target="_self">
+                <span data-hover="Attractions">
+                        Attractions
+                </span>
+            </a>
+        </li>
+    
+        
+        
+        <li eventName="menu" class="track-event ">
+            <a href="/en-gb/reviews" target="_self">
+                <span data-hover="Reviews">
+                        Reviews
+                </span>
+            </a>
+        </li>
+    
+        
+        
+        <li eventName="menu" class="track-event ">
+            <a href="/en-gb/photos" target="_self">
+                <span data-hover="Photos">
+                        Photos
+                </span>
+            </a>
+        </li>
+    
+        
+        
+        <li eventName="menu" class="track-event ">
+            <a href="/en-gb/faq" target="_self">
+                <span data-hover="FAQ">
+                        FAQ
+                </span>
+            </a>
+        </li>
+    
+        
+        
+        <li eventName="menu" class="track-event ">
+            <a href="/en-gb/amenities" target="_self">
+                <span data-hover="Amenities">
+                        Amenities
+                </span>
+            </a>
+        </li>
+    
+        
+        
+        <li eventName="menu" class="track-event ">
+            <a href="/en-gb/contact" target="_self">
+                <span data-hover="Contact">
+                        Contact
+                </span>
+            </a>
+        </li>
+    
+    </ul>
+</nav>
+
+
+
+  </div>
+</header>
+
+
+    <div id="click-shield" class="click-shield"></div>
+    <div class="backstretch"></div>
+
+    <div class="body-wrap">
+      <div class="main">
+        <div class="content-wrap ">
+          
+          
+	
+	<div class="content-section hero-wrap" aria-hidden="true">
+		<div class="hero-slider-wrap">
+			<div id="hero-slider" class="hero-slider flexslider">
+				<ul class="slides">
+					
+						
+						<li>
+							<div class="slide">
+								<img itemprop="image" src="https://q-fa.bstatic.com/xdata/images/xphoto/1920x810/36101493.jpg?k=a97f8688fcb94131b209a6dfe8bddf20e330de678ed7116aa36a080a3f6e51e1&o=" class="full" alt="hotel image" aria-hidden="true"/>
+							</div>
+						</li>
+						
+					
+						
+						<li>
+							<div class="slide">
+								<img itemprop="image" src="https://r-fa.bstatic.com/xdata/images/xphoto/1920x810/36101491.jpg?k=09cb802bb53da5593835ef924fe187a86cc63138756a2a8ef9db6b5f210189e1&o=" class="full" alt="hotel image" aria-hidden="true"/>
+							</div>
+						</li>
+						
+					
+						
+						<li>
+							<div class="slide">
+								<img itemprop="image" src="https://q-fa.bstatic.com/xdata/images/xphoto/1920x810/36101487.jpg?k=c8315f8bb2dc21d3fb9ec595f2d0d7612c5de1626ea7c9fa2d955d848c2e91a9&o=" class="full" alt="hotel image" aria-hidden="true"/>
+							</div>
+						</li>
+						
+					
+						
+						<li>
+							<div class="slide">
+								<img itemprop="image" src="https://q-fa.bstatic.com/xdata/images/xphoto/1920x810/36101494.jpg?k=082d34a80f073ee1fed0d542cff0e937b6bb05048c45e2d93e691dd73709abc8&o=" class="full" alt="hotel image" aria-hidden="true"/>
+							</div>
+						</li>
+						
+					
+						
+						<li>
+							<div class="slide">
+								<img itemprop="image" src="https://q-fa.bstatic.com/xdata/images/xphoto/1920x810/36101490.jpg?k=7ecf2bf792583705045cd7eb9b273183b85d1b86bb8f6133c5abf8f334f37bfa&o=" class="full" alt="hotel image" aria-hidden="true"/>
+							</div>
+						</li>
+						
+					
+						
+						<li>
+							<div class="slide">
+								<img itemprop="image" src="https://q-fa.bstatic.com/xdata/images/xphoto/1920x810/36101488.jpg?k=a2f9508d96d186091795a8cabd1ba86a5cff19c5bd52a1a15b3e36c8b9416b2f&o=" class="full" alt="hotel image" aria-hidden="true"/>
+							</div>
+						</li>
+						
+					
+						
+						<li>
+							<div class="slide">
+								<img itemprop="image" src="https://q-fa.bstatic.com/xdata/images/xphoto/1920x810/36101489.jpg?k=c012f7a63ec36e5377675cb403f07ede30a125482e49b5ef577bc140a14ca59b&o=" class="full" alt="hotel image" aria-hidden="true"/>
+							</div>
+						</li>
+						
+					
+						
+						<li>
+							<div class="slide">
+								<img itemprop="image" src="https://r-fa.bstatic.com/xdata/images/xphoto/1920x810/36101495.jpg?k=761bbf6d93926cca32e320aa253d93823b7c2e20a042f37f9021539f89e950e8&o=" class="full" alt="hotel image" aria-hidden="true"/>
+							</div>
+						</li>
+						
+					
+						
+						<li>
+							<div class="slide">
+								<img itemprop="image" src="https://r-fa.bstatic.com/xdata/images/xphoto/1920x810/36101492.jpg?k=4158ca175742756920fde5c60421176aed8d51b0bc376d68acb25673b7e932f7&o=" class="full" alt="hotel image" aria-hidden="true"/>
+							</div>
+						</li>
+						
+					
+				</ul>
+			</div>
+		</div>
+	</div>
+	
+
+	
+  <div class="content-section quickres_tabletUp bodyquickres footer-res clearfix">
+    <div class="inner">
+      <h3>Reservations</h3>
+      
+        <div class="quickres-fields search_wrapper_dates">
+          <div class="datepicker arrival search">
+<!--             <label for="Date1" class="invisible_spoken">Arrival</label>
+ -->            <input type="text" class="date-pick" name="date1" id="Date1" aria-label="Arrival"/>
+            <span class="iconfont datepickicon search_calendar-icon" aria-hidden="true"></span>
+            <i class="iconfont iconfont-next from_to" aria-hidden="true"></i>
+            <span class="input-focused" aria-hidden="true"></span>
+          </div>
+          <div class="datepicker departure search">
+<!--             <label for="Date2" class="invisible_spoken">Departure</label>
+ -->            <input type="text" class="date-pick" name="date2" id="Date2" aria-label="Departure"/>
+            <span class="iconfont datepickicon search_calendar-icon" aria-hidden="true"></span>
+            <span class="input-focused" aria-hidden="true"></span>
+          </div>
+          <a class="booknow-btn" data-component="core/book_now_button">
+            Book Now
+          </a>
+        </div>
+      
+    </div>
+  </div>
+
+
+
+	<div class="content-section homepage-article clearfix">
+		<div class="inner clearfix">
+			<div class="clearfix">
+				<h1 class="featured-title">Sapporo Park Hotel</h1>
+				<div class="short-description"><div style="text-align:center">Situated in Sapporo, 1.5 km from Sapporo TV Tower, Sapporo Park Hotel boasts a restaurant and free WiFi throughout the property. Private parking is available on site.<br />
+<br />
+Each room comes with a TV. Some rooms include a seating area for your convenience. You will find a kettle in the room. The rooms are equipped with a private bathroom with a bath and bidet, with slippers provided. For your comfort, you will find free toiletries and a hairdryer.<br />
+<br />
+You will find a 24-hour front desk, hairdresser&#39;s, and gift shop at the property.<br />
+<br />
+The hotel also offers bike hire. Odori Park is 1.5 km from Sapporo Park Hotel, while Sapporo Clock Tower is 1.6 km from the property. The nearest airport is New Chitose Airport, 38 km from Sapporo Park Hotel.</div></div>
+			</div>
+		</div>
+	</div>
+
+
+        </div>
+      </div>
+
+      
+	<script src="http://r-fa.bstatic.com/static/manifests/js/common_websites/16ee93c10f806de2ac2551e054c905a8150cce65.js"></script>
+
+	
+	  
+  
+  <div class="widgets-wrap">
+    <div class="widgets-wrap-inner">
+      
+        
+
+          
+            
+              <div class="content-section widget" data-template="facilities_widget" data-url="/api/facilities_widget">
+                
+  <script type='text/javascript'>
+booking.jstmpl('facilities_widget', (function () { var T = ["\n    ","6","\n      \u003cdiv class=\"content-section facilities count-","\"\u003e\n        \u003cdiv class=\"inner\"\u003e\n          \u003cdiv class=\"header\"\u003e\n            \u003cdiv class=\"title\"\u003e\n              \u003ca href=\"","\"\u003e","","/private/{fe_menu_title}/name","facilities","\u003c/a\u003e\n            \u003c/div\u003e\n            \u003cdiv class=\"view-all\"\u003e\n              \u003ca href=\"","/private/bks_cms_view_all/name","\u003c/a\u003e\n            \u003c/div\u003e\n          \u003c/div\u003e\n          \u003cul\u003e\n            ","\n              ","\n                ","\n              \u003cli class=\"facility\"\u003e\n                \u003ca href=\"","\" class=\"facilities-link\"\u003e\n                  \u003cspan class=\"icon-facility ","\"\u003e\u003c/span\u003e\n                  ","\n                \u003c/a\u003e\n              \u003c/li\u003e\n            ","\n         \u003c/ul\u003e\n        \u003c/div\u003e\n      \u003c/div\u003e\n    ","\n  "], V = ["data","fe_facilities","fe_facilities_count","MAX_FACILITIES","B","hotel","action","action_id","fe_menu_title"], WV, LV, VA; return function (VS) { var s = '', r = this.fn; function suitesitesviews_partials_common_body_menu_action_to_title_inc1(s) { s += T[5]; { var LA= ( (r.MC(V[5]) || {})["header_menus"] || [] ); VS.unshift({'menu': null}); for(var LC=1, LM= LA.length, LV_menu; LC <= LM; LC++) { VS[0]['menu']= LV_menu= LA[LC - 1]; if ((r.MJ( LV_menu["action" ]  + "" === "" +  r.MB(V[6]) ))) { if (( (r.MJ( r.MB(V[6])  + "" !== "" +  "article" )) || (r.MJ( r.MB(V[7])  + "" === "" +  LV_menu["action_id" ] )) )) { r.MN("fe_menu_title", r.MG((LV_menu || {})["title"] )); break; s += T[5]; } } } VS.shift(); } { var LA= ( (r.MC(V[5]) || {})["footer_menus"] || [] ); VS.unshift({'menu': null}); for(var LC=1, LM= LA.length, LV_menu; LC <= LM; LC++) { VS[0]['menu']= LV_menu= LA[LC - 1]; if ((r.MJ( LV_menu["action" ]  + "" === "" +  r.MB(V[6]) ))) { if (( (r.MJ( r.MB(V[6])  + "" !== "" +  "article" )) || (r.MJ( r.MB(V[7])  + "" === "" +  LV_menu["action_id" ] )) )) { r.MN("fe_menu_title", r.MG((LV_menu || {})["title"] )); break; s += T[5]; } } } VS.shift(); } if ((r.MJ( /^bks_.*/ .test( r.MB(V[8]) )))) { s += r.ME(T[6], r.MB, r.MN, null); } else  { s += r.F['entities'](r.MC(V[8])); } return s; } s += T[0]; r.MN("fe_facilities", r.MB(V[0])); s += T[0]; r.MN('MAX_FACILITIES', T[1]); s += T[0]; r.MN("fe_facilities_count", (r.MB(V[1])).length); s += T[0]; if ((r.MJ( r.MB(V[2])  >  0 ))) { s += [ T[2], ( (r.MJ( r.MC(V[2])  >=  r.MC(V[3]) )) ? r.MC(V[3]) : r.MC(V[2]) ), T[3], (((r.MC(V[4]) || {})["data"] || {})["urls"] || {})["facilities"], T[4] ].join( '' ); { VS.unshift({'action': T[7], 'hotel': r.MG(((r.MC(V[4]) || {})["data"] || {})["hotel"] )}); s = suitesitesviews_partials_common_body_menu_action_to_title_inc1(s); VS.shift(); } s += [ T[8], (((r.MC(V[4]) || {})["data"] || {})["urls"] || {})["facilities"], T[4], r.ME(T[9], r.MB, r.MN, null), T[10] ].join( '' ); { var LA= ( r.MC(V[1]) || [] ); VS.unshift({'facility': null}); for(var LC=1, LM= LA.length, LV_facility; LC <= LM; LC++) { VS[0]['facility']= LV_facility= LA[LC - 1]; s += T[11]; if ((r.MJ( LC  >  r.MB(V[3]) ))) { s += T[12]; break; s += T[11]; } s += [ T[13], (((r.MC(V[4]) || {})["data"] || {})["urls"] || {})["facilities"], T[14], (LV_facility || {})["icon"], T[15], (((LV_facility || {})["facilities"] || [])[0] || {})["name_localized"], T[16] ].join( '' ); } VS.shift(); } s += T[17]; } s += T[18]; return s; }; } )());
+</script>
+
+
+
+              </div>
+            
+
+          
+        
+      
+        
+      
+        
+
+          
+            
+              <div class="content-section widget"
+                data-template="reviews_widget"
+                data-url="/api/reviews"
+                data-additional-parameters='{ "limit": 1, "offset": 0, "positive": "true", "locale": "en-gb" }'>
+                
+  <script type='text/javascript'>
+booking.jstmpl('reviews_widget', (function () { var T = ["\n    ","\n    \t\u003cdiv class=\"content-section reviews\"\u003e\n        \u003cdiv class=\"inner\"\u003e\n          \u003cdiv class=\"header clearfix\"\u003e\n          \t\u003cdiv class=\"title\"\u003e\n              \u003ca href=\"","\"\u003e","","/private/{fe_menu_title}/name","reviews","\u003c/a\u003e\n            \u003c/div\u003e\n            \u003cdiv class=\"view-all\"\u003e\n            \t\u003ca href=\"","\" class=\" all\"\u003e","/private/bks_cms_view_all/name","\u003c/a\u003e\n            \u003c/div\u003e\n          \u003c/div\u003e\n\n          \u003cdiv class=\"reviews-widget-content clearfix\"\u003e\n\n            \u003cdiv class=\"aggregate-score\"\u003e\n              \u003cdiv class=\"aggregate-score-value\"\u003e\n                ","\n                \u003cspan class=\"review-score-label\"\u003e","/private/bks_cms_review_score/name","\u003c/span\u003e\n              \u003c/div\u003e\n\n              ","\n\t","\n\n\t","\n\n\t\u003csvg class=\"","\" xmlns=\"http://www.w3.org/2000/svg\" animation=\"easeInOutQuart\" style=\"width:","; height:","\"\u003e\n\t  \u003ccircle fill=\"none\" cx=\"","\" cy=\"","\" r=\"","\" style=\"stroke-width:",";\"\u003e\u003c/circle\u003e\n\t  \u003cpath fill=\"none\"  stroke-width=\"","\" data-score=\"","\" data-radius=\"",";stroke-linecap:round;\"\u003e\u003c/path\u003e\n\t\u003c/svg\u003e\n","\n","aggregate-score-dial","80","8","\n\n              \u003cdiv class=\"review-count\"\u003e\n                \u003ca href=\"","\" class=\"all\"\u003e\n                  ","/private/bks_cms_hotel_compare_score_review/name","\n                \u003c/a\u003e\n                \u003cbr/\u003e\n                \u003cimg class=\"booking-reviews-logo\" alt=\"reviews\" src=\"data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAR4AAABYCAYAAAAjv5gTAAAAAXNSR0IArs4c6QAAAVlpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IlhNUCBDb3JlIDUuNC4wIj4KICAgPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4KICAgICAgPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIKICAgICAgICAgICAgeG1sbnM6dGlmZj0iaHR0cDovL25zLmFkb2JlLmNvbS90aWZmLzEuMC8iPgogICAgICAgICA8dGlmZjpPcmllbnRhdGlvbj4xPC90aWZmOk9yaWVudGF0aW9uPgogICAgICA8L3JkZjpEZXNjcmlwdGlvbj4KICAgPC9yZGY6UkRGPgo8L3g6eG1wbWV0YT4KTMInWQAANGlJREFUeAHtnQe8VMXVwM/svkcHRRQrTezYkIeiflHUxJZoNGqMMYlSlNjFqAQjuGAvUaOiEQVijZHEEmNv2As8iooNCM2Gior0x3s73//c3bvv7u69d8srQLzn95udmTNnzsycmXvmzNy5syIRRBKIJBBJIJJAJIFIApEEIglEEogkEEkgkkAkgUgCkQQiCUQSiCSw7khgm7NarjuViWoSSSBYAiY4KUpZLySwa6KztJAbxcih1LeDWHlfJDlKpoz+13pR/6iSP0gJ1CuePiNPExM7iQG8nVhbj88VizGW9KXQfcMg/y/h18n3tExJvJdL+oON7zHiRxKPP+5pf42IXSRJ86gsWnKpfHLDSk9a+cE+iY3ph3dwm+cxScofpDpxfR4+QkQSWAckkFIwVYmbGLxnNaw+9mWx5hIU0KSG8fkfyN1n5AESi73g2xJr75Ypo07yTSsVWZW4k34b5J/NrhKp3U4mX77QPz3CRhJYexKISe/EThR/ZsOrYPaDxwtSdckNIolYw/n9j3Iw5kTplWjXKK0z9pBgPqaV1MW1TyKIJLDOSSAmJrkvs2bw0qqUKisfY86VKhlLtsbhWUr56wdtXNpI54ZXFeVuC/CJx/KXYA0vOOIQSaDBEkDxxDo1mEsuAzX/90g0znIil/f6EDcxG1rNGqkITS8qMZGELHxfzSZnFMUqIook0MwSaLolUVyukq2Gtm7m9vzAirM3hjR4htgvJoWkR0mRBNaaBAopnqVik8dKUtrK5IRJuZkVUifbYuazqWm/DKn5prJZ+4ND0qOkhkpgyuh7eKt4PX2Ra2HNklr5tVSPXdPQIqL8kQSaQgLhJr+1d+SfB5lYJ1MnzqYys9mYfkridib7Ohv6V87o2ZJH/dMibKNIYMqoP7CsnSgxzvFYu4kYO1Vs7O8yLbGiUfhHTCIJNIEEwhVP0n4YWua0xGfSd+Q17CNfEUDXNQAfoRtTAlMTb8JOXQSRBNYLCYQrHiMcfCsAtfJ24FapMR0L5PZP1r2hzhtsy3uxzZjJO7PUWybJukW8Hl4o7yQ+8c/UQOw2iQ6yYV1PlOhmcNpYJLYE/wtZVTNf3rtiUQO5r5/Z9ROMjhvuKhLvwpJ7c0nGltMfX7Kwe5vDiV83qFHdE62kU3JvXm6keOtYszEOWcrHWGvV8M5dPjaouLIy37ZwS2lhN6ftmzIWW+E+l2TyU/lk/qeSOKC2LJ65me6Y14MVwxZYqoz1eEupS6oMvpDPls2SRK/Cz18uv1LiN83qIO0qtxET7y5Ju0zq7Kfy2X8/Krptt8/pKvHK7k7dbex7icunMn/cTEkk9MVHKIQrntCs6cRYyD6PtZ8Xw8KhUWWzWfvf8cD/nIYcAK5VJq/uRMXi4ii4volZLCkel1pzl0xPTM/QlBPYPbGhxJOD6PifUeb/8YDly6N1C5G+CTZqKdPWjZfqy+YULMomOVZQaPssgIsqwI72eRTgBgEUwh7b2TKVZW7fxNbQPJWhs3YlbZnD4L1Hpo5+OIN3A1UjL0GQv01FrYX2Kwbca7LK/FlmJr5wyZyzXXH7B+pwDLhUPbQ9dEEarFQlpvAQXulbjkvl51eN6M1AH448D0NGqfNMrqz0AIaKrSrxFel3SbLmGpl25Vcix8WlaseLqQ97hmZbdFLqqIYx49h3/KNfMWXjxs87kEoci5I5DB7dKQ+vvuGcSBfp2nOJTFjwMKrxAVkw5/miH1S3UuPn7UMZv0H+PwWVvSqIp+XctcMyyniO/nlYar/6uwypKrxfN37BdfDbK1WMqWFML0BW98uAbs+6RTv+HXP7045znXHvNi5GO9V17blIxi+4V1bZy+X0bt9m5dPImJntpE27M+gCrf/OqXSVURq6DVosEwY+ICvqLpMzetSPKTc97RvpQ8fF5MocfCqaTJ4s1aPv8k1zkVUjURSxR9xolm/lBk4yn5eFy4skYtJXBoMeidsyLzkIkdpQfZDZ4WIeQt1zKh6c2VbOpd0Xkql4q8wKnW/HyUozKutBzS25KtGf8fpiLjoTr5HtZUbi40zcG6i65DY69PdeVE74aR62Qx1cn8QOtOGDnPRU1MpQZJ/91qvqkpvhfaYP/VxJruwt1a2XSl87ikE1jPpX+tDlo6z8S75Y8tuCn4E4E0sH6mMGw5unqyj4lof7ZChVEaQVpieflTG00a89HqIig/owVsQvo377FpkjTWbnSG3dYDmlx6SC+SYs3AUafdZU4ZQAlCFmpAzocn9opgkLnoQuNTayCO0ZMqDrrXL7lDbSovNN0AzKSvaN2HlYesfIwO5TM8nj5h2GAfBX4tnKMkPgCVi7hGfzSBnc9WUPNhMsdgBkMuQF9PuuIEhykjkMdHavkn9DcjuueKWjPJ3DinI8k9FUZsgjFVUU9E5sIRvblxj6OgCKVzrKXB9GVQpt7DQ2dPsVVV4pRFUjGPRmSEiWpSJrTsmkm9qQ5YjFuqHGWcB3dv7QQ6Tl76XK/oMsFzvt9KfLxxo5Rjbv8GB+ggejluXmGzyN7E6FdyljTvvnEfLkKx0P+wYFj3swLuPnXy0VFS/S9hKVjpZsemIoPyvj5ql1GAx3zv8tVtxkCEpUOsqSMkTuwxK5TxJzWynGF7BhffFiRsudCzdC6TwDryKUjnIx3TGBHpPbP2LbAZiwYCBKR78/LKx0lN5gscflaWSrX0bkQSmDIC8zG8sDmJGOyk8AY1kPT52JBg4A/cCxo30DUZXREVk82xN7RKpGnpGF9YvsltiOt3CTEcqefsnF49gHiskkrEX/thfPqJ6yV6IFluNY5BEweBzS84v+9krfNO72py3qCygQisUuRy7HFqAKSGap2iehVqsPJGIskR8h4Uc+iYVR4fIonD+M4qZZLeXwfk8gd7V8ywdDC018QuYhzeU0bsEIicfuRr4tc5NKihvza+kaf1nGfahjvhToxHh9E21QmmLVvacWbf6KwjseK/gOCgwbmz714bMdid3pkxC4LZyiNWZ3ZvbFWRnj7F9IbHtw++GOCKkKa29evftCgo4SZknjqw19s4QhncEZ+wuDfxabnmh1H1DrqlJnT4TZGGBEB9G9yGcflnrvNJhlG0FeofJ4niWWdn7xYCo3gfjTIjPEi6TzJ0stW8eRmG1V9U0OY7zs75+poVj2qRoC7VrpQ8G+USOAkfZS0fokOP05i5s+tAaLo7HAmL5i2twNu1/gim+/4exdeaCWHHugJVmq9SUZ2RtrqS9LPbX2MhBu8eh3V3F5LMtJTJdG1+KOyHDJD9zH2luF4w9V7CMYOcA/MQebfzguhyATjSOaB/gAc7MMxhvYkO/HjOzoRQWGiy3TcLAyjjLTPaOGQNXF2zOELgpkYWU5u0tqURQ/0AKZNVnCtlI1Yp8s7r2Ho/jYm1gXYdx8NlflN0VUTUfDV4j+84K0RrIn0jsXbkP7xxfMV09QZP+ao2TcwvPrszVxqKGWWlJ+lVvDcMWTS11M3Np7ZbKcHEiqeyxGzgtMTyUsZmPrTKld012mzKyUb3mzkkweyAB4tEC+jtLa/imPpneiijKPz8NnIew8+J/Em5QtZAqW4KpVG/H26AjW5a9mkeVHekgnOT0fXTQGey2uSjHEDMdqmJ6Yl8dxTUWRAzUvZ3EIa9/jgcMyFSwtO6VwJpOteOKVyEXN7TCw/+HisiN5mb691NXuxBu5Q3mTcyvl1YblalCa7ncYkyjAYwFj7lSpWdFZBnbpzIy9BeOhE/Vij8TW+OY1JnsJFHMm2Da+tC5Sr0lJ1u0jX3/TTmoW8Trd+SpgGGNxmUvi68fsRXLr/Ow9yqKXpbz9tMlr4HsM43sg7iXfMgKR5Nc+SqK4k3YAZP8KJNUEw+ujHKjIiTcsqnODNQulOw/uPA7t+0HcDg8djM7FYrW/kimee2RmT/weVi86ztnLif055EE9Vfr+6ZqsvZC4jParSganCm316gHy7lX1rw/fRd2J8FAc96RU9RpF+CLKNJk83oChTbuef7u8c91yL7qo8B4jsWScK0UCyLnnaMpoHsRGAKNLE/8mZHG39m36kYvERmUr3apEguyXZNF6Iya2mzfKEit8IzMpwynjquw8zlu6p2WPEQ/wyvdp0lrnpHuigZvlHhqfYIz+0s3PILD2MVn87QlywW7Z/Tm4yzdkGc+ex87IYWhQdgd/xzysa5M302fyqGKx8nsZ1PW+DC4VmI13jYz776NiKlXpc47KD9jDa8Vlb8Jb3ZKAN2TJ2mNk0NYzMtkSL94j3Xo+Tn0LLzutnc2ccGxWfpG/IZP7kekJGZ7ZgV7ZUUZGLqJBcX0wYwymjeV12T3RPZ9XQssL64zPpWb5wVlKI5fJlNFjmCFRXgFgTAux8WMzqTsMZ5aSQzLx3ICVaVg4v8hSOlk07FNNSdC5lnIDwJiNpaJNfafpOZ4wMNJGdBmyx8ijuTBMl63+YO0KqXPeQjStZeMt3cprKJ0D2CvLVjpK8zUf/orVhy8ArMo6BXrGyEgXN5rnWyaS6kSu0qknm3rpK0SC0+spSwsldAyak4Iz2bnynTk+T+l4M6xYfjlyeNuLygtXxE5wnoa8hDQimTxdBnXJVTr11IO2/ghr6yCskSX1yJyQkRNzMOFRa9fIGvvzHKUhzjkkm7w6PLOmWgyAmgPz8jtJyZD9R5QkQlcyFxpX8bhcjfRmI/fNvP2WPnVsjPGQBsPFRVkN9otbYDErmE3ssExau8qDQweATTJrFD5pKctqEgyC7zJ8cwNxT5mFrsWoRNlVtPySNx0PUbfgmVds6WeUcutVWnyprOTsRXXAd17zEquYpacGs/RYEclkgbdYyQnBfNIptatvUxu6IF0pBF1O3guZbxKYxdqz5bwuKwPTNeHMHRez9NqL8zssDWWvjKtRaz4N1jmA6MZyfFstg7vdm4PMjw7Z/mtaf2l+gosx3cWxrNx4Qf8aObXbTF+qBVxhXAisvUAGbrPQl6xWPvTFK1LNkTEz23rTCysea//KWu5oZx2ua3F1deyX2KQ+iGGV3ZR5/W9OsZkSTf9MMDegG3hTHPrclPy4fnWdxBwNBn3jltawYWVS/+rRLwaz8aR8eCX7TuY2DyY32D+DKGTxZAhDA6/IFN7UhUHoOZ6wjIFpYzkYGWLRkM/wyUQg2MpMkpHumXBuwNJ7K2OP56Lz4npq2dgP8vANQsR+HJwdK2ZgN5bXRcIp3T+QwV3ezrghXec4OfV0rzF9grk43zYWp1AXLr051OqJFfnGUGW+OmT8JnowqYRYV2rtLKu5K7BNny9fHJimCRWt4t70Cm/EJ8zbqVGn+eBd1GiO7Z+CVv4rAzLLlEoTHEL6QbwGfs6Jx0JeZTsDbFTSZVzYr0VhBFRfN2p7D9/YOW5vZItAXta8FJjmnzAJdP2s5qWxdktvtEFhPQNla9gMv6IEefiUaOqKG9xu1lreChYEs7wgiUMQZtnaL2TmqHAF5xZi5RNG1k5uNMt39qyyMIUjxnbNzEm51ElJjdNcfKnxNq02J4vf85DiVCeTimap32uNX6gTfL0V781sPAdv9QBhUKmGlySndf3UmzUvbLB33U9kchOt+becve3qXHQmrvWc4G8MZWg8gUIWT5hFo2wsSmUsvrogODmTYM2mmXBuwIaYarm0Gl9VEd7KeEu3rM38sqdxC0LS/JKC6Y1pw9KynV+m0nGcjK6+4vPS8xXIkSywGbuUDzQbD3Rd7w/FfHzs5jQSvLx1aUryYyHjwc4riVUQcbLCHXv5FFZWYCEVp3QzufWbqwAwIc9Udpap2dESYzb5chE5ip7oYqHMksniZjcTuuw5vL4M27o+nBsywZtouaRuXM3HIDB1qbKs52PTXNpYMliD59JqvNDSpsXqkPb5MQzAGXM4G8+nBKQ2EZqPfWcn9O1h44CVYF7WhFsE2TVokx1taMxmv/L2skvN+F5MeeFYyJs4Y0sbc1oDwwQfBDakLG+epJ3vjZYcjpngPZximK1OZrUhXPEUw1BpJifmIpogJdVRtr8w1dnGLAphuV1IWn5SC9mGDgmufzKeKitsT8Ly/q0UMLGwOtbJtJapdW6hzeViyoybq6TPsJCNZ5jEGvEcjzXhZngxdWZjw0P2tSecHdSl8M4Xdc5GBsQKXWgfkC0QbUzwHpUxxdUpkHk6IVkXXIZlAz7xYsAeQQBja0LGHf/XVg9e+ddjnVCsYYpnTd3SHIYNigY/uKWxVW0WPMO1a5Pe/8gSUm4JO+QiQuMVEk6/ZHGqQ2yYsouFbAD6le58KuKXAM5yujWRssAKbS7rV9VWbiZPiMltNuJmkPMCCmt8tAmxHsspzdpPQrO1qDgyNF0T9fs1MTlngwrmKkCQ/CKYwO4RnFZCyqqQMaeTZbeevUvgBqkNHuuh49tbig0yDLxEIeHYmpDEkpMaR/GoReP3b5ZuddakT2HWmXddlI+/rXMPjE+CL8ry/Ugg2I9l9s0pk9byT5vBcKjox6rFQliZ4eVkl7BGbuJs0Nm8IfxFdkJOLGaGSuocUk7CehA1sVdCaxnzvZ4jO0tLPkAOO9FdaM8qm1sqZs0HfugUjvtxrp2R9do3mDYnxTkflMad0WMRb4i8lkgOsf1tDiI4euc87i8KfSkTNr6D+a7llMZRPO3bhB3Qs1L5WaoTkvIM7a3zbbPOBHEbfJjOm6n3CJ0FT/KissJWnsjEk3VPZsK5AT1DYySRi/aN69UbRvb3TVOksfVlFrvUmnzpSwxQlUkQtJd2LYcFJZaML+ctUMmFpDNUJ3RPIPjhM2ZXbhQYEsheJ7O4XBaYXjjBf9mRrK3vpzweHHTr1HF4HjocYXjrdKN0GXiqh0xXAE954tlBy9UqY+eELJ885PH49Z5YdlA3qhfUvZSNXD9iDVc8+tW32D+HNHd65t8Opie+40ELngmL2VRVC6Aipq/vg+ueNI9l6jPtUr09cEEmnhswdggPwGG56Kx46hR22ABgmztZ/PkPL3OTDD/ybuRM6XORbsbmQ6HN7vwczY25N7zA2K0ctxidt5e1R2JX6dD6BfJuG57fJ/XOeT/lte4bfBG9An8+R/m5AGtO/V7Z4K3nMx5CLG8znDwn+HDOR+ldNRMWcK2GnIO73LnzxqWyyfox6OJc35hKqay8Q26YG/zmT2nHz8cqlv4a9Af7rOj5m/UQgh/eQo3RV8d6H82GLGWM4WxEANjkw1kpSXN1Vjw3EudOmqpLxvHtU77Ju8eIH0n7FtMxL/rlZsvEecHPNRU6aOvBhJVpKtilfVyqEsyuCcI50DfxC6ng9baRnjkp9VEj/8y6ErXQHk99TjbmL53Mg/CIF5UTbs03O4kcXHFRE9eZdy3CGg5AhnzsmZo8Rkis9ecooCn0+4vS95KFWDoz6OOqkis+buFZfN+lEwDjw/k4tStj8zRpUVmddYdNMsSy1joZcz/K5yEe/K1966B3FY9fcLG0aM3xg/SNf4Y9uTjXhbrw1NuPsI/3kRvN9/k+b8P4VJTVnnlpKf73cU8Q8guBurqrslJN1uZ+VtK6Fsl/0Lw1jJlrGAypGdl4z4DwWtxycCn4uFKKi77pSsbGeVmiFJ7iIX+NvPtm4b0RYwZKi7a/ZDC+yNevC7kLti0Pp651d/WS+Yatz0dzK+ROXjpeSJndfPOk2vEnrv08TSxlpq5A0NlIFRxvz/yt9jSvOrZlR2bxLXaplclkRiBPXcoFTARcF7rHiLEy9dLqTJZ1MWDTdyG7dZvMh759EmNo1TkuKsBvDb5PATnnZ/UuHcfP7sJyl0nNr69MTzFtmVjS9fhkwn3SbSBLWNMrn2kaY8zRhH6Kgnmben1AH8/i7745p2V2wf2YYtrn5bXcsHjnvLEyuPs0mfjLOjlkQULi5u95dBmE6YGSfQurqZr+170arBfTnXb0x1eZBIPlA+ZTerwZTLBupwQMdLfSvF40Rh+8bcCo2Zt2ZisE79fDbsaUb5KXi/4FTh7UDuLh/j4P7UUYo4fxjkDpnI5/EnUorHT0+ga/i8BmJmrE1J0UOvs6ZTNr6VWeei+xMXqZtba7ACRHUOaHBYjCk6ck3mOwPRBIpAopHruF9MIyD2SylhIWc8GZc71GE5efrOwf/rDawzM10H9BSCY5cV/oTA0fHBvzf+Q7hR64BgtkJPGj6YV8paPMtZ9i8fp+Gtz1ARTKPzPlBgb4vMKYAbjT4HFYeDscJl/KmpozAtmtiwlts0/RF1A8DWiBlX/I5BgzkA9Muewjvro+kU5pvKWAfje2gv2QIHA2cnlL1KjAXTWTR1/ZKCzrzCXhipHlZYP/j95rtZZZa8vNOaWA82Fp3VFkmVtKtpJpY7JVaB6Tkz6o+xvIe0honrISsdC9sPibk1FwIXtKXuIiwvqFudhjZUjPBUVQNy+JDXhx5FOLplE8ViaI/YxXhswsQTA18R/Uzi/olGVBJEXjLW+UvjOH8YFj+EMxJaGzETNFyL5DsYVaGScrDG30gVL2eNzszj9lmAlu1NePs5QodKjQN2NjIpPzS+amfwlUK2o5VJeUV0+m69UggZClSMMfbiv56QO73cXHzr+njEY6o8IH1Qvm/Ibq1k+ozp0+q/V6i+CXKoHty0mwnPtK8rdAA7r68wq87D2HT9NFPy2WdWMrnlkMlaM5ozIw8yYrrCbVCTbgkvtAwmZiOWBZE3NtwBRzhBR73H9ygpvT7MHkK28GtrKEvGfQxsGBiq7kPZ5025N6/WnI/5SJnqxtPSpNvXa8Ol7/h32qElQrXXJPnrkXSxyWzmFtdBnYF1h2/IjlxywXk+9zE54L38WeJ/ixG83zrdyah1PEwG63oxT0dstsS8WXOACpNyvU2RNQCKf5/sfWwG2/kjVfonzkL7jaAC7haMsdV2tkT67T0Haum2Dk5WIr1nDFY2UOhenMcTifTmzPfkfYG5r8elVf+i75epP/1wyA9/IJfDBqJVk7ls/8tyUvG7shlpVPducqjORn25Ok6+QiFRCzjbXX8P3u1pTpP4jdssqxeDSv/jtnbfIoBufnLqs8P8Z/JPUZsUsevrkQzvGE5IXUcXV+keG78M7l/9Wjb5PJZkuMcrUCboTPo7jJ8GLpw1+46ERSV7efTB7FrQbc6SQSct7F1u8f6h06tYwh4d8w84BL3AZ1/Vse2kUM6vaqLFvF/mXyXOq0yEUX4fOvqvYy8m7D/0cF79EpI/1DvoFdzmVi3pE891NPnTQLg/OXOFxFM7DLvuJeu1E419qhqF11EX1ZlBFRwQB4gN360kxgw1/ZJuUbqVm1KPjmvpLabrne8+/k+LvsenEPaVHxUzpGH67NmPWY5fUqBh0QXKtqk89zl8tLgdZGscXqnT7izIK3ym4jekklH2aK2QG3KfiNKQ/Lxiyi/Hm09Rmpfp8HI+hfM3IKTcY+Qqa/z8HWRytWBw/uaZe+wacC3aUFF2nFY/rmsBVtzt5UNtLBYbak4ivpwL3ALsT1ryCBuvQHeatjn7hJjm/r/sHtjO9n4eojX9cHC4SqR/+ZOt4nLZO7cYPilgw2dwIrkkeiluvE9MiDumDo4yid1oEESalXPEp0SrdqzsbsLBvEdaO2N4rkC5TRE0X92V7qyoe/8B3VGD5p2Ju+183ofrjNGAubchcT/6nGZzHWcGWJfZPwi7Lmq6eL+odPrZsLg7vMJnii8+d6lZscSDn96eMt8TdDji3hq2PjC6zyqVITe6LgVRYuX/VN3Z/pX32O8qHGzMxH5mK47tZyi5YfLOevmwvBKdt+Isc92EcO3XNPNtl7ZPGqXZalaLMHdCHGUXokgeaUQN9LOITHf3YFgVoPDX2jGMQ7wjepBCqalHvEPJKAVwJ6AjyO/VidWOBF54X174I20X9CDVE6uiyvHvVhXt4IsV5IIFI860U3/Q9Usmrkn1hSXOa0pCrBRq59EsXyGmroE5b7n0hFHcsMs7XY2I4s3DgWwT5QKIScewrNFyWuCxKIllrrQi/8r9eh75+6iK2YjWJp0UhNXcSZrZ3Y5/umkfhFbJpZApHF08wC/2EWV3kK1k5jKR2MpeQZMnN0pHTW48Hkvo1Yj5sQVX3dlkBCx9jARqujtVfwBvRfjcYvYrRWJBBZPGtF7D+gQquSh/D1f4H9miLkkTq0OJx/PbmmCOqIZB2XQHwdr19UvfVdApsfUMPaqC1LrV5sGJc50fG/7SbJifjRE9d3cUT1T0kg2lyORkLzSGDXRGcORZ7IBjMfjJp9KTR80tOT0Ub+zX7OBP7Y8OmST6c3T6uiUsqUQKR4yhRclK0BEtBrTdu33FVMfDdO6G6KMurocLP2W5TS5yicqfLd4hmZe7MbUFSUNZJAJIFIApEEIgk4Esi2ePSm/K4DdpAkl27pN0KNAYYrKCx/BrZw6Tuif3MaQSSBSAI/eAnUK54J84/AzL0dt3kTSWU5H439ka9sx8C//r6SJiosYhtJIJLAuiuBlOIZv4ArF034VQ+N1gYuS9J7SyKIJBBJ4AcrAf4TaP7W3CWrF023bTYpJO0h3I/yTLOVFxUUSSCSwDolAU6Vxo6lRs2ndLT5JuTP+NYp8USViSQQSaApJIDisX2agnE4T27VjyCSQCSBH6wEUDxmk+ZvvV0LZTZ/K6MSIwlEEvCXAIongkgCkQQiCTSvBMr8dqZAJRdzY0Fbrm5t1ThHgcaMGbNNLBYbnS71ydNOO+2eAjWQRCJR0blz5/H8q2tFMpmcf8YZZwwvlKfUdOrVl3oN1XzUiYvG6+GGG27YsGXLlleAqaIOW1GHE6nDi7feeutxxI8m/jHxRH2OpgndcsstP6eOQ+D+3umnn35h05QScW1qCdx2221XU0YXxs0/GTcPNXV5Tc2/8RXPN5x6f/QJkTYoniMPw2/d4DZMmjRp7gEADywXbwuXeEtBxbPpppseBJ3zv1fku6zBlfBn0AX0CemkLMWD0nmKcvdys1nL3z6nYFe8E1AGXB4viRSq6X6pQ3fcYZTfrulKWfc56+SFHPojhxoe3LvX/Rrn1ZCHSXZh3HyEv94rnsZdan37XUrprFot4iigx0VWrMiTYKmIiRMn1jFo3Nvzd7j55pv1HyhCgQF2nEvALFFQUbm0pfjUSf8jaUnaZbKqtUOkryKox7W4qmXLlr2Wjutt+5pnmcYjaB4J8MDuTX/dgbu5eUps9FJ0vOi44eFa/6HxLJ7vkIlaOiuz/sUCCdUfjm6guFR5DFUeFRUVx+O9q2E/0GUWA+zodNrbZ5555sd+dA3FsXT5NzxUyWQB1s4ulO8o9TVr1txyzjnnLHAJmG0vJ6wugkgCRUuApfw+RROvB4SNY/Es+T6ldFasrG/yBh1Yah3eKEstZYrgp2E5vKdhrzWj8VxIL7M2Ujy0d+emN3W8rq4u7paxcuVKnaUiiCQQScAjgcIWj+WzqrA/iPx+aUrpLPcsqTq0F/k5Skc3mBsRUCL3YElcjduONfvuWA/T/dirYoJGk9asWLHiH14a3RAmTdP3gG4L0t7Ef7mmpuaRoUOHslasBzaCt4duKOlLsW4uSO8TXAauiuXbUMz3uaTpf2UL6X9kI7cTuAtI7+py6dChw0j4rCE+AZqPoPkJNAdBMx9leptL5/ql1M/Nc9NNN7WsrKw8kbrsDW5neL9L/V5kefcfl6ZUn3rsCB/dt+qHvxzeT8HzSazH+bTnLHBtV69ePeHcc89dpLzBXQ6uEzQP0S/P5JbH8rgHluowxS9atOg8rFLPgBEpp92UuT/szsZpP22Mr/sf71GHW6jDB4QFeXeLx+PDqf920DCUTWs2av+qaeCG0ydsSvoD/EP7nzIec3MWW394nkcdtqPs73TMuPlzfeiugG4j6F6F7l7i50KzGe454s956bX/aeMp0O8FvjduEeGXyfs0tG+6tNBtxTi5WOOk3UqafrGQAeTyKyL9FbF8+fKLzz///Kw/aESWv6ScA8n7LnnHKB08O4A7n/L647YBpROt9sFLX3311a30c1LpciHc4nn3fZH/PC1SU5ObLxVfyrJTl1fLltent2cPU5VOu8Y/DI0lcT+NdhtyfH2h9aGcZdYTHuEZBseFCOd13AXk0IdfH64BKIIJLI/eIl0FlwHS9MrOIfi/JW1H6KYS1nJ74rdHuDqYh6nTTPgd0+ETNK5AXAfaMGh7puM/0jjtcBSWQ5T6Kbl+mo0B2ZEH+lmC4+A7GNeP8CnU9X6U3iTi+kCWBLT1RPJPIe/FuB+T+ef4t4GbnR6cOnivRGaquB0gXZWUymq3NCrLA99Z09XxtrGlJ7GsdlOP6+Gp7fsFrhf8NsXthzud+GTa4PQBYadc/APSZVbiO/WgD0I33MkT2v9pfiXVnzL1mVM5DaPvtk/zyPJQ0juQPlzpcCwnnHE0UPPg9tW4Czpm6f836JubSfsNrhfuQNIT+G9QxkiX9ptvvvmCsCoXLd/dinCT1Vcl7simVatWyiMLKGMoCE1nOeNMFlr2LPAj4PcjUJvjdsAdq/Vh5fGUTsbE8yBY8cydL/LKGyILPxV5+HFVgdmZNa5KR5WPC6psVOmo8mkCOPvssz+hgS8qaxp2nF8R3mUW6ZlNZTroEvKotRSn829GEezL/ksv/AHQvQ9elcib2um5fKFvSd6H8FvjnsRdB+0HuXRYAJ+S9hN4XuCmET5EcatWrXrbxfn55dQPJRujHs/hfkQZtbgr4X0QClqVxS24PUjTAVw0UI9Daeu9ZFBzVWfNs3H70Y4z4KXWjaY5y1j8BkM57SYPNymk9vuolyr9Xb7//nt9GNSK/Qf1bIu7G7ptkMVH4H5C2jU4hRUaV0falylU+C+0gf1fav2xrO+jtDotEb7H+pXMw3x8Ov1LgIfMH/Shpq/eoq1q5cxBFr+iTdun23e95iJtFEp6jIYZLzpGHGsUX5V0BkjT/q5yEfDt74bVV8sGz0mvra116gSNyrozvNSqOgJ/I+rQlfDvcDpWfoI1dB1+HlTkYRSxGgvn+Zfqk/Rczr+wKn92CEOuY+pN1aNPootZZrmgyypVOrrMakKgcbrcOogieqLN+2DyVXuLI91ZZuF/i4D+o2kMji7kuVDDCOY0TOTbNZyG9+mYJ6B/BZrtENSZ4NVlALxuIBs6tf9ZZ531mpsA3x5uWP3zzjtvJd5zKK9aOsVJoiy1RkKvASm3fihZnbX2UP6063CWQVqWC88jn5nU/TYXUchXRQZco3TI483p06f/eOxY5z/mFfUKg28iprpaQjq4BHkY9cuFcttN+UdqmdTxSeTr1Dddh2n4J9DuvtBsTfiXTFZ6luo5+lhnY81Ty5jJWqooPgzgFdT/JY8rlvOfU79n4XkoThXP5T5lq1WicK8qi1Qw/5e+GgVWJ4FZKN4+w4YNcx/Ij8E9h3wXQHMjbT6V8KXI6gvCT1CuTtp7w7sFjoddBCt0H7xKHA+7w7M/fgbod1VUqi8+RaYzrr/+erUGdewJz9k54N7WMKBL13soz1D2XZR3AmUMwiWd1PSPv8XTkr9AOvTHIi20HmnQ5dRDPMez52LpoHT0LZYLrVunlI5uKDcx0JB/UcSKdDHHe4ujcZm3WQj3QYSxWtMJX4RTa6Ua4Y/15tEwey1f4t2Zxv+aB6xlOpzxyDvaq3QyCY0QKLd+1GlYuvh/5ygdB81sORaaD4qtIorscGh3UXry/dajdBwWyPMrFNxlTqQRfsptN0VvlS6+43HHHZfZyE/jLHyPpf6qlJ2JJ41vkAe/vP4vt/7wulsrQ/7dGWvOEtytHHFdqjpWN+kTXHyun37whyiePvmDR+lkSNljGUNZ38NHnwvnTBuJT+FURq032WSTKpeYeP90+Eb8NcR3vPHGGzd10+Gjk72CY+20aNHC7QNdfWycSqr/xfqfSB7tA1WieQaOv+LR/FttIXL0z7L3anSv55kX0GnfKUUKWrdKKZ0NN3AxTeqjOJZRwMNaCMJRzZ0B7zILLXxPJkGkj4YRxCT1NJwL0D+jOHh2RJC6Z5AFpD+ahWjcSMn1Q8nqH+Q5+fAf8KuOzjK02Rkofum5OAbwToojz3fIeXZuusYZUEXz88ufgyu53Zqf+r2qPn3V78ADD3yF2fV33r0EfQOKVfMI7h2lawwI6P+y6o8MH6EN32u9sLCP8daPuGPtkF5NO97zpnnDPPi70X59oC2Wp2d5Uk9F/9cS44F1QPdgRK0evGkaJv/+6itQnhNmDDxG+C3FseTLpEPrKB7SnP6HbjphrBFn2+MfuueGpV9FmY5OUes/3QePgENxZEOeJspK7oQVd8wRzBs8k7rcyoVWGAZ6OnkjtUSbFVSpnIjrzgyxp2vmIQhnmQV+jtc6QWjbae3wB2Hm/lLDuUBaZtmA4sloepeOjbmFbrix/XLqh2m8nHxOJzPw5gfVibYsCErLxcOvp+LwP85Nc+OY9J+3bt16DXGPOeymluaX024tgfbqHpseCPwp0b1p4974lsH/HmPgKdIf9fa/5mko+PV/ufXXh5JxOJE6DYLHsfjXuPUjfnw6PMHF+fnQbe/iURDvwc+NZvnQOQ8nfmZMq/IgrsskXT5difXUmviehL9BMc1AkT9P/P+Qa39wDyLXzvg742rI+xy+6GoCZX80NI9C2w7UUOoxlMl/CfQvoJieBP9PlM+3Sp8LzsDNRWbF27JhfDT920WXdB7Q5ZgqHVVOzQwvvPDCcwhANbfOGI4iQatmllk0+l63SghRheKaY/qwaDzPwa8t7lt1pBeWC0SNAeXWj4fL2bPQOtD5PrNCqnbIwpmViqkrA8UZnMhgbhD9zJkzVUE7m6NBNAH4rOVrue1W3jroGdC6mXk0Th9gXfdrvfTg5gU8AK8y+F9NnyAH3fjQkPprbeiXu9Wnvn15gLtpWCdR4j1o02peRvxdcSHgPJDQWmjyxrOLI1k3lHVcO9sOyo+yn1CfsvbVpSoTiSruFtBMwld+jnLB749T+gPwDOkvp1ccihZd3jMOtyH9UqIzHGTqWVOFNJb4QhTigDQ+ywu3eFzSFiiZnx4sMulVkQ9npfZ+jkDpbNzJpWhWXz+h4NOt+yn0PBqoy60LvMss4hnFo4Ki8d8i5I7gRzJgr8dfZ6Dc+jHwt3EbwYDYgvBHbtzr0+6cGcObmh2Gj7411AEZOJvsv//+O5CrVXbOomIq/wyU2+4MAx4QNeWJP6IPz3777dcbhfNj4kfjdPbel9f9d+KrRdHo0ND689C+wrici6x7MIZ1uXU9G7jupvK/sYoCJxNtDHkWqE/+5SzJAvtLaXLh66+/fguLeTF5O6nc6Pf9Cety60WlnTFjxlu77767WtTOPg9lHaR40h2FpWEXsCw/IzxSHYpzE/qgP3TOxjn5O4C/g7E6DXlNd/OoX4FTDVcY9C3NgVhmuoGs+z+dNy6cpwkpaJy+3TqPIroyY/Qj7iyz8F+nkbNzitalw17Q60PjCzqDkd5PE9mUfdlvXeqbsXGQJdePjcN5KNs1FF/JwNANYWfQ+FTH2bfxwfuh/qtIZOgsufwIKKu3Hx6cawW19ktHtn75Sm43Z5PinDHZV8vgrdtLugGuExFuCih1V2HtPIR/NGWqIlJLqLgxDmGJUHL9PeNK63QPbiT1VOV4A86x3rEg/kY4FKD5mL5QmvbsrWyRVgB5eVBuu4LsjGXyCTQfKgF1SIJ/muCvWTHsR/n9FU+/O2NIZUr6y6AOQ5HsD/4gaFTJZRQPz1wvyt8cmoVMAM6kpy8fiKsFOpE+uIV8+gY0TlwtpizF49QcZPHQZ3eOanUunr6JKNMa9F1ljwBOpIE60yloZ2YBaa+nEcekTeSsdI1Ao2++niV4u2dw5NE1BaKc+lFHNaHf0vrgn+pXL33zAW9XLn4kWThoncGBvzUD6ydZiUQosxVpZ+Xi0/EP1CfdeSvmpWEm7EAf/caLS9OW3C88CEnK0D2KZ3fbbbeDcnlqnIdybBpfiTVU+hj3Y+qDow4l19/Lhn5zx2o/xqVaO1viPn/ppZdUKYQCZ9CmQbBKiVAeJ6ufC9ddd51aB3pM5Fnkv6c3nbJdJaLnzPbCfYkV9r6HxllukW8A+bcGP8dVMEoD/pfKl+BdGs8F3eAHN1nx0GYtsx2c/qyv4Om4IbRBzc0a1sYP5raH76Uug3ax0iCs23kQsgSBdj+StHM1H3S3qN+cUG79qOswrSdt6kUbbtKgW++rrrpqAywDHdgtXFwhn8HyAjyfUToG81hmrZ3dPIQ7Y2GNJ541gN108jmDjPgh1KWPi7/66qvboyx0cPZ0ca5fTrt1f4f8bysP2n02yrCNyy/tg069OtY6qTWkeMLfpNPb8ZBnlqlpXFleOfX3FpS2zF8Dp3W+WdOo591unb20ueH0pypXpfEXIHPnrZVLp/tbbdu2nQDfDvD8DLxagRmg7k+DVyV+MK4lbhKJGcuQt3jPKzH4Q9WH1lVUGlV4RX9I35OxcaCGvYCMsVBErS095/OmN03DutRqfjCysjEKRcncz8N1FY132oFw/uO3NlYcHaOK5W/Q/pq19F4ISwW3BKdLANaQjnCfYjDcqOHmhHLrR11fp11jadOpuLMIH0y9XyesCkgtlk2QyTiig4ptD9bCWcxQL5GnO3mmI6f34aEDUi0Z3WD8K2m/J6zKKTNQwT0GShVhe9xr1KUanGbVJW4F/hj8M0jLQLnthpd+G6TtPIy9ihnUUb8jm09cN5f7U0BX3BqWF+e7hS1duvTl9u3b15KuY0XlNodTxEe535q5dKX45dbfWwZtuZs67YvrpHjq/DdveliYb96uZjLQJeVu0OmB0efhN5P+2wL/AHCb4dcimxOwZpZ5eemnRNDrZLGX4qFzllkuDQr+HdK/gvcm6fQsxYP18xzp+uZK73p6lvDD+O9BS/Gx/Qlrv+sE/zBLvEnKwwtNZoZ6C8kLWzMjD1cGgo7/lGwveLLe4wlnBRHUvXTAfghkLgk9cSfjzsEp7jPcEPZ2jiCeeZgINxuUWz/yDaHuF1LROjp6e9wAwieD2xB3FPFHSmkEA1T3LXYir27MfovTh7kX8ZmEhzN7OVYWYT7hq8kMZjWtodHZ8WvodQbdh7A+UCvB6zJ2tObJhXLaTZ436ctj4aWb4Wq9nMlgv5bw7wir0plF+pEMeN3zcSB9wO42jUC3Ca4fE1DR1mCKS/5vOfX3cuFMj1rozpIJOb3p7sN4aYLCWHurUD79aKtauxW0ST93+QPhEwhvCr+JpPWiT18O4OFVJlmKB3p9DtxnawV7ipNyefAB9u8oQ/da9dOdYyhbP0saAZ3uG+lkc9uSJUt0POYB/6u18AUMdNWOzQd82S2DujW7ZaENPPXUUyvZG+hFsA/CUTN9IZbT0yixlZq+tqHc+rEn0wkLZG8GWlc6vJo3F9MYmDUNbQ8m++YMniXwWqG8/vKXv3Tl8Np8DSO3jrlf9CuepWxPlle7UI+vsTTe/eMf/6iWZSiU0+5rr722bZs2bfaE8db05eY4nUDmsOn8eu6pa7dw3fdgCdIFpbnYe0+Sm16uX079yy3LL5+eMqZf9Fu1HZDDN1hOU1Fi7/rRNjYOa0e/D9NnamsUjx5o/C/x6ZSvk7wvrAXFY6tl/px+kjig1rdGEXKtSUAfSveNEQrsqfR+SlZ9WLvrl8d6HP4LZnt9qxFBJIGSJdC8Sy099Vi7+qhI6ZTcT82SAUsghtX0MO4RnC5bsoCZTa/9SKSRD2clRpFIAiVIwMiEBbr21o3DJgJTx87Vh7zjfEMGd9c15VrZQ2mixv3PsUW56CX1+or1O5xe7vUq1g+e0VO1J+F0M/593AHs63z5PyeAqEHNIgHTLKVEhaw3EtDXsJz41bcV/QIq/SEbov0b8jYogG+E/gFJIFI8P6DOLqWpbBDvxHJLX9N2Qgnpa+i5bBrOZdN6XmNsWpdSl4g2kkAkgUgCkQQiCTRYAv8PMPf8OidT1xMAAAAASUVORK5CYII=\"/\u003e\n              \u003c/div\u003e\n            \u003c/div\u003e\n\n            ","\n              \u003cdiv class=\"comment-content\"\u003e\n                \u003cdiv class=\"guest-comment\"\u003e\n                  \u003cdiv class=\"review-title\"\u003e","\u003c/div\u003e\n                  \u003cdiv class=\"review-text-positive\"\u003e","\u003c/div\u003e\n                \u003c/div\u003e\n                \u003cdiv class=\"guest-info\"\u003e\n                  ","\n                  \u003cspan class=\"guest-name\"\u003e","\u003c/span\u003e /\n                  ","\n                  \u003cspan class=\"guest-location\"\u003e\n                    ","\n                      \u003cspan class=\"guest-city\"\u003e","\u003c/span\u003e\n                      \u003cspan\u003e,\u003c/span\u003e\n                    ","\n                    \u003cspan class=\"guest-countrycode\"\u003e","\u003c/span\u003e\n                  \u003c/span\u003e\n                  \u003cdiv class=\"review-date\"\u003e","\u003c/div\u003e\n                \u003c/div\u003e\n              ","\n\n            \u003c/div\u003e\n          \u003c/div\u003e\n        \u003c/div\u003e\n        \u003cscript type=\"text/javascript\"\u003eB.modules.scoredial.init()\u003c/script\u003e\n      \u003c/div\u003e\n\n    ","\n  "], V = ["data","B","hotel","action","action_id","fe_menu_title","score-dial","class","80","radius","8","stroke_width","size","inside_radius","score","fe_reviews"], WV, LV, VA; return function (VS) { var s = '', r = this.fn; function suitesitesviews_partials_common_body_menu_action_to_title_inc1(s) { s += T[3]; { var LA= ( (r.MC(V[2]) || {})["header_menus"] || [] ); VS.unshift({'menu': null}); for(var LC=1, LM= LA.length, LV_menu; LC <= LM; LC++) { VS[0]['menu']= LV_menu= LA[LC - 1]; if ((r.MJ( LV_menu["action" ]  + "" === "" +  r.MB(V[3]) ))) { if (( (r.MJ( r.MB(V[3])  + "" !== "" +  "article" )) || (r.MJ( r.MB(V[4])  + "" === "" +  LV_menu["action_id" ] )) )) { r.MN("fe_menu_title", r.MG((LV_menu || {})["title"] )); break; s += T[3]; } } } VS.shift(); } { var LA= ( (r.MC(V[2]) || {})["footer_menus"] || [] ); VS.unshift({'menu': null}); for(var LC=1, LM= LA.length, LV_menu; LC <= LM; LC++) { VS[0]['menu']= LV_menu= LA[LC - 1]; if ((r.MJ( LV_menu["action" ]  + "" === "" +  r.MB(V[3]) ))) { if (( (r.MJ( r.MB(V[3])  + "" !== "" +  "article" )) || (r.MJ( r.MB(V[4])  + "" === "" +  LV_menu["action_id" ] )) )) { r.MN("fe_menu_title", r.MG((LV_menu || {})["title"] )); break; s += T[3]; } } } VS.shift(); } if ((r.MJ( /^bks_.*/ .test( r.MB(V[5]) )))) { s += r.ME(T[4], r.MB, r.MN, null); } else  { s += r.F['entities'](r.MC(V[5])); } return s; } function suitesitesviews_partials_reviews_score_dial_inc1(s) { s += [ '', T[13] ].join( '' ); if (! (r.MD(V[7]))) { r.MN("class", r.MB(V[6])); } s += T[13]; if (! (r.MD(V[9]))) { r.MN("radius", r.MB(V[8])); } s += T[13]; if (! (r.MD(V[11]))) { r.MN("stroke_width", r.MB(V[10])); } s += T[14]; r.MN("inside_radius", (r.MI( r.MB(V[9]) ) - r.MI( (r.MI( r.MB(V[11]) ) / r.MI( 2 )) ))); s += T[13]; r.MN("size", r.sprintf("%dpx", (r.MI( r.MB(V[9]) ) * r.MI( 2 )))); s += [ T[15], r.MC(V[7]), T[16], r.MC(V[12]), T[17], r.MC(V[12]), T[18], r.MC(V[9]), T[19], r.MC(V[9]), T[20], r.MC(V[13]), T[21], r.MC(V[11]), T[22], r.MC(V[11]), T[23], r.MC(V[14]), T[24], r.MC(V[9]), T[21], r.MC(V[11]), T[25], '', T[26] ].join( '' ); return s; } s += T[0]; r.MN("fe_reviews", r.MG((r.MC(V[0]) || {})["items"] )); s += T[0]; if (r.MJ((r.MB(V[15])).length)) { s += [ T[1], (((r.MC(V[1]) || {})["data"] || {})["urls"] || {})["reviews"], T[2] ].join( '' ); { VS.unshift({'action': T[5], 'hotel': r.MG(((r.MC(V[1]) || {})["data"] || {})["hotel"] )}); s = suitesitesviews_partials_common_body_menu_action_to_title_inc1(s); VS.shift(); } s += [ T[6], (((r.MC(V[1]) || {})["data"] || {})["urls"] || {})["reviews"], T[7], r.ME(T[8], r.MB, r.MN, null), T[9], ((r.MC(V[0]) || {})["aggregate"] || {})["hotel_average_score"], T[10], r.ME(T[11], r.MB, r.MN, null), T[12] ].join( '' ); { VS.unshift({'class': T[27], 'radius': T[28], 'score': (r.MI( r.MC(V[0])["aggregate" ]["hotel_average_score" ] ) * r.MI( 10 )), 'stroke_width': T[29]}); s = suitesitesviews_partials_reviews_score_dial_inc1(s); VS.shift(); } s += [ T[30], (((r.MC(V[1]) || {})["data"] || {})["urls"] || {})["reviews"], T[31],             ( VS.unshift({'num_reviews': r.MG(((r.MC(V[0]) || {})["aggregate"] || {})["count"] )}), (VA = r.ME(T[32], r.MB, r.MN, r.MO(((r.MC(V[0]) || {})["aggregate"] || {})["count"], null, T[32]))), VS.shift(), VA ) , T[33] ].join( '' ); { var LA= ( r.MC(V[15]) || [] ); VS.unshift({'fe_review': null}); for(var LC=1, LM= LA.length, LV_fe_review; LC <= LM; LC++) { VS[0]['fe_review']= LV_fe_review= LA[LC - 1]; s += [ T[34], (LV_fe_review || {})["title"], T[35], (LV_fe_review || {})["hotel_positive"], T[36] ].join( '' ); if (r.MJ(r.MG((LV_fe_review || {})["guest_name"] ))) { s += [ T[37], (LV_fe_review || {})["guest_name"], T[38] ].join( '' ); } s += T[39]; if (r.MJ(r.MG((LV_fe_review || {})["guest_city"] ))) { s += [ T[40], (LV_fe_review || {})["guest_city"], T[41] ].join( '' ); } s += [ T[42], (LV_fe_review || {})["guest_countrycode"], T[43], r.DATE(r.MG((LV_fe_review || {})["completed"] ),"date_with_year","","",""), T[44] ].join( '' ); } VS.shift(); } s += T[45]; } s += T[46]; return s; }; } )());
+</script>
+
+
+
+              </div>
+            
+
+          
+        
+      
+        
+
+          
+            <div class="content-section widget"
+                data-template="rooms_widget"
+                data-url="/api/rooms_widget"
+                data-additional-parameters='{ "has_custom_rooms": 1 }'>
+              
+  <script type='text/javascript'>
+booking.jstmpl('rooms_widget', (function () { var T = ["\n  \t","\n\t  ","\n\t\t\u003cdiv class=\"content-section rooms count-"," clearfix\"\u003e\n\t\t\t\u003cdiv class=\"inner flexslider\"\u003e\n\t\t\t\t\u003cdiv class=\"header\"\u003e\n\t\t\t\t\t\u003cdiv class=\"title\"\u003e\n\t\t\t\t\t\t\u003ca href=\"","\"\u003e","","/private/{fe_menu_title}/name","rooms","\u003c/a\u003e\n\t\t\t\t\t\u003c/div\u003e\n\t\t\t\t\t\u003cdiv class=\"view-all\"\u003e\n\t\t\t\t\t\t\u003ca href=\"","/private/bks_cms_view_all/name","\u003c/a\u003e\n\t\t\t\t\t\u003c/div\u003e\n\t\t\t\t\u003c/div\u003e\n\t\t\t\t\u003cul class=\"slides\"\u003e\n\t\t\t\t  ","\n\t\t\t\t\t\u003cli\u003e\n\t\t\t\t\t\t\u003ca href=\"","\" class=\"tile\"\u003e\n\t\t\t\t\t\t\t\u003cdiv class=\"resimg-holder aspect-2-1 room-bg-image\"\n\t\t\t\t\t\t\t\tstyle=\"background-image:url(",")\"\u003e\n\t\t\t\t\t\t\t\u003c/div\u003e\n\t\t\t\t\t\t\t\u003cdiv class=\"slide-title\"\u003e","\u003c/div\u003e\n\t\t\t\t\t  \u003c/a\u003e\n\t\t\t\t\t\u003c/li\u003e\n\t\t\t\t  ","\n\t\t\t\t\u003c/ul\u003e\n\t\t\t\u003c/div\u003e\n\t  \t\u003cscript type=\"text/javascript\"\u003eB.modules.flexslider.init();\u003c/script\u003e\n\t\t\u003c/div\u003e\n\t  ","\n  "], V = ["data","fe_rooms","fe_room_count","B","hotel","action","action_id","fe_menu_title"], WV, LV, VA; return function (VS) { var s = '', r = this.fn; function suitesitesviews_partials_common_body_menu_action_to_title_inc1(s) { s += T[5]; { var LA= ( (r.MC(V[4]) || {})["header_menus"] || [] ); VS.unshift({'menu': null}); for(var LC=1, LM= LA.length, LV_menu; LC <= LM; LC++) { VS[0]['menu']= LV_menu= LA[LC - 1]; if ((r.MJ( LV_menu["action" ]  + "" === "" +  r.MB(V[5]) ))) { if (( (r.MJ( r.MB(V[5])  + "" !== "" +  "article" )) || (r.MJ( r.MB(V[6])  + "" === "" +  LV_menu["action_id" ] )) )) { r.MN("fe_menu_title", r.MG((LV_menu || {})["title"] )); break; s += T[5]; } } } VS.shift(); } { var LA= ( (r.MC(V[4]) || {})["footer_menus"] || [] ); VS.unshift({'menu': null}); for(var LC=1, LM= LA.length, LV_menu; LC <= LM; LC++) { VS[0]['menu']= LV_menu= LA[LC - 1]; if ((r.MJ( LV_menu["action" ]  + "" === "" +  r.MB(V[5]) ))) { if (( (r.MJ( r.MB(V[5])  + "" !== "" +  "article" )) || (r.MJ( r.MB(V[6])  + "" === "" +  LV_menu["action_id" ] )) )) { r.MN("fe_menu_title", r.MG((LV_menu || {})["title"] )); break; s += T[5]; } } } VS.shift(); } if ((r.MJ( /^bks_.*/ .test( r.MB(V[7]) )))) { s += r.ME(T[6], r.MB, r.MN, null); } else  { s += r.F['entities'](r.MC(V[7])); } return s; } s += T[0]; r.MN("fe_rooms", r.MB(V[0])); s += T[1]; r.MN("fe_room_count", (r.MB(V[1])).length); s += T[1]; if ((r.MJ( r.MB(V[2])  >  0 ))) { s += [ T[2], r.MC(V[2]), T[3], (((r.MC(V[3]) || {})["data"] || {})["urls"] || {})["rooms"], T[4] ].join( '' ); { VS.unshift({'action': T[7], 'hotel': r.MG(((r.MC(V[3]) || {})["data"] || {})["hotel"] )}); s = suitesitesviews_partials_common_body_menu_action_to_title_inc1(s); VS.shift(); } s += [ T[8], (((r.MC(V[3]) || {})["data"] || {})["urls"] || {})["rooms"], T[4], r.ME(T[9], r.MB, r.MN, null), T[10] ].join( '' ); { var LA= ( r.MC(V[1]) || [] ); VS.unshift({'room': null}); for(var LC=1, LM= LA.length, LV_room; LC <= LM; LC++) { VS[0]['room']= LV_room= LA[LC - 1]; s += [ T[11], ( LV_room["url" ] || r.MC(V[3])["data" ]["urls" ]["rooms" ] ), T[12], r.STATIC_HOSTNAME(( ( LV_room["images" ] && LV_room["images" ][0 ] ) ? LV_room["images" ][0 ]["url" ] : "" ), 0,0,0), T[13], (LV_room || {})["name"], T[14] ].join( '' ); } VS.shift(); } s += T[15]; } s += T[16]; return s; }; } )());
+</script>
+
+
+
+            </div>
+
+          
+        
+      
+        
+
+          
+            
+              
+    <div class="content-section location">
+        <div class="inner">
+            <div class="header">
+                <div class="title">
+                    <a href="/en-gb/attractions">Attractions</a>
+                </div>
+                <a class="location-link button-link" href="/en-gb/attractions">
+                    View attractions
+                </a>
+            </div>
+            <div class="location-content clearfix">
+                <div class="location-map">
+                    <div class="mapimgs" onclick="window.location.href='http://www.sapporoparkhotel1964.com/en-gb/attractions'">
+                        <img id="googlemap" data-src="https://reservation.booking.expert/api/googlemap.png?hotel_id=271588&zoom=13" class="load-when-in-viewport" alt="property map" aria-hidden="true"/>
+                            <div class='poi'>
+                                <img alt="property location pin" aria-hidden="true" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAA2ZpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMC1jMDYxIDY0LjE0MDk0OSwgMjAxMC8xMi8wNy0xMDo1NzowMSAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wTU09Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9tbS8iIHhtbG5zOnN0UmVmPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvc1R5cGUvUmVzb3VyY2VSZWYjIiB4bWxuczp4bXA9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8iIHhtcE1NOk9yaWdpbmFsRG9jdW1lbnRJRD0ieG1wLmRpZDpEMzVGM0I0NDM5ODNFMTExQUY0OTgwRDE5MjQ1NURDRiIgeG1wTU06RG9jdW1lbnRJRD0ieG1wLmRpZDpERTYzNDQ0RDgzM0QxMUUxOTMxMUU0QUVBRjY3RTI0OCIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDpERTYzNDQ0QzgzM0QxMUUxOTMxMUU0QUVBRjY3RTI0OCIgeG1wOkNyZWF0b3JUb29sPSJBZG9iZSBQaG90b3Nob3AgQ1M1LjEgV2luZG93cyI+IDx4bXBNTTpEZXJpdmVkRnJvbSBzdFJlZjppbnN0YW5jZUlEPSJ4bXAuaWlkOkQ2NUYzQjQ0Mzk4M0UxMTFBRjQ5ODBEMTkyNDU1RENGIiBzdFJlZjpkb2N1bWVudElEPSJ4bXAuZGlkOkQzNUYzQjQ0Mzk4M0UxMTFBRjQ5ODBEMTkyNDU1RENGIi8+IDwvcmRmOkRlc2NyaXB0aW9uPiA8L3JkZjpSREY+IDwveDp4bXBtZXRhPiA8P3hwYWNrZXQgZW5kPSJyIj8+SBBzJwAAA01JREFUeNqEVEtIG1EUvZPJr/mYGBOQxApaRbNQ0IIxILQbwUopBFxVCopQN925FQulboRCwYIQKLoUXIjgD0oFV4WAH1BIDUFrQJOaNOajMZlMnN47zYwZq+2Fx8x7757z7p9ZXV2FSmEYBliWBZ1OJy6tVvtYrVY76I7n+TjHcVuFQgFolUol6OvrU+DV0k9jf798mNverrdYLBMmk8mHhDZ6gIQIkDB5cXGxmE6n3xk6OyMHZUyLICgJJRGCwTcP7fYPSIZcWlCpVH/IkklgbTa4vr62VVVVjeB6lQgGxxi3+1MlXtSWQKpQ6L3T6Zyurq7W6vV6+fxyZQXiY2Mg6dId6ZAuYRQWra2twcbGBuzv7/vOz88FdEtQCM8Lhy0twneWFfI7O4or0k2lUgJiB3ALtFT0otFoNNXU1Eyjm7JVkqT8fuAODiiAEB8fV9yVsYDYj4FAwCSeaTQaMJvNL5HMhdlUAAp7e/BrclLek+vpuTkQrq5usooYwhKHTIivvKAE5Le24OfoKBx7PBDCkvnR3g78yYnikdjwMIQMBjhqbYXo4KDoAWGJQyQs11wbfbVNTZDf3YV8IAACx8G/hMKQXVwEXVubaCUmqkskpELGWNRSPFQWC9QtL4tK/xMGrXItLcEDr1eMJRrkkMsGs5MWyoXJOhxQh5kna+8V9MY5Pw/G3l5xi7VJKy0SUvUXi8UIHcqBdrnANDBwL5+mvh5MPp+8Jyx2UFgkRDLI5XJf6FspxaOjewnFRKEhsm6ZQybE3vyMB6VKK/lI5KbeMLaahoab9sSEFcvZJwxhiUN2OZvNhrHiZ66wvqRYcuGwGE/H1BQ8Oj6GxsNDcC4sgL6rS36QdPP5PBC2o6NDdJmh8UUlg9OFevOr3W7v0WEZZGZnwTI0JGbztuQ2N4ExmwHcbkgkEt9OT0+fejweTs4yWWnt7uai0ejzs7Oz9Ut81TwycicZia6nB/jmZiDdWCz2jLByOUkDVhqs2EYsTpLXVqt1wmAw1FLRSv1N8cIhSzGLo5tvcZj4vV5v6c4BS/Eg5UwmU8K4zOAA9SNhL3bAEyS1lSd2Eu82KaOUCO6ObvprwJIVFGhULmGy1pFs/baFFKLKiqiU3wIMAJbFykOxC7uHAAAAAElFTkSuQmCC"/>
+                            </div>
+                    </div>
+                </div>
+                <div class="location-meta">
+                    <div class="location-subhead">
+                        <a class="subhead-link" href="/en-gb/attractions">Sapporo Park Hotel</a>
+                        <a class="view-link" href="/en-gb/attractions">
+                            <span class="view-link-button">View attractions</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+            <script>
+                // TEMPORARY solution to reduce number of requests to static map api
+                $(document).ready(function() {
+                    $(window).scroll(function(event) {
+                        $('img.load-when-in-viewport').each(function(i) {
+                            var $img = $(this),
+                                viewportBottom = $(window).scrollTop() + $(window).height();
+                            if (viewportBottom >= $img.offset().top * 2 / 3) {  // when user scrolls 2/3 of the way...
+                                $img.attr('src', $img.attr('data-src'));        // trigger the image load
+                                $img.removeClass('load-when-in-viewport');      // and remove class so we don't process this image again
+                            }
+                        });
+                    });
+                });
+            </script>
+        
+    </div>
+
+
+            
+
+
+          
+        
+      
+    </div>
+  </div>
+
+
+		<script src="http://r-fa.bstatic.com/static/manifests/js/home/ab33931a7ac1233d0f8e048917228e4df2d88130.js"></script>
+	
+
+  <div class="widget" data-template="badges_widget" data-url="/api/badges_widget">
+  	
+  <script type='text/javascript'>
+booking.jstmpl('badges_widget', (function () { var T = ["\n    ","\n    \u003cdiv class=\"badges clearfix\"\u003e\n      \u003cdiv class=\"badges-inner\"\u003e\n      \t","\n          \u003cul class=\"badge-list clearfix\" id=\"Ol1\"\u003e\n          \t","\n\n  \t       \t\t","\n          \t\t\t","javascript:void(0);","disabled=\"disabled\"","\n                ","\n              ","\n                  ","http://","target=\"_blank\"","\n       \t\t\t\t","\n\n              \u003cli class=\"badge\"\u003e\n                \u003ca href=\"","\" "," ","\u003e\n                  ","\n                    \u003cdiv class=\"badge-image\"\u003e\n                    \t\u003cimg src=\"","\" alt=\"","\"\u003e\n                \t\t\u003c/div\u003e\n                  ","\n                    \u003cdiv class=\"badge-title\"\u003e","\u003c/div\u003e\n                  ","\n                \u003c/a\u003e\n              \u003c/li\u003e\n            ","\n          \u003c/ul\u003e\n       \t","\n      \u003c/div\u003e\n    \u003c/div\u003e\n  "], V = ["data","fe_badges","fe_badge_link_url","fe_badge_disabled","fe_badge_target","fe_badges_count"], WV, LV, VA; return function (VS) { var s = '', r = this.fn; s += T[0]; r.MN("fe_badges", r.MG((r.MC(V[0]) || [])[0] )); s += T[0]; r.MN("fe_badges_count", (r.MB(V[1])).length); s += T[1]; if ((r.MJ( r.MB(V[5])  >  0 ))) { s += T[2]; { var LA= ( r.MC(V[1]) || [] ); VS.unshift({'badge': null}); for(var LC=1, LM= LA.length, LV_badge; LC <= LM; LC++) { VS[0]['badge']= LV_badge= LA[LC - 1]; s += T[3]; if (( ( r.MK(LV_badge["link_url" ]) || (r.MJ( LV_badge["link_url" ].toString().length  ==  0 )) ) || (r.MJ( LV_badge["link_url" ]  + "" === "" +  "#" )) )) { s += T[4]; r.MN(V[2],T[5]); s += T[4]; r.MN(V[3],T[6]); s += T[7]; r.MN(V[4], undefined); s += T[8]; } else  { s += T[7]; if ((r.MJ( /^http[s]?:\/\// .test( LV_badge["link_url" ] )))) { s += T[9]; r.MN(V[2],(LV_badge || {})["link_url"]); s += T[7]; } else  { s += T[9]; r.MN(V[2],[ T[10], (LV_badge || {})["link_url"] ].join( '' )); s += T[7]; } s += T[7]; r.MN(V[3], undefined); s += T[7]; r.MN(V[4],T[11]); s += T[12]; } s += [ T[13], r.MC(V[2]), T[14], r.MC(V[4]), T[15], r.MC(V[3]), T[16] ].join( '' ); if (r.MJ(r.MG((LV_badge || {})["logo_url"] ))) { s += [ T[17], (LV_badge || {})["logo_url"], T[18], (LV_badge || {})["title"], T[19] ].join( '' ); } s += T[9]; if ((r.MJ( /\S+/ .test( LV_badge["title" ] )))) { s += [ T[20], (LV_badge || {})["title"], T[21] ].join( '' ); } s += T[22]; } VS.shift(); } s += T[23]; } s += T[24]; return s; }; } )());
+</script>
+
+
+  </div>
+
+	
+		
+  <div class="content-section quickres_tabletUp bodyquickres footer-res clearfix">
+    <div class="inner">
+      <h3>Reservations</h3>
+      
+        <div class="quickres-fields search_wrapper_dates">
+          <div class="datepicker arrival search">
+<!--             <label for="Date1" class="invisible_spoken">Arrival</label>
+ -->            <input type="text" class="date-pick" name="date1" id="Date1" aria-label="Arrival"/>
+            <span class="iconfont datepickicon search_calendar-icon" aria-hidden="true"></span>
+            <i class="iconfont iconfont-next from_to" aria-hidden="true"></i>
+            <span class="input-focused" aria-hidden="true"></span>
+          </div>
+          <div class="datepicker departure search">
+<!--             <label for="Date2" class="invisible_spoken">Departure</label>
+ -->            <input type="text" class="date-pick" name="date2" id="Date2" aria-label="Departure"/>
+            <span class="iconfont datepickicon search_calendar-icon" aria-hidden="true"></span>
+            <span class="input-focused" aria-hidden="true"></span>
+          </div>
+          <a class="booknow-btn" data-component="core/book_now_button">
+            Book Now
+          </a>
+        </div>
+      
+    </div>
+  </div>
+
+
+	
+
+	
+<div class="footer">
+    <div class="footer-inner">
+        <div class="clearfix">
+
+            <div class="footer-group-a">
+                <div class="footer-contact">
+                    <div class="hotel-name" itemprop="name">Sapporo Park Hotel</div>
+                    <div class="hotel-phone">
+                        <a class="phone-btn-call track-call" href="tel:+81115113135">
+                            +81 11-511-3135
+                        </a>
+                    </div>
+
+                    
+    <div itemprop="address" class="hotel-address">
+        
+            <div>064-8589 Hokkaido</div>
+        
+            <div>Sapporo</div>
+        
+            <div>Chuo-ku Minami 10-jo Nishi 3-1-1</div>
+        
+            <div>Japan</div>
+        
+    </div>
+
+
+                    
+                        <div class="hotel-email">
+                            <a class="track-email" href="mailto:sph_inb1@granvista.co.jp">
+                                sph_inb1@granvista.co.jp
+                            </a>
+                        </div>
+                    
+
+                    
+	<ul class="footer-social clearfix">
+		
+			
+			
+			
+	    	<li id="facebookLink">
+	    		<div class="fb-link">
+	    			<a class="facebookAnchor" target="_blank" href="https://www.facebook.com/park1964">
+	    				<span class="social-link-name invisible_spoken">Facebook</span>
+	    			</a>
+	  			</div>
+				</li>
+
+			
+
+		
+			
+			
+			
+				<li id="tripAdvisorLink">
+			 		<div class="tripAdvisor-link">
+			 			<a class="tripAdvisorAnchor" target="_blank" href="https://www.tripadvisor.com.sg/Hotel_Review-g298560-d325626-Reviews-Sapporo_Park_Hotel-Sapporo_Hokkaido.html">
+			 				<span class="social-link-name invisible_spoken">Tripadvisor</span>
+			 			</a>
+		 			</div>
+	 			</li>
+
+			
+
+		
+	</ul>
+
+
+                </div>
+            </div>
+
+            <div class="footer-group-b">
+                
+                    
+
+                    
+                        
+                            
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+
+                    <div class="footer-languages" id="language-selector">
+                        <ul class="languages">
+                            
+                                <li class="selectedLang">
+                                    <a data-ajax="false" href="/en-gb">English</a>
+                                    <span></span>
+                                </li>
+                            
+                                <li class="">
+                                    <a data-ajax="false" href="/ko-kr">한국어</a>
+                                    <span></span>
+                                </li>
+                            
+                                <li class="">
+                                    <a data-ajax="false" href="/zh-tw">繁體中文</a>
+                                    <span></span>
+                                </li>
+                            
+                                <li class="">
+                                    <a data-ajax="false" href="/zh-cn">中文</a>
+                                    <span></span>
+                                </li>
+                            
+                        </ul>
+                    </div>
+                
+
+                <div class="footer-links">
+                    <ul class="links-list clearfix">
+                        
+                            
+                            
+                            <li>
+                                <a href="/en-gb/sitemap" title="Sitemap" target="_self">Sitemap</a>
+                            </li>
+                        
+                            
+                            
+                            <li>
+                                <a href="/en-gb/privacy-policy" title="Privacy policy" target="_self">Privacy policy</a>
+                            </li>
+                        
+                            
+                            
+                            <li>
+                                <a href="/en-gb/cookie-policy" title="Cookie policy" target="_self">Cookie policy</a>
+                            </li>
+                        
+                            
+                            
+                            <li>
+                                <a href="/en-gb/general-terms-conditions-for-accommodation-contract" title="General Terms and Conditions for Accommodation Contract" target="_self">General Terms and Conditions for Accommodation Contract</a>
+                            </li>
+                        
+                    </ul>
+                </div>
+            </div>
+
+        </div>
+        <!--clearfix end-->
+
+        <div class="footer-credits ">
+            <div class="powered" id="OnWeb">
+                <span>&copy; 2018</span>
+                <a href="http://suite.booking.com" target="_blank">BookingSuite</a>
+            </div>
+        </div>
+
+    </div>
+    <!--footer-inner end-->
+</div>
+<!--footer end-->
+
+
+	
+<div class="overlay overlay-slidein">
+    <div class="overlay-close">
+        <span class="close-x"></span>
+        <span class="label-close">Close</span>
+    </div>
+
+    <div id="overlay-quickres" class="overlay-quickres overlay-content content-section" style="display: none;">
+
+        <div class="quickres-content inner">
+            <h2 class="quickres-header">Reservations</h2>
+            <div class="quickres-fields search_wrapper_dates">
+                
+                <div class="datepicker arrival search">
+                    <label for="quickResDate1" class="invisible_spoken">Arrival</label>
+                    <input type="text" class="date-pick" name="date1" id="quickResDate1" />
+                    <span class="iconfont datepickicon search_calendar-icon" aria-hidden="true"></span>
+                    <i class="iconfont iconfont-next from_to" aria-hidden="true"></i>
+                    <span class="input-focused" aria-hidden="true"></span>
+
+                </div>
+
+                <div class="datepicker departure search">
+                    <label for="quickResDate2" class="invisible_spoken">Departure</label>
+                    <input type="text" class="date-pick" name="date2" id="quickResDate2" />
+                    <span class="iconfont datepickicon search_calendar-icon" aria-hidden="true"></span>
+                    <span class="input-focused" aria-hidden="true"></span>
+
+                </div>
+                <a class="booknow-btn" data-component="core/book_now_button">Book Now</a>
+            </div>
+        </div>
+    </div>
+
+    <div id="overlay-menu-no-quickres" class="overlay-menu overlay-content" style="display: none;">
+        <div class="menu-content inner">
+            <ul class="menu-list count-count-">
+                <li class="home-link">
+                    <a href="/en-gb"  target="_self"><span data-hover="Home">Home</span></a>
+                </li>
+                
+                    
+                    
+                    <li data-menu-id="" eventName="menu" class="track-event ">
+                        <a href="/en-gb/rooms"  target="_self">
+                            <span data-hover="Rooms">Rooms</span>
+                        </a>
+                    </li>
+                
+                    
+                    
+                    <li data-menu-id="" eventName="menu" class="track-event ">
+                        <a href="/en-gb/restaurant"  target="_self">
+                            <span data-hover="Restaurant">Restaurant</span>
+                        </a>
+                    </li>
+                
+                    
+                    
+                    <li data-menu-id="" eventName="menu" class="track-event ">
+                        <a href="/en-gb/facilities1"  target="_self">
+                            <span data-hover="Facilities">Facilities</span>
+                        </a>
+                    </li>
+                
+                    
+                    
+                    <li data-menu-id="" eventName="menu" class="track-event ">
+                        <a href="/en-gb/services1"  target="_self">
+                            <span data-hover="Services">Services</span>
+                        </a>
+                    </li>
+                
+                    
+                    
+                    <li data-menu-id="" eventName="menu" class="track-event ">
+                        <a href="/en-gb/access"  target="_self">
+                            <span data-hover="Access">Access</span>
+                        </a>
+                    </li>
+                
+                    
+                    
+                    <li data-menu-id="" eventName="menu" class="track-event ">
+                        <a href="/en-gb/attractions"  target="_self">
+                            <span data-hover="Attractions">Attractions</span>
+                        </a>
+                    </li>
+                
+                    
+                    
+                    <li data-menu-id="" eventName="menu" class="track-event ">
+                        <a href="/en-gb/reviews"  target="_self">
+                            <span data-hover="Reviews">Reviews</span>
+                        </a>
+                    </li>
+                
+                    
+                    
+                    <li data-menu-id="" eventName="menu" class="track-event ">
+                        <a href="/en-gb/photos"  target="_self">
+                            <span data-hover="Photos">Photos</span>
+                        </a>
+                    </li>
+                
+                    
+                    
+                    <li data-menu-id="" eventName="menu" class="track-event ">
+                        <a href="/en-gb/faq"  target="_self">
+                            <span data-hover="FAQ">FAQ</span>
+                        </a>
+                    </li>
+                
+                    
+                    
+                    <li data-menu-id="" eventName="menu" class="track-event ">
+                        <a href="/en-gb/amenities"  target="_self">
+                            <span data-hover="Amenities">Amenities</span>
+                        </a>
+                    </li>
+                
+                    
+                    
+                    <li data-menu-id="" eventName="menu" class="track-event ">
+                        <a href="/en-gb/contact"  target="_self">
+                            <span data-hover="Contact">Contact</span>
+                        </a>
+                    </li>
+                
+            </ul>
+
+            <div class="hotel-contact">
+                <div class="hotel-contact-inner">
+                    <div class="hotel-name">Sapporo Park Hotel</div>
+
+                    <div class="hotel-phone">
+                        <a href="tel:+81115113135" class="track-call">
+                            +81 11-511-3135
+                        </a>
+                    </div>
+
+                    
+    <div itemprop="address" class="hotel-address">
+        
+            <div>064-8589 Hokkaido</div>
+        
+            <div>Sapporo</div>
+        
+            <div>Chuo-ku Minami 10-jo Nishi 3-1-1</div>
+        
+            <div>Japan</div>
+        
+    </div>
+
+
+                    
+                        <div class="hotel-email">
+                            <a class="track-email" href="mailto:sph_inb1@granvista.co.jp">
+                                sph_inb1@granvista.co.jp
+                            </a>
+                        </div>
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+      
+
+    </div>
+
+    
+
+    
+        
+    
+  </div>
+  </body>
+</html>

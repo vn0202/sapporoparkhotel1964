@@ -1,0 +1,1199 @@
+<!DOCTYPE html>
+
+<html lang="zh-cn" class="clip-paths">
+  <head>
+    <!-- needed for other scripts -->
+    <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+
+    
+
+<script type="text/javascript">
+(function() {
+    typeof window.B === 'object' || (window.B = {});
+    typeof window.B.util === 'object' || (window.B.util = {});
+    typeof window.B.env === 'object' || (window.B.env = {});
+    typeof window.B.modules === 'object' || (window.B.modules = {});
+    typeof window.B.services === 'object' || (window.B.services = {});
+    typeof window.B.data === 'object' || (window.B.data = {});
+    typeof window.B.components === 'object' || (window.B.components = {});
+
+    
+    typeof window.booking === 'object' || (window.booking = window.B);
+
+    B.env.global_translation_tags = {"lrm":"\u200e","nbsp":"&nbsp;","line_break":"\u003cbr\u003e","rlm":"\u200f","zwsp":"\u200b"};
+    B.env.params = {"room_id":"9053"};
+    B.env.route_params = "";
+    B.env.action = "room";
+    B.env.pid = "ad003295bc7c000b";
+    B.env.stype = "48";
+    B.env.currency = {"symbol":"&#165;","code":"JPY","exchange_rate":1};
+    B.env.channel = "booking";
+    B.env.google_analytics_tag = "";
+    B.env.lang = "zh-cn";
+    B.env.lang_short_code = "zh";
+    B.env.date_format = "yyyy/M/d";
+    B.env.ajax_action_host = "https://reservation.booking.expert";
+    B.env.csrf_token = "";
+    B.env.urls = {"cookie_policy":"http://www.sapporoparkhotel1964.com/zh-cn/cookie-policy","attractions":"http://www.sapporoparkhotel1964.com/zh-cn/attractions","sitemap":"http://www.sapporoparkhotel1964.com/zh-cn/sitemap","privacy_policy":"http://www.sapporoparkhotel1964.com/zh-cn/privacy-policy","facilities":"http://www.sapporoparkhotel1964.com/zh-cn/amenities","reviews":"http://www.sapporoparkhotel1964.com/zh-cn/reviews","confirm":"https://reservation.booking.expert/zh-cn/confirm?hotel_id=271588","home":"http://www.sapporoparkhotel1964.com/zh-cn","verify":"https://reservation.booking.expert/zh-cn/verify?hotel_id=271588","search":"https://reservation.booking.expert/zh-cn/search?hotel_id=271588","photos":"http://www.sapporoparkhotel1964.com/zh-cn/photos","book":"https://reservation.booking.expert/zh-cn/book?hotel_id=271588","rooms":"http://www.sapporoparkhotel1964.com/zh-cn/rooms","contact":"http://www.sapporoparkhotel1964.com/zh-cn/contact"};
+    B.env.guest_ip = "34.245.182.81";
+    B.env.ip_country = "ie";
+    B.env.page_type = "roomdetail";
+    B.env.error_config = {"filtered_av_updates":{"code":444,"type":"user","desc":"AV updates - some filtered"},"AUTH_STATUS_TOKEN_ERROR":{"code":3011,"desc":"AUTH_STATUS_TOKEN_ERROR","type":"user"},"gone":{"code":410,"type":"user","desc":"HTTP 410 - Gone"},"price_mismatch_increase_process_booking":{"desc":"Difference between asked and available incremental prices. The price increased.","type":"user","code":1200},"filtered_av_updates_errors":{"code":445,"desc":"AV updates - errors and filtered","type":"user"},"AUTH_STATUS_FAILED":{"type":"user","desc":"AUTH_STATUS_FAILED","code":3004},"AUTH_STATUS_USER_UNCONFIRMED":{"type":"user","desc":"AUTH_STATUS_USER_UNCONFIRMED","code":3009},"token_invalid":{"type":"user","desc":"Provided token is invalid.","code":2001},"cc_validation_error":{"type":"user","desc":"Credit card validation error","code":1013},"AUTH_STATUS_2FA_WRONG_ANSWER_TO_SECURITY_QUESTION":{"desc":"AUTH_STATUS_2FA_WRONG_ANSWER_TO_SECURITY_QUESTION","type":"user","code":3034},"duplicated_request_dist":{"code":1020,"type":"user","desc":"Duplicated distribution request (magic, not client facing)"},"too_many_requests_":{"type":"user","desc":"Too many requests - Throttling","code":429},"missing_parameters":{"code":1002,"type":"user","desc":"One or more required input parameters are missing."},"FACEBOOK_AUTHENTICATE":{"desc":"FACEBOOK_AUTHENTICATE","type":"user","code":3023},"FACEBOOK_USER_DIDNT_ALLOW_EMAIL":{"desc":"FACEBOOK_USER_DIDNT_ALLOW_EMAIL","type":"user","code":3027},"payment_error_insufficient_funds":{"type":"user","desc":"Insufficient funds","code":2010},"unknown_error_code":{"code":65535,"type":"system","desc":"Unknown error code"},"payment_error_generic":{"type":"user","desc":"There was a problem processing payment","code":2007},"rpo_not_found":{"desc":"Room not found.","type":"user","code":1105},"duplicated_request_supply":{"desc":"Duplicated supply request (magic, not client facing)","type":"user","code":420},"AUTH_STATUS_NO_USERNAME":{"type":"user","desc":"AUTH_STATUS_NO_USERNAME","code":3007},"min_length_of_stay_not_fulfilled":{"code":1126,"type":"user","desc":"Minimum length of stay for the requested hotel(s) was not fulfilled"},"FACEBOOK_ERROR_WITH_CUSTOM_MSG":{"desc":"FACEBOOK_ERROR_WITH_CUSTOM_MSG","type":"user","code":3025},"AUTH_STATUS_2FA_INVALID_AUTHORIZATION_TOKEN":{"type":"user","desc":"AUTH_STATUS_2FA_INVALID_AUTHORIZATION_TOKEN","code":3033},"affiliate_not_found":{"type":"user","desc":"Affiliate not found.","code":1119},"internal_error":{"type":"system","desc":"Internal error (with a unique ID if the error is logged: in those cases Bookings may be contacted to trace the error).","code":1001},"AUTH_STATUS_NONE":{"type":"user","desc":"AUTH_STATUS_NONE","code":3000},"AUTH_STATUS_LOCKED":{"code":3005,"type":"user","desc":"AUTH_STATUS_LOCKED"},"AUTH_STATUS_2FA_CHALLENGE_FAILED_INVALID_PIN":{"code":3032,"type":"user","desc":"AUTH_STATUS_2FA_CHALLENGE_FAILED_INVALID_PIN"},"service_unavailable":{"desc":"Service Unavailable","type":"system","code":503},"WECHAT_ERROR_WITH_CUSTOM_MSG":{"desc":"WECHAT_ERROR_WITH_CUSTOM_MSG","type":"user","code":3029},"function_not_allowed":{"code":1010,"type":"user","desc":"Function not allowed."},"price_mismatch_decrease_process_booking":{"type":"user","desc":"Difference between asked and available incremental prices. The price decreased.","code":1201},"unauthorized":{"type":"user","desc":"HTTP 401 - Unauthorized","code":401},"no_rpo_availability":{"code":1107,"desc":"There is no room available during the specified period.","type":"user"},"AUTH_STATUS_USER_UNKNOWN":{"desc":"AUTH_STATUS_FAILED","type":"user","code":3004},"too_many_parallel_requests":{"type":"user","desc":"Too many parallel requests. Please only call 1 instance of this function in parallel during 8-23 GMT or 3 instances in parallel during 23-8 GMT.","code":1008},"affiliate_closed":{"code":1120,"desc":"Affiliate is closed.","type":"user"},"incorrect_parameters":{"desc":"One or more input parameters have an incorrect value.","type":"user","code":1009},"unknown_link_booking_error":{"code":2003,"type":"user","desc":"Unknown error while linking booking."},"possible_hijack":{"code":1111,"type":"user","desc":"A reequest is blocked because its considered a hijack for a booking"},"AUTH_STATUS_EXPIRED":{"code":3001,"type":"user","desc":"AUTH_STATUS_EXPIRED"},"booking_already_linked":{"desc":"This booking has already been linked to another user account.","type":"user","code":2004},"hotel_is_closed":{"code":1011,"type":"user","desc":"The specified hotel is not in service."},"non_pci_call_in_pci":{"type":"user","desc":"This call can not be made to secure server. Please remove 'secure-' prefix from domain name.","code":1015},"too_many_requests":{"code":1007,"type":"user","desc":"Too many requests per minute. Please don't use this function heavily (i.e. only for testing) during 8-23 GMT."},"AUTH_STATUS_2FA_NO_APP_SUPPORT_FOR_THE_FEATURE":{"code":3035,"type":"user","desc":"AUTH_STATUS_2FA_NO_APP_SUPPORT_FOR_THE_FEATURE"},"captcha_required":{"desc":"User must complete captcha challenge before retrying request.","type":"user","code":1142},"not_implemented":{"code":501,"desc":"Not Implemented","type":"system"},"ofac_second_match":{"code":1300,"desc":"OFAC second match by date of birthday.","type":"user"},"AUTH_STATUS_NO_PASSWORD":{"desc":"AUTH_STATUS_NO_PASSWORD","type":"user","code":3008},"AUTH_STATUS_AUTHENTICATED":{"type":"user","desc":"AUTH_STATUS_AUTHENTICATED","code":3002},"FACEBOOK_ALREADY_CONNECTED_TO_DIFF_ACCOUNT":{"code":3024,"type":"user","desc":"FACEBOOK_AUTHENTICATE"},"not_found":{"code":404,"desc":"HTTP 404 - Not Found","type":"user"},"booking_is_being_processed":{"code":2009,"desc":"This booking is being processed in another request, ignoring this request.","type":"user"},"ssl_required":{"code":1005,"type":"user","desc":"HTTPS (SSL) connection required for using this procedure."},"invalid_parameter_combination":{"desc":"Invalid parameter combination.","type":"user","code":1006},"FACEBOOK_ACCOUNTS_MUST_BE_MERGED":{"type":"user","desc":"FACEBOOK_ACCOUNTS_MUST_BE_MERGED","code":3022},"no_bn_or_pincode":{"code":2002,"desc":"Missing booknumber or pincode.","type":"user"},"xml_parse_error":{"desc":"XML parse error","type":"user","code":1012},"internal_server_error":{"type":"system","desc":"Internal Server Error","code":500},"bad_request":{"code":400,"desc":"HTTP 400 - Bad Request","type":"user"},"AUTH_STATUS_SN_SIGNIN_NEEDS_PASSWORD":{"code":3003,"type":"user","desc":"AUTH_STATUS_SN_SIGNIN_NEEDS_PASSWORD"},"FACEBOOK_ERROR_UNKNOWN":{"type":"user","desc":"FACEBOOK_ERROR_UNKNOWN","code":3021},"forbidden":{"type":"user","desc":"HTTP 403 - Forbidden","code":403},"AUTH_STATUS_EMAIL_UNCONFIRMED":{"code":3010,"type":"user","desc":"AUTH_STATUS_EMAIL_UNCONFIRMED"},"arrival_date_in_past":{"type":"user","desc":"Arrival date must be today or after today","code":1124},"invalid_guest_qty":{"desc":"Guest_qty is not between 1 and it's maximum.","type":"user","code":1122},"SHORT_PASSWORD":{"code":3030,"type":"user","desc":"Password is less then 8 characters"},"booking_looks_suspicious":{"code":2006,"type":"user","desc":"Book process failed."},"cancelled_booking":{"type":"user","desc":"The given booking is cancelled.","code":1123},"booking_already_processed":{"desc":"This booking has already been processed and a cached result will be returned.","type":"user","code":2005},"rpo_not_in_hotel":{"type":"user","desc":"Room is not part of the hotel.","code":1106},"pci_call_outside_pci":{"code":1014,"desc":"This call requires connection to secure server. Please add 'secure-' prefix to domain name.","type":"user"},"invalid_input_format":{"desc":"One or more input parameters have an illegal format.","type":"user","code":1003},"num_rooms_bigger_than_allowed":{"type":"user","desc":"Number of rooms is bigger than the maximum allowed","code":1125},"PASSWORD_RESET_FAILED":{"code":3020,"desc":"Password reset failed","type":"user"},"I_MEAN_AUTH_STATUS_USER_UNKNOWN":{"desc":"AUTH_STATUS_USER_UNKNOWN","type":"user","code":3028},"ALREADY_SUBMITTED":{"code":3026,"type":"user","desc":"ALREADY_SUBMITTED"},"item_not_available":{"code":2011,"desc":"Item not available.","type":"user"},"PASSWORD_EQ_USERNAME":{"type":"user","desc":"Password is equal to username","code":3031}};
+    B.env.constants = {"PolicyTypes":{"CHILDREN":"POLICY_CHILDREN","INTERNET":"POLICY_HOTEL_INTERNET","PREPAYMENT":"POLICY_PREPAY","PETS":"POLICY_HOTEL_PETS","GROUPS":"POLICY_HOTEL_GROUPS","CANCELLATION":"POLICY_CANCELLATION","PARKING":"POLICY_HOTEL_PARKING"},"SocialLinkTypes":{"GOOGLEPLUS":"google+","YOUTUBE":"youtube","TWITTER":"twitter","TUMBLR":"tumblr","FACEBOOK":"facebook","PINTEREST":"pinterest","TRIPADVISOR":"tripadvisor","WEIBO":"weibo","INSTAGRAM":"instagram","YELP":"yelp"},"AlbumTypes":{"GALLERY":"gallery","CUSTOM_ROOM":"custom_room","ARTICLE_MAIN":"articlemain","HOMEPAGE":"homepage","ARTICLE_SECTION":"articlesection","DINING":"dining"},"PhotoClass":{"BKS_HOMEPAGE_HERO":56,"BKS_CUSTOM_ROOM":68,"BKS_GALLERY":60,"BKS_FAVICON":59,"BKS_PDF_DOCUMENT":99,"BKS_LOGO_AWARDS":54,"BKS_ARTICLE_HERO":57,"BKS_ARTICLE_BODY":58,"BKS_BACKGROUND":55},"PaymentMethod":{"MAX_CARDS_TO_DISPLAY":3,"FREE":"free","CASH_ONLY_PAYMENT_METHOD":18},"Layouts":{"WEBSITES":"websites","BOOKING_ENGINE":"bookingengine","EMAIL_BASE":"email_base","EMPTY":"empty"},"SmartAVClient":{"SEVEN_DAYS_AGO":-7,"AVAILABILITY_DAYS":22,"LENGTH_OF_STAY":1},"SegmentTypes":{"HEADER":"header","CUSTOM_CONTACT_FORM":"custom_contact_form","EMBED":"embed","IMAGE":"image","PARAGRAPH_HTML":"paragraph_html","NONEDITABLE":"noneditable","PARAGRAPH":"paragraph","SECTION_HEADER":"section_header","VIDEO":"video","SLIDESHOW":"slideshow"},"Theme":{"CREST":"theme_Crest","SUMMIT":"theme_Summit","ASCENT":"theme_Ascent","FRAME":"theme_Frame","EDGE":"theme_Edge","FOCUS":"theme_Focus","AVENUE":"theme_Avenue","AURA":"theme_Aura"},"ChoiceRatePlanStrings":{"SSC":"bks_cms_choice_hotels_aarp_members_60_plus","SAPR1":"bks_cms_choice_hotels_advance_purchase_rate","SP15M3":"bks_cms_choice_hotels_discount_with_min_stay_3_nights","RACK":"bks_cms_choice_hotels_best_available","SAPR2":"bks_cms_choice_hotels_advance_purchase_rate","SP20M4":"bks_cms_choice_hotels_discount_with_min_stay_4_nights","SP15M2":"bks_cms_choice_hotels_discount_with_min_stay_2_nights","SGM":"bks_cms_choice_hotels_special_rates_gov_military_travellers","S3A":"bks_cms_choice_hotels_aaa_caa_members_only"},"GTM":{"CHANNEL":"booking","WF_GUEST_TRAFFIC":"GTM-PBSCT4T"},"RefundableTypes":{"FREE_CANCELLATION":"free_cancellation","SPECIAL_CONDITIONS":"special_conditions","NON_REFUNDABLE":"non_refundable"},"WidgetTypes":{"EMBEDWIDGET":"DEPRECATED","CUSTOM_CONTACT_FORM":"CustomContactForm","EMBED":"Embed","SITEMAP":"DEPRECATED","QUICKRESERVATION":"DEPRECATED","REVIEWS":"Reviews","VIDEO":"Video","CONTACT":"DEPRECATED","LOCATION":"Location","FEATURED_ARTICLE":"FeaturedArticle","FACILITIES":"Facilities","LEGACY":"DEPRECATED","ROOM":"Room"},"CustomContactFormFieldTypes":{"DATE_RANGE":"8","TIME":"9","PHONE":"6","TIME_RANGE":"10","EMAIL":"5","CATEGORY":"0","RECIPIENT":"2","TITLE":"1","FIRST_NAME":"3","LAST_NAME":"4","GUESTS":"11","BOOKED_ROOM":"13","MESSAGE":"12","DATE":"7"},"BookingEngineType":{"BOOKING":0,"CHOICE":1},"PageTypes":{"ROOM":"room","CONFIRM":"confirm","EMAIL_CONFIRMATION":"email/confirmation","PROMOTIONS":"promotions","ARTICLE":"article","HOME":"home","CUSTOM_LINK":"custom_link","SEARCH":"search","VERIFY":"verify","SITEMAP":"sitemap","EMAIL_CONTACT":"email/contact","INDEX":"index","TOOLS":"_","PHOTOS":"photos","CUSTOM_ROOM":"custom_room","FACILITIES":"facilities","EMAIL_CANCELLATION":"email/cancellation","ROOM_OVERVIEW":"roomoverview","CONTACT":"contact","ROOM_DETAIL":"roomdetail","PRIVACY_POLICY":"privacy_policy","ATTRACTIONS":"attractions","HOMEPAGE":"homepage","ROOMS":"rooms","COOKIE_POLICY":"cookie_policy","REVIEWS":"reviews","RESERVATION":"reservation","DINING":"dining","BOOK":"book"},"BookingEngineName":{"choice":"choice","booking":"booking"},"RoomSource":{"BOOKING":"booking","CUSTOM":"custom"},"ChoiceRatePlanTypes":{"S3A":"S3A","RACK":"RACK","SP15M2":"SP15M2","SGM":"SGM","SP20M4":"SP20M4","SAPR2":"SAPR2","SP15M3":"SP15M3","SAPR1":"SAPR1","SSC":"SSC"}};
+    B.env.static_hostnames = ["http://q-fa.bstatic.com","http://r-fa.bstatic.com"];
+    B.env.static_images_hostnames = ["http://q-fa.bstatic.com","http://r-fa.bstatic.com"];
+    B.env.static_file_suffix = "";
+    B.env.affiliate_id = 1241010;
+    B.env.affiliate_label = "bks_wf";
+    B.env.hotel_id = 271588;
+    B.env.is_preview = !!"";
+    B.env.device_class_by_ua = "desktop";
+
+    
+
+    B.data.hotel = {"open_bookable":true,"latitude":43.0480122367167,"sku":"WebDirectSubscription","address_object":{"address":"Chuo-ku Minami 10-jo Nishi 3-1-1","country":"\u65e5\u672c","city":"\u672d\u5e4c","name":"\u672d\u5e4c\u516c\u56ed\u996d\u5e97"},"preferred_contacts":{"email":"sph_inb1@granvista.co.jp","telephone_1":"+81 11-511-3135","name":"Ms. Takahashi Yumi"},"branding_version":"c76be","primary_domain":"www.sapporoparkhotel1964.com","custom_reservation_url":"https://www.book-secure.com/index.php?s=results&property=jpsap30526&arrival={$CheckIN(yyyy-MM-dd)}&departure={$CheckOUT(yyyy-MM-dd)}","hotel_id":271588,"primary_language":"en","google_analytics_tracking_id":"","standard_branding":{"hash_name":"90010b6d5e74fad6913e489e48ecf58a61ddcd12","accent_color":"#17417d","background_img":"//q.bstatic.com/data/bsuitewf/6ac64972b5e163f3dbde95088369717c9e144ac4","font_settings":"Georgia;Georgia;Georgia","theme":"theme_Aura","logo":"//q.bstatic.com/data/bsuitewf/3bf94bac2ddfa5e05a929a05613909cc1662e4f1","background_color":"#529ec2"},"hotel_flag_foreigner_tax_exemption":0,"languages_spoken":["en-gb","ja-jp"],"hotel_checkin_from":"14:00","social_links":[{"title":"Facebook","hidden":false,"sort_id":0,"url":"https://www.facebook.com/park1964","hotel_id":271588,"id":1063678,"is_hidden":false},{"is_hidden":false,"hotel_id":271588,"url":"https://www.tripadvisor.com.sg/Hotel_Review-g298560-d325626-Reviews-Sapporo_Park_Hotel-Sapporo_Hokkaido.html","id":1063675,"title":"TripAdvisor","hidden":false,"sort_id":2}],"booking_engine":0,"longitude":141.355928778648,"time_zone":"Asia/Tokyo","hotel_checkin_until":"","hotel_poi_zoom":15,"short_code":"bhpicqsr","hotel_checkout_from":"","test_hotel":false,"footer_menus":[{"url":"http://www.sapporoparkhotel1964.com/zh-cn/sitemap","target_blank":false,"action":"sitemap","title":"bks_cms_menu_sitemap"},{"url":"http://www.sapporoparkhotel1964.com/zh-cn/privacy-policy","target_blank":false,"title":"bks_cms_menu_privacy_policy","action":"privacy_policy"},{"url":"http://www.sapporoparkhotel1964.com/zh-cn/cookie-policy","title":"bks_cms_menu_cookie_policy","action":"cookie_policy","target_blank":false}],"webpage_languages":["en-gb","ko-kr","zh-tw","zh-cn"],"name":"\u672d\u5e4c\u516c\u56ed\u996d\u5e97","default_communication_language":"ja","header_menus":[{"action":"rooms","title":"bks_cms_menu_rooms","target_blank":false,"url":"http://www.sapporoparkhotel1964.com/zh-cn/rooms","current":"1"},{"url":"http://www.sapporoparkhotel1964.com/zh-cn/restaurant","target_blank":false,"action_id":176279,"title":"\u9910\u5385","action":"article"},{"url":"http://www.sapporoparkhotel1964.com/zh-cn/facilities1","title":"\u8bbe\u65bd","action":"article","target_blank":false,"action_id":176287},{"url":"http://www.sapporoparkhotel1964.com/zh-cn/services1","title":"\u670d\u52a1","action":"article","target_blank":false,"action_id":176292},{"url":"http://www.sapporoparkhotel1964.com/zh-cn/access","title":"\u8bbf\u95ee","action":"article","target_blank":false,"action_id":176277},{"url":"http://www.sapporoparkhotel1964.com/zh-cn/attractions","title":"bks_cms_menu_attractions","action":"attractions","target_blank":false},{"url":"http://www.sapporoparkhotel1964.com/zh-cn/reviews","title":"bks_cms_menu_reviews","action":"reviews","target_blank":false},{"url":"http://www.sapporoparkhotel1964.com/zh-cn/photos","action":"photos","title":"bks_cms_menu_photos","target_blank":false},{"action_id":176284,"target_blank":false,"action":"article","title":"\u5e38\u95ee\u95ee\u9898","url":"http://www.sapporoparkhotel1964.com/zh-cn/faq"},{"target_blank":false,"action":"facilities","title":"bks_cms_menu_amenities","url":"http://www.sapporoparkhotel1964.com/zh-cn/amenities"},{"url":"http://www.sapporoparkhotel1964.com/zh-cn/contact","target_blank":false,"title":"bks_cms_menu_contact","action":"contact"}],"contact_emails":[{"contact_person_id":952898,"email":"sph_inb1@granvista.co.jp"}],"affiliate_id":1241010,"hotel_checkout_until":"11:00","flags":{"HasCustomReservationURLs":"true","ConsentCheckboxIsPrechecked":"false","HasThirdPartyAnalyticsInsertions":"false","ShowConsentCheckbox":"true","HasThirdPartyBookingEngine":"false","ConsentCheckboxIsRequired":"true","HasQuickReservationFeature":"false"},"branding_hash_name":"90010b6d5e74fad6913e489e48ecf58a61ddcd12","currency_code":"JPY"};
+    B.data.urls = {"cookie_policy":"http://www.sapporoparkhotel1964.com/zh-cn/cookie-policy","attractions":"http://www.sapporoparkhotel1964.com/zh-cn/attractions","sitemap":"http://www.sapporoparkhotel1964.com/zh-cn/sitemap","privacy_policy":"http://www.sapporoparkhotel1964.com/zh-cn/privacy-policy","facilities":"http://www.sapporoparkhotel1964.com/zh-cn/amenities","reviews":"http://www.sapporoparkhotel1964.com/zh-cn/reviews","confirm":"https://reservation.booking.expert/zh-cn/confirm?hotel_id=271588","home":"http://www.sapporoparkhotel1964.com/zh-cn","verify":"https://reservation.booking.expert/zh-cn/verify?hotel_id=271588","search":"https://reservation.booking.expert/zh-cn/search?hotel_id=271588","photos":"http://www.sapporoparkhotel1964.com/zh-cn/photos","book":"https://reservation.booking.expert/zh-cn/book?hotel_id=271588","rooms":"http://www.sapporoparkhotel1964.com/zh-cn/rooms","contact":"http://www.sapporoparkhotel1964.com/zh-cn/contact"};
+    B.data.default_image = "data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4KPCFET0NUWVBFIHN2ZyBQVUJMSUMgIi0vL1czQy8vRFREIFNWRyAxLjEvL0VOIiAiaHR0cDovL3d3dy53My5vcmcvR3JhcGhpY3MvU1ZHLzEuMS9EVEQvc3ZnMTEuZHRkIj4KPHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZlcnNpb249IjEuMSI+CiAgPHJlY3Qgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgc3R5bGU9ImZpbGw6I0ZBRkFGQTtzdHJva2Utd2lkdGg6MztzdHJva2U6Izk5OTtzdHJva2UtZGFzaGFycmF5OiA4LCA0O3ZlY3Rvci1lZmZlY3Q6IG5vbi1zY2FsaW5nLXN0cm9rZTsiIC8+Cjwvc3ZnPgo=";
+
+    
+    B.data.search_results = "" || undefined;
+    
+
+    
+
+    
+    B.data.policies = "" || undefined;
+    
+
+    
+
+    
+
+    
+
+    
+    B.env.accounting_config = {"currency_separator":{"JPY":"","USD":"","default":"&nbsp;","GBP":""},"symbol_position":{"RON":"after","CZK":"after","PLN":"after","default":"before"},"html_symbol":{"PLN":"z&#x0142;","XPF":"CFP","INR":"Rs.","BRL":"R$","ILS":"&#x20AA;","ARS":"AR$","EUR":"&#x20AC;","RON":"lei","HKD":"HK$","IDR":"Rp","CZK":"K&#269;","TRY":"TL","SGD":"S$","GBP":"&#163;","USD":"US$","CLP":"CL$","JPY":"&#165;"},"decimal_separator":{"default":"."},"num_decimals":{"TND":"3","DJF":"0","RWF":"0","JPY":"0","VND":"0","TJR":"0","KMF":"0","MGA":"0","AFA":"0","LAK":"0","default":"2","IQD":"3","ECS":"0","PYG":"0","TMM":"0","MZM":"0","GNF":"0","JOD":"3","XOF":"0","CLP":"0","TWD":"0","RUB":"0","UGX":"0","KWD":"3","BIF":"0","HUF":"0","IDR":"0","VUV":"0","XAF":"0","KRW":"0","BYR":"0","COP":"0","LYD":"3","BHD":"3","OMR":"3","XPF":"0","ISK":"0"},"group_separator":{"default":","}} || undefined;
+    
+
+    B.env.month_names = ["一月","二月","三月","四月","五月","六月","七月","八月","九月","十月","十一月","十二月"];
+    B.env.day_of_week_names = ["周日","周一","周二","周三","周四","周五","周六"];
+    B.env.full_day_of_week_names = ["星期日","星期一","星期二","星期三","星期四","星期五","星期六"];
+
+    
+        B.env.jstmpl_date_format = {"from_month_with_year":"{full_year}\u5e74{month_name_from}\u81f3\u4eca","date_without_year":"{month_name}{day_of_month}\u65e5","date_with_weekday_time_from":"{full_year}\u5e74{begin_marker}{month_name}{day_of_month}\u65e5{end_marker}{weekday}{time}\u4e4b\u540e","date_with_weekday_time_until":"{full_year}\u5e74{begin_marker}{month_name}{day_of_month}\u65e5{end_marker}{weekday}{time}\u4e4b\u524d","short_month_only":"{short_month_name}","month_with_year":"{full_year}\u5e74{month_name_with_year_only}","short_date_with_weekday_without_year":"{short_month_name}{day_of_month}\u65e5{short_weekday}","date_with_short_weekday_with_year":"{full_year}\u5e74{month_name}{day_of_month}\u65e5 {short_weekday}","numeric_date_range_both_years":"{full_year}/{month}/{day_of_month} - {full_year_until}/{month_until}/{day_of_month_until}","date_with_weekday_to":"{full_year}\u5e74{month_name_to}{day_of_month}\u65e5{weekday_to}","day_of_month_only":"{day_of_month}","numeric_date":"{full_year}/{month}/{day_of_month}","date_with_short_weekday_without_year":"{month_name}{day_of_month}\u65e5 {short_weekday}","short_date":"{full_year}\u5e74{short_month_name}{day_of_month}\u65e5","long_date_range_both_years":"{full_year}\u5e74{month_name}{day_of_month}\u65e5 - {full_year_until}\u5e74{month_name_until}{day_of_month_until}\u65e5","in_month_with_year":"{full_year}\u5e74{month_name_in}","date_with_weekday":"{full_year}\u5e74{month_name}{day_of_month}\u65e5{weekday}","numeric_date_range":"{month}/{day_of_month} - {month_until}/{day_of_month_until}","short_date_without_year_range":"{short_month_name}{day_of_month}\u65e5 - {short_month_name_until}{day_of_month_until}\u65e5","range_from_long_date_time_until_long_date_time":"\u4ece{full_year}\u5e74{month_name}{day_of_month}\u65e5{time}\u81f3{full_year_until}\u5e74{month_name_until}{day_of_month_until}\u65e5{time_until}","short_weekday_only":"{short_weekday}","short_month_with_year":"{full_year}\u5e74{short_month_name}","month_name_only":"{month_name_nom}","short_date_with_weekday":"{full_year}\u5e74{short_month_name}{day_of_month}\u65e5{short_weekday}","short_date_without_year":"{short_month_name}{day_of_month}\u65e5","date_with_year":"{full_year}\u5e74{month_name}{day_of_month}\u65e5","date_with_weekday_time_from_until":"{full_year}\u5e74{begin_marker}{month_name}{day_of_month}\u65e5{end_marker}{weekday}{time} - {time_until}","date_with_weekday_with_markers":"{full_year}\u5e74{begin_marker}{month_name}{day_of_month}\u65e5{end_marker}{weekday}","date_with_weekday_from":"{full_year}\u5e74{month_name_from}{day_of_month}\u65e5{weekday_from}"};
+        B.env.jstmpl_months = {"5":{"name_to":"5\u6708","name_only":"5\u6708","name_from":"5\u6708","name":"5\u6708","name_def_article_uc":"The May","name_def_article_lc":"the May","short_name":"5\u6708","name_with_year_only":"5\u6708","name_in":"5\u6708"},"4":{"name_to":"4\u6708","name_only":"4\u6708","name_from":"4\u6708","name":"4\u6708","name_def_article_uc":"The April","name_def_article_lc":"the April","short_name":"4\u6708","name_with_year_only":"4\u6708","name_in":"4\u6708"},"1":{"name_to":"1\u6708","name_only":"1\u6708","name_from":"1\u6708","name":"1\u6708","name_def_article_uc":"The January","name_def_article_lc":"the January","short_name":"1\u6708","name_with_year_only":"1\u6708","name_in":"1\u6708"},"11":{"name_to":"11\u6708","name_only":"11\u6708","name_from":"11\u6708","name":"11\u6708","name_def_article_uc":"The November","name_def_article_lc":"the November","short_name":"11\u6708","name_with_year_only":"11\u6708","name_in":"11\u6708"},"8":{"name_to":"8\u6708","name_only":"8\u6708","name_from":"8\u6708","name":"8\u6708","name_def_article_uc":"The August","name_def_article_lc":"the August","short_name":"8\u6708","name_with_year_only":"8\u6708","name_in":"8\u6708"},"3":{"name_to":"3\u6708","name_only":"3\u6708","name_from":"3\u6708","name":"3\u6708","name_def_article_uc":"The March","name_def_article_lc":"the March","short_name":"3\u6708","name_with_year_only":"3\u6708","name_in":"3\u6708"},"6":{"name_to":"6\u6708","name_only":"6\u6708","name_from":"6\u6708","name":"6\u6708","name_def_article_uc":"The June","name_def_article_lc":"the June","short_name":"6\u6708","name_with_year_only":"6\u6708","name_in":"6\u6708"},"7":{"name_to":"7\u6708","name_only":"7\u6708","name_from":"7\u6708","name":"7\u6708","name_def_article_uc":"The July","name_def_article_lc":"the July","short_name":"7\u6708","name_with_year_only":"7\u6708","name_in":"7\u6708"},"9":{"name_to":"9\u6708","name_only":"9\u6708","name_from":"9\u6708","name":"9\u6708","name_def_article_uc":"The September","name_def_article_lc":"the September","short_name":"9\u6708","name_with_year_only":"9\u6708","name_in":"9\u6708"},"10":{"name_to":"10\u6708","name_only":"10\u6708","name_from":"10\u6708","name":"10\u6708","name_def_article_uc":"The October","name_def_article_lc":"the October","short_name":"10\u6708","name_with_year_only":"10\u6708","name_in":"10\u6708"},"2":{"name_to":"2\u6708","name_only":"2\u6708","name_from":"2\u6708","name":"2\u6708","name_def_article_uc":"The February","name_def_article_lc":"the February","short_name":"2\u6708","name_with_year_only":"2\u6708","name_in":"2\u6708"},"12":{"name_to":"12\u6708","name_only":"12\u6708","name_from":"12\u6708","name":"12\u6708","name_def_article_uc":"The December","name_def_article_lc":"the December","short_name":"12\u6708","name_with_year_only":"12\u6708","name_in":"12\u6708"}};
+        B.env.jstmpl_weekdays = {"2":{"short":"\u661f\u671f\u4e8c","name_to":"\u661f\u671f\u4e8c","name_on":"\u661f\u671f\u4e8c","name_from":"\u661f\u671f\u4e8c","name":"\u661f\u671f\u4e8c","shortest":"\u5468\u4e8c"},"3":{"short":"\u661f\u671f\u4e09","name_to":"\u661f\u671f\u4e09","name_on":"\u661f\u671f\u4e09","name_from":"\u661f\u671f\u4e09","name":"\u661f\u671f\u4e09","shortest":"\u5468\u4e09"},"4":{"short":"\u661f\u671f\u56db","name_to":"\u661f\u671f\u56db","name_on":"\u661f\u671f\u56db","name_from":"\u661f\u671f\u56db","name":"\u661f\u671f\u56db","shortest":"\u5468\u56db"},"7":{"short":"\u661f\u671f\u65e5","name_to":"\u661f\u671f\u65e5","name_on":"\u661f\u671f\u65e5","name_from":"\u661f\u671f\u65e5","name":"\u661f\u671f\u65e5","shortest":"\u5468\u65e5"},"6":{"short":"\u661f\u671f\u516d","name_to":"\u661f\u671f\u516d","name_on":"\u661f\u671f\u516d","name_from":"\u661f\u671f\u516d","name":"\u661f\u671f\u516d","shortest":"\u5468\u516d"},"1":{"short":"\u661f\u671f\u4e00","name_to":"\u661f\u671f\u4e00","name_on":"\u661f\u671f\u4e00","name_from":"\u661f\u671f\u4e00","name":"\u661f\u671f\u4e00","shortest":"\u5468\u4e00"},"5":{"short":"\u661f\u671f\u4e94","name_to":"\u661f\u671f\u4e94","name_on":"\u661f\u671f\u4e94","name_from":"\u661f\u671f\u4e94","name":"\u661f\u671f\u4e94","shortest":"\u5468\u4e94"}};
+    
+
+    
+        B.env.jstmpl_time_format = {"PM_symbol":{"name":"PM"},"AM_symbol":{"name":"AM"},"time":{"name":"{hour_24h}:{minutes}"}};
+    
+
+    
+
+    B.env.reservation_backend = {
+        name: null,
+        process_url: null,
+        cancel_url: null
+    };
+
+    
+
+
+
+
+    B.env.clientside_translation_tags = {"bed_type":{"6":{"name_withnumber":"{bed_count}张大号双人床"},"5":{"name_withnumber":"{bed_count}张沙发床"},"1":{"name_withnumber":"{bed_count}张单人床"},"2":{"name_withnumber":"{bed_count}张双人床"},"7":{"name_withnumber":"{bed_count}张日式床垫"},"3":{"name_withnumber":"{bed_count}张超大号双人床"},"4":{"name_withnumber":"{bed_count}张床位"}},"weekday":{"2":{"short":"周二"},"7":{"short":"周日"},"3":{"short":"周三"},"4":{"short":"周四"},"6":{"short":"周六"},"5":{"short":"周五"},"1":{"short":"周一"}},"month":{"10":{"name_upper":"十月"},"4":{"name_upper":"四月"},"7":{"name_upper":"七月"},"2":{"name_upper":"二月"},"9":{"name_upper":"九月"},"8":{"name_upper":"八月"},"1":{"name_upper":"一月"},"12":{"name_upper":"十二月"},"3":{"name_upper":"三月"},"11":{"name_upper":"十一月"},"6":{"name_upper":"六月"},"5":{"name_upper":"五月"}},"private":{"bks_be_cart_abandon_dont_miss":"别犹豫，选择{hotel_name}吧！","bks_cms_menu_houses":"别墅","bks_cms_menu_cookie_policy":"Cookie使用政策","bks_cms_menu_promotions":"促销","bks_cms_menu_privacy_policy":"隐私政策","bks_cms_menu_map":"地图","bks_cms_menu_bunks":"双层床位","bks_be_error_room_no_longer_available":"这些客房已无法预订。","bks_be_mealplan":"餐点计划","bks_cms_menu_destination_guide":"目的地旅行指南","bks_be_select_a_room":"请选择客房","bks_cms_menu_local_guide":"当地旅行指南","bks_be_adult_number":"{num_adults}位成人","bks_be_error_too_many_guests":"您预订的客房无法接待过多住客。","bks_be_half_board_included":"含两餐","bks_be_terms_and_conditions":"相关条款","bks_cms_menu_rooms":"客房","bks_cms_menu_reservations":"预订","bks_cms_menu_book_now":"立即预订","bks_be_special_conditions":"特殊条款","bks_be_error_payment_error_generic":"无法处理您的付款。","bks_cms_menu_accommodations":"房间","bks_cms_menu_gallery":"相册","bks_cms_menu_around_town":"市内","bks_cms_menu_sign_up":"注册","bks_be_secure_reservation":"离开此页面后，您输入的信息将自动清除。现在担保您的预订，完成最后一步。","bks_be_error_missing_parameters":"无法继续，缺少部分参数。","bks_cms_featured_article_header":"精选文章","sq_feet":"平方英尺","bks_be_conf_email_important_info":"重要信息","bks_be_cancellation_canceling":"正在取消……","bks_cms_menu_bungalows":"简易别墅","bks_be_num_nights_stay":"入住{number_nights}晚","bks_cms_review_score":"综合评分","bks_cms_contact_message_error":"提交评论时出错，请重试或联系我们。","bks_be_confirm_exit":"更新尚未保存，确定退出？","bks_cms_menu_sitemap":"网站地图","bks_cms_menu_facilities":"设施/服务","bks_cms_menu_attractions":"景点","bks_be_num_rooms":"{num}间房","language_exception_bks_be_num_rooms_1":"1间房","bks_be_error_max_rooms_than_allowed":"客房预订数量超上限。","bks_cms_menu_apartments":"公寓","sq_metres":"平方米","bks_cms_menu_signature_offers":"精选优惠","bks_be_children_number":"{num_children}名儿童","bks_be_error_credit_card_validation":"请检查您的信用卡信息。","bks_cms_menu_photos":"照片","bks_cms_menu_deals":"优惠","bks_be_must_be_numbers":"必须填写数字","bks_cms_menu_hotels":"酒店","bks_cms_menu_vaction_rentals":"假日短租屋","bks_cms_menu_villas":"别墅","bks_be_error_incorrect_reservation_data":"无法确认您的订单，请检查所有输入信息后重试。","bks_cms_menu_vacation_rentals":"假日短租屋","bks_be_error_incorrect_pincode":"PIN码错误。","bks_be_room_no_longer_available":"这间客房可能刚被预订！您已不可预订了。","bks_cms_menu_area_attractions":"周边景点","bks_be_error_too_many_attempts_to_cancel":"尝试取消订单次数过多，请稍后再试。","bks_cms_menu_images":"照片","bks_cms_menu_benefits":"礼遇","bks_be_error_booking_already_processed":"已处理您的订单。","bks_be_max30nights":"入住时间最长不得超过30晚，请重新选择入住及退房日期","bks_cms_menu_things_to_do":"游玩推荐","sq_ft_usa":"sq ft","bks_be_no_availability_dates":"抱歉，{checkin_date} - {checkout_date}期间无空房","bks_cms_menu_packages":"组合优惠","bks_be_cancellation_authenticating":"正在验证……","bks_cms_hotel_compare_score_review":"评分来自{num_reviews}条点评","bks_cms_view_all":"查看全部","bks_cms_menu_local_area":"周边环境","bks_be_session_has_expired":"抱歉，网页已过期！","bks_be_required":"必填","bks_cms_menu_lodges":"山林小屋","bks_cms_menu_contact":"联系我们","bks_be_error_booking_in_the_past":"无法取消历史订单。","bks_cms_menu_inns":"宾馆","bks_cms_menu_check_availability":"查看房量","bks_be_excluded_charges":"不包含","bks_be_error_incorrect_affiliate":"该订单来自其他网站。","bks_cms_menu_services":"服务","bks_cms_menu_reservation_policy":"预订政策","bks_be_validate_cc":"无效信用卡卡号。","bks_cms_menu_beds":"床位","bks_cms_menu_check_rates":"查看价格","bks_be_error_no_bookings_at_the_moment":"抱歉，我们目前无法接收订单。","bks_cms_menu_more_info":"更多信息","bks_cms_menu_destinations":"目的地","bks_cms_menu_amenities":"客房设施","bks_cms_menu_cottages":"乡村别墅","bks_be_error_incorrect_arrival_hour":"到店时间错误。","bks_be_invalid_email":"无效邮箱","bks_be_not_allowed_to_book_in_preview":"预览模式下无法进行预订。","bks_cms_menu_bookings":"订单","language_exception_bks_be_adult_number_1":"1位成人","bks_cms_menu_excursions":"短途旅行","bks_cms_menu_offers":"优惠","bks_cms_menu_location":"地理位置","bks_cms_menu_suites":"套房","bks_be_validate_email_confirm_different":"请确保电邮地址一致","bks_be_the_fine_print":"预订须知","bks_be_free_cancellation_before_date":"{short_date_without_year}前可免费取消","bks_be_select":"选择","bks_be_dates_must_be_in_future":"入住和退房日期必须是未来的日期","bks_cms_more_info":"更多信息","bks_cms_menu_reviews":"点评","bks_cms_menu_dining":"餐饮","bks_be_error_incorrect_hotel":"该订单来自其他住宿。","bks_cms_menu_cabins":"木屋","bks_be_credit_card_enter_valid_expiry":"请填写正确的银行卡有效期","bks_be_error_missing_booking_number":"未输入订单编号。","bks_cms_menu_log_in":"登录","bks_cms_menu_plans":"Plans","bks_be_invalid_phone":"无效电话号码","bks_cms_menu_resorts":"度假村","bks_cms_contact_message_success":"信息已提交，谢谢！","bks_cms_menu_nearby_attractions":"附近景点","bks_cms_menu_info":"更多详情","bks_be_breakfast_included":"含早餐","bks_be_arrival_should_be_earlier_than_departure":"入住日期必须早于退房日期。","bks_cms_menu_specials":"Specials","bks_cms_menu_local_attractions":"当地景点","bks_be_error_booking_not_found":"未搜索到该订单，请检查订单确认号和PIN码。","bks_be_included_charges":"包括","bks_cms_menu_tents":"帐篷","bks_be_full_board_included":"含三餐","bks_be_sorry_something_wrong_developers_working_on_it":"抱歉，出错了！我们的开发人员正在尽力修复。","bks_be_error_booking_already_cancelled":"该订单已取消。","bks_cms_menu_properties":"住宿","bks_be_non_refundable":"不退款","bks_cms_menu_contact_us":"联系我们","bks_be_too_many_characters":"输入文字过多。","bks_cms_menu_enquire_now":"立即查询","bks_be_all_inclusive":"餐点全包"}};
+
+
+
+})();
+</script>
+
+
+
+    <script>
+    gtm_data_layer = [{
+       "bookingId": B.data.hotel.hotel_id,
+       "hotelId": B.data.hotel.hotel_id,
+       "channel": B.env.channel,
+       "deviceType": '', //B.util.screenHelper.deviceType(),
+       "parentId": 0,
+       "pageType": B.env.page_type,
+       "typeId": 0,
+       "locale": B.env.lang,
+       "partnerGaCode": B.data.hotel.google_analytics_tracking_id,
+       "reservationError": "",
+    }];
+</script>
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','gtm_data_layer','GTM-PBSCT4T');</script>
+<!-- End Google Tag Manager -->
+
+    
+	<title>行政家庭间&nbsp;&ndash;&nbsp;札幌公园饭店&nbsp;&ndash;&nbsp;札幌&nbsp;&ndash;&nbsp;日本</title>
+
+
+    
+	<link rel="alternate" hreflang="en-gb" href="/en-gb/rooms/executive-family-room" />
+<link rel="alternate" hreflang="ko-kr" href="/ko-kr/rooms/executive-family-room" />
+<link rel="alternate" hreflang="zh-tw" href="/zh-tw/rooms/executive-family-room" />
+<link rel="alternate" hreflang="zh-cn" href="/zh-cn/rooms/executive-family-room" />
+<link rel="canonical" href="/zh-cn/rooms/executive-family-room" />
+
+
+
+
+    <base href="/">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="description" content="这间客房位于酒店最高楼层的行政10楼。房价包括使用行政酒廊，客人可以全天24小时享用免费的咖啡，茶水和软饮料。门有安全锁，客房都配有迷你吧和带免费视频点播频道的电视。还提供免费早晨和晚上的报纸服务。">
+    <meta name="keywords" content="">
+    <meta name="format-detection" content="telephone=no">
+
+    <link rel="stylesheet" href="https://branding.booking.expert/api/brand/w/c76be/90010b6d5e74fad6913e489e48ecf58a61ddcd12.css" type="text/css" media="screen" />
+
+    
+
+    
+
+    
+  </head>
+
+  <body
+    itemscope=""
+    itemtype="http://schema.org/LodgingBusiness"
+    id="shortcode_bhpicqsr"
+    class="theme_Aura pg-roomdetail">
+  <div class="body-overflow-wrap">
+    
+
+    <!-- Google Tag Manager (noscript) -->
+<noscript>
+	<iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PBSCT4T" height="0" width="0"
+		style="display:none;visibility:hidden"></iframe>
+</noscript>
+<!-- End Google Tag Manager (noscript) -->
+    
+
+  <div id="CPolicy">
+      <span>
+          该网站使用cookies来提升用户访问体验。继续访问该网站，则表示您同意在您的设备上使用cookies，具体内容请见
+          <a href="/zh-cn/cookie-policy">Cookie政策</a>.
+      </span>
+      <div id="closeEUbtn"></div>
+  </div>
+
+
+
+    <header class="mast mast-fixed" id="mast-fixed">
+  <div class="inner">
+      <div class="logo-container"><a target="_self" itemprop="url" href="/zh-cn" title="札幌公园饭店">
+  
+    
+      <span class="full-size-logo"><img src="https://r-fa.bstatic.com/data/bsuitewf/3bf94bac2ddfa5e05a929a05613909cc1662e4f1" alt="札幌公园饭店"></span>
+      <span class="small-logo"><img src="https://r-fa.bstatic.com/data/bsuitewf/3bf94bac2ddfa5e05a929a05613909cc1662e4f1" alt="札幌公园饭店"></span>
+
+    
+  
+</a>
+</div><!--
+   --><div class="mast-right">
+          <div class="menu-collapsed"><span data-toggle="menu"><span class="iconfont"></span><span class="menu-label">菜单</span></span></div>
+          
+<div class="reservations track-event" eventName="reservations">
+  <div class="close">
+    <span class="iconfont"></span>
+    
+      <div class="quickrevBtn">
+        <span class="close">立即预订</span>
+      </div>
+    
+  </div>
+</div>
+
+
+      </div>
+  </div>
+</header>
+
+    
+<header class="mast static logo-left">
+  <div class="inner">
+    <div class="logo-container">
+      <a target="_self" itemprop="url" href="/zh-cn" title="札幌公园饭店">
+  
+    
+      <span class="full-size-logo"><img src="https://r-fa.bstatic.com/data/bsuitewf/3bf94bac2ddfa5e05a929a05613909cc1662e4f1" alt="札幌公园饭店"></span>
+      <span class="small-logo"><img src="https://r-fa.bstatic.com/data/bsuitewf/3bf94bac2ddfa5e05a929a05613909cc1662e4f1" alt="札幌公园饭店"></span>
+
+    
+  
+</a>
+
+    </div><div class="mast-right">
+      <div class="mast-actions">
+        
+          <div class="phone">
+            <span class="iconfont"></span>
+            <span class="phone-number" itemprop="telephone">
+              <a class="phone-btn-call track-call" href="tel:+81115113135">
+                +81 11-511-3135
+              </a>
+            </span>
+          </div>
+        
+        <div class="menu-collapsed">
+            <span data-toggle="menu"><span class="iconfont"></span><span class="menu-label">菜单</span></span>
+        </div>
+
+        <div class="phone-button-mobile">
+          <a href="tel:+81115113135" class="track-call">
+            <span class="iconfont"></span>
+            <span class="phone-label">+81 11-511-3135</span>
+          </a>
+        </div>
+
+        
+<div class="reservations track-event" eventName="reservations">
+  <div class="close">
+    <span class="iconfont"></span>
+    
+      <div class="quickrevBtn">
+        <span class="close">立即预订</span>
+      </div>
+    
+  </div>
+</div>
+
+
+
+      </div>
+
+      
+
+<nav class="menu-links count-6plus no-hero">
+    <ul>
+    
+        
+        
+        <li eventName="menu" class="track-event curr">
+            <a href="/zh-cn/rooms" target="_self">
+                <span data-hover="客房">
+                        客房
+                </span>
+            </a>
+        </li>
+    
+        
+        
+        <li eventName="menu" class="track-event ">
+            <a href="/zh-cn/restaurant" target="_self">
+                <span data-hover="餐厅">
+                        餐厅
+                </span>
+            </a>
+        </li>
+    
+        
+        
+        <li eventName="menu" class="track-event ">
+            <a href="/zh-cn/facilities1" target="_self">
+                <span data-hover="设施">
+                        设施
+                </span>
+            </a>
+        </li>
+    
+        
+        
+        <li eventName="menu" class="track-event ">
+            <a href="/zh-cn/services1" target="_self">
+                <span data-hover="服务">
+                        服务
+                </span>
+            </a>
+        </li>
+    
+        
+        
+        <li eventName="menu" class="track-event ">
+            <a href="/zh-cn/access" target="_self">
+                <span data-hover="访问">
+                        访问
+                </span>
+            </a>
+        </li>
+    
+        
+        
+        <li eventName="menu" class="track-event ">
+            <a href="/zh-cn/attractions" target="_self">
+                <span data-hover="景点">
+                        景点
+                </span>
+            </a>
+        </li>
+    
+        
+        
+        <li eventName="menu" class="track-event ">
+            <a href="/zh-cn/reviews" target="_self">
+                <span data-hover="点评">
+                        点评
+                </span>
+            </a>
+        </li>
+    
+        
+        
+        <li eventName="menu" class="track-event ">
+            <a href="/zh-cn/photos" target="_self">
+                <span data-hover="照片">
+                        照片
+                </span>
+            </a>
+        </li>
+    
+        
+        
+        <li eventName="menu" class="track-event ">
+            <a href="/zh-cn/faq" target="_self">
+                <span data-hover="常问问题">
+                        常问问题
+                </span>
+            </a>
+        </li>
+    
+        
+        
+        <li eventName="menu" class="track-event ">
+            <a href="/zh-cn/amenities" target="_self">
+                <span data-hover="客房设施">
+                        客房设施
+                </span>
+            </a>
+        </li>
+    
+        
+        
+        <li eventName="menu" class="track-event ">
+            <a href="/zh-cn/contact" target="_self">
+                <span data-hover="联系我们">
+                        联系我们
+                </span>
+            </a>
+        </li>
+    
+    </ul>
+</nav>
+
+
+
+    </div>
+  </div>
+</header>
+
+
+    <header class="mast static logo-center">
+  <div class="inner">
+    <div class="mast-top clearfix">
+      <div class="mast-top-inner">
+        <div class="mast-top-left">
+          
+            <div class="phone">
+              <span class="iconfont"></span>
+              <span class="phone-number">
+                <a class="phone-btn-call track-call" href="tel:+81115113135">
+                  +81 11-511-3135
+                </a>
+              </span>
+            </div>
+          
+        </div><!--
+     --><div class="logo-container"><a target="_self" itemprop="url" href="/zh-cn" title="札幌公园饭店">
+  
+    
+      <span class="full-size-logo"><img src="https://r-fa.bstatic.com/data/bsuitewf/3bf94bac2ddfa5e05a929a05613909cc1662e4f1" alt="札幌公园饭店"></span>
+      <span class="small-logo"><img src="https://r-fa.bstatic.com/data/bsuitewf/3bf94bac2ddfa5e05a929a05613909cc1662e4f1" alt="札幌公园饭店"></span>
+
+    
+  
+</a>
+</div><!--
+     --><div class="mast-actions" >
+          <div class="menu-collapsed"><span data-toggle="menu"><span class="iconfont"></span><span class="menu-label">菜单</span></span></div>
+          <div class="phone-button-mobile">
+            <a href="tel:+81115113135" class="track-call">
+              <span class="iconfont"></span>
+              <span class="phone-label">+81 11-511-3135</span>
+            </a>
+          </div>
+
+          
+<div class="reservations track-event" eventName="reservations">
+  <div class="close">
+    <span class="iconfont"></span>
+    
+      <div class="quickrevBtn">
+        <span class="close">立即预订</span>
+      </div>
+    
+  </div>
+</div>
+
+
+
+        </div>
+      </div>
+    </div>
+
+    
+
+<nav class="menu-links count-6plus no-hero">
+    <ul>
+    
+        
+        
+        <li eventName="menu" class="track-event curr">
+            <a href="/zh-cn/rooms" target="_self">
+                <span data-hover="客房">
+                        客房
+                </span>
+            </a>
+        </li>
+    
+        
+        
+        <li eventName="menu" class="track-event ">
+            <a href="/zh-cn/restaurant" target="_self">
+                <span data-hover="餐厅">
+                        餐厅
+                </span>
+            </a>
+        </li>
+    
+        
+        
+        <li eventName="menu" class="track-event ">
+            <a href="/zh-cn/facilities1" target="_self">
+                <span data-hover="设施">
+                        设施
+                </span>
+            </a>
+        </li>
+    
+        
+        
+        <li eventName="menu" class="track-event ">
+            <a href="/zh-cn/services1" target="_self">
+                <span data-hover="服务">
+                        服务
+                </span>
+            </a>
+        </li>
+    
+        
+        
+        <li eventName="menu" class="track-event ">
+            <a href="/zh-cn/access" target="_self">
+                <span data-hover="访问">
+                        访问
+                </span>
+            </a>
+        </li>
+    
+        
+        
+        <li eventName="menu" class="track-event ">
+            <a href="/zh-cn/attractions" target="_self">
+                <span data-hover="景点">
+                        景点
+                </span>
+            </a>
+        </li>
+    
+        
+        
+        <li eventName="menu" class="track-event ">
+            <a href="/zh-cn/reviews" target="_self">
+                <span data-hover="点评">
+                        点评
+                </span>
+            </a>
+        </li>
+    
+        
+        
+        <li eventName="menu" class="track-event ">
+            <a href="/zh-cn/photos" target="_self">
+                <span data-hover="照片">
+                        照片
+                </span>
+            </a>
+        </li>
+    
+        
+        
+        <li eventName="menu" class="track-event ">
+            <a href="/zh-cn/faq" target="_self">
+                <span data-hover="常问问题">
+                        常问问题
+                </span>
+            </a>
+        </li>
+    
+        
+        
+        <li eventName="menu" class="track-event ">
+            <a href="/zh-cn/amenities" target="_self">
+                <span data-hover="客房设施">
+                        客房设施
+                </span>
+            </a>
+        </li>
+    
+        
+        
+        <li eventName="menu" class="track-event ">
+            <a href="/zh-cn/contact" target="_self">
+                <span data-hover="联系我们">
+                        联系我们
+                </span>
+            </a>
+        </li>
+    
+    </ul>
+</nav>
+
+
+
+  </div>
+</header>
+
+
+    <div id="click-shield" class="click-shield"></div>
+    <div class="backstretch"></div>
+
+    <div class="body-wrap">
+      <div class="main">
+        <div class="content-wrap ">
+          
+          
+
+<div class="content-head">
+  <div class="sectionTitle">客房</div>
+  <div id="subNav" class="subnav">
+    <ul class="subNavItems list" >
+      
+        <li class="">
+          <a count="1" href="/zh-cn/rooms/imperial-suite"><span>皇家套房</span></a>
+        </li>
+      
+        <li class="">
+          <a count="2" href="/zh-cn/rooms/junior-suite-with-spa-bath"><span>小型套房 - 带Spa浴缸</span></a>
+        </li>
+      
+        <li class="">
+          <a count="3" href="/zh-cn/rooms/junior-suite"><span>小型套房</span></a>
+        </li>
+      
+        <li class="">
+          <a count="4" href="/zh-cn/rooms/luxury-twin-room"><span>豪华双床间</span></a>
+        </li>
+      
+        <li class="current">
+          <a count="5" href="/zh-cn/rooms/executive-family-room"><span>行政家庭间</span></a>
+        </li>
+      
+        <li class="">
+          <a count="6" href="/zh-cn/rooms/executive-twin-room"><span>行政双床间</span></a>
+        </li>
+      
+        <li class="">
+          <a count="7" href="/zh-cn/rooms/executive-double-room"><span>行政双人间</span></a>
+        </li>
+      
+        <li class="">
+          <a count="8" href="/zh-cn/rooms/executive-room-disability-access"><span>行政间 - 无障碍通道</span></a>
+        </li>
+      
+        <li class="">
+          <a count="9" href="/zh-cn/rooms/premium-twin-room"><span>高级双床间</span></a>
+        </li>
+      
+        <li class="">
+          <a count="10" href="/zh-cn/rooms/premium-double-room"><span>高级双人间</span></a>
+        </li>
+      
+        <li class="">
+          <a count="11" href="/zh-cn/rooms/superior-queen-room-non-smoking"><span>高级大号床间 - 禁烟</span></a>
+        </li>
+      
+        <li class="">
+          <a count="12" href="/zh-cn/rooms/superior-large-twin-room-non-smoking"><span>高级大型双床间 - 禁烟</span></a>
+        </li>
+      
+        <li class="">
+          <a count="13" href="/zh-cn/rooms/superior-large-twin-room-smoking"><span>高级大型双床间 - 可吸烟</span></a>
+        </li>
+      
+        <li class="">
+          <a count="14" href="/zh-cn/rooms/quadruple-room-non-smoking"><span>四人间 - 禁烟</span></a>
+        </li>
+      
+        <li class="">
+          <a count="15" href="/zh-cn/rooms/quadruple-room-smoking"><span>四人间 - 可吸烟</span></a>
+        </li>
+      
+        <li class="">
+          <a count="16" href="/zh-cn/rooms/hollywood-large-twin-room-smoking"><span>好莱坞大型双床间 - 可吸烟</span></a>
+        </li>
+      
+        <li class="">
+          <a count="17" href="/zh-cn/rooms/hollywood-large-twin-room-non-smoking"><span>好莱坞大型双床间 - 禁烟</span></a>
+        </li>
+      
+        <li class="">
+          <a count="18" href="/zh-cn/rooms/standard-large-triple-non-smoking"><span>标准大三人间 - 禁烟</span></a>
+        </li>
+      
+        <li class="">
+          <a count="19" href="/zh-cn/rooms/standard-large-triple-smoking"><span>标准大三人间 - 吸烟</span></a>
+        </li>
+      
+        <li class="">
+          <a count="20" href="/zh-cn/rooms/standard-single-room-non-smoking"><span>标准单人间 - 禁烟</span></a>
+        </li>
+      
+        <li class="">
+          <a count="21" href="/zh-cn/rooms/standard-single-room-smoking"><span>标准单人间 - 可吸烟</span></a>
+        </li>
+      
+        <li class="">
+          <a count="22" href="/zh-cn/rooms/standard-triple-room-non-smoking"><span>标准三人间 - 禁烟</span></a>
+        </li>
+      
+        <li class="">
+          <a count="23" href="/zh-cn/rooms/standard-triple-room-smoking"><span>标准三人间 - 可吸烟</span></a>
+        </li>
+      
+        <li class="">
+          <a count="24" href="/zh-cn/rooms/standard-large-twin-room-non-smoking"><span>标准大型双床间 - 禁烟</span></a>
+        </li>
+      
+        <li class="">
+          <a count="25" href="/zh-cn/rooms/standard-large-twin-room-smoking"><span>标准大型双床间 - 可吸烟</span></a>
+        </li>
+      
+        <li class="">
+          <a count="26" href="/zh-cn/rooms/standard-twin-room-non-smoking"><span>标准双床间 - 禁烟</span></a>
+        </li>
+      
+        <li class="">
+          <a count="27" href="/zh-cn/rooms/standard-twin-room-smoking"><span>标准双床间 - 可吸烟</span></a>
+        </li>
+      
+        <li class="">
+          <a count="28" href="/zh-cn/rooms/executive-floor-room-selected-at-check-in"><span>入住时选择行政楼层客房</span></a>
+        </li>
+      
+    </ul>
+  </div>
+</div>
+
+<div class="content-body">
+  <div class="content-body-inner">
+    <div class="room-photos room-photos-custom">
+      
+        <div id="hero-slider" class="hero-slider flexslider flex-img-single">
+          <ul class="slides">
+            
+              
+                
+                  <li class="slide"><img src="https://q-fa.bstatic.com/data/xphoto/1024x768/369/36998823.jpg" /></li>
+                
+              
+            
+              
+                
+                  <li class="slide"><img src="https://r-fa.bstatic.com/data/xphoto/1024x768/369/36998826.jpg" /></li>
+                
+              
+            
+              
+                
+                  <li class="slide"><img src="https://q-fa.bstatic.com/data/xphoto/1024x768/369/36998824.jpg" /></li>
+                
+              
+            
+              
+                
+                  <li class="slide"><img src="https://q-fa.bstatic.com/data/xphoto/1024x768/369/36998825.jpg" /></li>
+                
+              
+            
+          </ul>
+        </div>
+      
+    </div>
+
+    <h1 class="room-name">行政家庭间</h1>
+
+    <div class="room-to-book">
+      <a class="book-room room_switch1" data-component="core/book_now_button" data-room-id="9053">
+        <span>立即预订</span>
+      </a>
+    </div>
+    <div class="room-details clearfix">
+
+      <div class="room-meta clearfix">
+        <div class="room-attributes clearfix">
+          
+            <div class="maxguests">
+              <span class="attribute-label">最多入住人数</span>
+              <span class="attribute-value">4</span>
+            </div>
+          
+          
+          
+            <div class="bedsize">
+              <span class="attribute-label">床型</span>
+              <span class="attribute-value">
+                2张单人床&nbsp;&amp;&nbsp;2张沙发床
+              </span>
+            </div>
+          
+          
+            <div class="roomsize">
+              <span class="attribute-label">客房面积</span>
+              <span class="attribute-value">
+                47
+                
+                  
+                    平方米
+                  
+                
+               </span>
+            </div>
+          
+        </div>
+
+        
+        <div class="room-description">
+          <div class="content">
+            <p>这间客房位于酒店最高楼层的行政10楼。房价包括使用行政酒廊，客人可以全天24小时享用免费的咖啡，茶水和软饮料。门有安全锁，客房都配有迷你吧和带免费视频点播频道的电视。还提供免费早晨和晚上的报纸服务。 <br/><br/>酒店将根据预订确认信中的人数准备加床。请在预订时注明正确的客人人数。 <br/><br/> = AMENITIES = <br/><br/>衣柜/衣橱/睡衣/保险箱/浴帽/牙刷/瓶装水水/垃圾桶/沐浴露/洗发水/护发素/吹风机/浴衣/空调/冰箱/收音机/浴室/迷你吧/淋浴/电话/付费频道/电视/拖鞋/卫星电视/暖气/沙发/免费洗漱用品/台/卫生间/ DVD播放机/厕所</p>
+          </div>
+        </div>
+        
+      </div>
+
+      
+
+    </div>
+
+    <div class="content-footer clearfix" id="next-previous">
+      <div class="prev">
+        <a href=""><span class="label">上一页</span></a>
+      </div>
+      <div class="next">
+        <a href=""><span class="label">下一页</span></a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script src="http://r-fa.bstatic.com/static/manifests/js/roomdetail/4802f1ade7c71850f0e633bd7843e745f4573768.js"></script>
+
+
+
+        </div>
+      </div>
+
+      
+	<script src="http://q-fa.bstatic.com/static/manifests/js/common_websites/2038b2ca3afe278b5f7f2b9ea8519f9b6703be47.js"></script>
+
+	
+
+  <div class="widget" data-template="badges_widget" data-url="/api/badges_widget">
+  	
+  <script type='text/javascript'>
+booking.jstmpl('badges_widget', (function () { var T = ["\n    ","\n    \u003cdiv class=\"badges clearfix\"\u003e\n      \u003cdiv class=\"badges-inner\"\u003e\n      \t","\n          \u003cul class=\"badge-list clearfix\" id=\"Ol1\"\u003e\n          \t","\n\n  \t       \t\t","\n          \t\t\t","javascript:void(0);","disabled=\"disabled\"","\n                ","\n              ","\n                  ","http://","target=\"_blank\"","\n       \t\t\t\t","\n\n              \u003cli class=\"badge\"\u003e\n                \u003ca href=\"","\" "," ","\u003e\n                  ","\n                    \u003cdiv class=\"badge-image\"\u003e\n                    \t\u003cimg src=\"","\" alt=\"","\"\u003e\n                \t\t\u003c/div\u003e\n                  ","\n                    \u003cdiv class=\"badge-title\"\u003e","\u003c/div\u003e\n                  ","\n                \u003c/a\u003e\n              \u003c/li\u003e\n            ","\n          \u003c/ul\u003e\n       \t","\n      \u003c/div\u003e\n    \u003c/div\u003e\n  "], V = ["data","fe_badges","fe_badge_link_url","fe_badge_disabled","fe_badge_target","fe_badges_count"], WV, LV, VA; return function (VS) { var s = '', r = this.fn; s += T[0]; r.MN("fe_badges", r.MG((r.MC(V[0]) || [])[0] )); s += T[0]; r.MN("fe_badges_count", (r.MB(V[1])).length); s += T[1]; if ((r.MJ( r.MB(V[5])  >  0 ))) { s += T[2]; { var LA= ( r.MC(V[1]) || [] ); VS.unshift({'badge': null}); for(var LC=1, LM= LA.length, LV_badge; LC <= LM; LC++) { VS[0]['badge']= LV_badge= LA[LC - 1]; s += T[3]; if (( ( r.MK(LV_badge["link_url" ]) || (r.MJ( LV_badge["link_url" ].toString().length  ==  0 )) ) || (r.MJ( LV_badge["link_url" ]  + "" === "" +  "#" )) )) { s += T[4]; r.MN(V[2],T[5]); s += T[4]; r.MN(V[3],T[6]); s += T[7]; r.MN(V[4], undefined); s += T[8]; } else  { s += T[7]; if ((r.MJ( /^http[s]?:\/\// .test( LV_badge["link_url" ] )))) { s += T[9]; r.MN(V[2],(LV_badge || {})["link_url"]); s += T[7]; } else  { s += T[9]; r.MN(V[2],[ T[10], (LV_badge || {})["link_url"] ].join( '' )); s += T[7]; } s += T[7]; r.MN(V[3], undefined); s += T[7]; r.MN(V[4],T[11]); s += T[12]; } s += [ T[13], r.MC(V[2]), T[14], r.MC(V[4]), T[15], r.MC(V[3]), T[16] ].join( '' ); if (r.MJ(r.MG((LV_badge || {})["logo_url"] ))) { s += [ T[17], (LV_badge || {})["logo_url"], T[18], (LV_badge || {})["title"], T[19] ].join( '' ); } s += T[9]; if ((r.MJ( /\S+/ .test( LV_badge["title" ] )))) { s += [ T[20], (LV_badge || {})["title"], T[21] ].join( '' ); } s += T[22]; } VS.shift(); } s += T[23]; } s += T[24]; return s; }; } )());
+</script>
+
+
+  </div>
+
+	
+		
+  <div class="content-section quickres_tabletUp bodyquickres footer-res clearfix">
+    <div class="inner">
+      <h3>订单</h3>
+      
+        <div class="quickres-fields search_wrapper_dates">
+          <div class="datepicker arrival search">
+<!--             <label for="Date1" class="invisible_spoken">入住时间</label>
+ -->            <input type="text" class="date-pick" name="date1" id="Date1" aria-label="入住时间"/>
+            <span class="iconfont datepickicon search_calendar-icon" aria-hidden="true"></span>
+            <i class="iconfont iconfont-next from_to" aria-hidden="true"></i>
+            <span class="input-focused" aria-hidden="true"></span>
+          </div>
+          <div class="datepicker departure search">
+<!--             <label for="Date2" class="invisible_spoken">退房</label>
+ -->            <input type="text" class="date-pick" name="date2" id="Date2" aria-label="退房"/>
+            <span class="iconfont datepickicon search_calendar-icon" aria-hidden="true"></span>
+            <span class="input-focused" aria-hidden="true"></span>
+          </div>
+          <a class="booknow-btn" data-component="core/book_now_button">
+            立即预订
+          </a>
+        </div>
+      
+    </div>
+  </div>
+
+
+	
+
+	
+<div class="footer">
+    <div class="footer-inner">
+        <div class="clearfix">
+
+            <div class="footer-group-a">
+                <div class="footer-contact">
+                    <div class="hotel-name" itemprop="name">札幌公园饭店</div>
+                    <div class="hotel-phone">
+                        <a class="phone-btn-call track-call" href="tel:+81115113135">
+                            +81 11-511-3135
+                        </a>
+                    </div>
+
+                    
+    <div itemprop="address" class="hotel-address">
+        
+            <div>064-8589 北海道</div>
+        
+            <div>札幌</div>
+        
+            <div>Chuo-ku Minami 10-jo Nishi 3-1-1</div>
+        
+            <div>日本</div>
+        
+    </div>
+
+
+                    
+                        <div class="hotel-email">
+                            <a class="track-email" href="mailto:sph_inb1@granvista.co.jp">
+                                sph_inb1@granvista.co.jp
+                            </a>
+                        </div>
+                    
+
+                    
+	<ul class="footer-social clearfix">
+		
+			
+			
+			
+	    	<li id="facebookLink">
+	    		<div class="fb-link">
+	    			<a class="facebookAnchor" target="_blank" href="https://www.facebook.com/park1964"></a>
+	  			</div>
+				</li>
+
+			
+
+		
+			
+			
+			
+				<li id="tripAdvisorLink">
+			 		<div class="tripAdvisor-link">
+			 			<a class="tripAdvisorAnchor" target="_blank" href="https://www.tripadvisor.com.sg/Hotel_Review-g298560-d325626-Reviews-Sapporo_Park_Hotel-Sapporo_Hokkaido.html"></a>
+		 			</div>
+	 			</li>
+
+			
+
+		
+	</ul>
+
+
+                </div>
+            </div>
+
+            <div class="footer-group-b">
+                
+                    
+
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                            
+                        
+                    
+
+                    <div class="footer-languages" id="language-selector">
+                        <ul class="languages">
+                            
+                                <li class="">
+                                    <a data-ajax="false" href="/en-gb/rooms/executive-family-room">English</a>
+                                    <span></span>
+                                </li>
+                            
+                                <li class="">
+                                    <a data-ajax="false" href="/ko-kr/rooms/executive-family-room">한국어</a>
+                                    <span></span>
+                                </li>
+                            
+                                <li class="">
+                                    <a data-ajax="false" href="/zh-tw/rooms/executive-family-room">繁體中文</a>
+                                    <span></span>
+                                </li>
+                            
+                                <li class="selectedLang">
+                                    <a data-ajax="false" href="/zh-cn/rooms/executive-family-room">中文</a>
+                                    <span></span>
+                                </li>
+                            
+                        </ul>
+                    </div>
+                
+
+                <div class="footer-links">
+                    <ul class="links-list clearfix">
+                        
+                            
+                            
+                            <li>
+                                <a href="/zh-cn/sitemap" title="网站地图" target="_self">网站地图</a>
+                            </li>
+                        
+                            
+                            
+                            <li>
+                                <a href="/zh-cn/privacy-policy" title="隐私政策" target="_self">隐私政策</a>
+                            </li>
+                        
+                            
+                            
+                            <li>
+                                <a href="/zh-cn/cookie-policy" title="Cookie使用政策" target="_self">Cookie使用政策</a>
+                            </li>
+                        
+                    </ul>
+                </div>
+            </div>
+
+        </div>
+        <!--clearfix end-->
+
+        <div class="footer-credits ">
+            <div class="powered" id="OnWeb">
+                <span>&copy; 2018</span>
+                <a href="http://suite.booking.com" target="_blank">BookingSuite</a>
+            </div>
+        </div>
+
+    </div>
+    <!--footer-inner end-->
+</div>
+<!--footer end-->
+
+
+	
+<div class="overlay overlay-slidein">
+    <div class="overlay-close">
+        <span class="close-x"></span>
+        <span class="label-close">关闭</span>
+    </div>
+
+    <div id="overlay-quickres" class="overlay-quickres overlay-content content-section" style="display: none;">
+
+        <div class="quickres-content inner">
+            <h2 class="quickres-header">订单</h2>
+            <div class="quickres-fields search_wrapper_dates">
+                
+                <div class="datepicker arrival search">
+                    <label for="quickResDate1" class="invisible_spoken">入住时间</label>
+                    <input type="text" class="date-pick" name="date1" id="quickResDate1" />
+                    <span class="iconfont datepickicon search_calendar-icon" aria-hidden="true"></span>
+                    <i class="iconfont iconfont-next from_to" aria-hidden="true"></i>
+                    <span class="input-focused" aria-hidden="true"></span>
+
+                </div>
+
+                <div class="datepicker departure search">
+                    <label for="quickResDate2" class="invisible_spoken">退房</label>
+                    <input type="text" class="date-pick" name="date2" id="quickResDate2" />
+                    <span class="iconfont datepickicon search_calendar-icon" aria-hidden="true"></span>
+                    <span class="input-focused" aria-hidden="true"></span>
+
+                </div>
+                <a class="booknow-btn" data-component="core/book_now_button">立即预订</a>
+            </div>
+        </div>
+    </div>
+
+    <div id="overlay-menu-no-quickres" class="overlay-menu overlay-content" style="display: none;">
+        <div class="menu-content inner">
+            <ul class="menu-list count-count-">
+                <li class="home-link">
+                    <a href="/zh-cn"  target="_self"><span data-hover="Home">首页</span></a>
+                </li>
+                
+                    
+                    
+                    <li data-menu-id="" eventName="menu" class="track-event curr">
+                        <a href="/zh-cn/rooms"  target="_self">
+                            <span data-hover="客房">客房</span>
+                        </a>
+                    </li>
+                
+                    
+                    
+                    <li data-menu-id="" eventName="menu" class="track-event ">
+                        <a href="/zh-cn/restaurant"  target="_self">
+                            <span data-hover="餐厅">餐厅</span>
+                        </a>
+                    </li>
+                
+                    
+                    
+                    <li data-menu-id="" eventName="menu" class="track-event ">
+                        <a href="/zh-cn/facilities1"  target="_self">
+                            <span data-hover="设施">设施</span>
+                        </a>
+                    </li>
+                
+                    
+                    
+                    <li data-menu-id="" eventName="menu" class="track-event ">
+                        <a href="/zh-cn/services1"  target="_self">
+                            <span data-hover="服务">服务</span>
+                        </a>
+                    </li>
+                
+                    
+                    
+                    <li data-menu-id="" eventName="menu" class="track-event ">
+                        <a href="/zh-cn/access"  target="_self">
+                            <span data-hover="访问">访问</span>
+                        </a>
+                    </li>
+                
+                    
+                    
+                    <li data-menu-id="" eventName="menu" class="track-event ">
+                        <a href="/zh-cn/attractions"  target="_self">
+                            <span data-hover="景点">景点</span>
+                        </a>
+                    </li>
+                
+                    
+                    
+                    <li data-menu-id="" eventName="menu" class="track-event ">
+                        <a href="/zh-cn/reviews"  target="_self">
+                            <span data-hover="点评">点评</span>
+                        </a>
+                    </li>
+                
+                    
+                    
+                    <li data-menu-id="" eventName="menu" class="track-event ">
+                        <a href="/zh-cn/photos"  target="_self">
+                            <span data-hover="照片">照片</span>
+                        </a>
+                    </li>
+                
+                    
+                    
+                    <li data-menu-id="" eventName="menu" class="track-event ">
+                        <a href="/zh-cn/faq"  target="_self">
+                            <span data-hover="常问问题">常问问题</span>
+                        </a>
+                    </li>
+                
+                    
+                    
+                    <li data-menu-id="" eventName="menu" class="track-event ">
+                        <a href="/zh-cn/amenities"  target="_self">
+                            <span data-hover="客房设施">客房设施</span>
+                        </a>
+                    </li>
+                
+                    
+                    
+                    <li data-menu-id="" eventName="menu" class="track-event ">
+                        <a href="/zh-cn/contact"  target="_self">
+                            <span data-hover="联系我们">联系我们</span>
+                        </a>
+                    </li>
+                
+            </ul>
+
+            <div class="hotel-contact">
+                <div class="hotel-contact-inner">
+                    <div class="hotel-name">札幌公园饭店</div>
+
+                    <div class="hotel-phone">
+                        <a href="tel:+81115113135" class="track-call">
+                            +81 11-511-3135
+                        </a>
+                    </div>
+
+                    
+    <div itemprop="address" class="hotel-address">
+        
+            <div>064-8589 北海道</div>
+        
+            <div>札幌</div>
+        
+            <div>Chuo-ku Minami 10-jo Nishi 3-1-1</div>
+        
+            <div>日本</div>
+        
+    </div>
+
+
+                    
+                        <div class="hotel-email">
+                            <a class="track-email" href="mailto:sph_inb1@granvista.co.jp">
+                                sph_inb1@granvista.co.jp
+                            </a>
+                        </div>
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+      
+
+    </div>
+
+    
+
+    
+        
+    
+  </div>
+  </body>
+</html>

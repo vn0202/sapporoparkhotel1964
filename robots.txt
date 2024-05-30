@@ -1,0 +1,2 @@
+User-agent: *
+Sitemap: http://www.sapporoparkhotel1964.com/sitemapindex.xml

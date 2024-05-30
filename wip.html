@@ -1,0 +1,658 @@
+<header @mouseleave="active=null" x-data="{active:null}"
+        class=" p-4 shadow-lg fixed top-0 left w-full bg-white">
+    <div class="flex justify-between items-center">
+        <a class="w-[240px] md:w-[260px] lg:w-[300px] block self-start" href="/">
+            <img class="w-full max-w-full"
+                 src="https://r-fa.bstatic.com/data/bsuitewf/3bf94bac2ddfa5e05a929a05613909cc1662e4f1"
+                 alt="Sapporo Park Hotel">
+        </a>
+
+        <div class="hidden lg:block">
+            <div class="flex items-center justify-end">
+                <a href="/en-gb/faq" class="block px-4 py-2 uppercase hover:text-primary" target="_self">
+
+                    FAQ
+
+                </a>
+                <div data-component="core/openable" data-active-class="open" data-outside-close="true"
+                     class="relative px-4 group">
+
+                    <button
+                        class="flex gap-3 px-4 items-center ml-auto group"
+                        aria-haspopup="true"
+                        aria-label="Select language">
+                        <svg class="group-hover:fill-primary" height="20" width="20" viewBox="0 0 128 128"
+                             role="presentation" aria-hidden="true" focusable="false">
+                            <path
+                                d="M64 8a56 56 0 1 0 56 56A56 56 0 0 0 64 8zm41.5 80H87.8a69.7 69.7 0 0 0 3.7-16h19.8a47.6 47.6 0 0 1-5.8 16zM64 109.6A62 62 0 0 1 52.9 96h22.2A62 62 0 0 1 64 109.6zM48.8 88a61.5 61.5 0 0 1-4.3-16h39a61.5 61.5 0 0 1-4.3 16zM16.7 72h19.8a69.7 69.7 0 0 0 3.7 16H22.5a47.6 47.6 0 0 1-5.8-16zm2-24H38a70.5 70.5 0 0 0-2 16H16a47.8 47.8 0 0 1 2.8-16zM64 18.4A61.8 61.8 0 0 1 79.2 40H48.8A61.8 61.8 0 0 1 64 18.4zM82 48a62.3 62.3 0 0 1 2 16H44a62.3 62.3 0 0 1 2-16zm10 16a70.5 70.5 0 0 0-1.9-16h19.2a47.8 47.8 0 0 1 2.8 16zm13.5-24H87.8a69.4 69.4 0 0 0-13.9-23 48.1 48.1 0 0 1 31.6 23zM54.1 17a69.4 69.4 0 0 0-13.9 23H22.5A48.1 48.1 0 0 1 54 17zM28.3 96h15.4a69.6 69.6 0 0 0 10.4 15 48 48 0 0 1-25.8-15zm45.6 15a69.6 69.6 0 0 0 10.4-15h15.4A48 48 0 0 1 74 111z"/>
+                        </svg>
+                        <span class="group-hover:text-primary">en</span>
+                        <svg width="18" height="18" viewBox="0 0 24 24" class="group-hover:hidden "
+                             xmlns="http://www.w3.org/2000/svg">
+                            <path d="M18 9L12 15L6 9" stroke="#222222"/>
+                        </svg>
+                        <svg width="18" height="18" viewBox="0 0 24 24"
+                             class="hidden group-hover:block group-hover:fill-primary"
+                             xmlns="http://www.w3.org/2000/svg">
+                            <path d="M18 15L12 9L6 15"/>
+                        </svg>
+
+
+                    </button>
+
+                    <ul
+                        class="hidden group-hover:block absolute right-0 w-full shadow bg-white">
+
+                        <li class="current">
+                            <a class="block px-4 py-2 hover:bg-primary hover:text-white" target="_self"
+                               href="https://www.sapporoparkhotel1964.com/en-gb/services1?page_id=1687975">English</a>
+                        </li>
+
+                        <li class="">
+                            <a class="block px-4 py-2 hover:bg-primary hover:text-white" target="_self"
+                               href="https://www.sapporoparkhotel1964.com/ko-kr/services1?page_id=1687975">&#xD55C;&#xAD6D;&#xC5B4;</a>
+                        </li>
+
+                        <li class="">
+                            <a class="block px-4 py-2 hover:bg-primary hover:text-white" target="_self"
+                               href="https://www.sapporoparkhotel1964.com/zh-cn/services1?page_id=1687975">&#x4E2D;&#x6587;</a>
+                        </li>
+
+                        <li class="">
+                            <a class="block px-4 py-2 hover:bg-primary hover:text-white" target="_self"
+                               href="https://www.sapporoparkhotel1964.com/zh-tw/services1?page_id=1687975">&#x7E41;&#x9AD4;&#x4E2D;&#x6587;</a>
+                        </li>
+
+                    </ul>
+
+                </div>
+                <a href="/en-gb/contact" class="block px-4 py-2 uppercase bg-primary text-white" target="_self">
+
+                    Contact
+                </a>
+            </div>
+
+
+            <nav>
+                <ul class="flex ">
+
+                    <li class="relative group">
+                        <a @mousemove="active=1" href="/en-gb/rooms" class="block px-4 py-2 uppercase flex gap-2 "
+                           target="_self">
+                            Rooms
+                            <svg width="24" height="24" viewBox="0 0 24 24" class="group-hover:hidden" fill="none"
+                                 xmlns="http://www.w3.org/2000/svg">
+                                <path d="M18 9L12 15L6 9" stroke="#222222"/>
+                            </svg>
+                            <svg width="24" height="24" class="hidden fill-none stroke-primary group-hover:block"
+                                 viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M18 15L12 9L6 15"/>
+                            </svg>
+
+                        </a>
+                        <template x-teleport="header">
+                            <div x-cloak x-show="active==1">
+                                <ul class=" bg-white flex py-10 w-3/4 mx-auto text-sm">
+                                    <li>
+                                        <a href="" class="block px-4 py-2 ">
+                                            <img width="154" height="100"
+                                                 class="rounded mb-4 h-[100px] hover:opacity-80"
+                                                 src="/images/rooms/superior.jpg" alt="Superior rooms">
+                                            <span>Superior rooms</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="" class="block px-4 py-2 ">
+                                            <img width="154" height="100"
+                                                 class="rounded mb-4 h-[100px] hover:opacity-80"
+                                                 src="/images/rooms/standard.png" alt="Superior rooms">
+                                            <span>Standards rooms</span>
+                                        </a></li>
+                                    <li>
+                                        <a href="" class="block px-4 py-2 ">
+                                            <img width="154" height="100"
+                                                 class="rounded mb-4 h-[100px] hover:opacity-80"
+                                                 src="/images/rooms/exective.png" alt="Superior rooms">
+                                            <span>Executive rooms</span>
+                                        </a></li>
+                                </ul>
+                            </div>
+
+                        </template>
+
+                    </li>
+
+
+                    <li class="relative group">
+                        <a @mousemove="active=2" href="/en-gb/rooms" class="block px-4 py-2 uppercase flex gap-2 "
+                           target="_self">
+                            Restaurants
+                            <svg width="24" height="24" viewBox="0 0 24 24" class="group-hover:hidden" fill="none"
+                                 xmlns="http://www.w3.org/2000/svg">
+                                <path d="M18 9L12 15L6 9" stroke="#222222"/>
+                            </svg>
+                            <svg width="24" height="24" class="hidden fill-none stroke-primary group-hover:block"
+                                 viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M18 15L12 9L6 15"/>
+                            </svg>
+
+                        </a>
+                        <template x-teleport="header">
+                            <div x-cloak x-show="active==2" class=" bg-white py-10 w-3/4 mx-auto text-sm">
+                                <div class="mb-8 text-lg ">
+                                    Restaurant & bar
+                                </div>
+                                <ul class=" flex">
+                                    <li>
+                                        <a href="" class="block px-4 py-2">
+                                            <img width="154" height="100"
+                                                 class="rounded mb-4 h-[100px] hover:opacity-80"
+                                                 src="/images/restaurants/rest_piare.png" alt="Terrace Restaurant Piare">
+                                            <div>
+                                                <div>
+                                                    Western restaurant
+                                                </div>
+                                                <div>Terrace Restaurant Piare</div>
+
+                                            </div>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="" class="block px-4 py-2 ">
+                                            <img width="154" height="100"
+                                                 class="rounded mb-4 h-[100px] hover:opacity-80"
+                                                 src="/images/restaurants/rest_togenkyo.png" alt="ogenkyo Restaurant">
+                                            <div>
+                                                <div>
+                                                    Chinese
+                                                </div>
+                                                <div>Togenkyo Restaurant</div>
+
+                                            </div>
+                                        </a></li>
+                                    <li>
+                                        <a href="" class="block px-4 py-2 ">
+                                            <img width="154" height="100"
+                                                 class="rounded mb-4 h-[100px] hover:opacity-80"
+                                                 src="/images/restaurants/rest_nada.png" alt="Nadaman Garden Restaurant">
+                                            <div>
+                                                <div>
+                                                    Japanese
+                                                </div>
+                                                <div>Nadaman Garden Restaurant</div>
+
+                                            </div>
+                                        </a></li>
+                                    <li>
+                                        <a href="/en-gb/restaurant/lasso.htm" class="block px-4 py-2 ">
+                                            <img width="154" height="100"
+                                                 class="rounded mb-4 h-[100px] hover:opacity-80"
+                                                 src="/images/restaurants/Lasso009.jpg" alt="Lasso">
+                                            <div>
+
+                                                <div>Lobby Lounge Lasso</div>
+
+                                            </div>
+                                        </a></li>
+                                    <li>
+                                        <a href="" class="block px-4 py-2 ">
+                                            <img width="154" height="100"
+                                                 class="rounded mb-4 h-[100px] hover:opacity-80"
+                                                 src="/images/restaurants/rest_kitara.png" alt="Terrace Restaurant Kitara ">
+                                            <div>
+                                                <div>
+                                                    Restaurant outside the hotel
+
+                                                </div>
+                                                <div>Terrace Restaurant Kitara</div>
+                                            </div>
+                                        </a></li>
+                                    <li>
+                                        <a href="" class="block px-4 py-2 ">
+                                            <img width="154" height="100"
+                                                 class="rounded mb-4 h-[100px] hover:opacity-80"
+                                                 src="/images/restaurants/park-club.jpg" alt="Park Club ">
+                                            <div>
+                                                <div>
+                                                    Western food & bar
+
+                                                </div>
+                                                <div>Park Club (members only)</div>
+                                            </div>
+                                        </a></li>
+                                    <li>
+                                        <a href="" class="block px-4 py-2 ">
+                                            <img width="154" height="100"
+                                                 class="rounded mb-4 h-[100px] hover:opacity-80"
+                                                 src="/images/restaurants/rest_cake.png" alt="Piare's cake corner">
+                                            <div>
+                                                <div>
+                                                    Sweets shop
+                                                </div>
+                                                <div>Piare's cake corner</div>
+
+                                            </div>
+                                        </a></li>
+
+                                </ul>
+                            </div>
+
+                        </template>
+
+                    </li>
+
+
+                    <li eventName="menu" class="track-event ">
+                        <a href="/en-gb/facilities1" class="block px-4 py-2 uppercase" target="_self">
+                <span data-hover="Facilities">
+                        Facilities
+                </span>
+                        </a>
+                    </li>
+
+
+                    <li eventName="menu" class="track-event ">
+                        <a href="/en-gb/services1" class="block px-4 py-2 uppercase" target="_self">
+                <span data-hover="Services">
+                        Services
+                </span>
+                        </a>
+                    </li>
+
+
+                    <li eventName="menu" class="track-event ">
+                        <a href="/en-gb/access" class="block px-4 py-2 uppercase" target="_self">
+                <span data-hover="Access">
+                        Access
+                </span>
+                        </a>
+                    </li>
+
+
+                    <li eventName="menu" class="track-event ">
+                        <a href="/en-gb/attractions" class="block px-4 py-2 uppercase" target="_self">
+                <span data-hover="Attractions">
+                        Attractions
+                </span>
+                        </a>
+                    </li>
+
+
+                    <li eventName="menu" class="track-event ">
+                        <a href="/en-gb/reviews" class="block px-4 py-2 uppercase" target="_self">
+                <span data-hover="Reviews">
+                        Reviews
+                </span>
+                        </a>
+                    </li>
+
+
+                    <li eventName="menu" class="track-event ">
+                        <a href="/en-gb/photos" class="block px-4 py-2 uppercase" target="_self">
+                <span data-hover="Photos">
+                        Photos
+                </span>
+                        </a>
+                    </li>
+
+
+                    <li eventName="menu" class="track-event ">
+                        <a href="/en-gb/faq" class="block px-4 py-2 uppercase" target="_self">
+                <span data-hover="FAQ">
+                        FAQ
+                </span>
+                        </a>
+                    </li>
+
+
+                    <li eventName="menu" class="track-event ">
+                        <a href="/en-gb/amenities" class="block px-4 py-2 uppercase" target="_self">
+                <span data-hover="Amenities">
+                        Amenities
+                </span>
+                        </a>
+                    </li>
+
+
+                </ul>
+            </nav>
+
+        </div>
+        <div x-data="{open:false}" class="lg:hidden">
+            <button @click="open=true" aria-label="Menu">
+                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M5 7H19" stroke="#222222" stroke-linecap="round"/>
+                    <path d="M5 12H19" stroke="#222222" stroke-linecap="round"/>
+                    <path d="M5 17H19" stroke="#222222" stroke-linecap="round"/>
+                </svg>
+            </button>
+            <div x-cloak x-show="open" class="flex  fixed top-0 right-0 h-full w-full bg-black bg-opacity-10  justify-end">
+
+                <div class="bg-white w-full h-full">
+                    <div class="flex justify-between p-2 items-center shadow-lg">
+                        <a class="w-[240px] block" href="/">
+                            <img class="w-full max-w-full"
+                                 src="https://r-fa.bstatic.com/data/bsuitewf/3bf94bac2ddfa5e05a929a05613909cc1662e4f1"
+                                 alt="Sapporo Park Hotel">
+                        </a>
+                        <svg @click="open=false" width="24" height="24" viewBox="0 0 20 20" fill="none"
+                             xmlns="http://www.w3.org/2000/svg">
+                            <path d="M15 5L5 15" stroke="#33363F" stroke-width="2" stroke-linecap="round"
+                                  stroke-linejoin="round"/>
+                            <path d="M5 5L15 15" stroke="#33363F" stroke-width="2" stroke-linecap="round"
+                                  stroke-linejoin="round"/>
+                        </svg>
+                    </div>
+                    <div>
+                        <nav>
+                            <ul x-data="{current:0}">
+
+                                <li class="relative group border-b border-solid border-gray-200">
+                                    <div class="px-4 py-2 uppercase flex justify-between ">
+                                        <a  href="/en-gb/rooms" class="block "
+                                            target="_self">
+                                            Rooms
+                                        </a>
+                                        <svg x-cloak x-show="!(current===1)" @click=" current=1" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                             xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M18 9L12 15L6 9" stroke="#222222"/>
+                                        </svg>
+                                        <svg x-cloak x-show="current===1" @click="current=0" width="24" height="24"  class=" fill-none stroke-primary "
+                                             viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M18 15L12 9L6 15"/>
+                                        </svg>
+                                    </div>
+
+                                    <ul x-cloak x-show=" current===1" x-transition class="  bg-[#F5F8F7] text-sm">
+                                        <li class="border-b border-solid border-[#2e755f4d]">
+                                            <a href="" class="block px-4 py-2 flex justify-between items-center">
+
+                                                <span>Superior rooms</span>
+                                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                    <path d="M9 6L15 12L9 18" stroke="#222222"/>
+                                                </svg>
+
+                                            </a>
+                                        </li>
+                                        <li class="border-b border-solid border-[#2e755f4d]">
+                                            <a href="" class="block px-4 py-2 flex justify-between items-center">
+
+                                                <span>Standards rooms</span>
+                                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                    <path d="M9 6L15 12L9 18" stroke="#222222"/>
+                                                </svg>
+                                            </a></li>
+                                        <li>
+                                            <a href="" class="block px-4 py-2 flex justify-between items-center">
+
+                                                <span>Executive rooms</span>
+                                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                    <path d="M9 6L15 12L9 18" stroke="#222222"/>
+                                                </svg>
+                                            </a></li>
+                                    </ul>
+
+
+                                </li>
+
+
+                                <li  class="relative group border-b border-solid border-gray-200">
+                                    <div class="px-4 py-2 uppercase flex justify-between ">
+                                        <a  href="/en-gb/rooms" class="block uppercase "
+                                            target="_self">
+                                            Restaurants
+                                        </a>
+                                        <svg  x-cloak x-show="!(current===2)" @click="current=2" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                              xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M18 9L12 15L6 9" stroke="#222222"/>
+                                        </svg>
+                                        <svg x-cloak x-show="current===2" @click="current=0" width="24" height="24"  class=" fill-none stroke-primary "
+                                             viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M18 15L12 9L6 15"/>
+                                        </svg>
+                                    </div>
+
+
+
+                                    <ul x-cloak x-show="current===2"
+                                        x-transition
+                                        class="  bg-[#F5F8F7] text-sm">
+                                        <li  class="border-b border-solid border-[#2e755f4d]">
+                                            <a href="" class="block px-4 py-2 flex justify-between items-center">
+
+                                                <div>
+                                                    <div>
+                                                        Western restaurant
+                                                    </div>
+                                                    <div>Terrace Restaurant Piare</div>
+
+                                                </div>
+                                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                    <path d="M9 6L15 12L9 18" stroke="#222222"/>
+                                                </svg>
+                                            </a>
+                                        </li>
+                                        <li  class="border-b border-solid border-[#2e755f4d]">
+                                            <a href="" class="block px-4 py-2 flex justify-between items-center">
+
+                                                <div>
+                                                    <div>
+                                                        Chinese
+                                                    </div>
+                                                    <div>Togenkyo Restaurant</div>
+
+                                                </div>
+                                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                    <path d="M9 6L15 12L9 18" stroke="#222222"/>
+                                                </svg>
+                                            </a></li>
+                                        <li  class="border-b border-solid border-[#2e755f4d]">
+                                            <a href="" class="block px-4 py-2 flex justify-between items-center">
+
+                                                <div>
+                                                    <div>
+                                                        Japanese
+                                                    </div>
+                                                    <div>Nadaman Garden Restaurant</div>
+
+                                                </div>
+                                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                    <path d="M9 6L15 12L9 18" stroke="#222222"/>
+                                                </svg>
+                                            </a></li>
+                                        <li  class="border-b border-solid border-[#2e755f4d]">
+                                            <a href="/en-gb/restaurant/lasso.htm" class="block px-4 py-2 flex justify-between items-center">
+
+                                                <div>
+
+                                                    <div>Lobby Lounge Lasso</div>
+
+                                                </div>
+                                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                    <path d="M9 6L15 12L9 18" stroke="#222222"/>
+                                                </svg>
+                                            </a></li>
+                                        <li  class="border-b border-solid border-[#2e755f4d]">
+                                            <a href="" class="block px-4 py-2 flex justify-between items-center">
+
+                                                <div>
+                                                    <div>
+                                                        Restaurant outside the hotel
+
+                                                    </div>
+                                                    <div>Terrace Restaurant Kitara</div>
+                                                </div>
+                                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                    <path d="M9 6L15 12L9 18" stroke="#222222"/>
+                                                </svg>
+                                            </a></li>
+                                        <li  class="border-b border-solid border-[#2e755f4d]">
+                                            <a href="" class="block px-4 py-2 flex justify-between items-center">
+
+                                                <div>
+                                                    <div>
+                                                        Western food & bar
+
+                                                    </div>
+                                                    <div>Park Club (members only)</div>
+                                                </div>
+                                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                    <path d="M9 6L15 12L9 18" stroke="#222222"/>
+                                                </svg>
+                                            </a></li>
+                                        <li>
+                                            <a href="" class="block px-4 py-2 flex justify-between items-center">
+
+                                                <div>
+                                                    <div>
+                                                        Sweets shop
+                                                    </div>
+                                                    <div>Piare's cake corner</div>
+
+                                                </div>
+                                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                    <path d="M9 6L15 12L9 18" stroke="#222222"/>
+                                                </svg>
+                                            </a></li>
+
+                                    </ul>
+
+
+                                </li>
+
+
+                                <li class="relative group border-b border-solid border-gray-200">
+                                    <a href="/en-gb/facilities1" class="block px-4 py-2 uppercase" target="_self">
+                <span data-hover="Facilities">
+                        Facilities
+                </span>
+                                    </a>
+                                </li>
+
+
+                                <li eventName="menu" class="relative group border-b border-solid border-gray-200">
+                                    <a href="/en-gb/services1" class="block px-4 py-2 uppercase" target="_self">
+                <span data-hover="Services">
+                        Services
+                </span>
+                                    </a>
+                                </li>
+
+
+                                <li eventName="menu" class="relative group border-b border-solid border-gray-200">
+                                    <a href="/en-gb/access" class="block px-4 py-2 uppercase" target="_self">
+                <span data-hover="Access">
+                        Access
+                </span>
+                                    </a>
+                                </li>
+
+
+                                <li eventName="menu" class="relative group border-b border-solid border-gray-200">
+                                    <a href="/en-gb/attractions" class="block px-4 py-2 uppercase" target="_self">
+                <span data-hover="Attractions">
+                        Attractions
+                </span>
+                                    </a>
+                                </li>
+
+
+                                <li eventName="menu" class="relative group border-b border-solid border-gray-200">
+                                    <a href="/en-gb/reviews" class="block px-4 py-2 uppercase" target="_self">
+                <span data-hover="Reviews">
+                        Reviews
+                </span>
+                                    </a>
+                                </li>
+
+
+                                <li eventName="menu" class="relative group border-b border-solid border-gray-200">
+                                    <a href="/en-gb/photos" class="block px-4 py-2 uppercase" target="_self">
+                <span data-hover="Photos">
+                        Photos
+                </span>
+                                    </a>
+                                </li>
+
+
+                                <li eventName="menu" class="relative group border-b border-solid border-gray-200">
+                                    <a href="/en-gb/faq" class="block px-4 py-2 uppercase" target="_self">
+                <span data-hover="FAQ">
+                        FAQ
+                </span>
+                                    </a>
+                                </li>
+
+
+                                <li eventName="menu" class="relative group border-b border-solid border-gray-200">
+                                    <a href="/en-gb/amenities" class="block px-4 py-2 uppercase" target="_self">
+                <span data-hover="Amenities">
+                        Amenities
+                </span>
+                                    </a>
+                                </li>
+
+
+                            </ul>
+                        </nav>
+                        <div x-data="{select_lang:false}"
+                             class="relative py-4 group">
+                            <button
+                                @click="select_lang=!select_lang"
+                                class="flex gap-3 px-4 items-center group"
+                                aria-haspopup="true"
+                                aria-label="Select language">
+                                <svg class="group-hover:fill-primary" height="20" width="20" viewBox="0 0 128 128"
+                                     role="presentation" aria-hidden="true" focusable="false">
+                                    <path
+                                        d="M64 8a56 56 0 1 0 56 56A56 56 0 0 0 64 8zm41.5 80H87.8a69.7 69.7 0 0 0 3.7-16h19.8a47.6 47.6 0 0 1-5.8 16zM64 109.6A62 62 0 0 1 52.9 96h22.2A62 62 0 0 1 64 109.6zM48.8 88a61.5 61.5 0 0 1-4.3-16h39a61.5 61.5 0 0 1-4.3 16zM16.7 72h19.8a69.7 69.7 0 0 0 3.7 16H22.5a47.6 47.6 0 0 1-5.8-16zm2-24H38a70.5 70.5 0 0 0-2 16H16a47.8 47.8 0 0 1 2.8-16zM64 18.4A61.8 61.8 0 0 1 79.2 40H48.8A61.8 61.8 0 0 1 64 18.4zM82 48a62.3 62.3 0 0 1 2 16H44a62.3 62.3 0 0 1 2-16zm10 16a70.5 70.5 0 0 0-1.9-16h19.2a47.8 47.8 0 0 1 2.8 16zm13.5-24H87.8a69.4 69.4 0 0 0-13.9-23 48.1 48.1 0 0 1 31.6 23zM54.1 17a69.4 69.4 0 0 0-13.9 23H22.5A48.1 48.1 0 0 1 54 17zM28.3 96h15.4a69.6 69.6 0 0 0 10.4 15 48 48 0 0 1-25.8-15zm45.6 15a69.6 69.6 0 0 0 10.4-15h15.4A48 48 0 0 1 74 111z"/>
+                                </svg>
+                                <span class="group-hover:text-primary">en</span>
+                                <svg width="18" height="18" viewBox="0 0 24 24" class="group-hover:hidden "
+                                     xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M18 9L12 15L6 9" stroke="#222222"/>
+                                </svg>
+                                <svg width="18" height="18" viewBox="0 0 24 24"
+                                     class="hidden group-hover:block group-hover:fill-primary"
+                                     xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M18 15L12 9L6 15"/>
+                                </svg>
+
+
+                            </button>
+
+                            <ul x-cloak x-show="select_lang"
+                                class=" absolute right-0 w-full shadow bg-white">
+
+                                <li class="current">
+                                    <a class="block px-4 py-2 hover:bg-primary hover:text-white" target="_self"
+                                       href="https://www.sapporoparkhotel1964.com/en-gb/services1?page_id=1687975">English</a>
+                                </li>
+
+                                <li class="">
+                                    <a class="block px-4 py-2 hover:bg-primary hover:text-white" target="_self"
+                                       href="https://www.sapporoparkhotel1964.com/ko-kr/services1?page_id=1687975">&#xD55C;&#xAD6D;&#xC5B4;</a>
+                                </li>
+
+                                <li class="">
+                                    <a class="block px-4 py-2 hover:bg-primary hover:text-white" target="_self"
+                                       href="https://www.sapporoparkhotel1964.com/zh-cn/services1?page_id=1687975">&#x4E2D;&#x6587;</a>
+                                </li>
+
+                                <li class="">
+                                    <a class="block px-4 py-2 hover:bg-primary hover:text-white" target="_self"
+                                       href="https://www.sapporoparkhotel1964.com/zh-tw/services1?page_id=1687975">&#x7E41;&#x9AD4;&#x4E2D;&#x6587;</a>
+                                </li>
+
+                            </ul>
+
+                        </div>
+
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+</header>

@@ -1,0 +1,2220 @@
+<!DOCTYPE html>
+
+<html lang="en-gb" class="clip-paths">
+  <head>
+    <!-- needed for other scripts -->
+    <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+
+    
+
+<script type="text/javascript">
+(function() {
+    typeof window.B === 'object' || (window.B = {});
+    typeof window.B.util === 'object' || (window.B.util = {});
+    typeof window.B.env === 'object' || (window.B.env = {});
+    typeof window.B.modules === 'object' || (window.B.modules = {});
+    typeof window.B.services === 'object' || (window.B.services = {});
+    typeof window.B.data === 'object' || (window.B.data = {});
+    typeof window.B.components === 'object' || (window.B.components = {});
+
+    
+    typeof window.booking === 'object' || (window.booking = window.B);
+
+    B.env.global_translation_tags = {"line_break":"\u003cbr\u003e","zwsp":"\u200b","nbsp":"&nbsp;","lrm":"\u200e","rlm":"\u200f"};
+    B.env.params = {"article_id":"297393"};
+    B.env.route_params = "";
+    B.env.action = "article";
+    B.env.pid = "ad0007e281140016";
+    B.env.stype = 48;
+    B.env.currency = {"exchange_rate":1,"code":"EUR","symbol":"&#x20AC;"};
+    B.env.channel = "booking";
+    B.env.google_analytics_tag = "";
+    B.env.lang = "en-gb";
+    B.env.lang_short_code = "en";
+    B.env.date_format = "dd/MM/yyyy";
+    B.env.ajax_action_host = "https://reservation.booking.expert";
+    B.env.csrf_token = "BYeDWwAAAAA=nbtQ1E-7_I50L1yOw2wARlvFEeKvaioe5Krw2DWwaJXr51rFZDXWK-0K5RD4FAU48StWzUl_2g9KbNLOq4dA5TOjZnPTZpBHj4q7AbCdiMVzao2eIImUBhPmBcn5-mM12Nn0reAgQG6-eqIQD3gQMqeVqL96uJFWS8gfUgQjYsmuhK9TgTkoXXlXA0bQQkgHrc-2r4Rs6mW5IU_A";
+    B.env.urls = {"book":"https://reservation.booking.expert/en-gb/book?h=bhpicqsr","rooms":"https://www.sapporoparkhotel1964.com/en-gb/rooms","attractions":"https://www.sapporoparkhotel1964.com/en-gb/attractions","home":"https://www.sapporoparkhotel1964.com/en-gb","reviews":"https://www.sapporoparkhotel1964.com/en-gb/reviews","verify":"https://reservation.booking.expert/en-gb/verify?h=bhpicqsr","confirm":"https://reservation.booking.expert/en-gb/confirm?h=bhpicqsr","facilities":"https://www.sapporoparkhotel1964.com/en-gb/amenities","contact":"https://www.sapporoparkhotel1964.com/en-gb/contact","sitemap":"https://www.sapporoparkhotel1964.com/en-gb/sitemap","privacy_policy":"https://www.sapporoparkhotel1964.com/en-gb/privacy-policy","cookie_policy":"https://www.sapporoparkhotel1964.com/en-gb/cookie-policy","search":"https://reservation.booking.expert/en-gb/search?h=bhpicqsr","photos":"https://www.sapporoparkhotel1964.com/en-gb/photos"};
+    B.env.guest_ip = "34.245.182.81";
+    B.env.ip_country = "ie";
+    B.env.visitor_country = "ie";
+    B.env.page_type = "article";
+    B.env.error_config = {"WECHAT_ERROR_WITH_CUSTOM_MSG":{"type":"user","desc":"WECHAT_ERROR_WITH_CUSTOM_MSG","code":3029},"no_bn_or_pincode":{"code":2002,"desc":"Missing booknumber or pincode.","type":"user"},"AUTH_STATUS_NO_USERNAME":{"desc":"AUTH_STATUS_NO_USERNAME","type":"user","code":3007},"AUTH_STATUS_2FA_CHALLENGE_FAILED_INVALID_PIN":{"desc":"AUTH_STATUS_2FA_CHALLENGE_FAILED_INVALID_PIN","type":"user","code":3032},"AUTH_STATUS_EMAIL_UNCONFIRMED":{"code":3010,"type":"user","desc":"AUTH_STATUS_EMAIL_UNCONFIRMED"},"pci_call_outside_pci":{"code":1014,"type":"user","desc":"This call requires connection to secure server. Please add 'secure-' prefix to domain name."},"AUTH_STATUS_LOCKED":{"desc":"AUTH_STATUS_LOCKED","type":"user","code":3005},"AUTH_STATUS_SN_SIGNIN_NEEDS_PASSWORD":{"type":"user","desc":"AUTH_STATUS_SN_SIGNIN_NEEDS_PASSWORD","code":3003},"AUTH_STATUS_NO_PASSWORD":{"code":3008,"desc":"AUTH_STATUS_NO_PASSWORD","type":"user"},"cc_validation_error":{"type":"user","desc":"Credit card validation error","code":1013},"too_many_parallel_requests":{"desc":"Too many parallel requests. Please only call 1 instance of this function in parallel during 8-23 GMT or 3 instances in parallel during 23-8 GMT.","type":"user","code":1008},"I_MEAN_AUTH_STATUS_USER_UNKNOWN":{"code":3028,"type":"user","desc":"AUTH_STATUS_USER_UNKNOWN"},"affiliate_closed":{"code":1120,"type":"user","desc":"Affiliate is closed."},"rpo_not_found":{"code":1105,"type":"user","desc":"Room not found."},"AUTH_STATUS_AUTHENTICATED":{"code":3002,"desc":"AUTH_STATUS_AUTHENTICATED","type":"user"},"cancelled_booking":{"code":1123,"type":"user","desc":"The given booking is cancelled."},"min_length_of_stay_not_fulfilled":{"type":"user","desc":"Minimum length of stay for the requested hotel(s) was not fulfilled","code":1126},"hotel_is_closed":{"code":1011,"desc":"The specified hotel is not in service.","type":"user"},"ALREADY_SUBMITTED":{"code":3026,"type":"user","desc":"ALREADY_SUBMITTED"},"price_mismatch_decrease_process_booking":{"type":"user","desc":"Difference between asked and available incremental prices. The price decreased.","code":1201},"captcha_required":{"code":1142,"desc":"User must complete captcha challenge before retrying request.","type":"user"},"num_rooms_bigger_than_allowed":{"code":1125,"desc":"Number of rooms is bigger than the maximum allowed","type":"user"},"ofac_second_match":{"code":1300,"desc":"OFAC second match by date of birthday.","type":"user"},"AUTH_STATUS_2FA_INVALID_AUTHORIZATION_TOKEN":{"desc":"AUTH_STATUS_2FA_INVALID_AUTHORIZATION_TOKEN","type":"user","code":3033},"PASSWORD_EQ_USERNAME":{"code":3031,"type":"user","desc":"Password is equal to username"},"service_unavailable":{"desc":"Service Unavailable","type":"system","code":503},"filtered_av_updates":{"code":444,"desc":"AV updates - some filtered","type":"user"},"invalid_parameter_combination":{"type":"user","desc":"Invalid parameter combination.","code":1006},"AUTH_STATUS_TOKEN_ERROR":{"code":3011,"type":"user","desc":"AUTH_STATUS_TOKEN_ERROR"},"unauthorized":{"desc":"HTTP 401 - Unauthorized","type":"user","code":401},"non_pci_call_in_pci":{"type":"user","desc":"This call can not be made to secure server. Please remove 'secure-' prefix from domain name.","code":1015},"invalid_input_format":{"code":1003,"desc":"One or more input parameters have an illegal format.","type":"user"},"duplicated_request_supply":{"code":420,"desc":"Duplicated supply request (magic, not client facing)","type":"user"},"FACEBOOK_ERROR_WITH_CUSTOM_MSG":{"code":3025,"desc":"FACEBOOK_ERROR_WITH_CUSTOM_MSG","type":"user"},"payment_error_insufficient_funds":{"code":2010,"type":"user","desc":"Insufficient funds"},"not_implemented":{"code":501,"desc":"Not Implemented","type":"system"},"AUTH_STATUS_NONE":{"desc":"AUTH_STATUS_NONE","type":"user","code":3000},"SHORT_PASSWORD":{"desc":"Password is less then 8 characters","type":"user","code":3030},"affiliate_not_found":{"desc":"Affiliate not found.","type":"user","code":1119},"AUTH_STATUS_2FA_NO_APP_SUPPORT_FOR_THE_FEATURE":{"desc":"AUTH_STATUS_2FA_NO_APP_SUPPORT_FOR_THE_FEATURE","type":"user","code":3035},"FACEBOOK_ACCOUNTS_MUST_BE_MERGED":{"code":3022,"type":"user","desc":"FACEBOOK_ACCOUNTS_MUST_BE_MERGED"},"unknown_link_booking_error":{"type":"user","desc":"Unknown error while linking booking.","code":2003},"function_not_allowed":{"desc":"Function not allowed.","type":"user","code":1010},"internal_server_error":{"code":500,"type":"system","desc":"Internal Server Error"},"no_rpo_availability":{"desc":"There is no room available during the specified period.","type":"user","code":1107},"unknown_error_code":{"code":65535,"type":"system","desc":"Unknown error code"},"PASSWORD_RESET_FAILED":{"type":"user","desc":"Password reset failed","code":3020},"possible_hijack":{"type":"user","desc":"A reequest is blocked because its considered a hijack for a booking","code":1111},"FACEBOOK_ALREADY_CONNECTED_TO_DIFF_ACCOUNT":{"desc":"FACEBOOK_AUTHENTICATE","type":"user","code":3024},"missing_parameters":{"desc":"One or more required input parameters are missing.","type":"user","code":1002},"AUTH_STATUS_2FA_WRONG_ANSWER_TO_SECURITY_QUESTION":{"desc":"AUTH_STATUS_2FA_WRONG_ANSWER_TO_SECURITY_QUESTION","type":"user","code":3034},"FACEBOOK_AUTHENTICATE":{"code":3023,"desc":"FACEBOOK_AUTHENTICATE","type":"user"},"filtered_av_updates_errors":{"type":"user","desc":"AV updates - errors and filtered","code":445},"arrival_date_in_past":{"desc":"Arrival date must be today or after today","type":"user","code":1124},"invalid_guest_qty":{"type":"user","desc":"Guest_qty is not between 1 and it's maximum.","code":1122},"booking_already_processed":{"type":"user","desc":"This booking has already been processed and a cached result will be returned.","code":2005},"booking_is_being_processed":{"type":"user","desc":"This booking is being processed in another request, ignoring this request.","code":2009},"gone":{"code":410,"type":"user","desc":"HTTP 410 - Gone"},"ssl_required":{"desc":"HTTPS (SSL) connection required for using this procedure.","type":"user","code":1005},"too_many_requests_":{"desc":"Too many requests - Throttling","type":"user","code":429},"AUTH_STATUS_USER_UNCONFIRMED":{"type":"user","desc":"AUTH_STATUS_USER_UNCONFIRMED","code":3009},"duplicated_request_dist":{"code":1020,"desc":"Duplicated distribution request (magic, not client facing)","type":"user"},"FACEBOOK_USER_DIDNT_ALLOW_EMAIL":{"code":3027,"desc":"FACEBOOK_USER_DIDNT_ALLOW_EMAIL","type":"user"},"FACEBOOK_ERROR_UNKNOWN":{"desc":"FACEBOOK_ERROR_UNKNOWN","type":"user","code":3021},"price_mismatch_increase_process_booking":{"code":1200,"type":"user","desc":"Difference between asked and available incremental prices. The price increased."},"AUTH_STATUS_FAILED":{"desc":"AUTH_STATUS_FAILED","type":"user","code":3004},"too_many_requests":{"desc":"Too many requests per minute. Please don't use this function heavily (i.e. only for testing) during 8-23 GMT.","type":"user","code":1007},"payment_error_generic":{"code":2007,"type":"user","desc":"There was a problem processing payment"},"xml_parse_error":{"code":1012,"desc":"XML parse error","type":"user"},"booking_already_linked":{"code":2004,"type":"user","desc":"This booking has already been linked to another user account."},"AUTH_STATUS_EXPIRED":{"desc":"AUTH_STATUS_EXPIRED","type":"user","code":3001},"forbidden":{"code":403,"type":"user","desc":"HTTP 403 - Forbidden"},"bad_request":{"code":400,"type":"user","desc":"HTTP 400 - Bad Request"},"token_invalid":{"desc":"Provided token is invalid.","type":"user","code":2001},"rpo_not_in_hotel":{"type":"user","desc":"Room is not part of the hotel.","code":1106},"AUTH_STATUS_USER_UNKNOWN":{"type":"user","desc":"AUTH_STATUS_FAILED","code":3004},"item_not_available":{"desc":"Item not available.","type":"user","code":2011},"internal_error":{"code":1001,"type":"system","desc":"Internal error (with a unique ID if the error is logged: in those cases Bookings may be contacted to trace the error)."},"incorrect_parameters":{"desc":"One or more input parameters have an incorrect value.","type":"user","code":1009},"booking_looks_suspicious":{"code":2006,"desc":"Book process failed.","type":"user"},"not_found":{"desc":"HTTP 404 - Not Found","type":"user","code":404}};
+    B.env.constants = {"AlbumTypes":{"DINING":"dining","GALLERY":"gallery","ARTICLE_SECTION":"articlesection","ARTICLE_MAIN":"articlemain","CUSTOM_ROOM":"custom_room","HOMEPAGE":"homepage"},"GTM":{"WF_GUEST_TRAFFIC":"GTM-PBSCT4T","CHANNEL":"booking"},"Layouts":{"BOOKING_ENGINE":"bookingengine","EMPTY":"empty","EMAIL_BASE":"email_base","WEBSITES":"websites"},"CustomContactFormFieldTypes":{"EMAIL":5,"CATEGORY":0,"DATE":7,"TIME_RANGE":10,"BOOKED_ROOM":13,"TIME":9,"RECIPIENT":2,"GUESTS":11,"LAST_NAME":4,"FIRST_NAME":3,"PHONE":6,"DATE_RANGE":8,"TITLE":1,"MESSAGE":12},"SegmentTypes":{"SLIDESHOW":"slideshow","CUSTOM_CONTACT_FORM":"custom_contact_form","PARAGRAPH":"paragraph","IMAGE":"image","HEADER":"header","PARAGRAPH_HTML":"paragraph_html","SECTION_HEADER":"section_header","NONEDITABLE":"noneditable","VIDEO":"video","EMBED":"embed"},"PaymentMethod":{"CASH_ONLY_PAYMENT_METHOD":18,"MAX_CARDS_TO_DISPLAY":3,"FREE":"free"},"PolicyTypes":{"GROUPS":"POLICY_HOTEL_GROUPS","CHILDREN":"POLICY_CHILDREN","INTERNET":"POLICY_HOTEL_INTERNET","PARKING":"POLICY_HOTEL_PARKING","PREPAYMENT":"POLICY_PREPAY","CANCELLATION":"POLICY_CANCELLATION","PETS":"POLICY_HOTEL_PETS"},"RefundableTypes":{"FREE_CANCELLATION":"free_cancellation","SPECIAL_CONDITIONS":"special_conditions","NON_REFUNDABLE":"non_refundable"},"Theme":{"CREST":"theme_Crest","EDGE":"theme_Edge","AVENUE":"theme_Avenue","AURA":"theme_Aura","FOCUS":"theme_Focus","ASCENT":"theme_Ascent","FRAME":"theme_Frame","SUMMIT":"theme_Summit"},"SmartAVClient":{"AVAILABILITY_DAYS":22,"LENGTH_OF_STAY":1,"SEVEN_DAYS_AGO":-7},"ChoiceRatePlanTypes":{"SGM":"SGM","SAPR2":"SAPR2","SP15M3":"SP15M3","SP15M2":"SP15M2","RACK":"RACK","SAPR1":"SAPR1","SP20M4":"SP20M4","S3A":"S3A","SSC":"SSC"},"RoomSource":{"BOOKING_PLUS":"booking_plus","BOOKING":"booking","CUSTOM":"custom"},"PageTypes":{"ARTICLE":"article","INDEX":"index","EMAIL_CONTACT":"email/contact","ROOM_DETAIL":"roomdetail","PHOTOS":"photos","ROOM":"room","CONTACT":"contact","BOOK":"book","CUSTOM_ROOM":"custom_room","SITEMAP":"sitemap","EMAIL_CANCELLATION":"email/cancellation","COOKIE_POLICY":"cookie_policy","SEARCH":"search","PROMOTIONS":"promotions","TOOLS":"_","FACILITIES":"facilities","PACKAGES":"packages","PACKAGE":"package","ROOM_OVERVIEW":"roomoverview","HOME":"home","PRIVACY_POLICY":"privacy_policy","ATTRACTIONS":"attractions","CUSTOM_LINK":"custom_link","EMAIL_CONFIRMATION":"email/confirmation","DINING":"dining","ROOMS":"rooms","REVIEWS":"reviews","CONFIRM":"confirm","RESERVATION":"reservation","VERIFY":"verify","HOMEPAGE":"homepage"},"BookingEngineType":{"CHOICE":"CHOICE","BOOKING":"BOOKING","THIRD_PARTY_URL":"THIRD_PARTY_URL"},"PhotoClass":{"BKS_PDF_DOCUMENT":99,"BKS_CUSTOM_ROOM":68,"BKS_LOGO_AWARDS":54,"BKS_GALLERY":60,"BKS_ARTICLE_HERO":57,"BKS_BACKGROUND":55,"BKS_FAVICON":59,"BKS_ARTICLE_BODY":58,"BKS_HOMEPAGE_HERO":56},"WidgetTypes":{"SITEMAP":"DEPRECATED","VIDEO":"Video","LOCATION":"Location","CONTACT":"DEPRECATED","QUICKRESERVATION":"DEPRECATED","EMBEDWIDGET":"DEPRECATED","ROOM":"Room","EMBED":"Embed","FACILITIES":"Facilities","FEATURED_ARTICLE":"FeaturedArticle","REVIEWS":"Reviews","CUSTOM_CONTACT_FORM":"CustomContactForm","LEGACY":"DEPRECATED"},"ChoiceRatePlanStrings":{"RACK":"bks_cms_choice_hotels_best_available","SSC":"bks_cms_choice_hotels_aarp_members_60_plus","SAPR1":"bks_cms_choice_hotels_advance_purchase_rate","SP20M4":"bks_cms_choice_hotels_discount_with_min_stay_4_nights","S3A":"bks_cms_choice_hotels_aaa_caa_members_only","SP15M3":"bks_cms_choice_hotels_discount_with_min_stay_3_nights","SGM":"bks_cms_choice_hotels_special_rates_gov_military_travellers","SAPR2":"bks_cms_choice_hotels_advance_purchase_rate","SP15M2":"bks_cms_choice_hotels_discount_with_min_stay_2_nights"},"SocialLinkTypes":{"TWITTER":"twitter","TUMBLR":"tumblr","GOOGLEPLUS":"google+","FACEBOOK":"facebook","PINTEREST":"pinterest","YELP":"yelp","WEIBO":"weibo","TRIPADVISOR":"tripadvisor","INSTAGRAM":"instagram","YOUTUBE":"youtube"}};
+    B.env.static_hostnames = ["https://q-fa.bstatic.com","https://r-fa.bstatic.com"];
+    B.env.static_images_hostnames = ["https://q-fa.bstatic.com","https://r-fa.bstatic.com"];
+    B.env.static_file_suffix = "";
+    B.env.affiliate_id = 1241010;
+    B.env.affiliate_label = "bks_wf";
+    B.env.hotel_id = 271588;
+    B.env.is_preview = !!"";
+    B.env.device_class_by_ua = "desktop";
+    B.env.privacy_and_consent = {"display_cookie_warning":1,"warning_rendered_cookie_name":"cws","warning_closed_cookie_name":"bks_wf_cws"};
+
+    
+
+    B.data.hotel = {"product_type":{"affiliate_id":1241010,"name":"web-direct-subscription","sku":"WebDirectSubscription"},"open_bookable":true,"branding_hash_name":"90010b6d5e74fad6913e489e48ecf58a61ddcd12","hotel_flag_foreigner_tax_exemption":0,"hotel_checkout_from":"","branding_version":"0bd4c","time_zone":"Asia/Tokyo","flags":{"HasThirdPartyAnalyticsInsertions":"false","CustomReservationMobileURL":"https://www.book-secure.com/index.php?s=results&property=jpsap30526&arrival={$CheckIN(yyyy-MM-dd)}&departure={$CheckOUT(yyyy-MM-dd)}","SHOW_PHONE_NUMBER_ON_SITE":"true","HasQuickReservationFeature":"false","VIEW_CONTENT_SETTING":"true","HAS_PUBLISHED_DATA":"true","ShowCookiePolicy":"True","HasCustomReservationURLs":"true","HasThirdPartyBookingEngine":"false","ShowConsentCheckbox":"true","CustomReservationURL":"https://www.book-secure.com/index.php?s=results&property=jpsap30526&arrival={$CheckIN(yyyy-MM-dd)}&departure={$CheckOUT(yyyy-MM-dd)}","ConsentCheckboxIsPrechecked":"false","GoogleAnalyticsID":"","ConsentCheckboxIsRequired":"true","ReservationCurrency":"JPY","SHOW_EMAIL_ADDRESS_ON_SITE":"true","ReservationChoiceSwitch":"3"},"affiliate_id":1241010,"hotel_poi_zoom":15,"primary_language":"en","footer_menus":[{"current":"","url":"https://www.sapporoparkhotel1964.com/en-gb/sitemap","title":"bks_cms_menu_sitemap","action":"sitemap","target_blank":false},{"title":"bks_cms_menu_privacy_policy","url":"https://www.sapporoparkhotel1964.com/en-gb/privacy-policy","current":"","target_blank":false,"action":"privacy_policy"},{"current":"","url":"https://www.sapporoparkhotel1964.com/en-gb/cookie-policy","title":"bks_cms_menu_cookie_policy","target_blank":false,"action":"cookie_policy"},{"action":"article","target_blank":false,"action_id":297393,"current":1,"title":"General Terms and Conditions for Accommodation Contract","url":"https://www.sapporoparkhotel1964.com/en-gb/general-terms-conditions-for-accommodation-contract"}],"hotel_checkin_from":"14:00","sku":"WebDirectSubscription","address_object":{"city":"Sapporo","name":"Sapporo Park Hotel","country":"Japan","address":"Chuo-ku Minami 10-jo Nishi 3-1-1"},"webpage_languages":["en-gb","ko-kr","zh-cn","zh-tw"],"primary_domain":"www.sapporoparkhotel1964.com","hotel_id":271588,"longitude":141.355928778648,"currency_code":"JPY","booking_engine_type":"THIRD_PARTY_URL","hotel_checkout_until":"11:00","short_code":"bhpicqsr","hotel_checkin_until":"","standard_branding":{"logo":"//q.bstatic.com/data/bsuitewf/3bf94bac2ddfa5e05a929a05613909cc1662e4f1","theme":"theme_Aura","hash_name":"90010b6d5e74fad6913e489e48ecf58a61ddcd12","font_settings":"Georgia;Georgia;Georgia","background_color":"#529ec2","background_img":"//q.bstatic.com/data/bsuitewf/6ac64972b5e163f3dbde95088369717c9e144ac4","accent_color":"#17417d"},"name":"Sapporo Park Hotel","latitude":43.0480122367167,"booking_engine":2,"default_communication_language":"ja","preferred_contacts":{"telephone_1":"+81 11-511-3135","name":"Ms. Takahashi Yumi","email":"sph_inb1@granvista.co.jp"},"social_links":[{"is_hidden":false,"hotel_id":271588,"url":"https://www.facebook.com/park1964","hidden":false,"title":"Facebook","id":1063678,"sort_id":0},{"is_hidden":false,"hidden":false,"id":1063675,"url":"https://www.tripadvisor.com.sg/Hotel_Review-g298560-d325626-Reviews-Sapporo_Park_Hotel-Sapporo_Hokkaido.html","title":"TripAdvisor","hotel_id":271588,"sort_id":2}],"header_menus":[{"action_id":310473,"action":"article","target_blank":false,"title":"Important Notices","url":"https://www.sapporoparkhotel1964.com/en-gb/important-notices","current":""},{"target_blank":false,"action":"rooms","title":"bks_cms_menu_rooms","url":"https://www.sapporoparkhotel1964.com/en-gb/rooms","current":""},{"current":"","title":"Restaurant","url":"https://www.sapporoparkhotel1964.com/en-gb/restaurant","action":"article","target_blank":false,"action_id":176279},{"title":"Facilities","url":"https://www.sapporoparkhotel1964.com/en-gb/facilities1","current":"","action_id":176287,"target_blank":false,"action":"article"},{"current":"","url":"https://www.sapporoparkhotel1964.com/en-gb/services1","title":"Services","target_blank":false,"action":"article","action_id":176292},{"title":"Access","url":"https://www.sapporoparkhotel1964.com/en-gb/new-page","current":"","action_id":311053,"target_blank":false,"action":"article"},{"action":"attractions","target_blank":false,"current":"","title":"bks_cms_menu_attractions","url":"https://www.sapporoparkhotel1964.com/en-gb/attractions"},{"current":"","title":"bks_cms_menu_reviews","url":"https://www.sapporoparkhotel1964.com/en-gb/reviews","action":"reviews","target_blank":false},{"action":"photos","target_blank":false,"title":"bks_cms_menu_photos","url":"https://www.sapporoparkhotel1964.com/en-gb/photos","current":""},{"target_blank":false,"action":"facilities","url":"https://www.sapporoparkhotel1964.com/en-gb/amenities","title":"bks_cms_menu_amenities","current":""},{"current":"","title":"FAQ","url":"https://www.sapporoparkhotel1964.com/en-gb/faq","target_blank":false,"action":"article","action_id":176284},{"current":"","url":"https://www.sapporoparkhotel1964.com/en-gb/contact","title":"bks_cms_menu_contact","action":"contact","target_blank":false}],"test_hotel":false};
+    B.data.urls = {"book":"https://reservation.booking.expert/en-gb/book?h=bhpicqsr","rooms":"https://www.sapporoparkhotel1964.com/en-gb/rooms","attractions":"https://www.sapporoparkhotel1964.com/en-gb/attractions","home":"https://www.sapporoparkhotel1964.com/en-gb","reviews":"https://www.sapporoparkhotel1964.com/en-gb/reviews","verify":"https://reservation.booking.expert/en-gb/verify?h=bhpicqsr","confirm":"https://reservation.booking.expert/en-gb/confirm?h=bhpicqsr","facilities":"https://www.sapporoparkhotel1964.com/en-gb/amenities","contact":"https://www.sapporoparkhotel1964.com/en-gb/contact","sitemap":"https://www.sapporoparkhotel1964.com/en-gb/sitemap","privacy_policy":"https://www.sapporoparkhotel1964.com/en-gb/privacy-policy","cookie_policy":"https://www.sapporoparkhotel1964.com/en-gb/cookie-policy","search":"https://reservation.booking.expert/en-gb/search?h=bhpicqsr","photos":"https://www.sapporoparkhotel1964.com/en-gb/photos"};
+    B.data.default_image = "data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4KPCFET0NUWVBFIHN2ZyBQVUJMSUMgIi0vL1czQy8vRFREIFNWRyAxLjEvL0VOIiAiaHR0cDovL3d3dy53My5vcmcvR3JhcGhpY3MvU1ZHLzEuMS9EVEQvc3ZnMTEuZHRkIj4KPHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZlcnNpb249IjEuMSI+CiAgPHJlY3Qgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgc3R5bGU9ImZpbGw6I0ZBRkFGQTtzdHJva2Utd2lkdGg6MztzdHJva2U6Izk5OTtzdHJva2UtZGFzaGFycmF5OiA4LCA0O3ZlY3Rvci1lZmZlY3Q6IG5vbi1zY2FsaW5nLXN0cm9rZTsiIC8+Cjwvc3ZnPgo=";
+
+    
+    B.data.search_results = "" || undefined;
+    
+
+    
+
+    
+    B.data.policies = "" || undefined;
+    
+
+    
+
+    
+
+    
+
+    
+    B.env.accounting_config = {"num_decimals":{"MGA":0,"BIF":0,"JOD":3,"BHD":3,"ECS":0,"GNF":0,"TMM":0,"UGX":0,"RUB":0,"IQD":3,"AFA":0,"KMF":0,"VND":0,"PYG":0,"JPY":0,"LYD":3,"CLP":0,"COP":0,"KRW":0,"RWF":0,"DJF":0,"OMR":3,"LAK":0,"XAF":0,"BYR":0,"TJR":0,"TWD":0,"MZM":0,"VUV":0,"ISK":0,"TND":3,"default":2,"XPF":0,"KWD":3,"HUF":0,"XOF":0,"IDR":0},"symbol_position":{"PLN":"after","CZK":"after","default":"before","RON":"after"},"group_separator":{"default":","},"decimal_separator":{"default":"."},"currency_separator":{"JPY":"","default":"&nbsp;","USD":"","GBP":""},"html_symbol":{"INR":"Rs.","HKD":"HK$","JPY":"&#165;","CZK":"K&#269;","XPF":"CFP","ARS":"AR$","GBP":"&#163;","IDR":"Rp","SGD":"S$","EUR":"&#x20AC;","USD":"US$","RON":"lei","TRY":"TL","PLN":"z&#x0142;","BRL":"R$","CLP":"CL$","PHP":"&#8369;","ILS":"&#x20AA;"}} || undefined;
+    
+
+    B.env.month_names = ["January","February","March","April","May","June","July","August","September","October","November","December"];
+    B.env.day_of_week_names = ["Sun","Mon","Tue","Wed","Thu","Fri","Sat"];
+    B.env.full_day_of_week_names = ["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"];
+
+    
+        B.env.jstmpl_date_format = {"from_month_with_year":"since {month_name_from} {full_year}","date_without_year":"{day_of_month} {month_name}","date_with_weekday_time_from":"{weekday} {begin_marker}{day_of_month} {month_name}{end_marker} {full_year} from {time}","date_with_weekday_time_until":"{weekday} {begin_marker}{day_of_month} {month_name}{end_marker} {full_year} until {time}","short_month_only":"{short_month_name}","month_with_year":"{month_name_with_year_only} {full_year}","short_date_with_weekday_without_year":"{short_weekday} {day_of_month} {short_month_name}","date_with_short_weekday_with_year":"{short_weekday} {day_of_month} {month_name} {full_year}","numeric_date_range_both_years":"{day_of_month}/{month}/{full_year} - {day_of_month_until}/{month_until}/{full_year_until}","date_with_weekday_to":"{weekday_to} {day_of_month} {month_name_to} {full_year}","day_of_month_only":"{day_of_month}","numeric_date":"{day_of_month}/{month}/{full_year}","date_with_short_weekday_without_year":"{short_weekday} {day_of_month} {month_name}","short_date":"{day_of_month} {short_month_name} {full_year}","long_date_range_both_years":"{day_of_month} {month_name} {full_year} - {day_of_month_until} {month_name_until} {full_year_until}","in_month_with_year":"in {month_name_in} {full_year}","date_with_weekday":"{weekday} {day_of_month} {month_name} {full_year}","numeric_date_range":"{day_of_month}/{month} - {day_of_month_until}/{month_until}","short_date_without_year_range":"{day_of_month} {short_month_name} - {day_of_month_until} {short_month_name_until}","range_from_long_date_time_until_long_date_time":"from {day_of_month} {month_name} {full_year} at {time} until {day_of_month_until} {month_name_until} {full_year_until} at {time_until}","short_weekday_only":"{short_weekday}","short_month_with_year":"{short_month_name} {full_year}","month_name_only":"{month_name_nom}","short_date_with_weekday":"{short_weekday} {day_of_month} {short_month_name} {full_year}","short_date_without_year":"{day_of_month} {short_month_name}","date_with_year":"{day_of_month} {month_name} {full_year}","date_with_weekday_time_from_until":"{weekday} {begin_marker}{day_of_month} {month_name}{end_marker} {full_year} from {time} until {time_until}","date_with_weekday_with_markers":"{weekday} {begin_marker}{day_of_month} {month_name}{end_marker} {full_year}","date_with_weekday_from":"{weekday_from} {day_of_month} {month_name_from} {full_year}"};
+        B.env.jstmpl_months = {"5":{"name_to":"May","name_only":"May","name_from":"May","name":"May","short_name":"May","name_with_year_only":"May","name_in":"May","name_def_article_uc":"The May","name_def_article_lc":"the May"},"4":{"name_to":"April","name_only":"April","name_from":"April","name":"April","short_name":"Apr","name_with_year_only":"April","name_in":"April","name_def_article_uc":"The April","name_def_article_lc":"the April"},"1":{"name_to":"January","name_only":"January","name_from":"January","name":"January","short_name":"Jan","name_with_year_only":"January","name_in":"January","name_def_article_uc":"The January","name_def_article_lc":"the January"},"11":{"name_to":"November","name_only":"November","name_from":"November","name":"November","short_name":"Nov","name_with_year_only":"November","name_in":"November","name_def_article_uc":"The November","name_def_article_lc":"the November"},"8":{"name_to":"August","name_only":"August","name_from":"August","name":"August","short_name":"Aug","name_with_year_only":"August","name_in":"August","name_def_article_uc":"The August","name_def_article_lc":"the August"},"3":{"name_to":"March","name_only":"March","name_from":"March","name":"March","short_name":"Mar","name_with_year_only":"March","name_in":"March","name_def_article_uc":"The March","name_def_article_lc":"the March"},"6":{"name_to":"June","name_only":"June","name_from":"June","name":"June","short_name":"Jun","name_with_year_only":"June","name_in":"June","name_def_article_uc":"The June","name_def_article_lc":"the June"},"7":{"name_to":"July","name_only":"July","name_from":"July","name":"July","short_name":"Jul","name_with_year_only":"July","name_in":"July","name_def_article_uc":"The July","name_def_article_lc":"the July"},"9":{"name_to":"September","name_only":"September","name_from":"September","name":"September","short_name":"Sept","name_with_year_only":"September","name_in":"September","name_def_article_uc":"The September","name_def_article_lc":"the September"},"10":{"name_to":"October","name_only":"October","name_from":"October","name":"October","short_name":"Oct","name_with_year_only":"October","name_in":"October","name_def_article_uc":"The October","name_def_article_lc":"the October"},"2":{"name_to":"February","name_only":"February","name_from":"February","name":"February","short_name":"Feb","name_with_year_only":"February","name_in":"February","name_def_article_uc":"The February","name_def_article_lc":"the February"},"12":{"name_to":"December","name_only":"December","name_from":"December","name":"December","short_name":"Dec","name_with_year_only":"December","name_in":"December","name_def_article_uc":"The December","name_def_article_lc":"the December"}};
+        B.env.jstmpl_weekdays = {"2":{"short":"Tue","name_to":"Tuesday","name_on":"Tuesday","name_from":"Tuesday","name":"Tuesday","shortest":"Tu"},"3":{"short":"Wed","name_to":"Wednesday","name_on":"Wednesday","name_from":"Wednesday","name":"Wednesday","shortest":"We"},"4":{"short":"Thu","name_to":"Thursday","name_on":"Thursday","name_from":"Thursday","name":"Thursday","shortest":"Th"},"7":{"short":"Sun","name_to":"Sunday","name_on":"Sunday","name_from":"Sunday","name":"Sunday","shortest":"Su"},"6":{"short":"Sat","name_to":"Saturday","name_on":"Saturday","name_from":"Saturday","name":"Saturday","shortest":"Sa"},"1":{"short":"Mon","name_to":"Monday","name_on":"Monday","name_from":"Monday","name":"Monday","shortest":"Mo"},"5":{"short":"Fri","name_to":"Friday","name_on":"Friday","name_from":"Friday","name":"Friday","shortest":"Fr"}};
+    
+
+    
+        B.env.jstmpl_time_format = {"PM_symbol":{"name":"PM"},"AM_symbol":{"name":"AM"},"time":{"name":"{hour_24h}:{minutes}"}};
+    
+
+    
+
+    
+
+    
+
+    
+
+
+
+
+    B.env.clientside_translation_tags = {"private":{"bks_be_error_payment_error_generic":"Cannot process your payment.","bks_be_select":"Select","bks_be_full_board_included":"Full board included","bks_cms_contact_message_success":"The information has been submitted to us. Thank you!","bks_cms_menu_map":"Map","bks_cms_menu_book_now":"Book now","bks_be_error_too_many_attempts_to_cancel":"Too many attempts to cancel a booking. Please try again later.","bks_be_validate_cc":"Invalid card number","bks_cms_menu_location":"Location","sq_metres":"m²","bks_be_terms_and_conditions":"Terms and conditions","bks_cms_menu_accommodations":"Accommodation","bks_cms_menu_reviews":"Reviews","bks_cms_more_info":"More info","bks_cms_menu_photos":"Photos","bks_cms_menu_sitemap":"Sitemap","bks_be_special_conditions":"Special conditions","bks_be_error_incorrect_hotel":"This booking is not from this property.","bks_cms_menu_plans":"Plans","bks_be_half_board_included":"Half board included","bks_be_arrival_should_be_earlier_than_departure":"Arrival date must be earlier than departure date.","bks_cms_hotel_compare_score_review":"Score from {num_reviews} reviews","bks_cms_menu_images":"Images","bks_cms_menu_privacy_policy":"Privacy policy","bks_be_error_missing_parameters":"Cannot proceed, some parameters are missing.","bks_be_num_nights_stay":"{number_nights} night stay","bks_cms_menu_log_in":"Log in","bks_cms_menu_properties":"Properties","bks_cms_menu_attractions":"Attractions","bks_cms_menu_check_rates":"Check rates","bks_cms_menu_excursions":"Excursions","bks_cms_menu_bungalows":"Bungalows","bks_be_error_credit_card_validation":"Please check your credit card information.","bks_cms_menu_services":"Services","bks_be_cart_abandon_dont_miss":"Don’t miss your chance to stay at {hotel_name}!","bks_be_excluded_charges":"Excluded","bks_cms_menu_specials":"Specials","language_exception_bks_cms_hotel_compare_score_review_1":"Score from {num_reviews} review","bks_cms_menu_inns":"Inns","bks_be_credit_card_enter_valid_expiry":"Please fill in a valid expiration date","bks_cms_menu_beds":"Beds","bks_cms_menu_vaction_rentals":"Vacation Rentals","bks_be_error_booking_not_found":"Booking not found. Check your PIN code and confirmation number.","language_exception_bks_be_error_room_no_longer_available_1":"This room is no longer available.","bks_cms_menu_vacation_rentals":"Vacation Rentals","bks_cms_menu_hotels":"Hotels","bks_be_error_incorrect_pincode":"Incorrect PIN code.","bks_cms_menu_cabins":"Cabins","bks_cms_menu_facilities":"Facilities","bks_be_max30nights":"Your check-out date is more than 30 nights after your check-in date. Bookings can only be made for a maximum of 30 nights. Please enter different dates and try again.","bks_cms_menu_promotions":"Promotions","bks_be_error_incorrect_arrival_hour":"Incorrect hour of arrival.","bks_cms_menu_houses":"Houses","bks_cms_menu_contact":"Contact","bks_be_occupancy_max_adults":"Max adults:","bks_cms_menu_gallery":"Gallery","bks_cms_menu_benefits":"Benefits","bks_cms_menu_offers":"Offers","bks_be_the_fine_print":"The fine print","bks_be_required":"Required","bks_cms_menu_more_info":"More info","bks_be_select_a_room":"Please select a room","bks_be_room_facilities":"Room facilities","bks_be_mealplan":"Meal plan","bks_cms_contact_message_error":"Your comments were not submitted due to error. Please, try again later or call us.","bks_be_breakfast_included":"Breakfast included","bks_cms_featured_article_header":"Featured articles","sq_feet":"ft²","bks_cms_menu_contact_us":"Contact us","bks_be_secure_reservation":"The details you've entered will not be saved if you leave this page. Secure your reservation now to complete your booking.","bks_be_sorry_something_wrong_developers_working_on_it":"We're sorry, but something has gone wrong. Our developers are working on it.","bks_be_rp_room_details_header":"Room details","bks_be_invalid_email":"Invalid Email","bks_cms_view_all":"View all","bks_cms_menu_rooms":"Rooms","bks_cms_review_score":"Review score","bks_be_no_availability_dates":"Sorry, we have no availability from {checkin_date} to {checkout_date}.","bks_cms_menu_local_guide":"Local guide","bks_cms_menu_resorts":"Resorts","bks_cms_menu_local_attractions":"Local attractions","bks_be_not_allowed_to_book_in_preview":"Bookings cannot be made in preview mode.","bks_cms_menu_local_area":"Local area","bks_be_dates_must_be_in_future":"Check in and check out dates must be in the future.","bks_cms_menu_dining":"Dining","bks_be_too_many_characters":"Text is too long","bks_be_captcha_entered_incorrectly":"CAPTCHA entered incorrectly, please try again.","bks_cms_menu_cookie_policy":"Cookie notice","language_exception_bks_be_adult_number_1":"1 adult","bks_be_error_booking_already_processed":"Your booking has been already processed.","bks_cms_menu_packages":"Packages","bks_cms_menu_cottages":"Cottages","bks_be_children_number":"{num_children} children","bks_cms_menu_sign_up":"Sign up","bks_be_cancellation_authenticating":"Authenticating...","bks_be_error_room_no_longer_available":"These rooms are no longer available.","bks_be_error_booking_already_cancelled":"This booking is already cancelled.","bks_cms_menu_destination_guide":"Destination Guide","bks_cms_close":"Close","bks_be_error_incorrect_reservation_data":"Your booking cannot be confirmed. Please check the information you have entered and try again.","bks_cms_menu_info":"More info","bks_be_room_no_longer_available":"This room is no longer available, it may have just been booked!","bks_cms_menu_area_attractions":"Area attractions","language_exception_bks_be_children_number_1":"{num_children} child","bks_cms_menu_enquire_now":"Enquire now","bks_be_bed_size":"Bed Size","bks_cms_menu_reservations":"Reservations","bks_be_confirm_exit":"Are you sure you want to exit? Your changes won't be saved.","bks_cms_menu_things_to_do":"Things to do","bks_be_error_incorrect_affiliate":"This booking was not done on this site.","bks_be_id_required_special_rates":"Identification is required for special and group rates.","sq_ft_usa":"sq ft","bks_cms_menu_check_availability":"Check availability","language_exception_bks_be_error_too_many_guests_1":"Room in your booking cannot accept so many guests.","bks_cms_menu_nearby_attractions":"Nearby attractions","bks_be_error_missing_booking_number":"Missing booking number.","bks_be_invalid_phone":"Invalid Phone number","bks_be_error_max_rooms_than_allowed":"Cannot book so many rooms.","bks_cms_menu_around_town":"Around town","bks_be_cancellation_canceling":"Cancelling...","bks_cms_menu_villas":"Villas","bks_be_must_be_numbers":"Must be numbers","bks_be_adult_number":"{num_adults} adults","bks_cms_menu_bookings":"Bookings","bks_cms_room_size":"Room size","bks_be_non_refundable":"Non-refundable","bks_cms_menu_signature_offers":"Signature offers","bks_cms_menu_lodges":"Lodges","bks_cms_menu_apartments":"Apartments","bks_be_conf_email_important_info":"Important information","bks_be_error_no_bookings_at_the_moment":"Sorry, we cannot accept bookings at the moment.","bks_cms_menu_tents":"Tents","bks_be_error_too_many_guests":"Rooms in your booking cannot accept so many guests.","bks_be_included_charges":"Included","bks_be_validate_email_confirm_different":"Please make sure the email addresses match","bks_cms_menu_amenities":"Amenities","language_exception_bks_be_num_rooms_1":"1 room","bks_be_session_has_expired":"Your session has expired.","bks_be_num_rooms":"{num} rooms","bks_be_free_cancellation_before_date":"FREE cancellation before {short_date_without_year}","bks_be_all_inclusive":"All-inclusive","bks_cms_menu_destinations":"Destinations","bks_cms_menu_bunks":"Bunks","bks_be_error_booking_in_the_past":"Cannot cancel booking in the past.","bks_cms_menu_suites":"Suites","bks_cms_menu_deals":"Deals","bks_be_children":"Children","bks_cms_menu_reservation_policy":"Reservation policy"},"month":{"7":{"name_upper":"July"},"5":{"name_upper":"May"},"2":{"name_upper":"February"},"3":{"name_upper":"March"},"11":{"name_upper":"November"},"6":{"name_upper":"June"},"8":{"name_upper":"August"},"1":{"name_upper":"January"},"10":{"name_upper":"October"},"12":{"name_upper":"December"},"9":{"name_upper":"September"},"4":{"name_upper":"April"}},"bed_type":{"4":{"name_withnumber":"{bed_count} bunk beds"},"6":{"name_withnumber":"{bed_count} large double beds"},"7":{"name_withnumber":"{bed_count} futon beds"},"3":{"name_withnumber":"{bed_count} extra-large double beds"},"5":{"name_withnumber":"{bed_count} sofa beds"},"1":{"name_withnumber":"{bed_count} single beds"},"2":{"name_withnumber":"{bed_count} double beds"}},"weekday":{"3":{"short":"Wed"},"1":{"short":"Mon"},"5":{"short":"Fri"},"2":{"short":"Tue"},"6":{"short":"Sat"},"7":{"short":"Sun"},"4":{"short":"Thu"}}};
+
+
+
+
+})();
+</script>
+
+
+
+    
+<script>
+    gtm_data_layer = [{
+       "bookingId": B.data.hotel.hotel_id,
+       "hotelId": B.data.hotel.hotel_id,
+       "channel": B.env.channel,
+       "deviceType": '', //B.util.screenHelper.deviceType(),
+       "parentId": 0,
+       "pageType": B.env.page_type,
+       "typeId": 0,
+       "locale": B.env.lang,
+       "partnerGaCode": (B.data.hotel.flags || {}).GoogleAnalyticsID,
+       "reservationError": "",
+       "productSku": B.data.hotel.product_type.sku
+    }];
+</script>
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','gtm_data_layer','GTM-PBSCT4T');</script>
+<!-- End Google Tag Manager -->
+
+
+    
+	<title>General Terms and Conditions for Accommodation Contract&nbsp;&ndash;&nbsp;Sapporo Park Hotel&nbsp;&ndash;&nbsp;Sapporo&nbsp;&ndash;&nbsp;Japan</title>
+
+
+    
+	<link rel="alternate" hreflang="en-gb" href="/en-gb/general-terms-conditions-for-accommodation-contract" />
+<link rel="alternate" hreflang="ko-kr" href="/ko-kr/general-terms-conditions-for-accommodation-contract" />
+<link rel="alternate" hreflang="zh-cn" href="/zh-cn/general-terms-conditions-for-accommodation-contract" />
+<link rel="alternate" hreflang="zh-tw" href="/zh-tw/general-terms-conditions-for-accommodation-contract" />
+<link rel="alternate" hreflang="en-gb" href="/general-terms-conditions-for-accommodation-contract" />
+<link rel="canonical" href="/general-terms-conditions-for-accommodation-contract" />
+
+
+
+
+    <base href="/">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <meta name="format-detection" content="telephone=no">
+
+    <link rel="stylesheet" href="https://branding.booking.expert/api/brand/w/0bd4c/90010b6d5e74fad6913e489e48ecf58a61ddcd12.css" type="text/css" media="screen" />
+
+    
+
+    
+
+    
+
+
+    
+  </head>
+
+  <body
+    itemscope=""
+    itemtype="http://schema.org/LodgingBusiness"
+    id="shortcode_bhpicqsr"
+    class="theme_Aura pg-article
+    
+    ">
+
+  
+
+  
+<!-- Google Tag Manager (noscript) -->
+<noscript>
+	<iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PBSCT4T" height="0" width="0"
+		style="display:none;visibility:hidden"></iframe>
+</noscript>
+<!-- End Google Tag Manager (noscript) -->
+
+  <div class="body-overflow-wrap">
+    
+
+    
+
+  <div id="CPolicy">
+      
+      <span>
+          To provide you with the best experience, Sapporo Park Hotel uses its own and third-party cookies on its website for technical, analytical and marketing purposes. By continuing to browse our site, you are agreeing to our use of cookies. Please consult our <a href='/en-gb/cookie-policy' target='_blank'>Cookie Notice</a> for more information.
+      </span>
+      <div id="closeEUbtn"></div>
+  </div>
+
+
+
+    <header class="mast mast-fixed" id="mast-fixed" aria-hidden="true" tabindex="-1">
+  <div class="inner">
+      <div class="logo-container"><a target="_self" itemprop="url" href="/en-gb" title="Sapporo Park Hotel">
+  
+    
+      <span class="full-size-logo"><img src="https://r-fa.bstatic.com/data/bsuitewf/3bf94bac2ddfa5e05a929a05613909cc1662e4f1" alt="Sapporo Park Hotel"></span>
+      <span class="small-logo"><img src="https://r-fa.bstatic.com/data/bsuitewf/3bf94bac2ddfa5e05a929a05613909cc1662e4f1" alt="Sapporo Park Hotel"></span>
+
+    
+  
+</a>
+</div><!--
+   --><div class="mast-right">
+          
+
+<span data-component="core/modal" data-active-class="open" data-modal-class-name="overlay">
+    <button class="menu-collapsed" data-trigger aria-haspopup="true">
+        <span data-toggle="menu">
+            <span class="iconfont"></span>
+            <span class="menu-label">Menu</span>
+        </span>
+    </button>
+
+    <script type="text/html" data-modal-content>
+        <div id="overlay-menu-no-quickres" class="overlay-menu overlay-content">
+            <div class="menu-content inner">
+                
+
+  
+    
+
+    
+        
+            
+        
+    
+        
+    
+        
+    
+        
+    
+
+    <div data-component="core/openable" data-active-class="open" data-outside-close="true" class="relative header-language-wrap">
+
+      <button data-trigger class="header-language" aria-haspopup="true" aria-label="Select language" >
+        <span data-icon class="icon-language" aria-hidden="true"></span>
+        <span>en</span>
+      </button>
+
+      <ul data-container class="dropdown-menu top-center" data-trap-focus >
+        
+            <li class="current">
+                <a data-ajax="false" target="_self" href="/en-gb/general-terms-conditions-for-accommodation-contract">English</a>
+            </li>
+        
+            <li class="">
+                <a data-ajax="false" target="_self" href="/ko-kr/general-terms-conditions-for-accommodation-contract">&#xD55C;&#xAD6D;&#xC5B4;</a>
+            </li>
+        
+            <li class="">
+                <a data-ajax="false" target="_self" href="/zh-cn/general-terms-conditions-for-accommodation-contract">&#x4E2D;&#x6587;</a>
+            </li>
+        
+            <li class="">
+                <a data-ajax="false" target="_self" href="/zh-tw/general-terms-conditions-for-accommodation-contract">&#x7E41;&#x9AD4;&#x4E2D;&#x6587;</a>
+            </li>
+        
+      </ul>
+
+    </div>
+
+  
+
+
+
+                
+                <ul class="menu-list count-count-6plus">
+                    <li class="home-link">
+                        <a href="/en-gb"  target="_self"><span data-hover="Home">Home</span></a>
+                    </li>
+                    
+                        
+                        
+                        <li data-menu-id="" eventName="menu" class="track-event ">
+                            <a href="/en-gb/important-notices"  target="_self">
+                                <span data-hover="Important Notices">Important Notices</span>
+                            </a>
+                        </li>
+                    
+                        
+                        
+                        <li data-menu-id="" eventName="menu" class="track-event ">
+                            <a href="/en-gb/rooms"  target="_self">
+                                <span data-hover="Rooms">Rooms</span>
+                            </a>
+                        </li>
+                    
+                        
+                        
+                        <li data-menu-id="" eventName="menu" class="track-event ">
+                            <a href="/en-gb/restaurant"  target="_self">
+                                <span data-hover="Restaurant">Restaurant</span>
+                            </a>
+                        </li>
+                    
+                        
+                        
+                        <li data-menu-id="" eventName="menu" class="track-event ">
+                            <a href="/en-gb/facilities1"  target="_self">
+                                <span data-hover="Facilities">Facilities</span>
+                            </a>
+                        </li>
+                    
+                        
+                        
+                        <li data-menu-id="" eventName="menu" class="track-event ">
+                            <a href="/en-gb/services1"  target="_self">
+                                <span data-hover="Services">Services</span>
+                            </a>
+                        </li>
+                    
+                        
+                        
+                        <li data-menu-id="" eventName="menu" class="track-event ">
+                            <a href="/en-gb/new-page"  target="_self">
+                                <span data-hover="Access">Access</span>
+                            </a>
+                        </li>
+                    
+                        
+                        
+                        <li data-menu-id="" eventName="menu" class="track-event ">
+                            <a href="/en-gb/attractions"  target="_self">
+                                <span data-hover="Attractions">Attractions</span>
+                            </a>
+                        </li>
+                    
+                        
+                        
+                        <li data-menu-id="" eventName="menu" class="track-event ">
+                            <a href="/en-gb/reviews"  target="_self">
+                                <span data-hover="Reviews">Reviews</span>
+                            </a>
+                        </li>
+                    
+                        
+                        
+                        <li data-menu-id="" eventName="menu" class="track-event ">
+                            <a href="/en-gb/photos"  target="_self">
+                                <span data-hover="Photos">Photos</span>
+                            </a>
+                        </li>
+                    
+                        
+                        
+                        <li data-menu-id="" eventName="menu" class="track-event ">
+                            <a href="/en-gb/amenities"  target="_self">
+                                <span data-hover="Amenities">Amenities</span>
+                            </a>
+                        </li>
+                    
+                        
+                        
+                        <li data-menu-id="" eventName="menu" class="track-event ">
+                            <a href="/en-gb/faq"  target="_self">
+                                <span data-hover="FAQ">FAQ</span>
+                            </a>
+                        </li>
+                    
+                        
+                        
+                        <li data-menu-id="" eventName="menu" class="track-event ">
+                            <a href="/en-gb/contact"  target="_self">
+                                <span data-hover="Contact">Contact</span>
+                            </a>
+                        </li>
+                    
+                </ul>
+
+                <div class="hotel-contact">
+                    <div class="hotel-contact-inner">
+                        <div class="hotel-name">Sapporo Park Hotel</div>
+                        
+  
+  
+  
+    
+      <div class="hotel-phone">
+        <a class="phone-btn-call track-call" href="tel:+81115113135">
+          +81 11-511-3135
+        </a>
+      </div>
+    
+  
+
+
+
+                        
+    <div itemprop="address" class="hotel-address">
+        
+            <div>064-8589 Hokkaido</div>
+        
+            <div>Sapporo</div>
+        
+            <div>Chuo-ku Minami 10-jo Nishi 3-1-1</div>
+        
+            <div>Japan</div>
+        
+    </div>
+
+
+                        
+  
+  
+  
+    
+      <div class="hotel-email">
+        <a class="track-email" href="mailto:sph_inb1@granvista.co.jp">
+          sph_inb1@granvista.co.jp
+        </a>
+      </div>
+    
+  
+
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </script>
+</span>
+
+
+          
+
+<div class="reservations track-event" eventName="reservations">
+    <div class="close">
+        <span class="iconfont"></span>
+        
+            <div data-component="core/modal" data-modal-class-name="overlay">
+                <button class="quickrevBtn" aria-label="Book now" aria-haspopup="true" data-trigger>
+                    <span class="close">Book now</span>
+                </button>
+
+                <script type="text/html" data-modal-content>
+                    <div id="overlay-quickres" class="overlay-quickres overlay-content content-section">
+                        <div class="quickres-content inner" role="search">
+                            <h2 class="quickres-header">Reservations</h2>
+                            <div class="quickres-fields search_wrapper_dates" data-component="widgets/date_picker">
+                                <div class="datepicker arrival search">
+                                    <label for="quickResDate1" class="invisible_spoken">Check-in</label>
+                                    <input type="text" class="date-pick" name="date1" id="quickResDate1" />
+                                    <span class="iconfont datepickicon search_calendar-icon" aria-hidden="true"></span>
+                                    <i class="iconfont iconfont-next from_to" aria-hidden="true"></i>
+                                    <span class="input-focused" aria-hidden="true"></span>
+                                </div>
+
+                                <div class="datepicker departure search">
+                                    <label for="quickResDate2" class="invisible_spoken">Check-out</label>
+                                    <input type="text" class="date-pick" name="date2" id="quickResDate2" />
+                                    <span class="iconfont datepickicon search_calendar-icon" aria-hidden="true"></span>
+                                    <span class="input-focused" aria-hidden="true"></span>
+                                </div>
+
+                                <a class="booknow-btn" data-component="core/book_now_button" href="#">Book now</a>
+                            </div>
+                        </div>
+                    </div>
+                </script>
+            </div>
+        
+    </div>
+</div>
+
+
+
+      </div>
+  </div>
+</header>
+
+
+    <header class="mast static logo-center" >
+    <div class="inner">
+        <div class="mast-top clearfix">
+            <div class="mast-top-inner">
+                <div class="mast-top-left">
+                    
+  
+  
+  
+    
+      <a class="phone track-call" href="tel:+81115113135">
+        <span class="iconfont" aria-hidden="true"></span>
+        <span class="phone-number" itemprop="telephone">
+          <span class="phone-btn-call">
+            +81 11-511-3135
+          </span>
+        </span>
+      </a>
+    
+  
+
+
+                </div>
+                <div class="logo-container">
+                    <a target="_self" itemprop="url" href="/en-gb" title="Sapporo Park Hotel">
+  
+    
+      <span class="full-size-logo"><img src="https://r-fa.bstatic.com/data/bsuitewf/3bf94bac2ddfa5e05a929a05613909cc1662e4f1" alt="Sapporo Park Hotel"></span>
+      <span class="small-logo"><img src="https://r-fa.bstatic.com/data/bsuitewf/3bf94bac2ddfa5e05a929a05613909cc1662e4f1" alt="Sapporo Park Hotel"></span>
+
+    
+  
+</a>
+
+                </div>
+                <div class="mast-actions">
+                    
+
+<span data-component="core/modal" data-active-class="open" data-modal-class-name="overlay">
+    <button class="menu-collapsed" data-trigger aria-haspopup="true">
+        <span data-toggle="menu">
+            <span class="iconfont"></span>
+            <span class="menu-label">Menu</span>
+        </span>
+    </button>
+
+    <script type="text/html" data-modal-content>
+        <div id="overlay-menu-no-quickres" class="overlay-menu overlay-content">
+            <div class="menu-content inner">
+                
+
+  
+    
+
+    
+        
+            
+        
+    
+        
+    
+        
+    
+        
+    
+
+    <div data-component="core/openable" data-active-class="open" data-outside-close="true" class="relative header-language-wrap">
+
+      <button data-trigger class="header-language" aria-haspopup="true" aria-label="Select language" >
+        <span data-icon class="icon-language" aria-hidden="true"></span>
+        <span>en</span>
+      </button>
+
+      <ul data-container class="dropdown-menu top-center" data-trap-focus >
+        
+            <li class="current">
+                <a data-ajax="false" target="_self" href="/en-gb/general-terms-conditions-for-accommodation-contract">English</a>
+            </li>
+        
+            <li class="">
+                <a data-ajax="false" target="_self" href="/ko-kr/general-terms-conditions-for-accommodation-contract">&#xD55C;&#xAD6D;&#xC5B4;</a>
+            </li>
+        
+            <li class="">
+                <a data-ajax="false" target="_self" href="/zh-cn/general-terms-conditions-for-accommodation-contract">&#x4E2D;&#x6587;</a>
+            </li>
+        
+            <li class="">
+                <a data-ajax="false" target="_self" href="/zh-tw/general-terms-conditions-for-accommodation-contract">&#x7E41;&#x9AD4;&#x4E2D;&#x6587;</a>
+            </li>
+        
+      </ul>
+
+    </div>
+
+  
+
+
+
+                
+                <ul class="menu-list count-count-6plus">
+                    <li class="home-link">
+                        <a href="/en-gb"  target="_self"><span data-hover="Home">Home</span></a>
+                    </li>
+                    
+                        
+                        
+                        <li data-menu-id="" eventName="menu" class="track-event ">
+                            <a href="/en-gb/important-notices"  target="_self">
+                                <span data-hover="Important Notices">Important Notices</span>
+                            </a>
+                        </li>
+                    
+                        
+                        
+                        <li data-menu-id="" eventName="menu" class="track-event ">
+                            <a href="/en-gb/rooms"  target="_self">
+                                <span data-hover="Rooms">Rooms</span>
+                            </a>
+                        </li>
+                    
+                        
+                        
+                        <li data-menu-id="" eventName="menu" class="track-event ">
+                            <a href="/en-gb/restaurant"  target="_self">
+                                <span data-hover="Restaurant">Restaurant</span>
+                            </a>
+                        </li>
+                    
+                        
+                        
+                        <li data-menu-id="" eventName="menu" class="track-event ">
+                            <a href="/en-gb/facilities1"  target="_self">
+                                <span data-hover="Facilities">Facilities</span>
+                            </a>
+                        </li>
+                    
+                        
+                        
+                        <li data-menu-id="" eventName="menu" class="track-event ">
+                            <a href="/en-gb/services1"  target="_self">
+                                <span data-hover="Services">Services</span>
+                            </a>
+                        </li>
+                    
+                        
+                        
+                        <li data-menu-id="" eventName="menu" class="track-event ">
+                            <a href="/en-gb/new-page"  target="_self">
+                                <span data-hover="Access">Access</span>
+                            </a>
+                        </li>
+                    
+                        
+                        
+                        <li data-menu-id="" eventName="menu" class="track-event ">
+                            <a href="/en-gb/attractions"  target="_self">
+                                <span data-hover="Attractions">Attractions</span>
+                            </a>
+                        </li>
+                    
+                        
+                        
+                        <li data-menu-id="" eventName="menu" class="track-event ">
+                            <a href="/en-gb/reviews"  target="_self">
+                                <span data-hover="Reviews">Reviews</span>
+                            </a>
+                        </li>
+                    
+                        
+                        
+                        <li data-menu-id="" eventName="menu" class="track-event ">
+                            <a href="/en-gb/photos"  target="_self">
+                                <span data-hover="Photos">Photos</span>
+                            </a>
+                        </li>
+                    
+                        
+                        
+                        <li data-menu-id="" eventName="menu" class="track-event ">
+                            <a href="/en-gb/amenities"  target="_self">
+                                <span data-hover="Amenities">Amenities</span>
+                            </a>
+                        </li>
+                    
+                        
+                        
+                        <li data-menu-id="" eventName="menu" class="track-event ">
+                            <a href="/en-gb/faq"  target="_self">
+                                <span data-hover="FAQ">FAQ</span>
+                            </a>
+                        </li>
+                    
+                        
+                        
+                        <li data-menu-id="" eventName="menu" class="track-event ">
+                            <a href="/en-gb/contact"  target="_self">
+                                <span data-hover="Contact">Contact</span>
+                            </a>
+                        </li>
+                    
+                </ul>
+
+                <div class="hotel-contact">
+                    <div class="hotel-contact-inner">
+                        <div class="hotel-name">Sapporo Park Hotel</div>
+                        
+  
+  
+  
+    
+      <div class="hotel-phone">
+        <a class="phone-btn-call track-call" href="tel:+81115113135">
+          +81 11-511-3135
+        </a>
+      </div>
+    
+  
+
+
+
+                        
+    <div itemprop="address" class="hotel-address">
+        
+            <div>064-8589 Hokkaido</div>
+        
+            <div>Sapporo</div>
+        
+            <div>Chuo-ku Minami 10-jo Nishi 3-1-1</div>
+        
+            <div>Japan</div>
+        
+    </div>
+
+
+                        
+  
+  
+  
+    
+      <div class="hotel-email">
+        <a class="track-email" href="mailto:sph_inb1@granvista.co.jp">
+          sph_inb1@granvista.co.jp
+        </a>
+      </div>
+    
+  
+
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </script>
+</span>
+
+
+                    
+  
+  
+  
+    
+      <div class="phone-button-mobile">
+        <a href="tel:+81115113135" class="track-call">
+          <span class="iconfont"></span>
+          <span class="phone-label">+81 11-511-3135</span>
+        </a>
+      </div>
+    
+  
+
+
+                    
+
+  
+    
+
+    
+        
+            
+        
+    
+        
+    
+        
+    
+        
+    
+
+    <div data-component="core/openable" data-active-class="open" data-outside-close="true" class="relative header-language-wrap">
+
+      <button data-trigger class="header-language" aria-haspopup="true" aria-label="Select language" >
+        <span data-icon class="icon-language" aria-hidden="true"></span>
+        <span>en</span>
+      </button>
+
+      <ul data-container class="dropdown-menu top-center" data-trap-focus >
+        
+            <li class="current">
+                <a data-ajax="false" target="_self" href="/en-gb/general-terms-conditions-for-accommodation-contract">English</a>
+            </li>
+        
+            <li class="">
+                <a data-ajax="false" target="_self" href="/ko-kr/general-terms-conditions-for-accommodation-contract">&#xD55C;&#xAD6D;&#xC5B4;</a>
+            </li>
+        
+            <li class="">
+                <a data-ajax="false" target="_self" href="/zh-cn/general-terms-conditions-for-accommodation-contract">&#x4E2D;&#x6587;</a>
+            </li>
+        
+            <li class="">
+                <a data-ajax="false" target="_self" href="/zh-tw/general-terms-conditions-for-accommodation-contract">&#x7E41;&#x9AD4;&#x4E2D;&#x6587;</a>
+            </li>
+        
+      </ul>
+
+    </div>
+
+  
+
+
+
+                    
+
+<div class="reservations track-event" eventName="reservations">
+    <div class="close">
+        <span class="iconfont"></span>
+        
+            <div data-component="core/modal" data-modal-class-name="overlay">
+                <button class="quickrevBtn" aria-label="Book now" aria-haspopup="true" data-trigger>
+                    <span class="close">Book now</span>
+                </button>
+
+                <script type="text/html" data-modal-content>
+                    <div id="overlay-quickres" class="overlay-quickres overlay-content content-section">
+                        <div class="quickres-content inner" role="search">
+                            <h2 class="quickres-header">Reservations</h2>
+                            <div class="quickres-fields search_wrapper_dates" data-component="widgets/date_picker">
+                                <div class="datepicker arrival search">
+                                    <label for="quickResDate1" class="invisible_spoken">Check-in</label>
+                                    <input type="text" class="date-pick" name="date1" id="quickResDate1" />
+                                    <span class="iconfont datepickicon search_calendar-icon" aria-hidden="true"></span>
+                                    <i class="iconfont iconfont-next from_to" aria-hidden="true"></i>
+                                    <span class="input-focused" aria-hidden="true"></span>
+                                </div>
+
+                                <div class="datepicker departure search">
+                                    <label for="quickResDate2" class="invisible_spoken">Check-out</label>
+                                    <input type="text" class="date-pick" name="date2" id="quickResDate2" />
+                                    <span class="iconfont datepickicon search_calendar-icon" aria-hidden="true"></span>
+                                    <span class="input-focused" aria-hidden="true"></span>
+                                </div>
+
+                                <a class="booknow-btn" data-component="core/book_now_button" href="#">Book now</a>
+                            </div>
+                        </div>
+                    </div>
+                </script>
+            </div>
+        
+    </div>
+</div>
+
+
+
+                </div>
+            </div>
+        </div>
+        
+
+<nav class="menu-links count-6plus no-hero">
+    <ul>
+    
+        
+        
+        <li eventName="menu" class="track-event ">
+            <a href="/en-gb/important-notices" target="_self">
+                <span data-hover="Important Notices">
+                        Important Notices
+                </span>
+            </a>
+        </li>
+    
+        
+        
+        <li eventName="menu" class="track-event ">
+            <a href="/en-gb/rooms" target="_self">
+                <span data-hover="Rooms">
+                        Rooms
+                </span>
+            </a>
+        </li>
+    
+        
+        
+        <li eventName="menu" class="track-event ">
+            <a href="/en-gb/restaurant" target="_self">
+                <span data-hover="Restaurant">
+                        Restaurant
+                </span>
+            </a>
+        </li>
+    
+        
+        
+        <li eventName="menu" class="track-event ">
+            <a href="/en-gb/facilities1" target="_self">
+                <span data-hover="Facilities">
+                        Facilities
+                </span>
+            </a>
+        </li>
+    
+        
+        
+        <li eventName="menu" class="track-event ">
+            <a href="/en-gb/services1" target="_self">
+                <span data-hover="Services">
+                        Services
+                </span>
+            </a>
+        </li>
+    
+        
+        
+        <li eventName="menu" class="track-event ">
+            <a href="/en-gb/new-page" target="_self">
+                <span data-hover="Access">
+                        Access
+                </span>
+            </a>
+        </li>
+    
+        
+        
+        <li eventName="menu" class="track-event ">
+            <a href="/en-gb/attractions" target="_self">
+                <span data-hover="Attractions">
+                        Attractions
+                </span>
+            </a>
+        </li>
+    
+        
+        
+        <li eventName="menu" class="track-event ">
+            <a href="/en-gb/reviews" target="_self">
+                <span data-hover="Reviews">
+                        Reviews
+                </span>
+            </a>
+        </li>
+    
+        
+        
+        <li eventName="menu" class="track-event ">
+            <a href="/en-gb/photos" target="_self">
+                <span data-hover="Photos">
+                        Photos
+                </span>
+            </a>
+        </li>
+    
+        
+        
+        <li eventName="menu" class="track-event ">
+            <a href="/en-gb/amenities" target="_self">
+                <span data-hover="Amenities">
+                        Amenities
+                </span>
+            </a>
+        </li>
+    
+        
+        
+        <li eventName="menu" class="track-event ">
+            <a href="/en-gb/faq" target="_self">
+                <span data-hover="FAQ">
+                        FAQ
+                </span>
+            </a>
+        </li>
+    
+        
+        
+        <li eventName="menu" class="track-event ">
+            <a href="/en-gb/contact" target="_self">
+                <span data-hover="Contact">
+                        Contact
+                </span>
+            </a>
+        </li>
+    
+    </ul>
+</nav>
+
+
+    </div>
+</header>
+
+
+
+    <div id="click-shield" class="click-shield"></div>
+    <div class="backstretch"></div>
+
+    <div class="body-wrap" role="main">
+      <div class="main">
+        <div class="content-wrap ">
+          
+          
+	<div class="content-head">
+		<h1 class="sectionTitle">
+			
+				General Terms and Conditions for Accommodation Contract
+			
+		</h1>
+		<div id="subNav" class="subnav list">
+			
+
+<nav id="sub_nav" class="sub_nav">
+	<ul class="subNavItems list">
+		
+	</ul>
+
+	
+</nav>
+
+
+
+		</div>
+	</div>
+
+	<div class="content-body">
+		<div class="content-body-inner">
+			 
+
+     
+
+    <div class="legoContent_wide advanced">
+        
+            <div class="group segmentsize1 ">
+                
+                    
+
+                        
+                    
+                
+            </div>
+        
+            <div class="group segmentsize3 ">
+                
+                    
+
+                        
+                            
+
+<h2 class="full-width-h2">Scope of Application</h2>
+
+
+
+                        
+                    
+                
+                    
+
+                        
+                    
+                
+                    
+
+                        
+                            
+
+<div class="full-width-text-block"><p align="left">●Article 1 &nbsp; &nbsp; &nbsp;<br />
+<br />
+1. &nbsp; &nbsp; &nbsp; &nbsp;Accommodation Contracts and related agreements to be entered into between this Hotel and the Guest to be accommodated shall be subject to these Terms and Conditions. Any particulars not provided for herein shall be governed by laws and regulations and/or generally accepted practices.<br />
+<br />
+2. &nbsp; &nbsp; &nbsp; &nbsp;In the case when the Hotel has entered into a special contract with the Guest insofar as such special contract does not violate laws and regulations and generally accepted practices, notwithstanding the preceding Paragraph, the special contract shall take precedence over the provisions of these Terms and Conditions.</p>
+</div>
+
+
+
+                        
+                    
+                
+            </div>
+        
+            <div class="group segmentsize3 ">
+                
+                    
+
+                        
+                            
+
+<h2 class="full-width-h2">Application for Accommodation Contracts</h2>
+
+
+
+                        
+                    
+                
+                    
+
+                        
+                    
+                
+                    
+
+                        
+                            
+
+<div class="full-width-text-block">●Article 2&nbsp; &nbsp; &nbsp;&nbsp;<br />
+<br />
+1. &nbsp; &nbsp; &nbsp; &nbsp;The Guest who intends to make an application for an Accommodation Contract with the Hotel shall notify the Hotel of the following particulars:<br />
+<br />
+1. &nbsp;(1) Name of the Guest(s);<br />
+<br />
+2. &nbsp;(2) Date of accommodation and estimated time of arrival;<br />
+<br />
+3. &nbsp;(3)Accommodation Charges (based, in principle, on the Basic Accommodation Charge listed in the Attached Table No. 1); and<br />
+<br />
+4. &nbsp;(4) Other particulars deemed necessary by the Hotel.<br />
+<br />
+2. &nbsp; &nbsp; &nbsp; &nbsp;In the case when the Guest requests, during his/her stay, extension of accommodation beyond the date in Subparagraph (2) of the preceding Paragraph, it shall be regarded as an application for a new Accommodation Contract at the time such request is made.<br />
+<br />
+<strong>3. &nbsp; &nbsp; &nbsp; In the case when the Hotel asks the Guest to submit a hotel registration form to record his/her name, address, phone number and other information, the Guest who has made an application for accommodation shall immediately submit such form even after the conclusion of an Accommodation Contract.</strong></div>
+
+
+
+                        
+                    
+                
+            </div>
+        
+            <div class="group segmentsize3 ">
+                
+                    
+
+                        
+                            
+
+<h2 class="full-width-h2">Conclusion of Accommodation Contrants</h2>
+
+
+
+                        
+                    
+                
+                    
+
+                        
+                    
+                
+                    
+
+                        
+                            
+
+<div class="full-width-text-block">●Article 3<br />
+<br />
+1. &nbsp; &nbsp; &nbsp; &nbsp;An Accommodation Contract shall be deemed to have been concluded when the Hotel has duly accepted the application as stipulated in the preceding Article. However, the same shall not apply when it has been proved that the Hotel has not accepted the application.<br />
+<br />
+2. &nbsp; &nbsp; &nbsp; &nbsp;When an Accommodation Contract has been concluded in accordance with the provisions of the preceding Paragraph, the Guest shall pay an accommodation deposit set by the Hotel within the limits of the Basic Accommodation Charge covering the Guest&rsquo;s entire period of stay (3 days when the period of stay exceeds 3 days) not later than the date specified by the Hotel.<br />
+<br />
+3. &nbsp; &nbsp; &nbsp; &nbsp;The deposit shall be first used for the Accommodation Charges to be paid by the Guest, then secondly for the cancellation charges [VAP1] under Article 6 and thirdly for the reparations under Article 18 as applicable, and the remainder, if any, shall be refunded at the time of payments of the Accommodation Charges as stated in Article 12.<br />
+<br />
+4. &nbsp; &nbsp; &nbsp; &nbsp;When the Guest has failed to pay the deposit by the date specified by the Hotel as stipulated in Paragraph 2, the Hotel shall treat the Accommodation Contract as invalid. However, the same shall apply only in the case where the Guest is thus informed by the Hotel when the period of payment of the deposit is specified.<br />
+<br />
+<strong>5. &nbsp; &nbsp; &nbsp; Even in the case when an application for accommodation is made and accepted based on the incorrect Accommodation Charges offered by the Hotel through Internet websites or by phone, if such Accommodation Charges are significantly lower than those for the days around the date of accommodation, such acceptance shall be deemed to have been made by mistake under the Civil Code unless the reason why such Accommodation Charges are significantly low is given (such as a &ldquo;limited&rdquo; or &ldquo;special&rdquo; offer), and the Hotel shall treat such Accommodation Contract as invalid and so notify the Guest promptly.</strong></div>
+
+
+
+                        
+                    
+                
+            </div>
+        
+            <div class="group segmentsize3 ">
+                
+                    
+
+                        
+                            
+
+<h2 class="full-width-h2">Special Contracts Requiring No Accommodation Deposit</h2>
+
+
+
+                        
+                    
+                
+                    
+
+                        
+                    
+                
+                    
+
+                        
+                            
+
+<div class="full-width-text-block">●Article 4&nbsp; &nbsp; &nbsp;&nbsp;<br />
+<br />
+1. &nbsp; &nbsp; &nbsp; &nbsp;Notwithstanding the provisions of Paragraph 2 of the preceding Article, the Hotel may enter into a special contract requiring no accommodation deposit after the Contract has been concluded as stipulated in the same Paragraph.<br />
+<br />
+2. &nbsp; &nbsp; &nbsp; &nbsp;In the case when the Hotel has not requested the payment of the deposit as stipulated in Paragraph 2 of the preceding Article and/or has not specified the date of payment of the deposit at the time an application for the Accommodation Contract has been accepted, it shall be treated as that the Hotel has accepted a special contract prescribed in the preceding Paragraph.</div>
+
+
+
+                        
+                    
+                
+            </div>
+        
+            <div class="group segmentsize3 ">
+                
+                    
+
+                        
+                            
+
+<h2 class="full-width-h2">Refusal of Accommodation Contracts</h2>
+
+
+
+                        
+                    
+                
+                    
+
+                        
+                    
+                
+                    
+
+                        
+                            
+
+<div class="full-width-text-block"><p align="left">●Article 5</p>
+
+<p align="left">The Hotel may not accept the conclusion of the Accommodation Contract and it may not allow the use of hotel facilities under any of the following cases:</p>
+
+<p align="left">1.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; When an application for accommodation does not conform with the provisions of these Terms and Conditions;</p>
+
+<p align="left">2.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; When the Hotel is fully booked and no room is available;</p>
+
+<p align="left">3.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; When the Guest seeking accommodation is deemed likely to conduct himself/herself in a manner that will contravene laws, public order or good morals in regard to his/her accommodation;</p>
+
+<p align="left">4.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; When those wishing to stay are deemed to fall under any of the following (a) through (c);</p>
+
+<p align="left">(a)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; An organized crime group as defined by Article 2, Item 2 of the Act to Prevent Unjust Acts by Organized Crime Group Members (Act No. 77 of 1991) (hereinafter, &ldquo;Criminal Gang&rdquo;), members of an organized criminal group as defined by Article 2, Item 6 of said act (hereinafter, &ldquo;Gang Members&rdquo;), associate members or affiliates of Criminal Gangs or other such antisocial groups</p>
+
+<p align="left">(b)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; When the business activities of a corporation or other organizations are controlled by a Criminal Gang or Gang Members</p>
+
+<p align="left">(c)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; A corporation whose executives include anyone determined to be a Gang Member</p>
+
+<p align="left">5.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; When those wishing to stay have caused considerable trouble to other guests through their words or actions;</p>
+
+<p align="left">6.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; When the Guest seeking accommodation can be clearly detected as carrying an infectious disease;</p>
+
+<p align="left">7.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; When demands are made by violent means, or handling of unreasonable burdens is demanded in regard to a stay;</p>
+
+<p align="left">8.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; When the Hotel is unable to provide accommodation due to natural calamities, disfunction of the facilities and/or other unavoidable causes;</p>
+
+<p align="left">9.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; When falling under any of the cases stipulated in prefectural Ordinances for Enforcement of the Hotel Business Act; or</p>
+
+<p align="left"><b>10.&nbsp;&nbsp;&nbsp; </b><b>When the Guest applies for accommodation, keeping dark about his/her intention to generate his/her own profit by reselling a booked room or act as an intermediary for fees in regard to the room.</b></p>
+</div>
+
+
+
+                        
+                    
+                
+            </div>
+        
+            <div class="group segmentsize3 ">
+                
+                    
+
+                        
+                            
+
+<h2 class="full-width-h2">Right to Cancel Accommodation Contracts by the Guest</h2>
+
+
+
+                        
+                    
+                
+                    
+
+                        
+                    
+                
+                    
+
+                        
+                            
+
+<div class="full-width-text-block">●Article 6<br />
+<br />
+1. &nbsp; &nbsp; &nbsp; &nbsp;The Guest is entitled to cancel an Accommodation Contract by so notifying the Hotel.<br />
+<br />
+2. &nbsp; &nbsp; &nbsp; &nbsp;In the case when the Guest has cancelled an Accommodation Contract in whole or in part due to the causes attributable to the Guest (except in the case when the Hotel has requested the payment of a deposit during the specified period as prescribed in Paragraph 2 of Article 3 and the Guest has cancelled before the payment), the Guest shall pay cancellation charges[VAP1] &nbsp;as listed in the Attached Table No.2. However, in the case when a special contract as prescribed in Paragraph 1 of Article 4 has been concluded, the same shall apply only when the Guest is informed of the obligation of payment of cancellation charges in the case of cancellation by the Guest.<br />
+<br />
+3. &nbsp; &nbsp; &nbsp; &nbsp;In the case when the Guest does not appear by the time of the following Table on the date of accommodation (when the following hours have passed since the expected time of arrival if the Hotel is notified of it in advance) without an advance notice, the Hotel may regard the Accommodation Contract as being cancelled by the Guest.<br />
+<br />
+Name of hotel&nbsp; &nbsp;Time&nbsp; &nbsp; Hours passed</div>
+
+
+
+                        
+                    
+                
+            </div>
+        
+            <div class="group segmentsize3 ">
+                
+                    
+
+                        
+                            
+
+<h2 class="full-width-h2">Right to Cancel Accommodation Contracts by the Hotel</h2>
+
+
+
+                        
+                    
+                
+                    
+
+                        
+                    
+                
+                    
+
+                        
+                            
+
+<div class="full-width-text-block"><p align="left">●Article 7&nbsp; &nbsp; &nbsp;&nbsp;</p>
+
+<p align="left">1.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; The Hotel may cancel an Accommodation Contract and terms of use of hotel facilities under any of the following cases:</p>
+
+<p align="left">(1)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; When the Guest seeking accommodation is deemed likely to conduct, or to have conducted himself/herself in a manner that will contravene laws, public order or good morals in regard to his/her accommodation;</p>
+
+<p align="left">(2)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; When those wishing to stay are deemed to fall under any of the following (a) through (c);</p>
+
+<p align="left">(a)&nbsp; Criminal Gangs, Gang Members, associate members or affiliates of Criminal Gangs or other such antisocial groups</p>
+
+<p align="left">(b)&nbsp; When the business activities of a corporation or other organizations are controlled by a Criminal Gang or Gang Members</p>
+
+<p align="left">(c)&nbsp;&nbsp; A corporation whose executives include anyone determined to be a Gang Member</p>
+
+<p align="left">(3)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; When those wishing to stay have caused considerable trouble to other guests through their words or actions;</p>
+
+<p align="left">(4)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; When the Guest seeking accommodation is clearly detected as carrying an infectious disease;</p>
+
+<p align="left">(5)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; When demands are made by violent means, or handling of unreasonable burdens is demanded in regard to a stay;</p>
+
+<p align="left">(6)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; When the Hotel is unable to provide accommodation due to force majeure including natural calamities;</p>
+
+<p align="left">(7)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; When falling under any of the cases stipulated in prefectural Ordinances for Enforcement of the Hotel Business Act;</p>
+
+<p align="left">(8)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; When the Guest does not observe prohibited actions (only for the purpose of fire prevention), such as smoking in bed, mischief to fire-fighting facilities or other prohibitions under the Use Regulations stipulated by the Hotel; or&nbsp;</p>
+
+<p align="left">(9)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>When any violation under these Terms and Conditions is found.</b></p>
+
+<p align="left">2.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; In the case when the Hotel has cancelled an Accommodation Contract in accordance with the preceding Paragraph, the Hotel shall not be entitled to charge the Guest for any of the accommodation services, etc. which he/she has not received yet.</p>
+</div>
+
+
+
+                        
+                    
+                
+            </div>
+        
+            <div class="group segmentsize3 ">
+                
+                    
+
+                        
+                            
+
+<h2 class="full-width-h2">Registration of Accommodation</h2>
+
+
+
+                        
+                    
+                
+                    
+
+                        
+                    
+                
+                    
+
+                        
+                            
+
+<div class="full-width-text-block">●Article 8&nbsp; &nbsp; &nbsp;<br />
+<br />
+1. &nbsp; &nbsp; &nbsp; &nbsp;The Guest shall register the following particulars at the front desk of the Hotel on the date of accommodation:<br />
+<br />
+(1) &nbsp; &nbsp; &nbsp;Name, age, sex, address and occupation of the Guest;<br />
+<br />
+(2) &nbsp; &nbsp; &nbsp;Nationality, passport number, port and date of entry in Japan in the case of a non-Japanese guest who does not have an address in Japan;<br />
+<br />
+(3) &nbsp; &nbsp; &nbsp;Date and estimated time of departure; and<br />
+<br />
+(4) &nbsp; &nbsp; &nbsp;Other particulars deemed necessary by the Hotel<br />
+<br />
+2. &nbsp; &nbsp; &nbsp; &nbsp;In the case when the Guest intends to pay his/her Accommodation Charges prescribed in Article 12 by any alternative means other than currencies, such as traveller&rsquo;s cheques, coupons or credit cards, these credentials shall be shown in advance at the time of the registration prescribed in the preceding Paragraph.<br />
+<br />
+3. &nbsp; &nbsp; &nbsp; &nbsp;&ldquo;Non-Japanese guest who does not have an address in Japan&rdquo; is asked to write his/her name, address, occupation, etc., as well as nationality and passport number. In addition, he/she is asked to show his/her passport and its copy.</div>
+
+
+
+                        
+                    
+                
+            </div>
+        
+            <div class="group segmentsize3 ">
+                
+                    
+
+                        
+                            
+
+<h2 class="full-width-h2">Occupancy Hours of Guest Rooms</h2>
+
+
+
+                        
+                    
+                
+                    
+
+                        
+                    
+                
+                    
+
+                        
+                            
+
+<div class="full-width-text-block">●Article 9&nbsp; &nbsp; &nbsp; &nbsp;<br />
+<br />
+1. &nbsp; &nbsp; &nbsp; &nbsp;The Guest is entitled to occupy the contracted guest room of the Hotel during the hours shown in the following Table.<br />
+However, in the case when the Guest is accommodated continuously, the Guest may occupy it all day long, except for the dates of arrival and departure.<br />
+<br />
+Name of hotel&nbsp; Date of arrival&nbsp; Date of departure<br />
+<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 00:00&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 00:00<br />
+<br />
+2. &nbsp; &nbsp; &nbsp; &nbsp;The Hotel may, notwithstanding the provisions prescribed in the preceding Paragraph, permit the Guest to occupy the room beyond the time prescribed in the same Paragraph. In this case, extra charges shall be paid as follows:<br />
+<br />
+Name of hotel<br />
+<br />
+30% of room charge&nbsp; &nbsp;50% of room charge&nbsp; &nbsp; &nbsp;Room charge in full<br />
+<br />
+Excess hours (or less)&nbsp; Excess hours (or less)&nbsp; Excess hours (or more)<br />
+<br />
+3 hours&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 5 hours&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 5 hours</div>
+
+
+
+                        
+                    
+                
+            </div>
+        
+            <div class="group segmentsize3 ">
+                
+                    
+
+                        
+                            
+
+<h2 class="full-width-h2">Observance of Use Regulations</h2>
+
+
+
+                        
+                    
+                
+                    
+
+                        
+                    
+                
+                    
+
+                        
+                            
+
+<div class="full-width-text-block">●Article 10&nbsp; &nbsp; &nbsp;&nbsp;<br />
+<br />
+The Guest shall observe the Use Regulations established by the Hotel, which are posted within the premises of the Hotel.</div>
+
+
+
+                        
+                    
+                
+            </div>
+        
+            <div class="group segmentsize3 ">
+                
+                    
+
+                        
+                            
+
+<h2 class="full-width-h2">Business Hours</h2>
+
+
+
+                        
+                    
+                
+                    
+
+                        
+                    
+                
+                    
+
+                        
+                            
+
+<div class="full-width-text-block">●Article 11&nbsp; &nbsp; &nbsp;<br />
+<br />
+1. &nbsp; &nbsp; &nbsp; &nbsp;The business hours of facilities, etc. of the Hotel shall be notified by brochures as provided, notices displayed in each place, service directories in guest rooms and others.</div>
+
+
+
+                        
+                    
+                
+            </div>
+        
+            <div class="group segmentsize3 ">
+                
+                    
+
+                        
+                            
+
+<h2 class="full-width-h2">Payment of Accommodation Charges</h2>
+
+
+
+                        
+                    
+                
+                    
+
+                        
+                    
+                
+                    
+
+                        
+                            
+
+<div class="full-width-text-block"><p align="left">●Article 12&nbsp; &nbsp;&nbsp;<br />
+<br />
+1. &nbsp; &nbsp; &nbsp; &nbsp;The breakdown of Accommodation Charges, etc. that the Guest shall pay is as listed in the Attached Table No.1.<br />
+<br />
+2. &nbsp; &nbsp; &nbsp; &nbsp;Accommodation Charges, etc. as stated in the preceding Paragraph shall be paid in currencies or by other alternative means acceptable to the Hotel, such as traveller&rsquo;s cheques, coupons or credit cards, at the front desk at the time of departure of the Guest or upon request by the Hotel.<br />
+<br />
+Accommodation Charges shall still be paid even in the case when the Guest does not stay at the Hotel at his/her discretion after the Hotel has&nbsp;offered a guest room and made it available for him/her to use.</p>
+</div>
+
+
+
+                        
+                    
+                
+            </div>
+        
+            <div class="group segmentsize3 ">
+                
+                    
+
+                        
+                            
+
+<h2 class="full-width-h2">Liabilities of the Hotel</h2>
+
+
+
+                        
+                    
+                
+                    
+
+                        
+                    
+                
+                    
+
+                        
+                            
+
+<div class="full-width-text-block">●Article 13&nbsp; &nbsp;<br />
+<br />
+1. &nbsp; &nbsp; &nbsp; &nbsp;The Hotel shall compensate the Guest for damage if the Hotel has caused such damage to the Guest in the course of fulfilling or nonfulfilling of an Accommodation Contract and/or related agreements. However, the same shall not apply in the case when such damage has been caused by reasons attributable to the Hotel.<br />
+<br />
+2. &nbsp; &nbsp; &nbsp; &nbsp;The Hotel is covered by Hotel Liability Insurance in order to deal with unexpected fire and/or other disasters.</div>
+
+
+
+                        
+                    
+                
+            </div>
+        
+            <div class="group segmentsize3 ">
+                
+                    
+
+                        
+                            
+
+<h2 class="full-width-h2">Handling When Unable to Provide Contracted Rooms</h2>
+
+
+
+                        
+                    
+                
+                    
+
+                        
+                    
+                
+                    
+
+                        
+                            
+
+<div class="full-width-text-block">●Article 14&nbsp; &nbsp;&nbsp;<br />
+<br />
+1. &nbsp; &nbsp; &nbsp; &nbsp;When unable to provide a contracted guest room, the Hotel shall arrange accommodation of the same standard elsewhere for the Guest insofar as practicable with the consent of the Guest.<br />
+<br />
+2. &nbsp; &nbsp; &nbsp; &nbsp;Notwithstanding the provisions of the preceding Paragraph, when unable to arrange other accommodation, the Hotel shall pay the Guest compensation money equivalent to the cancellation charge and the compensation money shall be applied to the reparations. However, when unable to provide a guest room due to causes not attributable to the Hotel, the Hotel shall not compensate the Guest.</div>
+
+
+
+                        
+                    
+                
+            </div>
+        
+            <div class="group segmentsize3 ">
+                
+                    
+
+                        
+                            
+
+<h2 class="full-width-h2">Handling of Deposited Articles</h2>
+
+
+
+                        
+                    
+                
+                    
+
+                        
+                    
+                
+                    
+
+                        
+                            
+
+<div class="full-width-text-block">●Article 15&nbsp; &nbsp; &nbsp;<br />
+<br />
+1. &nbsp; &nbsp; &nbsp; &nbsp;The Hotel shall compensate the Guest when loss, breakage or other damage is caused to the goods, cash or valuables deposited at the front desk by the Guest, except in the case when this has occurred due to causes of force majeure. For cash and valuables, however, when the Hotel has asked the Guest to report its kind and value but the Guest has failed to do so, the Hotel shall compensate the Guest within the limits of 100,000 yen.<br />
+<br />
+2. &nbsp; &nbsp; &nbsp; &nbsp;The Hotel shall compensate the Guest when loss, breakage or other damage is caused, through intention or negligence on the part of the Hotel, to the goods, cash or valuables which are brought into the premises of the Hotel by the Guest but are not deposited at the front desk. However, for articles of which the kind and value has not been reported in advance by the Guest, the Hotel shall compensate the Guest within the limits of 30,000 yen, except in the case where loss, breakage or other damage was caused intentionally or by gross negligence on the part of the Hotel.</div>
+
+
+
+                        
+                    
+                
+            </div>
+        
+            <div class="group segmentsize3 ">
+                
+                    
+
+                        
+                            
+
+<h2 class="full-width-h2">Custody of Baggage and/or Belongings of the Guest</h2>
+
+
+
+                        
+                    
+                
+                    
+
+                        
+                    
+                
+                    
+
+                        
+                            
+
+<div class="full-width-text-block">●Article 16&nbsp; &nbsp; &nbsp;<br />
+<br />
+1. &nbsp; &nbsp; &nbsp; &nbsp;When the baggage of the Guest is brought into the Hotel before his/her arrival, the Hotel shall be liable to keep it only in the case where such request has been accepted by the Hotel. The baggage shall be handed over to the Guest at the front desk at the time of his/her check-in.<br />
+<br />
+2. &nbsp; &nbsp; &nbsp; &nbsp;When the baggage or belongings of the Guest is found left after his/her checkout, the Hotel shall ask the owner of such article for instructions. When no instructions are given to the Hotel by the owner or when the ownership is not confirmed, the Hotel shall keep the article for 7 days including the day it is found, and after this period, the Hotel shall turn it over to the nearest police station.<br />
+<br />
+3. &nbsp; &nbsp; &nbsp; &nbsp;The Hotel&rsquo;s liability in regard to the custody of the Guest&rsquo;s baggage or belongings in the case of the preceding two Paragraphs shall be assumed in accordance with the provisions of Paragraph 1 of the preceding Article in the case of Paragraph 1, and with the provisions of Paragraph 2 of the same Article in the case of Paragraph 2.</div>
+
+
+
+                        
+                    
+                
+            </div>
+        
+            <div class="group segmentsize3 ">
+                
+                    
+
+                        
+                            
+
+<h2 class="full-width-h2">Liability in Regard to Parking</h2>
+
+
+
+                        
+                    
+                
+                    
+
+                        
+                    
+                
+                    
+
+                        
+                            
+
+<div class="full-width-text-block">●Article 17&nbsp; &nbsp;<br />
+<br />
+The Hotel shall not be liable for the custody of the vehicle of the Guest when the Guest uses the parking lot within the premises of the Hotel, as it shall be regarded that the Hotel simply offers the space for parking, whether the key of the vehicle has been deposited to the Hotel or not. However, the Hotel shall compensate the Guest for the damage caused through intention or negligence on the part of the Hotel in regard to the management of the parking lot. This shall also apply to the Hotel&rsquo;s affiliated parking lots.</div>
+
+
+
+                        
+                    
+                
+            </div>
+        
+            <div class="group segmentsize3 ">
+                
+                    
+
+                        
+                            
+
+<h2 class="full-width-h2">Liability of the Guest</h2>
+
+
+
+                        
+                    
+                
+                    
+
+                        
+                    
+                
+                    
+
+                        
+                            
+
+<div class="full-width-text-block">●Article 18&nbsp; &nbsp; &nbsp;<br />
+<br />
+The Guest shall compensate the Hotel for the damage caused through intention or negligence on the part of the Guest.</div>
+
+
+
+                        
+                    
+                
+            </div>
+        
+            <div class="group segmentsize3 ">
+                
+                    
+
+                        
+                            
+
+<h2 class="full-width-h2">Regulations for Condolence Money for Hotel Guests</h2>
+
+
+
+                        
+                    
+                
+                    
+
+                        
+                    
+                
+                    
+
+                        
+                            
+
+<div class="full-width-text-block">●Article 19&nbsp; &nbsp; &nbsp;<br />
+<br />
+The Hotel shall carry out the procedures stated in the Regulations for Condolence Money for Hotel Guests in the event of the death of a hotel guest during his/her stay with the Hotel, due to causes other than an injury.</div>
+
+
+
+                        
+                    
+                
+            </div>
+        
+            <div class="group segmentsize3 ">
+                
+                    
+
+                        
+                            
+
+<h2 class="full-width-h2">Governing Laws and Agreed Court with Jurisdiction</h2>
+
+
+
+                        
+                    
+                
+                    
+
+                        
+                    
+                
+                    
+
+                        
+                            
+
+<div class="full-width-text-block">●Article 20<br />
+<br />
+Any dispute relating to an Accommodation Contract between the Hotel and the Guest shall be governed by Japanese laws and shall be referred to the district court or the summary court having jurisdiction over the location of the head office of the company that manages and operates the Hotel.</div>
+
+
+
+                        
+                    
+                
+            </div>
+        
+            <div class="group segmentsize3 ">
+                
+                    
+
+                        
+                            
+
+<h2 class="full-width-h2">Attached Tables</h2>
+
+
+
+                        
+                    
+                
+                    
+
+                        
+                    
+                
+                    
+
+                        
+                            
+
+<div class="full-width-text-block"><p align="left">Attached Table No.1: Breakdown of Accommodation Charges, etc. (Ref. Paragraph 1 of Article 2, Paragraph 1 of Article 12)<br />
+<br />
+<br />
+Breakdown<br />
+<br />
+Total Amount Payable by the Guest<br />
+<br />
+Accommodation Charges<br />
+<br />
+1. &nbsp; &nbsp;Basic Accommodation Charge<br />
+<br />
+2. &nbsp; &nbsp;Service Charge (1. x 10%)<br />
+<br />
+Extra Charges<br />
+<br />
+3. &nbsp; &nbsp;Drinks and Other Expenses<br />
+<br />
+4. &nbsp; &nbsp;Service Charges (3. x 10%)<br />
+<br />
+Tax<br />
+<br />
+(a) &nbsp; Consumption Tax<br />
+<br />
+(b) &nbsp; Tokyo Accommodation Tax<br />
+<br />
+(c) &nbsp; Hot Spring Use Tax<br />
+<br />
+&nbsp;<br />
+<br />
+Attached Table No.2: Cancellation Charges (Ref. Paragraph 2 of Article 6)<br />
+<br />
+Date when Cancellation of Contract is Notified<br />
+<br />
+No Show<br />
+<br />
+Accommodation Date<br />
+<br />
+1 day prior to Accommodation Date<br />
+<br />
+3 days prior to Accommodation Date<br />
+<br />
+7 days prior to Accommodation Date<br />
+<br />
+14 days prior to Accommodation Date<br />
+<br />
+21 days prior to Accommodation Date<br />
+<br />
+Contracted Number of Guests<br />
+<br />
+Individual<br />
+<br />
+Less than 5 rooms<br />
+<br />
+100%<br />
+<br />
+100%<br />
+<br />
+80%<br />
+<br />
+50%<br />
+<br />
+20%<br />
+<br />
+-<br />
+<br />
+-<br />
+<br />
+Group<br />
+<br />
+5 rooms or more<br />
+<br />
+100%<br />
+<br />
+100%<br />
+<br />
+80%<br />
+<br />
+50%<br />
+<br />
+50%<br />
+<br />
+20%<br />
+<br />
+-<br />
+<br />
+50 rooms or more<br />
+<br />
+100%<br />
+<br />
+100%<br />
+<br />
+80%<br />
+<br />
+80%<br />
+<br />
+50%<br />
+<br />
+50%<br />
+<br />
+20%<br />
+<br />
+[Note]<br />
+<br />
+1. &nbsp; &nbsp; &nbsp; &nbsp;The percentages signify the rate of the cancellation charge to the Basic Accommodation Charge.<br />
+<br />
+2. &nbsp; &nbsp; &nbsp; &nbsp;When part of a group booking (for 5 rooms or more) is changed, such as shortening the number of nights booked and reducing the number of rooms booked, cancellation charges for all nights and rooms falling under the Attached Table No.2 shall be paid by the group.<br />
+<br />
+3. &nbsp; &nbsp; &nbsp; &nbsp;When part of a group booking (for 5 rooms or more) is cancelled, no cancellation charge shall be incurred in the case where the number of rooms cancelled is fewer than 10% of the number of rooms booked as of 10 days prior to occupancy (if cancellation is accepted less than 10 days prior to occupancy, as of the date of acceptance) with fractions counted as a whole number.<br />
+<br />
+&nbsp;</p>
+</div>
+
+
+
+                        
+                    
+                
+            </div>
+        
+    </div>
+
+
+
+			<div class="content-footer clearfix">
+				
+				
+			</div>
+		</div>
+	</div>
+
+	<script src="https://r-fa.bstatic.com/static/manifests/js/article/eb346cfdd7cf6b7c1aea3137bebbe9405c61cf38.js"></script>
+
+
+        </div>
+      </div>
+
+      
+    <script src="https://r-fa.bstatic.com/static/manifests/js/common_websites/da37581e86b6e2aa73b6b96a8ea6a2cf2b01db4f.js"></script>
+
+    
+
+  <div class="widget" data-template="badges_widget" data-url="/api/badges_widget">
+      
+  <script type='text/javascript'>
+booking.jstmpl('badges_widget', (function () { var T = ["\n    ","\n    \u003cdiv class=\"badges clearfix\"\u003e\n      \u003cdiv class=\"badges-inner\"\u003e\n          ","\n          \u003cul class=\"badge-list clearfix\" id=\"Ol1\"\u003e\n              ","\n\n                     ","\n                      ","javascript:void(0);","disabled=\"disabled\"","\n                ","\n              ","\n                  ","http://","target=\"_blank\"","\n                       ","\n\n              \u003cli class=\"badge\"\u003e\n                \u003ca href=\"","\" "," ","\u003e\n                  ","\n                    \u003cdiv class=\"badge-image\"\u003e\n                        \u003cimg src=\"","\" alt=\"","\"\u003e\n                        \u003c/div\u003e\n                  ","\n                    \u003cdiv class=\"badge-title\"\u003e","\u003c/div\u003e\n                  ","\n                \u003c/a\u003e\n              \u003c/li\u003e\n            ","\n          \u003c/ul\u003e\n           ","\n      \u003c/div\u003e\n    \u003c/div\u003e\n  "], V = ["data","fe_badges","fe_badge_link_url","fe_badge_disabled","fe_badge_target","fe_badges_count"], WV, LV, VA; return function (VS) { var s = '', r = this.fn; s += T[0]; r.MN("fe_badges", r.MG((r.MC(V[0]) || [])[0] )); s += T[0]; r.MN("fe_badges_count", (r.MB(V[1])).length); s += T[1]; if ((r.MJ( r.MB(V[5])  >  0 ))) { s += T[2]; { var LA= ( r.MC(V[1]) || [] ); VS.unshift({'badge': null}); for(var LC=1, LM= LA.length, LV_badge; LC <= LM; LC++) { VS[0]['badge']= LV_badge= LA[LC - 1]; s += T[3]; if (( ( r.MK(LV_badge["link_url" ]) || (r.MJ( LV_badge["link_url" ].toString().length  ==  0 )) ) || (r.MJ( LV_badge["link_url" ]  + "" === "" +  "#" )) )) { s += T[4]; r.MN(V[2],T[5]); s += T[4]; r.MN(V[3],T[6]); s += T[7]; r.MN(V[4], undefined); s += T[8]; } else  { s += T[7]; if ((r.MJ( /^http[s]?:\/\// .test( LV_badge["link_url" ] )))) { s += T[9]; r.MN(V[2],(LV_badge || {})["link_url"]); s += T[7]; } else  { s += T[9]; r.MN(V[2],[ T[10], (LV_badge || {})["link_url"] ].join( '' )); s += T[7]; } s += T[7]; r.MN(V[3], undefined); s += T[7]; r.MN(V[4],T[11]); s += T[12]; } s += [ T[13], r.MC(V[2]), T[14], r.MC(V[4]), T[15], r.MC(V[3]), T[16] ].join( '' ); if (r.MJ(r.MG((LV_badge || {})["logo_url"] ))) { s += [ T[17], (LV_badge || {})["logo_url"], T[18], (LV_badge || {})["title"], T[19] ].join( '' ); } s += T[9]; if ((r.MJ( /\S+/ .test( LV_badge["title" ] )))) { s += [ T[20], (LV_badge || {})["title"], T[21] ].join( '' ); } s += T[22]; } VS.shift(); } s += T[23]; } s += T[24]; return s; }; } )());
+</script>
+
+
+  </div>
+
+    
+        
+  <div class="content-section quickres_tabletUp bodyquickres footer-res clearfix" role="search">
+    <div class="inner">
+      <h2>Reservations</h2>
+      
+        <div class="quickres-fields search_wrapper_dates">
+          <div class="datepicker arrival search">
+<!--             <label for="Date1" class="invisible_spoken">Check-in</label>
+ -->            <input type="text" class="date-pick" name="date1" id="Date1" aria-label="Check-in"/>
+            <span class="iconfont datepickicon search_calendar-icon" aria-hidden="true"></span>
+            <i class="iconfont iconfont-next from_to" aria-hidden="true"></i>
+            <span class="input-focused" aria-hidden="true"></span>
+          </div>
+          <div class="datepicker departure search">
+<!--             <label for="Date2" class="invisible_spoken">Check-out</label>
+ -->            <input type="text" class="date-pick" name="date2" id="Date2" aria-label="Check-out"/>
+            <span class="iconfont datepickicon search_calendar-icon" aria-hidden="true"></span>
+            <span class="input-focused" aria-hidden="true"></span>
+          </div>
+          <a class="booknow-btn" data-component="core/book_now_button" href="#">
+            Book now
+          </a>
+        </div>
+      
+    </div>
+  </div>
+
+
+    
+
+    
+<footer class="footer" role="footer">
+    <div class="footer-inner">
+        <div class="clearfix">
+
+            <div class="footer-group-a">
+                <div class="footer-contact">
+                    <div class="hotel-name" itemprop="name">Sapporo Park Hotel</div>
+                    
+  
+  
+  
+    
+      <div class="hotel-phone">
+        <a class="phone-btn-call track-call" href="tel:+81115113135">
+          +81 11-511-3135
+        </a>
+      </div>
+    
+  
+
+
+                    
+    <div itemprop="address" class="hotel-address">
+        
+            <div>064-8589 Hokkaido</div>
+        
+            <div>Sapporo</div>
+        
+            <div>Chuo-ku Minami 10-jo Nishi 3-1-1</div>
+        
+            <div>Japan</div>
+        
+    </div>
+
+                    
+  
+  
+  
+    
+      <div class="hotel-email">
+        <a class="track-email" href="mailto:sph_inb1@granvista.co.jp">
+          sph_inb1@granvista.co.jp
+        </a>
+      </div>
+    
+  
+
+
+                    
+	<ul class="footer-social clearfix">
+		
+			
+
+			
+	    	<li id="facebookLink">
+	    		<div class="fb-link">
+	    			<a class="facebookAnchor" target="_blank" href="https://www.facebook.com/park1964">
+	    				<span class="social-link-name invisible_spoken">Facebook</span>
+	    			</a>
+	  			</div>
+				</li>
+
+			
+
+		
+			
+
+			
+				<li id="tripAdvisorLink">
+			 		<div class="tripAdvisor-link">
+			 			<a class="tripAdvisorAnchor" target="_blank" href="https://www.tripadvisor.com.sg/Hotel_Review-g298560-d325626-Reviews-Sapporo_Park_Hotel-Sapporo_Hokkaido.html">
+			 				<span class="social-link-name invisible_spoken">Tripadvisor</span>
+			 			</a>
+		 			</div>
+	 			</li>
+
+			
+
+		
+	</ul>
+
+
+                </div>
+            </div>
+
+            <div class="footer-group-b">
+                <nav class="footer-links">
+                    <ul class="links-list clearfix">
+                        
+                            
+                            
+                            <li>
+                                <a href="/en-gb/sitemap" title="Sitemap" target="_self">Sitemap</a>
+                            </li>
+                        
+                            
+                            
+                            <li>
+                                <a href="/en-gb/privacy-policy" title="Privacy policy" target="_self">Privacy policy</a>
+                            </li>
+                        
+                            
+                            
+                            <li>
+                                <a href="/en-gb/cookie-policy" title="Cookie notice" target="_self">Cookie notice</a>
+                            </li>
+                        
+                            
+                            
+                            <li>
+                                <a href="/en-gb/general-terms-conditions-for-accommodation-contract" title="General Terms and Conditions for Accommodation Contract" target="_self">General Terms and Conditions for Accommodation Contract</a>
+                            </li>
+                        
+                    </ul>
+                </nav>
+            </div>
+
+        </div>
+        <!--clearfix end-->
+
+        <div class="footer-credits ">
+            <div class="powered" id="OnWeb">
+                <span>&copy; 2018</span>
+                <a href="http://suite.booking.com" target="_blank">BookingSuite</a>
+            </div>
+        </div>
+
+    </div>
+    <!--footer-inner end-->
+</footer>
+<!--footer end-->
+
+
+
+
+
+
+      
+
+      
+    </div>
+
+    
+
+    
+    
+  </div>
+  </body>
+</html>
