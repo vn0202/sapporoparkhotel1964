@@ -1,176 +1,98 @@
 <!DOCTYPE html>
 
 <html lang="en-gb" class="clip-paths">
-  <head>
-    <!-- needed for other scripts -->
-    <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
-
-    
-
-<script type="text/javascript">
-(function() {
-    typeof window.B === 'object' || (window.B = {});
-    typeof window.B.util === 'object' || (window.B.util = {});
-    typeof window.B.env === 'object' || (window.B.env = {});
-    typeof window.B.modules === 'object' || (window.B.modules = {});
-    typeof window.B.services === 'object' || (window.B.services = {});
-    typeof window.B.data === 'object' || (window.B.data = {});
-    typeof window.B.components === 'object' || (window.B.components = {});
-
-    
-    typeof window.booking === 'object' || (window.booking = window.B);
-
-    B.env.global_translation_tags = {"zwsp":"\u200b","line_break":"\u003cbr\u003e","lrm":"\u200e","rlm":"\u200f","nbsp":"&nbsp;"};
-    B.env.params = {};
-    B.env.route_params = "";
-    B.env.action = "cookie_policy";
-    B.env.pid = "a45808cf6c5a0061";
-    B.env.stype = 48;
-    B.env.currency = {"exchange_rate":1,"symbol":"&#x20AC;","code":"EUR"};
-    B.env.channel = "booking";
-    B.env.google_analytics_tag = "";
-    B.env.lang = "en-gb";
-    B.env.lang_short_code = "en";
-    B.env.date_format = "dd/MM/yyyy";
-    B.env.ajax_action_host = "https://reservation.booking.expert";
-    B.env.csrf_token = "";
-    B.env.urls = {"reviews":"https://www.sapporoparkhotel1964.com/en-gb/reviews","search":"https://reservation.booking.expert/en-gb/search?h=bhpicqsr","confirm":"https://reservation.booking.expert/en-gb/confirm?h=bhpicqsr","cookie_policy":"https://www.sapporoparkhotel1964.com/en-gb/cookie-policy","photos":"https://www.sapporoparkhotel1964.com/en-gb/photos","attractions":"https://www.sapporoparkhotel1964.com/en-gb/attractions","sitemap":"https://www.sapporoparkhotel1964.com/en-gb/sitemap","book":"https://reservation.booking.expert/en-gb/book?h=bhpicqsr","rooms":"https://www.sapporoparkhotel1964.com/en-gb/rooms","privacy_policy":"https://www.sapporoparkhotel1964.com/en-gb/privacy-policy","facilities":"https://www.sapporoparkhotel1964.com/en-gb/amenities","verify":"https://reservation.booking.expert/en-gb/verify?h=bhpicqsr","contact":"https://www.sapporoparkhotel1964.com/en-gb/contact","home":"https://www.sapporoparkhotel1964.com/en-gb"};
-    B.env.guest_ip = "52.211.218.41";
-    B.env.ip_country = "ie";
-    B.env.visitor_country = "ie";
-    B.env.page_type = "cookie_policy";
-    B.env.error_config = {"unknown_error_code":{"code":65535,"desc":"Unknown error code","type":"system"},"ofac_second_match":{"code":1300,"desc":"OFAC second match by date of birthday.","type":"user"},"hotel_is_closed":{"type":"user","code":1011,"desc":"The specified hotel is not in service."},"ssl_required":{"desc":"HTTPS (SSL) connection required for using this procedure.","code":1005,"type":"user"},"pci_call_outside_pci":{"type":"user","desc":"This call requires connection to secure server. Please add 'secure-' prefix to domain name.","code":1014},"possible_hijack":{"desc":"A reequest is blocked because its considered a hijack for a booking","code":1111,"type":"user"},"PASSWORD_EQ_USERNAME":{"type":"user","code":3031,"desc":"Password is equal to username"},"booking_is_being_processed":{"code":2009,"desc":"This booking is being processed in another request, ignoring this request.","type":"user"},"forbidden":{"type":"user","desc":"HTTP 403 - Forbidden","code":403},"AUTH_STATUS_2FA_CHALLENGE_FAILED_INVALID_PIN":{"code":3032,"desc":"AUTH_STATUS_2FA_CHALLENGE_FAILED_INVALID_PIN","type":"user"},"not_implemented":{"desc":"Not Implemented","code":501,"type":"system"},"filtered_av_updates":{"type":"user","code":444,"desc":"AV updates - some filtered"},"FACEBOOK_USER_DIDNT_ALLOW_EMAIL":{"type":"user","code":3027,"desc":"FACEBOOK_USER_DIDNT_ALLOW_EMAIL"},"booking_already_processed":{"code":2005,"desc":"This booking has already been processed and a cached result will be returned.","type":"user"},"function_not_allowed":{"code":1010,"desc":"Function not allowed.","type":"user"},"no_rpo_availability":{"type":"user","code":1107,"desc":"There is no room available during the specified period."},"unknown_link_booking_error":{"desc":"Unknown error while linking booking.","code":2003,"type":"user"},"duplicated_request_dist":{"type":"user","desc":"Duplicated distribution request (magic, not client facing)","code":1020},"num_rooms_bigger_than_allowed":{"type":"user","code":1125,"desc":"Number of rooms is bigger than the maximum allowed"},"AUTH_STATUS_AUTHENTICATED":{"type":"user","desc":"AUTH_STATUS_AUTHENTICATED","code":3002},"too_many_requests_":{"desc":"Too many requests - Throttling","code":429,"type":"user"},"missing_parameters":{"type":"user","desc":"One or more required input parameters are missing.","code":1002},"payment_error_generic":{"type":"user","desc":"There was a problem processing payment","code":2007},"incorrect_parameters":{"desc":"One or more input parameters have an incorrect value.","code":1009,"type":"user"},"token_invalid":{"desc":"Provided token is invalid.","code":2001,"type":"user"},"too_many_requests":{"desc":"Too many requests per minute. Please don't use this function heavily (i.e. only for testing) during 8-23 GMT.","code":1007,"type":"user"},"cancelled_booking":{"code":1123,"desc":"The given booking is cancelled.","type":"user"},"not_found":{"type":"user","code":404,"desc":"HTTP 404 - Not Found"},"AUTH_STATUS_USER_UNCONFIRMED":{"type":"user","code":3009,"desc":"AUTH_STATUS_USER_UNCONFIRMED"},"no_bn_or_pincode":{"code":2002,"desc":"Missing booknumber or pincode.","type":"user"},"filtered_av_updates_errors":{"code":445,"desc":"AV updates - errors and filtered","type":"user"},"AUTH_STATUS_USER_UNKNOWN":{"code":3004,"desc":"AUTH_STATUS_FAILED","type":"user"},"FACEBOOK_ACCOUNTS_MUST_BE_MERGED":{"desc":"FACEBOOK_ACCOUNTS_MUST_BE_MERGED","code":3022,"type":"user"},"FACEBOOK_ERROR_UNKNOWN":{"code":3021,"desc":"FACEBOOK_ERROR_UNKNOWN","type":"user"},"AUTH_STATUS_TOKEN_ERROR":{"type":"user","code":3011,"desc":"AUTH_STATUS_TOKEN_ERROR"},"service_unavailable":{"desc":"Service Unavailable","code":503,"type":"system"},"item_not_available":{"desc":"Item not available.","code":2011,"type":"user"},"arrival_date_in_past":{"desc":"Arrival date must be today or after today","code":1124,"type":"user"},"booking_already_linked":{"desc":"This booking has already been linked to another user account.","code":2004,"type":"user"},"payment_error_insufficient_funds":{"type":"user","desc":"Insufficient funds","code":2010},"FACEBOOK_AUTHENTICATE":{"desc":"FACEBOOK_AUTHENTICATE","code":3023,"type":"user"},"PASSWORD_RESET_FAILED":{"code":3020,"desc":"Password reset failed","type":"user"},"xml_parse_error":{"code":1012,"desc":"XML parse error","type":"user"},"AUTH_STATUS_2FA_NO_APP_SUPPORT_FOR_THE_FEATURE":{"type":"user","code":3035,"desc":"AUTH_STATUS_2FA_NO_APP_SUPPORT_FOR_THE_FEATURE"},"booking_looks_suspicious":{"type":"user","desc":"Book process failed.","code":2006},"invalid_input_format":{"code":1003,"desc":"One or more input parameters have an illegal format.","type":"user"},"ALREADY_SUBMITTED":{"desc":"ALREADY_SUBMITTED","code":3026,"type":"user"},"AUTH_STATUS_FAILED":{"desc":"AUTH_STATUS_FAILED","code":3004,"type":"user"},"too_many_parallel_requests":{"type":"user","desc":"Too many parallel requests. Please only call 1 instance of this function in parallel during 8-23 GMT or 3 instances in parallel during 23-8 GMT.","code":1008},"rpo_not_found":{"type":"user","desc":"Room not found.","code":1105},"AUTH_STATUS_2FA_INVALID_AUTHORIZATION_TOKEN":{"type":"user","code":3033,"desc":"AUTH_STATUS_2FA_INVALID_AUTHORIZATION_TOKEN"},"AUTH_STATUS_NO_PASSWORD":{"type":"user","code":3008,"desc":"AUTH_STATUS_NO_PASSWORD"},"gone":{"code":410,"desc":"HTTP 410 - Gone","type":"user"},"WECHAT_ERROR_WITH_CUSTOM_MSG":{"desc":"WECHAT_ERROR_WITH_CUSTOM_MSG","code":3029,"type":"user"},"invalid_parameter_combination":{"desc":"Invalid parameter combination.","code":1006,"type":"user"},"non_pci_call_in_pci":{"code":1015,"desc":"This call can not be made to secure server. Please remove 'secure-' prefix from domain name.","type":"user"},"rpo_not_in_hotel":{"code":1106,"desc":"Room is not part of the hotel.","type":"user"},"invalid_guest_qty":{"type":"user","code":1122,"desc":"Guest_qty is not between 1 and it's maximum."},"duplicated_request_supply":{"type":"user","code":420,"desc":"Duplicated supply request (magic, not client facing)"},"internal_error":{"desc":"Internal error (with a unique ID if the error is logged: in those cases Bookings may be contacted to trace the error).","code":1001,"type":"system"},"FACEBOOK_ALREADY_CONNECTED_TO_DIFF_ACCOUNT":{"code":3024,"desc":"FACEBOOK_AUTHENTICATE","type":"user"},"affiliate_not_found":{"type":"user","desc":"Affiliate not found.","code":1119},"FACEBOOK_ERROR_WITH_CUSTOM_MSG":{"desc":"FACEBOOK_ERROR_WITH_CUSTOM_MSG","code":3025,"type":"user"},"AUTH_STATUS_NONE":{"type":"user","code":3000,"desc":"AUTH_STATUS_NONE"},"cc_validation_error":{"code":1013,"desc":"Credit card validation error","type":"user"},"AUTH_STATUS_2FA_WRONG_ANSWER_TO_SECURITY_QUESTION":{"type":"user","code":3034,"desc":"AUTH_STATUS_2FA_WRONG_ANSWER_TO_SECURITY_QUESTION"},"AUTH_STATUS_EXPIRED":{"desc":"AUTH_STATUS_EXPIRED","code":3001,"type":"user"},"SHORT_PASSWORD":{"code":3030,"desc":"Password is less then 8 characters","type":"user"},"price_mismatch_increase_process_booking":{"type":"user","code":1200,"desc":"Difference between asked and available incremental prices. The price increased."},"captcha_required":{"type":"user","code":1142,"desc":"User must complete captcha challenge before retrying request."},"min_length_of_stay_not_fulfilled":{"desc":"Minimum length of stay for the requested hotel(s) was not fulfilled","code":1126,"type":"user"},"AUTH_STATUS_LOCKED":{"type":"user","desc":"AUTH_STATUS_LOCKED","code":3005},"price_mismatch_decrease_process_booking":{"type":"user","code":1201,"desc":"Difference between asked and available incremental prices. The price decreased."},"AUTH_STATUS_NO_USERNAME":{"desc":"AUTH_STATUS_NO_USERNAME","code":3007,"type":"user"},"affiliate_closed":{"desc":"Affiliate is closed.","code":1120,"type":"user"},"AUTH_STATUS_SN_SIGNIN_NEEDS_PASSWORD":{"type":"user","desc":"AUTH_STATUS_SN_SIGNIN_NEEDS_PASSWORD","code":3003},"I_MEAN_AUTH_STATUS_USER_UNKNOWN":{"type":"user","code":3028,"desc":"AUTH_STATUS_USER_UNKNOWN"},"AUTH_STATUS_EMAIL_UNCONFIRMED":{"type":"user","desc":"AUTH_STATUS_EMAIL_UNCONFIRMED","code":3010},"internal_server_error":{"desc":"Internal Server Error","code":500,"type":"system"},"bad_request":{"desc":"HTTP 400 - Bad Request","code":400,"type":"user"},"unauthorized":{"type":"user","desc":"HTTP 401 - Unauthorized","code":401}};
-    B.env.constants = {"Theme":{"AVENUE":"theme_Avenue","SUMMIT":"theme_Summit","FOCUS":"theme_Focus","FRAME":"theme_Frame","AURA":"theme_Aura","ASCENT":"theme_Ascent","CREST":"theme_Crest","EDGE":"theme_Edge"},"PageTypes":{"PACKAGES":"packages","COOKIE_POLICY":"cookie_policy","PACKAGE":"package","ROOM_DETAIL":"roomdetail","CUSTOM_LINK":"custom_link","ROOMS":"rooms","PROMOTIONS":"promotions","SITEMAP":"sitemap","BOOK":"book","DINING":"dining","ATTRACTIONS":"attractions","ROOM":"room","PRIVACY_POLICY":"privacy_policy","CONFIRM":"confirm","HOME":"home","EMAIL_CONFIRMATION":"email/confirmation","FACILITIES":"facilities","RESERVATION":"reservation","PHOTOS":"photos","EMAIL_CANCELLATION":"email/cancellation","ARTICLE":"article","SEARCH":"search","EMAIL_CONTACT":"email/contact","CONTACT":"contact","INDEX":"index","CUSTOM_ROOM":"custom_room","TOOLS":"_","REVIEWS":"reviews","HOMEPAGE":"homepage","ROOM_OVERVIEW":"roomoverview","VERIFY":"verify"},"SmartAVClient":{"LENGTH_OF_STAY":1,"AVAILABILITY_DAYS":22,"SEVEN_DAYS_AGO":-7},"PaymentMethod":{"FREE":"free","CASH_ONLY_PAYMENT_METHOD":18,"MAX_CARDS_TO_DISPLAY":3},"SocialLinkTypes":{"FACEBOOK":"facebook","INSTAGRAM":"instagram","PINTEREST":"pinterest","YELP":"yelp","TRIPADVISOR":"tripadvisor","YOUTUBE":"youtube","TWITTER":"twitter","GOOGLEPLUS":"google+","TUMBLR":"tumblr","WEIBO":"weibo"},"AlbumTypes":{"ARTICLE_SECTION":"articlesection","HOMEPAGE":"homepage","ARTICLE_MAIN":"articlemain","CUSTOM_ROOM":"custom_room","DINING":"dining","GALLERY":"gallery"},"WidgetTypes":{"VIDEO":"Video","CUSTOM_CONTACT_FORM":"CustomContactForm","LOCATION":"Location","QUICKRESERVATION":"DEPRECATED","ROOM":"Room","REVIEWS":"Reviews","EMBEDWIDGET":"DEPRECATED","LEGACY":"DEPRECATED","CONTACT":"DEPRECATED","EMBED":"Embed","SITEMAP":"DEPRECATED","FEATURED_ARTICLE":"FeaturedArticle","FACILITIES":"Facilities"},"GTM":{"WF_GUEST_TRAFFIC":"GTM-PBSCT4T","CHANNEL":"booking"},"SegmentTypes":{"EMBED":"embed","NONEDITABLE":"noneditable","PARAGRAPH_HTML":"paragraph_html","PARAGRAPH":"paragraph","HEADER":"header","CUSTOM_CONTACT_FORM":"custom_contact_form","VIDEO":"video","SECTION_HEADER":"section_header","SLIDESHOW":"slideshow","IMAGE":"image"},"RoomSource":{"BOOKING_PLUS":"booking_plus","BOOKING":"booking","CUSTOM":"custom"},"ChoiceRatePlanTypes":{"SP20M4":"SP20M4","SP15M2":"SP15M2","SP15M3":"SP15M3","SAPR1":"SAPR1","SSC":"SSC","S3A":"S3A","SGM":"SGM","RACK":"RACK","SAPR2":"SAPR2"},"RefundableTypes":{"FREE_CANCELLATION":"free_cancellation","SPECIAL_CONDITIONS":"special_conditions","NON_REFUNDABLE":"non_refundable"},"BookingEngineType":{"THIRD_PARTY_URL":"THIRD_PARTY_URL","CHOICE":"CHOICE","BOOKING":"BOOKING"},"Layouts":{"WEBSITES":"websites","EMAIL_BASE":"email_base","BOOKING_ENGINE":"bookingengine","EMPTY":"empty"},"CustomContactFormFieldTypes":{"CATEGORY":0,"PHONE":6,"LAST_NAME":4,"EMAIL":5,"MESSAGE":12,"RECIPIENT":2,"FIRST_NAME":3,"DATE":7,"BOOKED_ROOM":13,"TIME":9,"TIME_RANGE":10,"TITLE":1,"GUESTS":11,"DATE_RANGE":8},"PhotoClass":{"BKS_GALLERY":60,"BKS_PDF_DOCUMENT":99,"BKS_CUSTOM_ROOM":68,"BKS_FAVICON":59,"BKS_BACKGROUND":55,"BKS_LOGO_AWARDS":54,"BKS_HOMEPAGE_HERO":56,"BKS_ARTICLE_BODY":58,"BKS_ARTICLE_HERO":57},"PolicyTypes":{"PREPAYMENT":"POLICY_PREPAY","CANCELLATION":"POLICY_CANCELLATION","CHILDREN":"POLICY_CHILDREN","GROUPS":"POLICY_HOTEL_GROUPS","PETS":"POLICY_HOTEL_PETS","PARKING":"POLICY_HOTEL_PARKING","INTERNET":"POLICY_HOTEL_INTERNET"},"ChoiceRatePlanStrings":{"SP15M3":"bks_cms_choice_hotels_discount_with_min_stay_3_nights","SAPR1":"bks_cms_choice_hotels_advance_purchase_rate","SP20M4":"bks_cms_choice_hotels_discount_with_min_stay_4_nights","SP15M2":"bks_cms_choice_hotels_discount_with_min_stay_2_nights","RACK":"bks_cms_choice_hotels_best_available","SGM":"bks_cms_choice_hotels_special_rates_gov_military_travellers","SAPR2":"bks_cms_choice_hotels_advance_purchase_rate","SSC":"bks_cms_choice_hotels_aarp_members_60_plus","S3A":"bks_cms_choice_hotels_aaa_caa_members_only"}};
-    B.env.static_hostnames = ["https://q-fa.bstatic.com","https://r-fa.bstatic.com"];
-    B.env.static_images_hostnames = ["https://q-fa.bstatic.com","https://r-fa.bstatic.com"];
-    B.env.static_file_suffix = "";
-    B.env.affiliate_id = 1241010;
-    B.env.affiliate_label = "bks_wf";
-    B.env.hotel_id = 271588;
-    B.env.is_preview = !!"";
-    B.env.device_class_by_ua = "desktop";
-    B.env.privacy_and_consent = {"warning_closed_cookie_name":"bks_wf_cws","warning_rendered_cookie_name":"cws","display_cookie_warning":1};
-
-    
-
-    B.data.hotel = {"affiliate_id":1241010,"flags":{"ReservationCurrency":"JPY","VIEW_CONTENT_SETTING":"true","ConsentCheckboxIsRequired":"true","CustomReservationMobileURL":"https://www.book-secure.com/index.php?s=results&property=jpsap30526&arrival={$CheckIN(yyyy-MM-dd)}&departure={$CheckOUT(yyyy-MM-dd)}","ShowCookiePolicy":"True","ReservationChoiceSwitch":"3","HasQuickReservationFeature":"false","HasThirdPartyBookingEngine":"false","SHOW_EMAIL_ADDRESS_ON_SITE":"true","SHOW_PHONE_NUMBER_ON_SITE":"true","ShowConsentCheckbox":"true","HasCustomReservationURLs":"true","HasThirdPartyAnalyticsInsertions":"false","HAS_PUBLISHED_DATA":"true","CustomReservationURL":"https://www.book-secure.com/index.php?s=results&property=jpsap30526&arrival={$CheckIN(yyyy-MM-dd)}&departure={$CheckOUT(yyyy-MM-dd)}","ConsentCheckboxIsPrechecked":"false","GoogleAnalyticsID":""},"standard_branding":{"theme":"theme_Aura","background_img":"//q.bstatic.com/data/bsuitewf/6ac64972b5e163f3dbde95088369717c9e144ac4","font_settings":"Georgia;Georgia;Georgia","logo":"//q.bstatic.com/data/bsuitewf/3bf94bac2ddfa5e05a929a05613909cc1662e4f1","accent_color":"#17417d","background_color":"#529ec2","hash_name":"90010b6d5e74fad6913e489e48ecf58a61ddcd12"},"currency_code":"JPY","time_zone":"Asia/Tokyo","branding_version":"0bd4c","product_type":{"sku":"WebDirectSubscription","affiliate_id":1241010,"name":"web-direct-subscription"},"primary_language":"en","hotel_poi_zoom":15,"hotel_checkout_until":"11:00","footer_menus":[{"target_blank":false,"action":"sitemap","current":"","title":"bks_cms_menu_sitemap","url":"https://www.sapporoparkhotel1964.com/en-gb/sitemap"},{"action":"privacy_policy","current":"","target_blank":false,"title":"bks_cms_menu_privacy_policy","url":"https://www.sapporoparkhotel1964.com/en-gb/privacy-policy"},{"title":"bks_cms_menu_cookie_policy","url":"https://www.sapporoparkhotel1964.com/en-gb/cookie-policy","action":"cookie_policy","current":1,"target_blank":false},{"target_blank":false,"action":"article","action_id":297393,"url":"https://www.sapporoparkhotel1964.com/en-gb/general-terms-conditions-for-accommodation-contract","title":"General Terms and Conditions for Accommodation Contract"}],"hotel_checkin_from":"14:00","preferred_contacts":{"name":"Ms. Takahashi Yumi","telephone_1":"+81 11-511-3135","email":"sph_inb1@granvista.co.jp"},"address_object":{"city":"Sapporo","name":"Sapporo Park Hotel","address":"Chuo-ku Minami 10-jo Nishi 3-1-1","country":"Japan"},"booking_engine":2,"latitude":43.0480122367167,"name":"Sapporo Park Hotel","test_hotel":false,"hotel_checkin_until":"","open_bookable":true,"default_communication_language":"ja","longitude":141.355928778648,"social_links":[{"sort_id":0,"title":"Facebook","url":"https://www.facebook.com/park1964","hotel_id":271588,"is_hidden":false,"id":1063678,"hidden":false},{"hidden":false,"id":1063675,"hotel_id":271588,"is_hidden":false,"title":"TripAdvisor","sort_id":2,"url":"https://www.tripadvisor.com.sg/Hotel_Review-g298560-d325626-Reviews-Sapporo_Park_Hotel-Sapporo_Hokkaido.html"}],"hotel_id":271588,"branding_hash_name":"90010b6d5e74fad6913e489e48ecf58a61ddcd12","booking_engine_type":"THIRD_PARTY_URL","webpage_languages":["en-gb","ko-kr","zh-cn","zh-tw"],"short_code":"bhpicqsr","hotel_flag_foreigner_tax_exemption":0,"sku":"WebDirectSubscription","header_menus":[{"url":"https://www.sapporoparkhotel1964.com/en-gb/important-notices","title":"Important Notices","current":"","action":"article","action_id":310473,"target_blank":false},{"target_blank":false,"current":"","action":"rooms","title":"bks_cms_menu_rooms","url":"https://www.sapporoparkhotel1964.com/en-gb/rooms"},{"action":"article","current":"","action_id":176279,"target_blank":false,"url":"https://www.sapporoparkhotel1964.com/en-gb/restaurant","title":"Restaurant"},{"title":"Facilities","url":"https://www.sapporoparkhotel1964.com/en-gb/facilities1","target_blank":false,"action_id":176287,"current":"","action":"article"},{"action_id":176292,"current":"","action":"article","target_blank":false,"title":"Services","url":"https://www.sapporoparkhotel1964.com/en-gb/services1"},{"action_id":311053,"action":"article","current":"","target_blank":false,"title":"Access","url":"https://www.sapporoparkhotel1964.com/en-gb/new-page"},{"target_blank":false,"current":"","action":"attractions","url":"https://www.sapporoparkhotel1964.com/en-gb/attractions","title":"bks_cms_menu_attractions"},{"target_blank":false,"action":"reviews","current":"","title":"bks_cms_menu_reviews","url":"https://www.sapporoparkhotel1964.com/en-gb/reviews"},{"url":"https://www.sapporoparkhotel1964.com/en-gb/photos","title":"bks_cms_menu_photos","action":"photos","current":"","target_blank":false},{"url":"https://www.sapporoparkhotel1964.com/en-gb/amenities","title":"bks_cms_menu_amenities","current":"","action":"facilities","target_blank":false},{"url":"https://www.sapporoparkhotel1964.com/en-gb/faq","title":"FAQ","action":"article","current":"","action_id":176284,"target_blank":false},{"target_blank":false,"current":"","action":"contact","title":"bks_cms_menu_contact","url":"https://www.sapporoparkhotel1964.com/en-gb/contact"}],"primary_domain":"www.sapporoparkhotel1964.com","hotel_checkout_from":""};
-    B.data.urls = {"reviews":"https://www.sapporoparkhotel1964.com/en-gb/reviews","search":"https://reservation.booking.expert/en-gb/search?h=bhpicqsr","confirm":"https://reservation.booking.expert/en-gb/confirm?h=bhpicqsr","cookie_policy":"https://www.sapporoparkhotel1964.com/en-gb/cookie-policy","photos":"https://www.sapporoparkhotel1964.com/en-gb/photos","attractions":"https://www.sapporoparkhotel1964.com/en-gb/attractions","sitemap":"https://www.sapporoparkhotel1964.com/en-gb/sitemap","book":"https://reservation.booking.expert/en-gb/book?h=bhpicqsr","rooms":"https://www.sapporoparkhotel1964.com/en-gb/rooms","privacy_policy":"https://www.sapporoparkhotel1964.com/en-gb/privacy-policy","facilities":"https://www.sapporoparkhotel1964.com/en-gb/amenities","verify":"https://reservation.booking.expert/en-gb/verify?h=bhpicqsr","contact":"https://www.sapporoparkhotel1964.com/en-gb/contact","home":"https://www.sapporoparkhotel1964.com/en-gb"};
-    B.data.default_image = "data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4KPCFET0NUWVBFIHN2ZyBQVUJMSUMgIi0vL1czQy8vRFREIFNWRyAxLjEvL0VOIiAiaHR0cDovL3d3dy53My5vcmcvR3JhcGhpY3MvU1ZHLzEuMS9EVEQvc3ZnMTEuZHRkIj4KPHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZlcnNpb249IjEuMSI+CiAgPHJlY3Qgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgc3R5bGU9ImZpbGw6I0ZBRkFGQTtzdHJva2Utd2lkdGg6MztzdHJva2U6Izk5OTtzdHJva2UtZGFzaGFycmF5OiA4LCA0O3ZlY3Rvci1lZmZlY3Q6IG5vbi1zY2FsaW5nLXN0cm9rZTsiIC8+Cjwvc3ZnPgo=";
-
-    
-    B.data.search_results = "" || undefined;
-    
-
-    
-
-    
-    B.data.policies = "" || undefined;
-    
-
-    
-
-    
-
-    
-
-    
-    B.env.accounting_config = {"html_symbol":{"ARS":"AR$","XPF":"CFP","ILS":"&#x20AA;","RON":"lei","SGD":"S$","JPY":"&#165;","GBP":"&#163;","IDR":"Rp","INR":"Rs.","PHP":"&#8369;","USD":"US$","CZK":"K&#269;","CLP":"CL$","EUR":"&#x20AC;","PLN":"z&#x0142;","BRL":"R$","TRY":"TL","HKD":"HK$"},"group_separator":{"default":","},"decimal_separator":{"default":"."},"currency_separator":{"JPY":"","GBP":"","USD":"","default":"&nbsp;"},"num_decimals":{"XPF":"0","RUB":"0","BYR":"0","RWF":"0","GNF":"0","TWD":"0","PYG":"0","BIF":"0","LYD":"3","IDR":"0","default":"2","LAK":"0","XOF":"0","MGA":"0","HUF":"0","KMF":"0","KWD":"3","XAF":"0","TMM":"0","TND":"3","KRW":"0","UGX":"0","JOD":"3","DJF":"0","JPY":"0","IQD":"3","TJR":"0","MZM":"0","COP":"0","ECS":"0","VND":"0","ISK":"0","CLP":"0","AFA":"0","OMR":"3","BHD":"3","VUV":"0"},"symbol_position":{"default":"before","CZK":"after","PLN":"after","RON":"after"}} || undefined;
-    
-
-    B.env.month_names = ["January","February","March","April","May","June","July","August","September","October","November","December"];
-    B.env.day_of_week_names = ["Sun","Mon","Tue","Wed","Thu","Fri","Sat"];
-    B.env.full_day_of_week_names = ["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"];
-
-    
-        B.env.jstmpl_date_format = {"from_month_with_year":"since {month_name_from} {full_year}","date_without_year":"{day_of_month} {month_name}","date_with_weekday_time_from":"{weekday} {begin_marker}{day_of_month} {month_name}{end_marker} {full_year} from {time}","date_with_weekday_time_until":"{weekday} {begin_marker}{day_of_month} {month_name}{end_marker} {full_year} until {time}","short_month_only":"{short_month_name}","month_with_year":"{month_name_with_year_only} {full_year}","short_date_with_weekday_without_year":"{short_weekday} {day_of_month} {short_month_name}","date_with_short_weekday_with_year":"{short_weekday} {day_of_month} {month_name} {full_year}","numeric_date_range_both_years":"{day_of_month}/{month}/{full_year} - {day_of_month_until}/{month_until}/{full_year_until}","date_with_weekday_to":"{weekday_to} {day_of_month} {month_name_to} {full_year}","day_of_month_only":"{day_of_month}","numeric_date":"{day_of_month}/{month}/{full_year}","date_with_short_weekday_without_year":"{short_weekday} {day_of_month} {month_name}","short_date":"{day_of_month} {short_month_name} {full_year}","long_date_range_both_years":"{day_of_month} {month_name} {full_year} - {day_of_month_until} {month_name_until} {full_year_until}","in_month_with_year":"in {month_name_in} {full_year}","date_with_weekday":"{weekday} {day_of_month} {month_name} {full_year}","numeric_date_range":"{day_of_month}/{month} - {day_of_month_until}/{month_until}","short_date_without_year_range":"{day_of_month} {short_month_name} - {day_of_month_until} {short_month_name_until}","range_from_long_date_time_until_long_date_time":"from {day_of_month} {month_name} {full_year} at {time} until {day_of_month_until} {month_name_until} {full_year_until} at {time_until}","short_weekday_only":"{short_weekday}","short_month_with_year":"{short_month_name} {full_year}","month_name_only":"{month_name_nom}","short_date_with_weekday":"{short_weekday} {day_of_month} {short_month_name} {full_year}","short_date_without_year":"{day_of_month} {short_month_name}","date_with_year":"{day_of_month} {month_name} {full_year}","date_with_weekday_time_from_until":"{weekday} {begin_marker}{day_of_month} {month_name}{end_marker} {full_year} from {time} until {time_until}","date_with_weekday_with_markers":"{weekday} {begin_marker}{day_of_month} {month_name}{end_marker} {full_year}","date_with_weekday_from":"{weekday_from} {day_of_month} {month_name_from} {full_year}"};
-        B.env.jstmpl_months = {"5":{"name_to":"May","name_only":"May","name_from":"May","name":"May","short_name":"May","name_with_year_only":"May","name_in":"May","name_def_article_uc":"The May","name_def_article_lc":"the May"},"4":{"name_to":"April","name_only":"April","name_from":"April","name":"April","short_name":"Apr","name_with_year_only":"April","name_in":"April","name_def_article_uc":"The April","name_def_article_lc":"the April"},"1":{"name_to":"January","name_only":"January","name_from":"January","name":"January","short_name":"Jan","name_with_year_only":"January","name_in":"January","name_def_article_uc":"The January","name_def_article_lc":"the January"},"11":{"name_to":"November","name_only":"November","name_from":"November","name":"November","short_name":"Nov","name_with_year_only":"November","name_in":"November","name_def_article_uc":"The November","name_def_article_lc":"the November"},"8":{"name_to":"August","name_only":"August","name_from":"August","name":"August","short_name":"Aug","name_with_year_only":"August","name_in":"August","name_def_article_uc":"The August","name_def_article_lc":"the August"},"3":{"name_to":"March","name_only":"March","name_from":"March","name":"March","short_name":"Mar","name_with_year_only":"March","name_in":"March","name_def_article_uc":"The March","name_def_article_lc":"the March"},"6":{"name_to":"June","name_only":"June","name_from":"June","name":"June","short_name":"Jun","name_with_year_only":"June","name_in":"June","name_def_article_uc":"The June","name_def_article_lc":"the June"},"7":{"name_to":"July","name_only":"July","name_from":"July","name":"July","short_name":"Jul","name_with_year_only":"July","name_in":"July","name_def_article_uc":"The July","name_def_article_lc":"the July"},"9":{"name_to":"September","name_only":"September","name_from":"September","name":"September","short_name":"Sept","name_with_year_only":"September","name_in":"September","name_def_article_uc":"The September","name_def_article_lc":"the September"},"10":{"name_to":"October","name_only":"October","name_from":"October","name":"October","short_name":"Oct","name_with_year_only":"October","name_in":"October","name_def_article_uc":"The October","name_def_article_lc":"the October"},"2":{"name_to":"February","name_only":"February","name_from":"February","name":"February","short_name":"Feb","name_with_year_only":"February","name_in":"February","name_def_article_uc":"The February","name_def_article_lc":"the February"},"12":{"name_to":"December","name_only":"December","name_from":"December","name":"December","short_name":"Dec","name_with_year_only":"December","name_in":"December","name_def_article_uc":"The December","name_def_article_lc":"the December"}};
-        B.env.jstmpl_weekdays = {"2":{"short":"Tue","name_to":"Tuesday","name_on":"Tuesday","name_from":"Tuesday","name":"Tuesday","shortest":"Tu"},"3":{"short":"Wed","name_to":"Wednesday","name_on":"Wednesday","name_from":"Wednesday","name":"Wednesday","shortest":"We"},"4":{"short":"Thu","name_to":"Thursday","name_on":"Thursday","name_from":"Thursday","name":"Thursday","shortest":"Th"},"7":{"short":"Sun","name_to":"Sunday","name_on":"Sunday","name_from":"Sunday","name":"Sunday","shortest":"Su"},"6":{"short":"Sat","name_to":"Saturday","name_on":"Saturday","name_from":"Saturday","name":"Saturday","shortest":"Sa"},"1":{"short":"Mon","name_to":"Monday","name_on":"Monday","name_from":"Monday","name":"Monday","shortest":"Mo"},"5":{"short":"Fri","name_to":"Friday","name_on":"Friday","name_from":"Friday","name":"Friday","shortest":"Fr"}};
-    
-
-    
-        B.env.jstmpl_time_format = {"PM_symbol":{"name":"PM"},"AM_symbol":{"name":"AM"},"time":{"name":"{hour_24h}:{minutes}"}};
-    
-
-    
-
-    
-
-    
-
-    
+<head>
 
 
+    <title>[Official Website] Sapporo Park Hotel in Sapporo, Japan</title>
+
+    <meta property="og:url" content="https://www.sapporoparkhotel1964.com/en-gb"/>
+    <meta property="og:type" content="business.business"/>
+    <meta property="og:title" content="[Official Website] Sapporo Park Hotel in Sapporo, Japan"/>
+    <meta property="og:description"
+          content="Overlooking Nakajima Park in central Sapporo and just a 1-minute walk from Nakajima Koen Subway Station,&nbsp;the Park Hotel offers comfortable rooms&nbsp;and free&nbsp;Wi-Fi throughout the property.&nbsp;The hotel features 3 dining options and bicycle rental.
+Guest rooms&nbsp; come with air-conditioning, and attached private bathroom.&nbsp;Each room is equipped with satellite TV, radio and mini-bar.&nbsp;Some rooms offer a view of the Nakajima park.
+The Park Hotel houses its own shopping arcade, featuring a boutique and beauty salon.Aromatherapy and massage are available.The hotel offers concierge service and parking at a fee.
+Restaurants at Sapporo Park Hotel serve a variety of dishes, specializing in Italian, Chinese and local cuisine.&nbsp;The hotel features two terrace restaurants. Room service is also provided.
+
+JR Sapporo Station is a 5-minute subway ride from the property. New Chitose Airport can be reached within a 60-minute drive or a 50-minute train ride.
+"/>
+    <meta property="og:image"
+          content="https://q-fa.bstatic.com/xdata/images/xphoto/1920x810/36101493.jpg?k=a97f8688fcb94131b209a6dfe8bddf20e330de678ed7116aa36a080a3f6e51e1&o="/>
 
 
-    B.env.clientside_translation_tags = {"weekday":{"4":{"short":"Thu"},"5":{"short":"Fri"},"1":{"short":"Mon"},"2":{"short":"Tue"},"6":{"short":"Sat"},"3":{"short":"Wed"},"7":{"short":"Sun"}},"bed_type":{"7":{"name_withnumber":"{bed_count} futon beds"},"3":{"name_withnumber":"{bed_count} extra-large double beds"},"6":{"name_withnumber":"{bed_count} large double beds"},"2":{"name_withnumber":"{bed_count} double beds"},"1":{"name_withnumber":"{bed_count} single beds"},"5":{"name_withnumber":"{bed_count} sofa beds"},"4":{"name_withnumber":"{bed_count} bunk beds"}},"month":{"8":{"name_upper":"August"},"9":{"name_upper":"September"},"5":{"name_upper":"May"},"2":{"name_upper":"February"},"6":{"name_upper":"June"},"10":{"name_upper":"October"},"3":{"name_upper":"March"},"4":{"name_upper":"April"},"12":{"name_upper":"December"},"1":{"name_upper":"January"},"11":{"name_upper":"November"},"7":{"name_upper":"July"}},"private":{"bks_cms_menu_tents":"Tents","bks_cms_menu_location":"Location","bks_cms_menu_deals":"Deals","bks_be_mealplan":"Meal plan","sq_feet":"ft²","bks_be_error_incorrect_pincode":"Incorrect PIN code.","bks_be_select_a_room":"Please select a room","bks_be_must_be_numbers":"Must be numbers","bks_cms_close":"Close","bks_cms_menu_villas":"Villas","bks_cms_menu_privacy_policy":"Privacy policy","bks_be_invalid_email":"Invalid Email","bks_cms_menu_contact":"Contact","bks_be_children_number":"{num_children} children","bks_be_half_board_included":"Half board included","bks_cms_menu_attractions":"Attractions","bks_be_validate_cc":"Invalid card number","bks_be_adult_number":"{num_adults} adults","bks_cms_menu_around_town":"Around town","bks_cms_menu_reservations":"Reservations","bks_cms_menu_area_attractions":"Area attractions","bks_be_bed_size":"Bed Size","bks_be_error_no_bookings_at_the_moment":"Sorry, we cannot accept bookings at the moment.","bks_cms_menu_destination_guide":"Destination Guide","bks_cms_menu_images":"Images","bks_be_too_many_characters":"Text is too long","bks_be_arrival_should_be_earlier_than_departure":"Arrival date must be earlier than departure date.","bks_cms_menu_reviews":"Reviews","bks_cms_menu_enquire_now":"Enquire now","language_exception_bks_be_error_too_many_guests_1":"Room in your booking cannot accept so many guests.","bks_be_error_missing_parameters":"Cannot proceed, some parameters are missing.","bks_cms_menu_gallery":"Gallery","bks_be_error_incorrect_hotel":"This booking is not from this property.","bks_cms_menu_packages":"Packages","bks_be_validate_email_confirm_different":"Please make sure the email addresses match","bks_be_excluded_charges":"Excluded","bks_be_occupancy_max_adults":"Max adults:","bks_be_max30nights":"Your check-out date is more than 30 nights after your check-in date. Bookings can only be made for a maximum of 30 nights. Please enter different dates and try again.","language_exception_bks_be_num_rooms_1":"1 room","bks_be_credit_card_enter_valid_expiry":"Please fill in a valid expiration date","bks_cms_menu_bunks":"Bunks","bks_be_dates_must_be_in_future":"Check in and check out dates must be in the future.","bks_cms_menu_cabins":"Cabins","language_exception_bks_be_error_room_no_longer_available_1":"This room is no longer available.","bks_be_error_too_many_guests":"Rooms in your booking cannot accept so many guests.","bks_be_children":"Children","bks_be_error_max_rooms_than_allowed":"Cannot book so many rooms.","bks_cms_menu_sitemap":"Sitemap","bks_cms_menu_accommodations":"Accommodation","bks_be_included_charges":"Included","bks_be_error_booking_in_the_past":"Cannot cancel booking in the past.","bks_be_session_has_expired":"Your session has expired.","bks_be_error_booking_already_cancelled":"This booking is already cancelled.","bks_cms_more_info":"More info","bks_cms_menu_local_area":"Local area","bks_cms_menu_cookie_policy":"Cookie notice","bks_cms_menu_facilities":"Facilities","bks_be_sorry_something_wrong_developers_working_on_it":"We're sorry, but something has gone wrong. Our developers are working on it.","bks_cms_menu_contact_us":"Contact us","bks_be_cancellation_authenticating":"Authenticating...","bks_cms_menu_more_info":"More info","bks_cms_review_score":"Review score","bks_cms_featured_article_header":"Featured articles","bks_be_id_required_special_rates":"Identification is required for special and group rates.","bks_cms_menu_specials":"Specials","bks_be_select":"Select","bks_be_room_facilities":"Room facilities","bks_be_the_fine_print":"The fine print","bks_be_breakfast_included":"Breakfast included","bks_cms_menu_houses":"Houses","bks_be_error_incorrect_affiliate":"This booking was not done on this site.","bks_cms_menu_inns":"Inns","language_exception_bks_cms_hotel_compare_score_review_1":"Score from {num_reviews} review","bks_be_no_availability_dates":"Sorry, we have no availability from {checkin_date} to {checkout_date}.","bks_cms_room_size":"Room size","bks_cms_menu_offers":"Offers","bks_be_error_missing_booking_number":"Missing booking number.","bks_cms_menu_suites":"Suites","bks_be_cancellation_canceling":"Cancelling...","bks_be_error_booking_already_processed":"Your booking has been already processed.","bks_cms_menu_properties":"Properties","bks_cms_menu_nearby_attractions":"Nearby attractions","bks_be_error_payment_error_generic":"Cannot process your payment.","bks_be_full_board_included":"Full board included","bks_cms_menu_sign_up":"Sign up","bks_be_captcha_entered_incorrectly":"CAPTCHA entered incorrectly, please try again.","bks_be_non_refundable":"Non-refundable","bks_cms_menu_bungalows":"Bungalows","bks_be_confirm_exit":"Are you sure you want to exit? Your changes won't be saved.","bks_be_error_room_no_longer_available":"These rooms are no longer available.","bks_cms_menu_reservation_policy":"Reservation policy","bks_cms_menu_plans":"Plans","bks_cms_menu_resorts":"Resorts","bks_be_error_credit_card_validation":"Please check your credit card information.","bks_be_conf_email_important_info":"Important information","bks_cms_menu_check_rates":"Check rates","bks_cms_menu_vacation_rentals":"Vacation Rentals","bks_cms_menu_vaction_rentals":"Vacation Rentals","bks_cms_menu_cottages":"Cottages","bks_be_cart_abandon_dont_miss":"Don’t miss your chance to stay at {hotel_name}!","bks_be_terms_and_conditions":"Terms and conditions","bks_be_room_no_longer_available":"This room is no longer available, it may have just been booked!","bks_cms_menu_beds":"Beds","bks_be_not_allowed_to_book_in_preview":"Bookings cannot be made in preview mode.","bks_cms_menu_bookings":"Bookings","bks_cms_menu_dining":"Dining","language_exception_bks_be_adult_number_1":"1 adult","sq_metres":"m²","bks_cms_menu_local_guide":"Local guide","bks_cms_menu_local_attractions":"Local attractions","bks_cms_contact_message_error":"Your comments were not submitted due to error. Please, try again later or call us.","bks_cms_menu_benefits":"Benefits","bks_cms_menu_map":"Map","bks_cms_menu_services":"Services","bks_cms_menu_excursions":"Excursions","bks_cms_menu_signature_offers":"Signature offers","bks_be_free_cancellation_before_date":"FREE cancellation before {short_date_without_year}","bks_be_special_conditions":"Special conditions","bks_cms_hotel_compare_score_review":"Score from {num_reviews} reviews","bks_cms_menu_promotions":"Promotions","bks_cms_menu_log_in":"Log in","bks_be_invalid_phone":"Invalid Phone number","bks_cms_menu_lodges":"Lodges","sq_ft_usa":"sq ft","bks_cms_menu_rooms":"Rooms","bks_cms_contact_message_success":"The information has been submitted to us. Thank you!","bks_be_rp_room_details_header":"Room details","bks_cms_menu_things_to_do":"Things to do","bks_be_required":"Required","bks_cms_menu_info":"More info","bks_cms_view_all":"View all","language_exception_bks_be_children_number_1":"{num_children} child","bks_cms_menu_check_availability":"Check availability","bks_be_num_rooms":"{num} rooms","bks_cms_menu_book_now":"Book now","bks_cms_menu_photos":"Photos","bks_cms_menu_apartments":"Apartments","bks_be_error_booking_not_found":"Booking not found. Check your PIN code and confirmation number.","bks_be_secure_reservation":"The details you've entered will not be saved if you leave this page. Secure your reservation now to complete your booking.","bks_cms_menu_amenities":"Amenities","bks_cms_menu_destinations":"Destinations","bks_be_num_nights_stay":"{number_nights} night stay","bks_cms_menu_hotels":"Hotels","bks_be_error_incorrect_arrival_hour":"Incorrect hour of arrival.","bks_be_all_inclusive":"All-inclusive","bks_be_error_too_many_attempts_to_cancel":"Too many attempts to cancel a booking. Please try again later.","bks_be_error_incorrect_reservation_data":"Your booking cannot be confirmed. Please check the information you have entered and try again."}};
+    <link rel="alternate" hreflang="zh-cn" href="/zh-cn"/>
+    <link rel="alternate" hreflang="ko-kr" href="/ko-kr"/>
+    <link rel="alternate" hreflang="zh-tw" href="/zh-tw"/>
+    <link rel="alternate" hreflang="zh" href="/zh-cn"/>
+    <link rel="alternate" hreflang="ko" href="/ko-kr"/>
+    <link rel="alternate" hreflang="tw" href="/zh-tw"/>
+    <link rel="alternate" hreflang="en-gb" href="/en-gb"/>
+    <link rel="alternate" hreflang="en" href="/en-gb"/>
+    <link rel="alternate" hreflang="x-default" href=""/>
+    <link rel="canonical" href="/en-gb"/>
 
 
-
-
-})();
-</script>
-
-
-
-    
-<script>
-    gtm_data_layer = [{
-       "bookingId": B.data.hotel.hotel_id,
-       "hotelId": B.data.hotel.hotel_id,
-       "channel": B.env.channel,
-       "deviceType": '', //B.util.screenHelper.deviceType(),
-       "parentId": 0,
-       "pageType": B.env.page_type,
-       "typeId": 0,
-       "locale": B.env.lang,
-       "partnerGaCode": (B.data.hotel.flags || {}).GoogleAnalyticsID,
-       "reservationError": "",
-       "productSku": B.data.hotel.product_type.sku
-    }];
-</script>
-<!-- Google Tag Manager -->
-<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-})(window,document,'script','gtm_data_layer','GTM-PBSCT4T');</script>
-<!-- End Google Tag Manager -->
-
-
-    
-	<title>Cookie notice&nbsp;&ndash;&nbsp;Sapporo Park Hotel&nbsp;&ndash;&nbsp;Sapporo&nbsp;&ndash;&nbsp;Japan</title>
-
-
-    
-	<link rel="alternate" hreflang="en-gb" href="/en-gb/cookie-policy" />
-<link rel="alternate" hreflang="ko-kr" href="/ko-kr/cookie-policy" />
-<link rel="alternate" hreflang="zh-cn" href="/zh-cn/cookie-policy" />
-<link rel="alternate" hreflang="zh-tw" href="/zh-tw/cookie-policy" />
-<link rel="alternate" hreflang="en-gb" href="/cookie-policy" />
-<link rel="canonical" href="/cookie-policy" />
-
-
-
-
-    <base href="/">
-
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta name="description"
+          content="Overlooking Nakajima Park in central Sapporo and just a 1-minute walk from Nakajima Koen Subway Station, the Park Hotel offers comfortable rooms">
     <meta name="keywords" content="">
     <meta name="format-detection" content="telephone=no">
 
-    <link rel="stylesheet" href="https://branding.booking.expert/api/brand/w/0bd4c/90010b6d5e74fad6913e489e48ecf58a61ddcd12.css" type="text/css" media="screen" />
 
-    
-
-    
-
-    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@200..900&display=swap" rel="stylesheet">
 
 
-    
-  </head>
+    <link rel="icon" href="data:;base64,iVBORw0KGgo=">
+
+
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.14.0/dist/cdn.min.js"></script>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              primary: '#2E755F',
+            }
+          }
+        }
+      }
+    </script>
+    <style>
+        #header {
+            z-index: 10000;
+        }
+
+        * {
+            font-family: "Noto Serif JP", serif;
+
+        }
+
+        .my-slides {
+            position: relative;
+            height: 100vh;
+        }
+
+        .slide-item {
+            position: absolute;
+            transition: opacity 900ms ease-in-out;
+        }
+
+
+    </style>
+
+    <link
+            rel="stylesheet"
+            href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+    />
+
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+</head>
 
   <body
     itemscope=""
@@ -180,831 +102,705 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     
     ">
 
-  
-
-  
-<!-- Google Tag Manager (noscript) -->
-<noscript>
-	<iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PBSCT4T" height="0" width="0"
-		style="display:none;visibility:hidden"></iframe>
-</noscript>
-<!-- End Google Tag Manager (noscript) -->
-
-  <div class="body-overflow-wrap">
-    
-
-    
-
-  <div id="CPolicy">
-      
-      <span>
-          To provide you with the best experience, Sapporo Park Hotel uses its own and third-party cookies on its website for technical, analytical and marketing purposes. By continuing to browse our site, you are agreeing to our use of cookies. Please consult our <a href='/en-gb/cookie-policy' target='_blank'>Cookie Notice</a> for more information.
-      </span>
-      <div id="closeEUbtn"></div>
-  </div>
-
-
-
-    <header class="mast mast-fixed" id="mast-fixed" aria-hidden="true" tabindex="-1">
-  <div class="inner">
-      <div class="logo-container"><a target="_self" itemprop="url" href="/en-gb" title="Sapporo Park Hotel">
-  
-    
-      <span class="full-size-logo"><img src="https://r-fa.bstatic.com/data/bsuitewf/3bf94bac2ddfa5e05a929a05613909cc1662e4f1" alt="Sapporo Park Hotel"></span>
-      <span class="small-logo"><img src="https://r-fa.bstatic.com/data/bsuitewf/3bf94bac2ddfa5e05a929a05613909cc1662e4f1" alt="Sapporo Park Hotel"></span>
-
-    
-  
-</a>
-</div><!--
-   --><div class="mast-right">
-          
-
-<span data-component="core/modal" data-active-class="open" data-modal-class-name="overlay">
-    <button class="menu-collapsed" data-trigger aria-haspopup="true">
-        <span data-toggle="menu">
-            <span class="iconfont"></span>
-            <span class="menu-label">Menu</span>
-        </span>
-    </button>
-
-    <script type="text/html" data-modal-content>
-        <div id="overlay-menu-no-quickres" class="overlay-menu overlay-content">
-            <div class="menu-content inner">
-                
-
-  
-    
-
-    
-        
-            
-        
-    
-        
-    
-        
-    
-        
-    
-
-    <div data-component="core/openable" data-active-class="open" data-outside-close="true" class="relative header-language-wrap">
-
-      <button data-trigger class="header-language" aria-haspopup="true" aria-label="Select language" >
-        <span data-icon class="icon-language" aria-hidden="true"></span>
-        <span>en</span>
-      </button>
-
-      <ul data-container class="dropdown-menu top-center" data-trap-focus >
-        
-            <li class="current">
-                <a data-ajax="false" target="_self" href="/en-gb/cookie-policy">English</a>
-            </li>
-        
-            <li class="">
-                <a data-ajax="false" target="_self" href="/ko-kr/cookie-policy">&#xD55C;&#xAD6D;&#xC5B4;</a>
-            </li>
-        
-            <li class="">
-                <a data-ajax="false" target="_self" href="/zh-cn/cookie-policy">&#x4E2D;&#x6587;</a>
-            </li>
-        
-            <li class="">
-                <a data-ajax="false" target="_self" href="/zh-tw/cookie-policy">&#x7E41;&#x9AD4;&#x4E2D;&#x6587;</a>
-            </li>
-        
-      </ul>
-
-    </div>
-
-  
-
-
-
-                
-                <ul class="menu-list count-count-6plus">
-                    <li class="home-link">
-                        <a href="/en-gb"  target="_self"><span data-hover="Home">Home</span></a>
-                    </li>
-                    
-                        
-                        
-                        <li data-menu-id="" eventName="menu" class="track-event ">
-                            <a href="/en-gb/important-notices"  target="_self">
-                                <span data-hover="Important Notices">Important Notices</span>
-                            </a>
-                        </li>
-                    
-                        
-                        
-                        <li data-menu-id="" eventName="menu" class="track-event ">
-                            <a href="/en-gb/rooms"  target="_self">
-                                <span data-hover="Rooms">Rooms</span>
-                            </a>
-                        </li>
-                    
-                        
-                        
-                        <li data-menu-id="" eventName="menu" class="track-event ">
-                            <a href="/en-gb/restaurant"  target="_self">
-                                <span data-hover="Restaurant">Restaurant</span>
-                            </a>
-                        </li>
-                    
-                        
-                        
-                        <li data-menu-id="" eventName="menu" class="track-event ">
-                            <a href="/en-gb/facilities1"  target="_self">
-                                <span data-hover="Facilities">Facilities</span>
-                            </a>
-                        </li>
-                    
-                        
-                        
-                        <li data-menu-id="" eventName="menu" class="track-event ">
-                            <a href="/en-gb/services1"  target="_self">
-                                <span data-hover="Services">Services</span>
-                            </a>
-                        </li>
-                    
-                        
-                        
-                        <li data-menu-id="" eventName="menu" class="track-event ">
-                            <a href="/en-gb/new-page"  target="_self">
-                                <span data-hover="Access">Access</span>
-                            </a>
-                        </li>
-                    
-                        
-                        
-                        <li data-menu-id="" eventName="menu" class="track-event ">
-                            <a href="/en-gb/attractions"  target="_self">
-                                <span data-hover="Attractions">Attractions</span>
-                            </a>
-                        </li>
-                    
-                        
-                        
-                        <li data-menu-id="" eventName="menu" class="track-event ">
-                            <a href="/en-gb/reviews"  target="_self">
-                                <span data-hover="Reviews">Reviews</span>
-                            </a>
-                        </li>
-                    
-                        
-                        
-                        <li data-menu-id="" eventName="menu" class="track-event ">
-                            <a href="/en-gb/photos"  target="_self">
-                                <span data-hover="Photos">Photos</span>
-                            </a>
-                        </li>
-                    
-                        
-                        
-                        <li data-menu-id="" eventName="menu" class="track-event ">
-                            <a href="/en-gb/amenities"  target="_self">
-                                <span data-hover="Amenities">Amenities</span>
-                            </a>
-                        </li>
-                    
-                        
-                        
-                        <li data-menu-id="" eventName="menu" class="track-event ">
-                            <a href="/en-gb/faq"  target="_self">
-                                <span data-hover="FAQ">FAQ</span>
-                            </a>
-                        </li>
-                    
-                        
-                        
-                        <li data-menu-id="" eventName="menu" class="track-event ">
-                            <a href="/en-gb/contact"  target="_self">
-                                <span data-hover="Contact">Contact</span>
-                            </a>
-                        </li>
-                    
-                </ul>
-
-                <div class="hotel-contact">
-                    <div class="hotel-contact-inner">
-                        <div class="hotel-name">Sapporo Park Hotel</div>
-                        
-  
-  
-  
-    
-      <div class="hotel-phone">
-        <a class="phone-btn-call track-call" href="tel:+81115113135">
-          +81 11-511-3135
-        </a>
-      </div>
-    
-  
-
-
-
-                        
-    <div itemprop="address" class="hotel-address">
-        
-            <div>064-8589 Hokkaido</div>
-        
-            <div>Sapporo</div>
-        
-            <div>Chuo-ku Minami 10-jo Nishi 3-1-1</div>
-        
-            <div>Japan</div>
-        
-    </div>
-
-
-                        
-  
-  
-  
-    
-      <div class="hotel-email">
-        <a class="track-email" href="mailto:sph_inb1@granvista.co.jp">
-          sph_inb1@granvista.co.jp
-        </a>
-      </div>
-    
-  
-
-
-                    </div>
-                </div>
-            </div>
-        </div>
-    </script>
-</span>
-
-
-          
-
-<div class="reservations track-event" eventName="reservations">
-    <div class="close">
-        <span class="iconfont"></span>
-        
-            <div data-component="core/modal" data-modal-class-name="overlay">
-                <button class="quickrevBtn" aria-label="Book now" aria-haspopup="true" data-trigger>
-                    <span class="close">Book now</span>
-                </button>
-
-                <script type="text/html" data-modal-content>
-                    <div id="overlay-quickres" class="overlay-quickres overlay-content content-section">
-                        <div class="quickres-content inner" role="search">
-                            <h2 class="quickres-header">Reservations</h2>
-                            <div class="quickres-fields search_wrapper_dates" data-component="widgets/date_picker">
-                                <div class="datepicker arrival search">
-                                    <label for="quickResDate1" class="invisible_spoken">Check-in</label>
-                                    <input type="text" class="date-pick" name="date1" id="quickResDate1" />
-                                    <span class="iconfont datepickicon search_calendar-icon" aria-hidden="true"></span>
-                                    <i class="iconfont iconfont-next from_to" aria-hidden="true"></i>
-                                    <span class="input-focused" aria-hidden="true"></span>
-                                </div>
-
-                                <div class="datepicker departure search">
-                                    <label for="quickResDate2" class="invisible_spoken">Check-out</label>
-                                    <input type="text" class="date-pick" name="date2" id="quickResDate2" />
-                                    <span class="iconfont datepickicon search_calendar-icon" aria-hidden="true"></span>
-                                    <span class="input-focused" aria-hidden="true"></span>
-                                </div>
-
-                                <a class="booknow-btn" data-component="core/book_now_button" href="#">Book now</a>
-                            </div>
-                        </div>
-                    </div>
-                </script>
-            </div>
-        
-    </div>
-</div>
-
-
-
-      </div>
-  </div>
-</header>
-
-
-    <header class="mast static logo-center" >
-    <div class="inner">
-        <div class="mast-top clearfix">
-            <div class="mast-top-inner">
-                <div class="mast-top-left">
-                    
-  
-  
-  
-    
-      <a class="phone track-call" href="tel:+81115113135">
-        <span class="iconfont" aria-hidden="true"></span>
-        <span class="phone-number" itemprop="telephone">
-          <span class="phone-btn-call">
-            +81 11-511-3135
-          </span>
-        </span>
-      </a>
-    
-  
-
-
-                </div>
-                <div class="logo-container">
-                    <a target="_self" itemprop="url" href="/en-gb" title="Sapporo Park Hotel">
-  
-    
-      <span class="full-size-logo"><img src="https://r-fa.bstatic.com/data/bsuitewf/3bf94bac2ddfa5e05a929a05613909cc1662e4f1" alt="Sapporo Park Hotel"></span>
-      <span class="small-logo"><img src="https://r-fa.bstatic.com/data/bsuitewf/3bf94bac2ddfa5e05a929a05613909cc1662e4f1" alt="Sapporo Park Hotel"></span>
-
-    
-  
-</a>
-
-                </div>
-                <div class="mast-actions">
-                    
-
-<span data-component="core/modal" data-active-class="open" data-modal-class-name="overlay">
-    <button class="menu-collapsed" data-trigger aria-haspopup="true">
-        <span data-toggle="menu">
-            <span class="iconfont"></span>
-            <span class="menu-label">Menu</span>
-        </span>
-    </button>
-
-    <script type="text/html" data-modal-content>
-        <div id="overlay-menu-no-quickres" class="overlay-menu overlay-content">
-            <div class="menu-content inner">
-                
-
-  
-    
-
-    
-        
-            
-        
-    
-        
-    
-        
-    
-        
-    
-
-    <div data-component="core/openable" data-active-class="open" data-outside-close="true" class="relative header-language-wrap">
-
-      <button data-trigger class="header-language" aria-haspopup="true" aria-label="Select language" >
-        <span data-icon class="icon-language" aria-hidden="true"></span>
-        <span>en</span>
-      </button>
-
-      <ul data-container class="dropdown-menu top-center" data-trap-focus >
-        
-            <li class="current">
-                <a data-ajax="false" target="_self" href="/en-gb/cookie-policy">English</a>
-            </li>
-        
-            <li class="">
-                <a data-ajax="false" target="_self" href="/ko-kr/cookie-policy">&#xD55C;&#xAD6D;&#xC5B4;</a>
-            </li>
-        
-            <li class="">
-                <a data-ajax="false" target="_self" href="/zh-cn/cookie-policy">&#x4E2D;&#x6587;</a>
-            </li>
-        
-            <li class="">
-                <a data-ajax="false" target="_self" href="/zh-tw/cookie-policy">&#x7E41;&#x9AD4;&#x4E2D;&#x6587;</a>
-            </li>
-        
-      </ul>
-
-    </div>
-
-  
-
-
-
-                
-                <ul class="menu-list count-count-6plus">
-                    <li class="home-link">
-                        <a href="/en-gb"  target="_self"><span data-hover="Home">Home</span></a>
-                    </li>
-                    
-                        
-                        
-                        <li data-menu-id="" eventName="menu" class="track-event ">
-                            <a href="/en-gb/important-notices"  target="_self">
-                                <span data-hover="Important Notices">Important Notices</span>
-                            </a>
-                        </li>
-                    
-                        
-                        
-                        <li data-menu-id="" eventName="menu" class="track-event ">
-                            <a href="/en-gb/rooms"  target="_self">
-                                <span data-hover="Rooms">Rooms</span>
-                            </a>
-                        </li>
-                    
-                        
-                        
-                        <li data-menu-id="" eventName="menu" class="track-event ">
-                            <a href="/en-gb/restaurant"  target="_self">
-                                <span data-hover="Restaurant">Restaurant</span>
-                            </a>
-                        </li>
-                    
-                        
-                        
-                        <li data-menu-id="" eventName="menu" class="track-event ">
-                            <a href="/en-gb/facilities1"  target="_self">
-                                <span data-hover="Facilities">Facilities</span>
-                            </a>
-                        </li>
-                    
-                        
-                        
-                        <li data-menu-id="" eventName="menu" class="track-event ">
-                            <a href="/en-gb/services1"  target="_self">
-                                <span data-hover="Services">Services</span>
-                            </a>
-                        </li>
-                    
-                        
-                        
-                        <li data-menu-id="" eventName="menu" class="track-event ">
-                            <a href="/en-gb/new-page"  target="_self">
-                                <span data-hover="Access">Access</span>
-                            </a>
-                        </li>
-                    
-                        
-                        
-                        <li data-menu-id="" eventName="menu" class="track-event ">
-                            <a href="/en-gb/attractions"  target="_self">
-                                <span data-hover="Attractions">Attractions</span>
-                            </a>
-                        </li>
-                    
-                        
-                        
-                        <li data-menu-id="" eventName="menu" class="track-event ">
-                            <a href="/en-gb/reviews"  target="_self">
-                                <span data-hover="Reviews">Reviews</span>
-                            </a>
-                        </li>
-                    
-                        
-                        
-                        <li data-menu-id="" eventName="menu" class="track-event ">
-                            <a href="/en-gb/photos"  target="_self">
-                                <span data-hover="Photos">Photos</span>
-                            </a>
-                        </li>
-                    
-                        
-                        
-                        <li data-menu-id="" eventName="menu" class="track-event ">
-                            <a href="/en-gb/amenities"  target="_self">
-                                <span data-hover="Amenities">Amenities</span>
-                            </a>
-                        </li>
-                    
-                        
-                        
-                        <li data-menu-id="" eventName="menu" class="track-event ">
-                            <a href="/en-gb/faq"  target="_self">
-                                <span data-hover="FAQ">FAQ</span>
-                            </a>
-                        </li>
-                    
-                        
-                        
-                        <li data-menu-id="" eventName="menu" class="track-event ">
-                            <a href="/en-gb/contact"  target="_self">
-                                <span data-hover="Contact">Contact</span>
-                            </a>
-                        </li>
-                    
-                </ul>
-
-                <div class="hotel-contact">
-                    <div class="hotel-contact-inner">
-                        <div class="hotel-name">Sapporo Park Hotel</div>
-                        
-  
-  
-  
-    
-      <div class="hotel-phone">
-        <a class="phone-btn-call track-call" href="tel:+81115113135">
-          +81 11-511-3135
-        </a>
-      </div>
-    
-  
-
-
-
-                        
-    <div itemprop="address" class="hotel-address">
-        
-            <div>064-8589 Hokkaido</div>
-        
-            <div>Sapporo</div>
-        
-            <div>Chuo-ku Minami 10-jo Nishi 3-1-1</div>
-        
-            <div>Japan</div>
-        
-    </div>
-
-
-                        
-  
-  
-  
-    
-      <div class="hotel-email">
-        <a class="track-email" href="mailto:sph_inb1@granvista.co.jp">
-          sph_inb1@granvista.co.jp
-        </a>
-      </div>
-    
-  
-
-
-                    </div>
-                </div>
-            </div>
-        </div>
-    </script>
-</span>
-
-
-                    
-  
-  
-  
-    
-      <div class="phone-button-mobile">
-        <a href="tel:+81115113135" class="track-call">
-          <span class="iconfont"></span>
-          <span class="phone-label">+81 11-511-3135</span>
-        </a>
-      </div>
-    
-  
-
-
-                    
-
-  
-    
-
-    
-        
-            
-        
-    
-        
-    
-        
-    
-        
-    
-
-    <div data-component="core/openable" data-active-class="open" data-outside-close="true" class="relative header-language-wrap">
-
-      <button data-trigger class="header-language" aria-haspopup="true" aria-label="Select language" >
-        <span data-icon class="icon-language" aria-hidden="true"></span>
-        <span>en</span>
-      </button>
-
-      <ul data-container class="dropdown-menu top-center" data-trap-focus >
-        
-            <li class="current">
-                <a data-ajax="false" target="_self" href="/en-gb/cookie-policy">English</a>
-            </li>
-        
-            <li class="">
-                <a data-ajax="false" target="_self" href="/ko-kr/cookie-policy">&#xD55C;&#xAD6D;&#xC5B4;</a>
-            </li>
-        
-            <li class="">
-                <a data-ajax="false" target="_self" href="/zh-cn/cookie-policy">&#x4E2D;&#x6587;</a>
-            </li>
-        
-            <li class="">
-                <a data-ajax="false" target="_self" href="/zh-tw/cookie-policy">&#x7E41;&#x9AD4;&#x4E2D;&#x6587;</a>
-            </li>
-        
-      </ul>
-
-    </div>
-
-  
-
-
-
-                    
-
-<div class="reservations track-event" eventName="reservations">
-    <div class="close">
-        <span class="iconfont"></span>
-        
-            <div data-component="core/modal" data-modal-class-name="overlay">
-                <button class="quickrevBtn" aria-label="Book now" aria-haspopup="true" data-trigger>
-                    <span class="close">Book now</span>
-                </button>
-
-                <script type="text/html" data-modal-content>
-                    <div id="overlay-quickres" class="overlay-quickres overlay-content content-section">
-                        <div class="quickres-content inner" role="search">
-                            <h2 class="quickres-header">Reservations</h2>
-                            <div class="quickres-fields search_wrapper_dates" data-component="widgets/date_picker">
-                                <div class="datepicker arrival search">
-                                    <label for="quickResDate1" class="invisible_spoken">Check-in</label>
-                                    <input type="text" class="date-pick" name="date1" id="quickResDate1" />
-                                    <span class="iconfont datepickicon search_calendar-icon" aria-hidden="true"></span>
-                                    <i class="iconfont iconfont-next from_to" aria-hidden="true"></i>
-                                    <span class="input-focused" aria-hidden="true"></span>
-                                </div>
-
-                                <div class="datepicker departure search">
-                                    <label for="quickResDate2" class="invisible_spoken">Check-out</label>
-                                    <input type="text" class="date-pick" name="date2" id="quickResDate2" />
-                                    <span class="iconfont datepickicon search_calendar-icon" aria-hidden="true"></span>
-                                    <span class="input-focused" aria-hidden="true"></span>
-                                </div>
-
-                                <a class="booknow-btn" data-component="core/book_now_button" href="#">Book now</a>
-                            </div>
-                        </div>
-                    </div>
-                </script>
-            </div>
-        
-    </div>
-</div>
-
-
-
-                </div>
-            </div>
-        </div>
-        
-
-<nav class="menu-links count-6plus no-hero">
-    <ul>
-    
-        
-        
-        <li eventName="menu" class="track-event ">
-            <a href="/en-gb/important-notices" target="_self">
-                <span data-hover="Important Notices">
-                        Important Notices
-                </span>
-            </a>
-        </li>
-    
-        
-        
-        <li eventName="menu" class="track-event ">
-            <a href="/en-gb/rooms" target="_self">
-                <span data-hover="Rooms">
-                        Rooms
-                </span>
-            </a>
-        </li>
-    
-        
-        
-        <li eventName="menu" class="track-event ">
-            <a href="/en-gb/restaurant" target="_self">
-                <span data-hover="Restaurant">
-                        Restaurant
-                </span>
-            </a>
-        </li>
-    
-        
-        
-        <li eventName="menu" class="track-event ">
-            <a href="/en-gb/facilities1" target="_self">
+
+
+
+
+  <header id="header" @mouseleave="active=null" x-data="{active:null}"
+          class=" p-4 shadow-lg fixed top-0 left w-full bg-white">
+      <div class="flex justify-between items-center">
+          <a class="w-[240px] md:w-[260px] lg:w-[300px] block self-start" href="/">
+              <img class="w-full max-w-full"
+                   src="https://r-fa.bstatic.com/data/bsuitewf/3bf94bac2ddfa5e05a929a05613909cc1662e4f1"
+                   alt="Sapporo Park Hotel">
+          </a>
+
+          <div class="hidden lg:block">
+              <div class="flex items-center justify-end">
+                  <a href="/en-gb/faq" class="block px-4 py-2 uppercase hover:text-primary" target="_self">
+
+                      FAQ
+
+                  </a>
+                  <div data-component="core/openable" data-active-class="open" data-outside-close="true"
+                       class="relative px-4 group">
+
+                      <button
+                              class="flex gap-3 px-4 items-center ml-auto group"
+                              aria-haspopup="true"
+                              aria-label="Select language">
+                          <svg class="group-hover:fill-primary" height="20" width="20" viewBox="0 0 128 128"
+                               role="presentation" aria-hidden="true" focusable="false">
+                              <path
+                                      d="M64 8a56 56 0 1 0 56 56A56 56 0 0 0 64 8zm41.5 80H87.8a69.7 69.7 0 0 0 3.7-16h19.8a47.6 47.6 0 0 1-5.8 16zM64 109.6A62 62 0 0 1 52.9 96h22.2A62 62 0 0 1 64 109.6zM48.8 88a61.5 61.5 0 0 1-4.3-16h39a61.5 61.5 0 0 1-4.3 16zM16.7 72h19.8a69.7 69.7 0 0 0 3.7 16H22.5a47.6 47.6 0 0 1-5.8-16zm2-24H38a70.5 70.5 0 0 0-2 16H16a47.8 47.8 0 0 1 2.8-16zM64 18.4A61.8 61.8 0 0 1 79.2 40H48.8A61.8 61.8 0 0 1 64 18.4zM82 48a62.3 62.3 0 0 1 2 16H44a62.3 62.3 0 0 1 2-16zm10 16a70.5 70.5 0 0 0-1.9-16h19.2a47.8 47.8 0 0 1 2.8 16zm13.5-24H87.8a69.4 69.4 0 0 0-13.9-23 48.1 48.1 0 0 1 31.6 23zM54.1 17a69.4 69.4 0 0 0-13.9 23H22.5A48.1 48.1 0 0 1 54 17zM28.3 96h15.4a69.6 69.6 0 0 0 10.4 15 48 48 0 0 1-25.8-15zm45.6 15a69.6 69.6 0 0 0 10.4-15h15.4A48 48 0 0 1 74 111z"/>
+                          </svg>
+                          <span class="group-hover:text-primary">en</span>
+                          <svg width="18" height="18" viewBox="0 0 24 24" class="group-hover:hidden "
+                               xmlns="http://www.w3.org/2000/svg">
+                              <path d="M18 9L12 15L6 9" stroke="#222222"/>
+                          </svg>
+                          <svg width="18" height="18" viewBox="0 0 24 24"
+                               class="hidden group-hover:block group-hover:fill-primary"
+                               xmlns="http://www.w3.org/2000/svg">
+                              <path d="M18 15L12 9L6 15"/>
+                          </svg>
+
+
+                      </button>
+
+                      <ul
+                              class="hidden group-hover:block absolute right-0 w-full shadow bg-white">
+
+                          <li class="current">
+                              <a class="block px-4 py-2 hover:bg-primary hover:text-white" target="_self"
+                                 href="#">English</a>
+                          </li>
+
+                          <li class="">
+                              <a class="block px-4 py-2 hover:bg-primary hover:text-white" target="_self"
+                                 href="#">&#xD55C;&#xAD6D;&#xC5B4;</a>
+                          </li>
+
+                          <li class="">
+                              <a class="block px-4 py-2 hover:bg-primary hover:text-white" target="_self"
+                                 href="#">&#x4E2D;&#x6587;</a>
+                          </li>
+
+                          <li class="">
+                              <a class="block px-4 py-2 hover:bg-primary hover:text-white" target="_self"
+                                 href="#">&#x7E41;&#x9AD4;&#x4E2D;&#x6587;</a>
+                          </li>
+
+                      </ul>
+
+                  </div>
+                  <a href="/en-gb/contact" class="block px-4 py-2 uppercase bg-primary text-white" target="_self">
+
+                      Contact
+                  </a>
+              </div>
+
+
+              <nav>
+                  <ul class="flex ">
+
+                      <li class="relative group">
+                          <a @mousemove="active=1" href="/en-gb/rooms" class="block px-4 py-2 uppercase flex gap-2 "
+                             target="_self">
+                              Rooms
+                              <svg width="24" height="24" viewBox="0 0 24 24" class="group-hover:hidden" fill="none"
+                                   xmlns="http://www.w3.org/2000/svg">
+                                  <path d="M18 9L12 15L6 9" stroke="#222222"/>
+                              </svg>
+                              <svg width="24" height="24" class="hidden fill-none stroke-primary group-hover:block"
+                                   viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                  <path d="M18 15L12 9L6 15"/>
+                              </svg>
+
+                          </a>
+                          <template x-teleport="header">
+                              <div x-cloak x-show="active==1">
+                                  <ul class=" bg-white flex py-10 w-3/4 mx-auto text-sm">
+                                      <li>
+                                          <a href="/en-gb/rooms/superior" class="block px-4 py-2 ">
+                                              <img width="154" height="100"
+                                                   class="rounded mb-4 h-[100px] hover:opacity-80"
+                                                   src="/images/rooms/superior.jpg" alt="Superior rooms">
+                                              <span>Superior rooms</span>
+                                          </a>
+                                      </li>
+                                      <li>
+                                          <a href="/en-gb/rooms/standard" class="block px-4 py-2 ">
+                                              <img width="154" height="100"
+                                                   class="rounded mb-4 h-[100px] hover:opacity-80"
+                                                   src="/images/rooms/standard.png" alt="Superior rooms">
+                                              <span>Standards rooms</span>
+                                          </a></li>
+                                      <li>
+                                          <a href="/en-gb/rooms/executive" class="block px-4 py-2 ">
+                                              <img width="154" height="100"
+                                                   class="rounded mb-4 h-[100px] hover:opacity-80"
+                                                   src="/images/rooms/exective.png" alt="Superior rooms">
+                                              <span>Executive rooms</span>
+                                          </a></li>
+                                  </ul>
+                              </div>
+
+                          </template>
+
+                      </li>
+
+
+                      <li class="relative group">
+                          <a @mousemove="active=2" href="/en-gb/restaurant" class="block px-4 py-2 uppercase flex gap-2 "
+                             target="_self">
+                              Restaurants
+                              <svg width="24" height="24" viewBox="0 0 24 24" class="group-hover:hidden" fill="none"
+                                   xmlns="http://www.w3.org/2000/svg">
+                                  <path d="M18 9L12 15L6 9" stroke="#222222"/>
+                              </svg>
+                              <svg width="24" height="24" class="hidden fill-none stroke-primary group-hover:block"
+                                   viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                  <path d="M18 15L12 9L6 15"/>
+                              </svg>
+
+                          </a>
+                          <template x-teleport="header">
+                              <div x-cloak x-show="active==2" class=" bg-white py-10 w-3/4 mx-auto text-sm">
+                                  <div class="mb-8 text-lg ">
+                                      Restaurant & bar
+                                  </div>
+                                  <ul class=" flex">
+                                      <li>
+                                          <a href="/restaurant/terrace-restaurant-piare" class="block px-4 py-2">
+                                              <img width="154" height="100"
+                                                   class="rounded mb-4 h-[100px] hover:opacity-80"
+                                                   src="/images/restaurants/rest_piare.png"
+                                                   alt="Terrace Restaurant Piare">
+                                              <div>
+                                                  <div>
+                                                      Western restaurant
+                                                  </div>
+                                                  <div>Terrace Restaurant Piare</div>
+
+                                              </div>
+                                          </a>
+                                      </li>
+                                      <li>
+                                          <a href="/restaurant/togenkyo-chinese-restaurant" class="block px-4 py-2 ">
+                                              <img width="154" height="100"
+                                                   class="rounded mb-4 h-[100px] hover:opacity-80"
+                                                   src="/images/restaurants/rest_togenkyo.png"
+                                                   alt="ogenkyo Restaurant">
+                                              <div>
+                                                  <div>
+                                                      Chinese
+                                                  </div>
+                                                  <div>Togenkyo Restaurant</div>
+
+                                              </div>
+                                          </a></li>
+                                      <li>
+                                          <a href="/restaurant/nadaman-garden-japanese-restaurant" class="block px-4 py-2 ">
+                                              <img width="154" height="100"
+                                                   class="rounded mb-4 h-[100px] hover:opacity-80"
+                                                   src="/images/restaurants/rest_nada.png"
+                                                   alt="Nadaman Garden Restaurant">
+                                              <div>
+                                                  <div>
+                                                      Japanese
+                                                  </div>
+                                                  <div>Nadaman Garden Restaurant</div>
+
+                                              </div>
+                                          </a></li>
+                                      <li>
+                                          <a href="/restaurant/lasso" class="block px-4 py-2 ">
+                                              <img width="154" height="100"
+                                                   class="rounded mb-4 h-[100px] hover:opacity-80"
+                                                   src="/images/restaurants/Lasso009.jpg" alt="Lasso">
+                                              <div>
+
+                                                  <div>Lobby Lounge Lasso</div>
+
+                                              </div>
+                                          </a></li>
+                                      <li>
+                                          <a href="/restaurant/restaurant-outside-the-hotel-terrace-restaurant-kitara" class="block px-4 py-2 ">
+                                              <img width="154" height="100"
+                                                   class="rounded mb-4 h-[100px] hover:opacity-80"
+                                                   src="/images/restaurants/rest_kitara.png"
+                                                   alt="Terrace Restaurant Kitara ">
+                                              <div>
+                                                  <div>
+                                                      Restaurant outside the hotel
+
+                                                  </div>
+                                                  <div>Terrace Restaurant Kitara</div>
+                                              </div>
+                                          </a></li>
+                                      <li>
+                                          <a href="/restaurant/park-club-members-only" class="block px-4 py-2 ">
+                                              <img width="154" height="100"
+                                                   class="rounded mb-4 h-[100px] hover:opacity-80"
+                                                   src="/images/restaurants/park-club.jpg" alt="Park Club ">
+                                              <div>
+                                                  <div>
+                                                      Western food & bar
+
+                                                  </div>
+                                                  <div>Park Club (members only)</div>
+                                              </div>
+                                          </a></li>
+                                      <li>
+                                          <a href="/restaurant/piare-s-cake-corner" class="block px-4 py-2 ">
+                                              <img width="154" height="100"
+                                                   class="rounded mb-4 h-[100px] hover:opacity-80"
+                                                   src="/images/restaurants/rest_cake.png" alt="Piare's cake corner">
+                                              <div>
+                                                  <div>
+                                                      Sweets shop
+                                                  </div>
+                                                  <div>Piare's cake corner</div>
+
+                                              </div>
+                                          </a></li>
+
+                                  </ul>
+                              </div>
+
+                          </template>
+
+                      </li>
+
+
+                      <li eventName="menu" class="track-event ">
+                          <a href="/en-gb/facilities1" class="block px-4 py-2 uppercase" target="_self">
                 <span data-hover="Facilities">
                         Facilities
                 </span>
-            </a>
-        </li>
-    
-        
-        
-        <li eventName="menu" class="track-event ">
-            <a href="/en-gb/services1" target="_self">
+                          </a>
+                      </li>
+
+
+                      <li eventName="menu" class="track-event ">
+                          <a href="/en-gb/services1" class="block px-4 py-2 uppercase" target="_self">
                 <span data-hover="Services">
                         Services
                 </span>
-            </a>
-        </li>
-    
-        
-        
-        <li eventName="menu" class="track-event ">
-            <a href="/en-gb/new-page" target="_self">
+                          </a>
+                      </li>
+
+
+                      <li eventName="menu" class="track-event ">
+                          <a href="/en-gb/access" class="block px-4 py-2 uppercase" target="_self">
                 <span data-hover="Access">
                         Access
                 </span>
-            </a>
-        </li>
-    
-        
-        
-        <li eventName="menu" class="track-event ">
-            <a href="/en-gb/attractions" target="_self">
-                <span data-hover="Attractions">
-                        Attractions
-                </span>
-            </a>
-        </li>
-    
-        
-        
-        <li eventName="menu" class="track-event ">
-            <a href="/en-gb/reviews" target="_self">
-                <span data-hover="Reviews">
-                        Reviews
-                </span>
-            </a>
-        </li>
-    
-        
-        
-        <li eventName="menu" class="track-event ">
-            <a href="/en-gb/photos" target="_self">
-                <span data-hover="Photos">
-                        Photos
-                </span>
-            </a>
-        </li>
-    
-        
-        
-        <li eventName="menu" class="track-event ">
-            <a href="/en-gb/amenities" target="_self">
-                <span data-hover="Amenities">
-                        Amenities
-                </span>
-            </a>
-        </li>
-    
-        
-        
-        <li eventName="menu" class="track-event ">
-            <a href="/en-gb/faq" target="_self">
+                          </a>
+                      </li>
+
+
+                      <!--                        <li eventName="menu" class="track-event ">-->
+                      <!--                            <a href="/en-gb/attractions" class="block px-4 py-2 uppercase" target="_self">-->
+                      <!--                <span data-hover="Attractions">-->
+                      <!--                        Attractions-->
+                      <!--                </span>-->
+                      <!--                            </a>-->
+                      <!--                        </li>-->
+
+
+                      <!--                        <li eventName="menu" class="track-event ">-->
+                      <!--                            <a href="/en-gb/reviews" class="block px-4 py-2 uppercase" target="_self">-->
+                      <!--                <span data-hover="Reviews">-->
+                      <!--                        Reviews-->
+                      <!--                </span>-->
+                      <!--                            </a>-->
+                      <!--                        </li>-->
+
+
+                      <!--                        <li eventName="menu" class="track-event ">-->
+                      <!--                            <a href="/en-gb/photos" class="block px-4 py-2 uppercase" target="_self">-->
+                      <!--                <span data-hover="Photos">-->
+                      <!--                        Photos-->
+                      <!--                </span>-->
+                      <!--                            </a>-->
+                      <!--                        </li>-->
+
+
+                      <li eventName="menu" class="track-event ">
+                          <a href="/en-gb/faq" class="block px-4 py-2 uppercase" target="_self">
                 <span data-hover="FAQ">
                         FAQ
                 </span>
-            </a>
-        </li>
-    
-        
-        
-        <li eventName="menu" class="track-event ">
-            <a href="/en-gb/contact" target="_self">
-                <span data-hover="Contact">
-                        Contact
+                          </a>
+                      </li>
+
+
+                      <li eventName="menu" class="track-event ">
+                          <a href="/en-gb/amenities" class="block px-4 py-2 uppercase" target="_self">
+                <span data-hover="Amenities">
+                        Amenities
                 </span>
-            </a>
-        </li>
-    
-    </ul>
-</nav>
+                          </a>
+                      </li>
 
 
-    </div>
-</header>
+                  </ul>
+              </nav>
+
+          </div>
+          <div x-data="{open:false}" class="lg:hidden">
+              <button @click="open=true" aria-label="Menu">
+                  <svg width="32" height="32" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M5 7H19" stroke="#222222" stroke-linecap="round"/>
+                      <path d="M5 12H19" stroke="#222222" stroke-linecap="round"/>
+                      <path d="M5 17H19" stroke="#222222" stroke-linecap="round"/>
+                  </svg>
+              </button>
+              <div x-cloak x-show="open"
+                   class="flex  fixed top-0 right-0 h-full w-full bg-black bg-opacity-10  justify-end">
+
+                  <div class="bg-white w-full h-full">
+                      <div class="flex justify-between p-2 items-center shadow-lg">
+                          <a class="w-[240px] block" href="/">
+                              <img class="w-full max-w-full"
+                                   src="https://r-fa.bstatic.com/data/bsuitewf/3bf94bac2ddfa5e05a929a05613909cc1662e4f1"
+                                   alt="Sapporo Park Hotel">
+                          </a>
+                          <svg @click="open=false" width="24" height="24" viewBox="0 0 20 20" fill="none"
+                               xmlns="http://www.w3.org/2000/svg">
+                              <path d="M15 5L5 15" stroke="#33363F" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round"/>
+                              <path d="M5 5L15 15" stroke="#33363F" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round"/>
+                          </svg>
+                      </div>
+                      <div>
+                          <nav>
+                              <ul x-data="{current:0}">
+
+                                  <li class="relative group border-b border-solid border-gray-200">
+                                      <div class="px-4 py-2 uppercase flex justify-between ">
+                                          <a href="/en-gb/rooms" class="block "
+                                             target="_self">
+                                              Rooms
+                                          </a>
+                                          <svg x-cloak x-show="!(current===1)" @click=" current=1" width="24"
+                                               height="24" viewBox="0 0 24 24" fill="none"
+                                               xmlns="http://www.w3.org/2000/svg">
+                                              <path d="M18 9L12 15L6 9" stroke="#222222"/>
+                                          </svg>
+                                          <svg x-cloak x-show="current===1" @click="current=0" width="24" height="24"
+                                               class=" fill-none stroke-primary "
+                                               viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                              <path d="M18 15L12 9L6 15"/>
+                                          </svg>
+                                      </div>
+
+                                      <ul x-cloak x-show=" current===1" x-transition class="  bg-[#F5F8F7] text-sm">
+                                          <li class="border-b border-solid border-[#2e755f4d]">
+                                              <a href="" class="block px-4 py-2 flex justify-between items-center">
+
+                                                  <span>Superior rooms</span>
+                                                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                                       xmlns="http://www.w3.org/2000/svg">
+                                                      <path d="M9 6L15 12L9 18" stroke="#222222"/>
+                                                  </svg>
+
+                                              </a>
+                                          </li>
+                                          <li class="border-b border-solid border-[#2e755f4d]">
+                                              <a href="" class="block px-4 py-2 flex justify-between items-center">
+
+                                                  <span>Standards rooms</span>
+                                                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                                       xmlns="http://www.w3.org/2000/svg">
+                                                      <path d="M9 6L15 12L9 18" stroke="#222222"/>
+                                                  </svg>
+                                              </a></li>
+                                          <li>
+                                              <a href="" class="block px-4 py-2 flex justify-between items-center">
+
+                                                  <span>Executive rooms</span>
+                                                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                                       xmlns="http://www.w3.org/2000/svg">
+                                                      <path d="M9 6L15 12L9 18" stroke="#222222"/>
+                                                  </svg>
+                                              </a></li>
+                                      </ul>
+
+
+                                  </li>
+
+
+                                  <li class="relative group border-b border-solid border-gray-200">
+                                      <div class="px-4 py-2 uppercase flex justify-between ">
+                                          <a href="/en-gb/restaurant" class="block uppercase "
+                                             target="_self">
+                                              Restaurants
+                                          </a>
+                                          <svg x-cloak x-show="!(current===2)" @click="current=2" width="24"
+                                               height="24" viewBox="0 0 24 24" fill="none"
+                                               xmlns="http://www.w3.org/2000/svg">
+                                              <path d="M18 9L12 15L6 9" stroke="#222222"/>
+                                          </svg>
+                                          <svg x-cloak x-show="current===2" @click="current=0" width="24" height="24"
+                                               class=" fill-none stroke-primary "
+                                               viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                              <path d="M18 15L12 9L6 15"/>
+                                          </svg>
+                                      </div>
+
+
+                                      <ul x-cloak x-show="current===2"
+                                          x-transition
+                                          class="  bg-[#F5F8F7] text-sm">
+                                          <li class="border-b border-solid border-[#2e755f4d]">
+                                              <a href="/restaurant/terrace-restaurant-piare" class="block px-4 py-2 flex justify-between items-center">
+
+                                                  <div>
+                                                      <div>
+                                                          Western restaurant
+                                                      </div>
+                                                      <div>Terrace Restaurant Piare</div>
+
+                                                  </div>
+                                                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                                       xmlns="http://www.w3.org/2000/svg">
+                                                      <path d="M9 6L15 12L9 18" stroke="#222222"/>
+                                                  </svg>
+                                              </a>
+                                          </li>
+                                          <li class="border-b border-solid border-[#2e755f4d]">
+                                              <a href="/restaurant/togenkyo-chinese-restaurant" class="block px-4 py-2 flex justify-between items-center">
+
+                                                  <div>
+                                                      <div>
+                                                          Chinese
+                                                      </div>
+                                                      <div>Togenkyo Restaurant</div>
+
+                                                  </div>
+                                                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                                       xmlns="http://www.w3.org/2000/svg">
+                                                      <path d="M9 6L15 12L9 18" stroke="#222222"/>
+                                                  </svg>
+                                              </a></li>
+                                          <li class="border-b border-solid border-[#2e755f4d]">
+                                              <a href="/restaurant/nadaman-garden-japanese-restaurant" class="block px-4 py-2 flex justify-between items-center">
+
+                                                  <div>
+                                                      <div>
+                                                          Japanese
+                                                      </div>
+                                                      <div>Nadaman Garden Restaurant</div>
+
+                                                  </div>
+                                                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                                       xmlns="http://www.w3.org/2000/svg">
+                                                      <path d="M9 6L15 12L9 18" stroke="#222222"/>
+                                                  </svg>
+                                              </a></li>
+                                          <li class="border-b border-solid border-[#2e755f4d]">
+                                              <a href="/restaurant/lasso"
+                                                 class="block px-4 py-2 flex justify-between items-center">
+
+                                                  <div>
+
+                                                      <div>Lobby Lounge Lasso</div>
+
+                                                  </div>
+                                                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                                       xmlns="http://www.w3.org/2000/svg">
+                                                      <path d="M9 6L15 12L9 18" stroke="#222222"/>
+                                                  </svg>
+                                              </a></li>
+                                          <li class="border-b border-solid border-[#2e755f4d]">
+                                              <a href="/restaurant/restaurant-outside-the-hotel-terrace-restaurant-kitara" class="block px-4 py-2 flex justify-between items-center">
+
+                                                  <div>
+                                                      <div>
+                                                          Restaurant outside the hotel
+
+                                                      </div>
+                                                      <div>Terrace Restaurant Kitara</div>
+                                                  </div>
+                                                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                                       xmlns="http://www.w3.org/2000/svg">
+                                                      <path d="M9 6L15 12L9 18" stroke="#222222"/>
+                                                  </svg>
+                                              </a></li>
+                                          <li class="border-b border-solid border-[#2e755f4d]">
+                                              <a href="/restaurant/park-club-members-only" class="block px-4 py-2 flex justify-between items-center">
+
+                                                  <div>
+                                                      <div>
+                                                          Western food & bar
+
+                                                      </div>
+                                                      <div>Park Club (members only)</div>
+                                                  </div>
+                                                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                                       xmlns="http://www.w3.org/2000/svg">
+                                                      <path d="M9 6L15 12L9 18" stroke="#222222"/>
+                                                  </svg>
+                                              </a></li>
+                                          <li>
+                                              <a href="/restaurant/piare-s-cake-corner" class="block px-4 py-2 flex justify-between items-center">
+
+                                                  <div>
+                                                      <div>
+                                                          Sweets shop
+                                                      </div>
+                                                      <div>Piare's cake corner</div>
+
+                                                  </div>
+                                                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                                       xmlns="http://www.w3.org/2000/svg">
+                                                      <path d="M9 6L15 12L9 18" stroke="#222222"/>
+                                                  </svg>
+                                              </a></li>
+
+                                      </ul>
+
+
+                                  </li>
+
+
+                                  <li class="relative group border-b border-solid border-gray-200">
+                                      <a href="/en-gb/facilities1" class="block px-4 py-2 uppercase" target="_self">
+                <span data-hover="Facilities">
+                        Facilities
+                </span>
+                                      </a>
+                                  </li>
+
+
+                                  <li eventName="menu" class="relative group border-b border-solid border-gray-200">
+                                      <a href="/en-gb/services1" class="block px-4 py-2 uppercase" target="_self">
+                <span data-hover="Services">
+                        Services
+                </span>
+                                      </a>
+                                  </li>
+
+
+                                  <li eventName="menu" class="relative group border-b border-solid border-gray-200">
+                                      <a href="/en-gb/access" class="block px-4 py-2 uppercase" target="_self">
+                <span data-hover="Access">
+                        Access
+                </span>
+                                      </a>
+                                  </li>
+
+
+                                  <!--                                    <li eventName="menu" class="relative group border-b border-solid border-gray-200">-->
+                                  <!--                                        <a href="/en-gb/attractions" class="block px-4 py-2 uppercase" target="_self">-->
+                                  <!--                <span data-hover="Attractions">-->
+                                  <!--                        Attractions-->
+                                  <!--                </span>-->
+                                  <!--                                        </a>-->
+                                  <!--                                    </li>-->
+
+
+                                  <!--                                    <li eventName="menu" class="relative group border-b border-solid border-gray-200">-->
+                                  <!--                                        <a href="/en-gb/reviews" class="block px-4 py-2 uppercase" target="_self">-->
+                                  <!--                <span data-hover="Reviews">-->
+                                  <!--                        Reviews-->
+                                  <!--                </span>-->
+                                  <!--                                        </a>-->
+                                  <!--                                    </li>-->
+
+
+                                  <!--                                    <li eventName="menu" class="relative group border-b border-solid border-gray-200">-->
+                                  <!--                                        <a href="/en-gb/photos" class="block px-4 py-2 uppercase" target="_self">-->
+                                  <!--                <span data-hover="Photos">-->
+                                  <!--                        Photos-->
+                                  <!--                </span>-->
+                                  <!--                                        </a>-->
+                                  <!--                                    </li>-->
+
+
+                                  <li eventName="menu" class="relative group border-b border-solid border-gray-200">
+                                      <a href="/en-gb/faq" class="block px-4 py-2 uppercase" target="_self">
+                <span data-hover="FAQ">
+                        FAQ
+                </span>
+                                      </a>
+                                  </li>
+
+
+                                  <li eventName="menu" class="relative group border-b border-solid border-gray-200">
+                                      <a href="/en-gb/amenities" class="block px-4 py-2 uppercase" target="_self">
+                <span data-hover="Amenities">
+                        Amenities
+                </span>
+                                      </a>
+                                  </li>
+
+
+                              </ul>
+                          </nav>
+                          <div x-data="{select_lang:false}"
+                               class="relative py-4 group">
+                              <button
+                                      @click="select_lang=!select_lang"
+                                      class="flex gap-3 px-4 items-center group"
+                                      aria-haspopup="true"
+                                      aria-label="Select language">
+                                  <svg class="group-hover:fill-primary" height="20" width="20" viewBox="0 0 128 128"
+                                       role="presentation" aria-hidden="true" focusable="false">
+                                      <path
+                                              d="M64 8a56 56 0 1 0 56 56A56 56 0 0 0 64 8zm41.5 80H87.8a69.7 69.7 0 0 0 3.7-16h19.8a47.6 47.6 0 0 1-5.8 16zM64 109.6A62 62 0 0 1 52.9 96h22.2A62 62 0 0 1 64 109.6zM48.8 88a61.5 61.5 0 0 1-4.3-16h39a61.5 61.5 0 0 1-4.3 16zM16.7 72h19.8a69.7 69.7 0 0 0 3.7 16H22.5a47.6 47.6 0 0 1-5.8-16zm2-24H38a70.5 70.5 0 0 0-2 16H16a47.8 47.8 0 0 1 2.8-16zM64 18.4A61.8 61.8 0 0 1 79.2 40H48.8A61.8 61.8 0 0 1 64 18.4zM82 48a62.3 62.3 0 0 1 2 16H44a62.3 62.3 0 0 1 2-16zm10 16a70.5 70.5 0 0 0-1.9-16h19.2a47.8 47.8 0 0 1 2.8 16zm13.5-24H87.8a69.4 69.4 0 0 0-13.9-23 48.1 48.1 0 0 1 31.6 23zM54.1 17a69.4 69.4 0 0 0-13.9 23H22.5A48.1 48.1 0 0 1 54 17zM28.3 96h15.4a69.6 69.6 0 0 0 10.4 15 48 48 0 0 1-25.8-15zm45.6 15a69.6 69.6 0 0 0 10.4-15h15.4A48 48 0 0 1 74 111z"/>
+                                  </svg>
+                                  <span class="group-hover:text-primary">en</span>
+                                  <svg width="18" height="18" viewBox="0 0 24 24" class="group-hover:hidden "
+                                       xmlns="http://www.w3.org/2000/svg">
+                                      <path d="M18 9L12 15L6 9" stroke="#222222"/>
+                                  </svg>
+                                  <svg width="18" height="18" viewBox="0 0 24 24"
+                                       class="hidden group-hover:block group-hover:fill-primary"
+                                       xmlns="http://www.w3.org/2000/svg">
+                                      <path d="M18 15L12 9L6 15"/>
+                                  </svg>
+
+
+                              </button>
+
+                              <ul x-cloak x-show="select_lang"
+                                  class=" absolute right-0 w-full shadow bg-white">
+
+                                  <li class="current">
+                                      <a class="block px-4 py-2 hover:bg-primary hover:text-white" target="_self"
+                                         href="#">English</a>
+                                  </li>
+
+                                  <li class="">
+                                      <a class="block px-4 py-2 hover:bg-primary hover:text-white" target="_self"
+                                         href="#">&#xD55C;&#xAD6D;&#xC5B4;</a>
+                                  </li>
+
+                                  <li class="">
+                                      <a class="block px-4 py-2 hover:bg-primary hover:text-white" target="_self"
+                                         href="#">&#x4E2D;&#x6587;</a>
+                                  </li>
+
+                                  <li class="">
+                                      <a class="block px-4 py-2 hover:bg-primary hover:text-white" target="_self"
+                                         href="#">&#x7E41;&#x9AD4;&#x4E2D;&#x6587;</a>
+                                  </li>
+
+                              </ul>
+
+                          </div>
+
+                      </div>
+
+                  </div>
+              </div>
+          </div>
+      </div>
+
+  </header>
 
 
 
-    <div id="click-shield" class="click-shield"></div>
-    <div class="backstretch"></div>
 
-    <div class="body-wrap" role="main">
+
+    <div class="body-wrap mt-[120px]" role="main">
       <div class="main">
         <div class="content-wrap ">
           
           
 
 <div class="content-head">
-    <h1 class="sectionTitle">
+    <h1 class="text-4xl text-center py-10">
         Cookie notice
     </h1>
 </div>
 
-<div class="content-body">
+<div class="content-body lg:w-1/2 mx-auto px-4">
     <div class="content-body-inner">
         
 
@@ -1017,7 +813,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 describes how we use personal data collected through Cookies and other techniques including pixels
 ('Cookies') on our website <a href="">www.sapporoparkhotel1964.com</a> ('Site').</p>
 
-                <h3>Data Collection</h3>
+                <h3 class="text-xl font-semibold my-4">Data Collection</h3>
                 <p>When entering the Site or viewing our targeted advertisements, we automatically collect data using
 Cookies.</p>
                 <p>The types of information that we collect through Cookies include IP address; device ID; viewed pages;
@@ -1038,7 +834,7 @@ Cookies are used and which parties place such Cookies, please contact us using t
 set out below.</p>
 
 
-                <h3>Processing Purposes</h3>
+                <h3 class="text-xl font-semibold my-4">Processing Purposes</h3>
                 <p>We use your information, including personal data, collected through Cookies for the following
 purposes:</p>
                 <ul>
@@ -1070,7 +866,7 @@ advertising purposes at all times.</li>
 
 .</p>
 
-                <h3>Data Sharing</h3>
+                <h3 class="text-xl font-semibold my-4">Data Sharing</h3>
                 <ul>
                     <li>• <u>BookingSuite:</u> Your personal data may be shared with BookingSuite B.V. located at
 Herengracht 597, 1017 CE Amsterdam, the Netherlands, the company which operates the
@@ -1083,7 +879,7 @@ authorities insofar as it is required by law or is strictly necessary for the pr
 or prosecution of criminal acts and fraud.</li>
                 </ul>
 
-                <h3>Data Retention</h3>
+                <h3 class="text-xl font-semibold my-4">Data Retention</h3>
                 <p>There is a difference between session Cookies and permanent Cookies. Session Cookies only exist
 until you close your browser. Permanent Cookies have a longer lifespan and are not automatically
 deleted once you close your browser. We strive to serve Cookies or allow the serving of Cookies with
@@ -1092,7 +888,7 @@ a maximum lifespan of 5 years. Only in exceptional circumstances, such as for se
 have questions about specific retention periods, please contact us via the contact details included
 below.</p>
 
-                <h3>Questions or Complaints</h3>
+                <h3 class="text-xl font-semibold my-4">Questions or Complaints</h3>
                 <p>If you have questions or concerns about our processing of your personal data, or if you wish to
 exercise any of the rights you have under this notice, you are welcome to contact us via 
   
@@ -1107,7 +903,7 @@ exercise any of the rights you have under this notice, you are welcome to contac
 
 . You may also contact your local data protection authority with questions and complaints.</p>
 
-                <h3>Changes to the Notice</h3>
+                <h3 class="text-xl font-semibold my-4">Changes to the Notice</h3>
                 <p>Just as our business changes constantly, this Cookie Notice will also change from time to time. If you
 want to see changes made to this Cookie Notice from time to time, we invite you to access this Cookie
 Notice to see the changes.</p>
@@ -1122,181 +918,168 @@ Notice to see the changes.</p>
       </div>
 
       
-    <script src="https://r-fa.bstatic.com/static/manifests/js/common_websites/da37581e86b6e2aa73b6b96a8ea6a2cf2b01db4f.js"></script>
 
     
-
-  <div class="widget" data-template="badges_widget" data-url="/api/badges_widget">
-      
-  <script type='text/javascript'>
-booking.jstmpl('badges_widget', (function () { var T = ["\n    ","\n    \u003cdiv class=\"badges clearfix\"\u003e\n      \u003cdiv class=\"badges-inner\"\u003e\n          ","\n          \u003cul class=\"badge-list clearfix\" id=\"Ol1\"\u003e\n              ","\n\n                     ","\n                      ","javascript:void(0);","disabled=\"disabled\"","\n                ","\n              ","\n                  ","http://","target=\"_blank\"","\n                       ","\n\n              \u003cli class=\"badge\"\u003e\n                \u003ca href=\"","\" "," ","\u003e\n                  ","\n                    \u003cdiv class=\"badge-image\"\u003e\n                        \u003cimg src=\"","\" alt=\"","\"\u003e\n                        \u003c/div\u003e\n                  ","\n                    \u003cdiv class=\"badge-title\"\u003e","\u003c/div\u003e\n                  ","\n                \u003c/a\u003e\n              \u003c/li\u003e\n            ","\n          \u003c/ul\u003e\n           ","\n      \u003c/div\u003e\n    \u003c/div\u003e\n  "], V = ["data","fe_badges","fe_badge_link_url","fe_badge_disabled","fe_badge_target","fe_badges_count"], WV, LV, VA; return function (VS) { var s = '', r = this.fn; s += T[0]; r.MN("fe_badges", r.MG((r.MC(V[0]) || [])[0] )); s += T[0]; r.MN("fe_badges_count", (r.MB(V[1])).length); s += T[1]; if ((r.MJ( r.MB(V[5])  >  0 ))) { s += T[2]; { var LA= ( r.MC(V[1]) || [] ); VS.unshift({'badge': null}); for(var LC=1, LM= LA.length, LV_badge; LC <= LM; LC++) { VS[0]['badge']= LV_badge= LA[LC - 1]; s += T[3]; if (( ( r.MK(LV_badge["link_url" ]) || (r.MJ( LV_badge["link_url" ].toString().length  ==  0 )) ) || (r.MJ( LV_badge["link_url" ]  + "" === "" +  "#" )) )) { s += T[4]; r.MN(V[2],T[5]); s += T[4]; r.MN(V[3],T[6]); s += T[7]; r.MN(V[4], undefined); s += T[8]; } else  { s += T[7]; if ((r.MJ( /^http[s]?:\/\// .test( LV_badge["link_url" ] )))) { s += T[9]; r.MN(V[2],(LV_badge || {})["link_url"]); s += T[7]; } else  { s += T[9]; r.MN(V[2],[ T[10], (LV_badge || {})["link_url"] ].join( '' )); s += T[7]; } s += T[7]; r.MN(V[3], undefined); s += T[7]; r.MN(V[4],T[11]); s += T[12]; } s += [ T[13], r.MC(V[2]), T[14], r.MC(V[4]), T[15], r.MC(V[3]), T[16] ].join( '' ); if (r.MJ(r.MG((LV_badge || {})["logo_url"] ))) { s += [ T[17], (LV_badge || {})["logo_url"], T[18], (LV_badge || {})["title"], T[19] ].join( '' ); } s += T[9]; if ((r.MJ( /\S+/ .test( LV_badge["title" ] )))) { s += [ T[20], (LV_badge || {})["title"], T[21] ].join( '' ); } s += T[22]; } VS.shift(); } s += T[23]; } s += T[24]; return s; }; } )());
-</script>
-
-
-  </div>
 
     
         
-  <div class="content-section quickres_tabletUp bodyquickres footer-res clearfix" role="search">
-    <div class="inner">
-      <h2>Reservations</h2>
-      
-        <div class="quickres-fields search_wrapper_dates">
-          <div class="datepicker arrival search">
-<!--             <label for="Date1" class="invisible_spoken">Check-in</label>
- -->            <input type="text" class="date-pick" name="date1" id="Date1" aria-label="Check-in"/>
-            <span class="iconfont datepickicon search_calendar-icon" aria-hidden="true"></span>
-            <i class="iconfont iconfont-next from_to" aria-hidden="true"></i>
-            <span class="input-focused" aria-hidden="true"></span>
-          </div>
-          <div class="datepicker departure search">
-<!--             <label for="Date2" class="invisible_spoken">Check-out</label>
- -->            <input type="text" class="date-pick" name="date2" id="Date2" aria-label="Check-out"/>
-            <span class="iconfont datepickicon search_calendar-icon" aria-hidden="true"></span>
-            <span class="input-focused" aria-hidden="true"></span>
-          </div>
-          <a class="booknow-btn" data-component="core/book_now_button" href="#">
-            Book now
-          </a>
-        </div>
-      
-    </div>
-  </div>
 
 
-    
-
-    
-<footer class="footer" role="footer">
-    <div class="footer-inner">
-        <div class="clearfix">
-
-            <div class="footer-group-a">
-                <div class="footer-contact">
-                    <div class="hotel-name" itemprop="name">Sapporo Park Hotel</div>
-                    
-  
-  
-  
-    
-      <div class="hotel-phone">
-        <a class="phone-btn-call track-call" href="tel:+81115113135">
-          +81 11-511-3135
-        </a>
-      </div>
-    
-  
 
 
-                    
-    <div itemprop="address" class="hotel-address">
-        
-            <div>064-8589 Hokkaido</div>
-        
-            <div>Sapporo</div>
-        
-            <div>Chuo-ku Minami 10-jo Nishi 3-1-1</div>
-        
-            <div>Japan</div>
-        
-    </div>
 
-                    
-  
-  
-  
-    
-      <div class="hotel-email">
-        <a class="track-email" href="mailto:sph_inb1@granvista.co.jp">
-          sph_inb1@granvista.co.jp
-        </a>
-      </div>
-    
-  
+        <footer class="mt-10 border-t border-slate-500 pt-10 px-4">
+            <div>
+                <div class="flex gap-4 lg:justify-around flex-col lg:flex-row">
+                    <div>
+                        <a class="w-[240px] md:w-[260px] lg:w-[300px] block self-start mb-6 mx-auto" href="/">
+                            <img class="w-full max-w-full "
+                                 src="https://r-fa.bstatic.com/data/bsuitewf/3bf94bac2ddfa5e05a929a05613909cc1662e4f1"
+                                 alt="Sapporo Park Hotel">
+                        </a>
+                        <ul class="flex gap-8 justify-center text-sm font-normal">
+                            <li class="">
+                                <a href="https://www.instagram.com/sapporo.parkhotel/" target="_blank"
+                                   class="text-center">
+                                    <svg class="mx-auto fill-slate-400" width="24" height="24" viewBox="0 0 24 24"
+                                         fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path fill-rule="evenodd" clip-rule="evenodd"
+                                              d="M17 2H7C4.23858 2 2 4.23858 2 7V17C2 19.7614 4.23858 22 7 22H17C19.7614 22 22 19.7614 22 17V7C22 4.23858 19.7614 2 17 2ZM12.4584 8.90881C11.8082 8.81239 11.1442 8.92345 10.5607 9.22618C9.97729 9.52892 9.50416 10.0079 9.20865 10.595C8.91313 11.1822 8.81027 11.8475 8.91469 12.4965C9.01912 13.1454 9.32551 13.7449 9.7903 14.2097C10.2551 14.6745 10.8546 14.9809 11.5035 15.0853C12.1525 15.1897 12.8178 15.0869 13.405 14.7914C13.9921 14.4958 14.4711 14.0227 14.7738 13.4393C15.0766 12.8558 15.1876 12.1918 15.0912 11.5416C14.9929 10.8784 14.6838 10.2644 14.2097 9.7903C13.7356 9.3162 13.1216 9.00715 12.4584 8.90881ZM9.75472 7.67284C10.6649 7.20058 11.7008 7.02733 12.7151 7.17773C13.7497 7.33116 14.7076 7.81327 15.4472 8.55286C16.1867 9.29245 16.6689 10.2503 16.8223 11.2849C16.9727 12.2992 16.7994 13.3351 16.3272 14.2453C15.8549 15.1554 15.1077 15.8935 14.1918 16.3545C13.2758 16.8155 12.2379 16.976 11.2255 16.8131C10.2131 16.6502 9.27792 16.1722 8.55286 15.4471C7.8278 14.7221 7.34982 13.7869 7.18692 12.7745C7.02401 11.7621 7.18448 10.7242 7.64548 9.80825C8.10649 8.89234 8.84456 8.14511 9.75472 7.67284ZM17.5 7.5C18.0523 7.5 18.5 7.05228 18.5 6.5C18.5 5.94772 18.0523 5.5 17.5 5.5C16.9477 5.5 16.5 5.94772 16.5 6.5C16.5 7.05228 16.9477 7.5 17.5 7.5Z"/>
+                                    </svg>
+                                    OFFICIAL</a>
+                            </li>
+
+                            <li class=""><a href="https://www.facebook.com/park1964/" target="_blank">
+                                <div class="w-6 h-6 rounded-full flex items-center justify-center mx-auto bg-slate-400">
+                                    <svg width="18" height="18" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                        <path
+                                                d="M18 2H15C13.6739 2 12.4021 2.52678 11.4645 3.46447C10.5268 4.40215 10 5.67392 10 7V10H7V14H10V22H14V14H17L18 10H14V7C14 6.73478 14.1054 6.48043 14.2929 6.29289C14.4804 6.10536 14.7348 6 15 6H18V2Z"
+                                                fill="white"/>
+                                    </svg>
+                                </div>
+
+                                FACEBOOK</a></li>
+                            <li class=""><a
+                                    href="https://www.tripadvisor.com/Hotel_Review-g298560-d325626-Reviews-Sapporo_Park_Hotel-Sapporo_Hokkaido.html"
+                                    target="_blank">
+                                <div class="w-6 h-6 rounded-full flex items-center justify-center mx-auto bg-slate-400">
+                                    <img src="/images/icons/img.png" alt="">
+                                </div>
+
+                                TRIPADVISOR</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-group-a">
+                        <div class="footer-contact">
+                            <div class="hotel-name">Sapporo Park Hotel</div>
 
 
-                    
-	<ul class="footer-social clearfix">
-		
-			
+                            <div class="hotel-phone">
+                                <a class="phone-btn-call track-call" href="tel:+81115113131">
+                                    +81 11-511-3131
+                                </a>
+                            </div>
 
-			
-	    	<li id="facebookLink">
-	    		<div class="fb-link">
-	    			<a class="facebookAnchor" target="_blank" href="https://www.facebook.com/park1964">
-	    				<span class="social-link-name invisible_spoken">Facebook</span>
-	    			</a>
-	  			</div>
-				</li>
 
-			
+                            <div class="hotel-address">
 
-		
-			
+                                <div>064-8589 Hokkaido</div>
 
-			
-				<li id="tripAdvisorLink">
-			 		<div class="tripAdvisor-link">
-			 			<a class="tripAdvisorAnchor" target="_blank" href="https://www.tripadvisor.com.sg/Hotel_Review-g298560-d325626-Reviews-Sapporo_Park_Hotel-Sapporo_Hokkaido.html">
-			 				<span class="social-link-name invisible_spoken">Tripadvisor</span>
-			 			</a>
-		 			</div>
-	 			</li>
+                                <div>Sapporo</div>
 
-			
+                                <div>Chuo-ku Minami 10-jo Nishi 3-1-1</div>
 
-		
-	</ul>
+                                <div>Japan</div>
 
+                            </div>
+
+
+                            <div class="hotel-email">
+                                <a class="track-email" href="mailto:sph_inb1@granvista.co.jp">
+                                    sph_inb1@granvista.co.jp
+                                </a>
+                            </div>
+
+
+                            <ul class="footer-social clearfix">
+
+
+                                <li id="facebookLink">
+                                    <div class="fb-link">
+                                        <a class="facebookAnchor" target="_blank"
+                                           href="https://www.facebook.com/park1964">
+                                            <span class="social-link-name invisible_spoken">Facebook</span>
+                                        </a>
+                                    </div>
+                                </li>
+
+
+                                <li id="tripAdvisorLink">
+                                    <div class="tripAdvisor-link">
+                                        <a class="tripAdvisorAnchor" target="_blank"
+                                           href="https://www.tripadvisor.com.sg/Hotel_Review-g298560-d325626-Reviews-Sapporo_Park_Hotel-Sapporo_Hokkaido.html">
+                                            <span class="social-link-name invisible_spoken">Tripadvisor</span>
+                                        </a>
+                                    </div>
+                                </li>
+
+
+                            </ul>
+
+
+                        </div>
+                    </div>
+
+                    <div class="footer-group-b">
+                        <nav class="footer-links">
+                            <ul class="links-list clearfix">
+
+
+                                <li>
+                                    <a href="/en-gb/sitemap" title="Sitemap" target="_self">Sitemap</a>
+                                </li>
+
+
+                                <li>
+                                    <a href="/en-gb/privacy-policy" title="Privacy policy" target="_self">Privacy
+                                        policy</a>
+                                </li>
+
+
+                                <li>
+                                    <a href="/en-gb/cookie-policy" title="Cookie notice" target="_self">Cookie
+                                        notice</a>
+                                </li>
+
+
+                                <li>
+                                    <a href="/en-gb/general-terms-conditions-for-accommodation-contract"
+                                       title="General Terms and Conditions for Accommodation Contract" target="_self">General
+                                        Terms and Conditions for Accommodation Contract</a>
+                                </li>
+
+                            </ul>
+                        </nav>
+                    </div>
 
                 </div>
+
+                <div class="footer-credits mt-10 border-t border-slate-500 ">
+                    <div class="text-center py-10" id="OnWeb">
+
+
+                        <span>&copy; 2019</span>
+
+                        <span>Digital marketing by <a href="http://suite.booking.com/" target="_blank">BookingSuite</a>.</span>
+                        <span>BookingSuite is a brand of <a href="https://www.booking.com"
+                                                            target="_blank">Booking.com</a>. Have confidence in the world-class customer support that comes along with Booking.com </span>
+
+
+                    </div>
+                </div>
+
             </div>
-
-            <div class="footer-group-b">
-                <nav class="footer-links">
-                    <ul class="links-list clearfix">
-                        
-                            
-                            
-                            <li>
-                                <a href="/en-gb/sitemap" title="Sitemap" target="_self">Sitemap</a>
-                            </li>
-                        
-                            
-                            
-                            <li>
-                                <a href="/en-gb/privacy-policy" title="Privacy policy" target="_self">Privacy policy</a>
-                            </li>
-                        
-                            
-                            
-                            <li>
-                                <a href="/en-gb/cookie-policy" title="Cookie notice" target="_self">Cookie notice</a>
-                            </li>
-                        
-                            
-                            
-                            <li>
-                                <a href="/en-gb/general-terms-conditions-for-accommodation-contract" title="General Terms and Conditions for Accommodation Contract" target="_self">General Terms and Conditions for Accommodation Contract</a>
-                            </li>
-                        
-                    </ul>
-                </nav>
-            </div>
-
-        </div>
-        <!--clearfix end-->
-
-        <div class="footer-credits ">
-            <div class="powered" id="OnWeb">
-                <span>&copy; 2018</span>
-                <a href="http://suite.booking.com" target="_blank">BookingSuite</a>
-            </div>
-        </div>
-
-    </div>
-    <!--footer-inner end-->
-</footer>
+        </footer>
 <!--footer end-->
 
 
